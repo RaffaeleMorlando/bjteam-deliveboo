@@ -14117,7 +14117,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: '#app',
-  data: {}
+  data: {
+    prova: "DIO CANE"
+  },
+  mounted: function mounted() {
+    console.log(this.prova);
+  }
 });
 })();
 
