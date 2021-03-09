@@ -13,6 +13,10 @@ class Order extends Model
         'total_price'
     ];
 
+    /**
+     * DB RELATIONSHIP
+     */
+
     public function user(){
         return $this->belongsTo('App\User');
     }

@@ -14,6 +14,10 @@ class Review extends Model
         'image'
     ];
 
+    /**
+     * DB RELATIONSHIP
+     */
+
     public function user(){
         return $this->belongsTo('App\User');
     }
@@ -21,6 +25,5 @@ class Review extends Model
     public function restaurant(){
         return $this->belongsTo('App\Restaurant');
     }
-
 
 }

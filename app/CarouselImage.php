@@ -11,6 +11,10 @@ class CarouselImage extends Model
         'image'
     ];
 
+    /**
+     * DB RELATIONSHIP
+     */
+
     public function restaurant(){
         return $this->belongsTo('App\Restaurant');
     }

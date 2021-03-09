@@ -10,6 +10,10 @@ class Category extends Model
         'name'
     ];
 
+    /**
+     * DB RELATIONSHIP
+     */
+
     public function restaurants(){
         return $this->belongsToMany('App\Restaurant', 'restaurant_category');
     }

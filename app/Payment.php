@@ -11,6 +11,10 @@ class Payment extends Model
         'status'
     ];
 
+    /**
+     * DB RELATIONSHIP
+     */
+
     public function order(){
         return $this->belongsTo('App\Order');
     }

@@ -16,6 +16,10 @@ class Product extends Model
         'category'
     ];
 
+    /**
+     * DB RELATIONSHIP
+     */
+
     public function orders(){
         return $this->belongsToMany('App\Order', 'product_order');
     }

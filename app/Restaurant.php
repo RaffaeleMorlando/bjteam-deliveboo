@@ -18,6 +18,11 @@ class Restaurant extends Model
         'phone'
     ];
 
+
+    /**
+     * DB RELATIONSHIP
+     */
+    
     public function user(){
         return $this->belongsTo('App\User');
     }

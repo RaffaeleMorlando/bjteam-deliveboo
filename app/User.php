@@ -43,7 +43,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // RELAZIONI
+    /**
+     * DB RELATIONSHIP
+     */
+
     public function restaurant(){
         return $this->hasOne('App\Restaurant');
     }
@@ -55,4 +58,5 @@ class User extends Authenticatable
     public function orders(){
         return $this->hasMany('App\Order');
     }
+    
 }
