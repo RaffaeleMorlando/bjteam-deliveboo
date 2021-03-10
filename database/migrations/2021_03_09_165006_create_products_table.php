@@ -15,7 +15,19 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('restaurant_id');
+            $table->string('name',60)->required();
+            $table->text('description')->required();
+            $table->float('price',4,2)->required();
+            $table->boolean('is_vegetarian')->default(0);
+            $table->boolean('is_glutenfree')->default(0);
+            $table->string('category',20)->required();
             $table->timestamps();
+
+            $table->foreign('restaurant_id')
+                ->references('id')
+                ->on('restaurants')
+                ->onDelete('cascade');
         });
     }
 
