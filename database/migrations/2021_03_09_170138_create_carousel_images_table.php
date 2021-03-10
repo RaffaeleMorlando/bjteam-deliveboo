@@ -15,7 +15,13 @@ class CreateCarouselImagesTable extends Migration
     {
         Schema::create('carousel_images', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('restaurant_id');
+            $table->string('image',80)->nullable();
+
+            $table->foreign('restaurant_id')
+                ->references('id')
+                ->on('restaurants')
+                ->onDelete('cascade');
         });
     }
 
