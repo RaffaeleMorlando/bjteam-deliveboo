@@ -9,9 +9,11 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
+
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -30,19 +32,19 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::HOME;
     public function redirectTo() {
-        $role = Auth::user()->role;  
+        $role = Auth::user()->role;
         switch ($role) {
-          case 'admin':
-            return '/admin/dashboard';
+          case 'seller':
+            return '/seller/questions';
             break;
           case 'customer':
-            return '/customer/dashboard';
-            break; 
-      
+            return '/customer/questions';
+            break;
+
           default:
-            return '/home'; 
+            return '/home';
           break;
         }
       }
@@ -90,4 +92,5 @@ class RegisterController extends Controller
             'role' => $data['role']
         ]);
     }
+
 }
