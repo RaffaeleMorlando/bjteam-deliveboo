@@ -30,8 +30,8 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check()) {
           $role = Auth::user()->role;
           switch ($role) {
-            case 'admin':
-               return redirect('/admin/questions');
+            case 'seller':
+               return redirect('/seller/questions');
                break;
             case 'customer':
                return redirect('/customer/questions');

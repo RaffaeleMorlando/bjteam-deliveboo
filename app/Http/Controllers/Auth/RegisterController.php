@@ -36,8 +36,8 @@ class RegisterController extends Controller
     public function redirectTo() {
         $role = Auth::user()->role;
         switch ($role) {
-          case 'admin':
-            return '/admin/questions';
+          case 'seller':
+            return '/seller/questions';
             break;
           case 'customer':
             return '/customer/questions';

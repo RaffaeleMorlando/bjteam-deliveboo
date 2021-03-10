@@ -63,9 +63,8 @@
 
                         <div class="form-group row">
                             <select name="role" id="role">
-                                <option value="admin">Admin</option>
+                                <option value="seller">Seller</option>
                                 <option value="customer">Customer</option>
-                                <option value="acazzodicane">canedicazzo</option>
                             </select>
                         </div>
 
