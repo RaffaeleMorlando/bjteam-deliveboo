@@ -20,9 +20,9 @@ class User extends Authenticatable
         'email',
         'password', 
         'address', 
-        'credit_card', 
-        'is_seller', 
-        'avatar'
+        'credit_card',  
+        'avatar',
+        'role'
     ];
 
     /**
