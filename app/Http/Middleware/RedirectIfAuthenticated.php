@@ -28,17 +28,17 @@ class RedirectIfAuthenticated
 
     public function handle($request, Closure $next, $guard = null) {
         if (Auth::guard($guard)->check()) {
-          $role = Auth::user()->role; 
+          $role = Auth::user()->role;
           switch ($role) {
             case 'admin':
-               return redirect('/admin/dashboard');
+               return redirect('/admin/questions');
                break;
             case 'customer':
-               return redirect('/customer/dashboard');
-               break; 
-      
+               return redirect('/customer/questions');
+               break;
+
             default:
-               return redirect('/home'); 
+               return redirect('/home');
                break;
           }
         }

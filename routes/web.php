@@ -21,6 +21,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin/dashboard', 'Admin\DashboardController@index')->middleware('role:admin');
+Route::get('/admin/questions', 'Admin\DashboardController@index')->middleware('role:admin');
 
-Route::get('/customer/dashboard', 'Customer\DashboardController@index')->middleware('role:customer');
+Route::get('/customer/questions', 'Customer\DashboardController@index')->middleware('role:customer');
+
+// vista non visibile, serve a salvare le domande dell'utente customer
+Route::post('/customer/questions/store', 'Customer\DashboardController@questions')->name('customer.questions');
