@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('restaurant_id');
             $table->string('name',60)->required();
+            $table->string('image', 80)->required();
             $table->text('description')->required();
             $table->float('price',4,2)->required();
             $table->boolean('is_vegetarian')->default(0);
