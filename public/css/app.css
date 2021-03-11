@@ -18689,7 +18689,6 @@ h3 {
   justify-content: center;
   align-items: center;
   height: calc(100vh - 55px);
-  overflow-x: hidden;
 }
 #questions input {
   background-color: transparent;
@@ -18699,4 +18698,12 @@ h3 {
 }
 #questions input:focus {
   outline: none;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }

@@ -31345,6 +31345,7 @@ __webpack_require__.r(__webpack_exports__);
 var questions = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
   el: '#questions',
   data: {
+    userInput: "",
     customerQuestions: [{
       text: "Inserisci il tuo indirizzo",
       active: true,

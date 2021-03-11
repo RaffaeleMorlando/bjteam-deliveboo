@@ -5,6 +5,7 @@ import Vue from 'vue';
 const questions = new Vue({
   el: '#questions',
   data: {
+    userInput: "",
     customerQuestions: [
       {
         text: "Inserisci il tuo indirizzo",
