@@ -72,9 +72,11 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>
+
+    <script src="@yield("page-script")" charset="utf-8"></script>
 </body>
 </html>
