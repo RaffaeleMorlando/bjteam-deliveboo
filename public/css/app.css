@@ -18691,3 +18691,12 @@ h3 {
   height: calc(100vh - 55px);
   overflow-x: hidden;
 }
+#questions input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid black;
+  box-shadow: none;
+}
+#questions input:focus {
+  outline: none;
+}

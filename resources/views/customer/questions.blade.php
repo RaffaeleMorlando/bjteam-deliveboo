@@ -15,8 +15,8 @@
 
 
       <div class="form-group animate__animated animate__slideInRight" v-for="(question, index) in customerQuestions" v-if="question.active" :class="question.classes" @keyup.enter="nextQuestion(index)">
-        <h2>@{{ question.text }}</h2>
-        <input class="form-control" type="text" name="address" class="form-control" id="address">
+        <h2 class="text-uppercase">@{{ question.text }}</h2>
+        <input class="form-control text-center" type="text" name="address" id="address">
 
         <button v-if="question != customerQuestions[customerQuestions.length - 1]" type="button" name="button" @click="nextQuestion(index)">Avanti</button>
         <button v-else type="submit" name="button">Fine</button>

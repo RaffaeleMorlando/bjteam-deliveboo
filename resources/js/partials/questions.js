@@ -26,7 +26,7 @@ const questions = new Vue({
         active: false,
         classes: ""
       }
-    ]
+    ],
   },
   methods: {
 

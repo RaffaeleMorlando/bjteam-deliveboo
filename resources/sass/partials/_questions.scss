@@ -4,4 +4,16 @@
   align-items: center;
   height: calc(100vh - 55px);
   overflow-x: hidden;
+
+  input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    box-shadow: none;
+    
+    &:focus {
+      outline: none;
+
+    }
+  }
 }
