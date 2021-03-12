@@ -20,8 +20,8 @@ class CreateRestaurantsTable extends Migration
             $table->string("slug", 100)->required();
             $table->string("phone", 20)->required();
             $table->string("address")->required();
-            $table->string("lat", 20);
-            $table->string("lon", 20);
+            $table->string("lat", 20)->nullable();
+            $table->string("lon", 20)->nullable();
             $table->char("p_iva", 11)->required();
             $table->string("logo", 80)->nullable();
             $table->timestamps();
