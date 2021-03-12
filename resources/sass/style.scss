@@ -1,0 +1,10 @@
+// Partials
+@import 'partials/_common';
+@import 'partials/_mixins';
+@import 'partials/_dashboard';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

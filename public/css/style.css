@@ -1,0 +1,48 @@
+#dashboard {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  padding: 80px;
+  background-color: #303030;
+}
+#dashboard aside {
+  height: 100%;
+  width: 100px;
+  margin-right: 10px;
+  background: rgba(255, 254, 254, 0.75);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+#dashboard main {
+  height: 100%;
+  width: calc(100% - 110px);
+  padding: 20px;
+  background: rgba(255, 254, 254, 0.75);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+#dashboard main header {
+  width: 90%;
+  height: 200px;
+  margin: auto;
+  background-color: #303030;
+  border-radius: 10px;
+}
+#dashboard main .bottom {
+  width: calc(100% - 110px);
+  height: calc(100% - 200px);
+  padding: 20px;
+  margin: auto;
+  background-color: red;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

@@ -8604,8 +8604,8 @@ readers do not read off random characters that represent icons */
 
   to {
     visibility: hidden;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-150%, 0, 0);
+    transform: translate3d(-150%, 0, 0);
   }
 }
 @keyframes slideOutLeft {
@@ -8616,8 +8616,8 @@ readers do not read off random characters that represent icons */
 
   to {
     visibility: hidden;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-150%, 0, 0);
+    transform: translate3d(-150%, 0, 0);
   }
 }
 .animate__slideOutLeft {
@@ -18684,19 +18684,46 @@ h3 {
     border-color: #dee2e6;
   }
 }
-body {
-  background: black;
-}
-
 #dashboard {
-  background: rgba(110, 109, 109, 0.582);
-  box-shadow: 0 8px 32px 0 rgba(172, 173, 196, 0.37);
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  padding: 80px;
+  background-color: #303030;
+}
+#dashboard aside {
+  height: 100%;
+  width: 100px;
+  margin-right: 10px;
+  background: rgba(255, 254, 254, 0.75);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  display: flex;
-  margin: 20px auto;
-  height: 100vh;
 }
-#dashboard header {
-  color: red;
+#dashboard main {
+  height: 100%;
+  width: calc(100% - 110px);
+  padding: 20px;
+  background: rgba(255, 254, 254, 0.75);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+#dashboard main header {
+  width: 90%;
+  height: 200px;
+  margin: auto;
+  background-color: #303030;
+  border-radius: 10px;
+}
+#dashboard main .bottom {
+  width: calc(100% - 110px);
+  height: calc(100% - 200px);
+  padding: 20px;
+  margin: auto;
+  background-color: red;
 }
