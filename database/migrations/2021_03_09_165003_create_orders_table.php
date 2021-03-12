@@ -15,21 +15,9 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('restaurant_id');
-            $table->unsignedBigInteger('user_id');
             $table->char('order_number',6)->required()->unique(); // #00000
             $table->float('price',5,2)->required();
             $table->timestamps();
-
-            $table->foreign('restaurant_id')
-                ->references('id')
-                ->on('restaurants')
-                ->onDelete('cascade');
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
         });
     }
 

@@ -19,10 +19,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password', 
-        'address', 
-        'credit_card',  
-        'avatar',
-        'role'
     ];
 
     /**
@@ -49,14 +45,6 @@ class User extends Authenticatable
 
     public function restaurant(){
         return $this->hasOne('App\Restaurant');
-    }
-
-    public function reviews(){
-        return $this->hasMany('App\Review');
-    }
-
-    public function orders(){
-        return $this->hasMany('App\Order');
     }
     
 }

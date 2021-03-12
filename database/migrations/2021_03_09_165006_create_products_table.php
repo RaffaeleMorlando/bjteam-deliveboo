@@ -22,7 +22,6 @@ class CreateProductsTable extends Migration
             $table->float('price',4,2)->required();
             $table->boolean('is_vegetarian')->default(0);
             $table->boolean('is_glutenfree')->default(0);
-            $table->string('category',20)->required();
             $table->timestamps();
 
             $table->foreign('restaurant_id')

@@ -13,7 +13,6 @@ class Product extends Model
         'price',
         'is_vegetarian',
         'is_glutenfree',
-        'category'
     ];
 
     /**
@@ -27,10 +26,5 @@ class Product extends Model
     public function restaurant(){
         return $this->belongsTo('App\Restaurant');
     }
-
-    public function ingredients(){
-        return $this->belongsToMany('App\Ingredient', 'product_ingredient');
-    }
-
 
 }

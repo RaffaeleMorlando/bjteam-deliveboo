@@ -9,14 +9,15 @@ class Category extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'name'
+        'name',
+        'slug'
     ];
 
     /**
      * DB RELATIONSHIP
      */
-
-    public function restaurants(){
+    public function restaurants()
+    {
         return $this->belongsToMany('App\Restaurant', 'restaurant_category');
     }
 }

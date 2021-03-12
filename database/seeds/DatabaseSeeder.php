@@ -16,8 +16,6 @@ class DatabaseSeeder extends Seeder
           [
             UsersTableSeeder::class,
             RestaurantsTableSeeder::class
-            //UsersTableSeeder::class
-
           ]
         );
     }

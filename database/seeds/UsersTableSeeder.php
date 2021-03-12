@@ -19,24 +19,10 @@ class UsersTableSeeder extends Seeder
         $newUser = new User();
         $newUser->name = $faker->name;
         $newUser->password = Hash::make('password');
-        $newUser->address = $faker->address;
         $newUser->email = $faker->email;
-        $newUser->role = "seller";
         $newUser->save();
 
       }
-        // DB::table('users')->truncate(); //for cleaning earlier data to avoid duplicate entries
-        // DB::table('users')->insert([
-        //   'name' => 'the admin user',
-        //   'email' => 'iamadmin@gmail.com',
-        //   'role' => 'admin',
-        //   'password' => Hash::make('password'),
-        // ]);
-        // DB::table('users')->insert([
-        //   'name' => 'the seller user',
-        //   'email' => 'iamaseller@gmail.com',
-        //   'role' => 'seller',
-        //   'password' => Hash::make('password'),
-        // ]);
+
     }
 }
