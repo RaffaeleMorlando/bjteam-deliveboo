@@ -12,6 +12,12 @@ use Illuminate\Support\Str;
 
 class RestaurantController extends Controller
 {
+    private $restaurantValidation = [
+        'name' => 'required|max:100',
+        'phone' => 'required|max:20',
+        'address' => 'required',
+        'p_iva' => 'required|max:11',
+    ];
     //Ritorna il form per registrazione ristorante
     public function create() {
         
@@ -24,11 +30,13 @@ class RestaurantController extends Controller
 
         $data = $request->all();
 
-        $newRestaurant = new Restaurant();
+        $request->validate($this->restaurantValidation);
 
+        $newRestaurant = new Restaurant();
         $data['user_id'] = Auth::id();
         $data['slug'] = Str::slug($data['name']);
         $newRestaurant->fill($data);
+
         $newRestaurant->save();
 
         return redirect()->route('admin.restaurants.dashboard');
