@@ -10,23 +10,17 @@ const questions = new Vue({
       {
         text: "Inserisci il tuo indirizzo",
         active: true,
-        classes: ""
+        classes: "",
+        name: "address",
+        model: ""
       },
       {
         text: "Inserisci il numero della carta di credito",
         active: false,
-        classes: ""
+        classes: "",
+        name: "credit_card",
+        model: ""
       },
-      {
-        text: "Com'é dio?",
-        active: false,
-        classes: ""
-      },
-      {
-        text: "Come dici? è porco?",
-        active: false,
-        classes: ""
-      }
     ],
   },
   methods: {

@@ -14,15 +14,15 @@
       @method("POST")
 
 
-      <div class="form-group animate__animated animate__slideInRight" v-for="(question, index) in customerQuestions" v-if="question.active" :class="question.classes" @keyup.enter="nextQuestion(index)">
+      <div class="form-group animate__animated animate__slideInRight" v-for="(question, index) in customerQuestions" v-show="question.active" :class="question.classes" @keyup.enter="nextQuestion(index)">
 
         <div class="question">
           <h2 class="text-uppercase">@{{ question.text }}</h2>
-          <input class="form-control text-center mb-3" type="text" name="address" id="address" v-model="userInput">
+          <input class="form-control text-center mb-3" type="text" :name="question.name" :id="question.name" v-model="question.model">
         </div>
 
         <transition name="fade">
-          <div class="buttons" v-if="userInput != ''">
+          <div class="buttons" v-if="question.model != ''">
             <button v-if="question != customerQuestions[customerQuestions.length - 1]" type="button" name="button" @click="nextQuestion(index)">Avanti</button>
             <button v-else type="submit" name="button">Fine</button>
           </div>
