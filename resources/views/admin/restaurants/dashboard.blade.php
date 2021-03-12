@@ -1,31 +1,34 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+ 
+  <div id="dashboard" class="container">
+    <aside>
+     <ul>
+       <li><a href=""><i class="fas fa-home"></i></a></li>
+       <li><a href=""><i class="fas fa-pizza-slice"></i>
+       </a></li>
+       <li><a href=""><i class="fas fa-chart-bar"></i>
+       </a></li>
+       <li><a href=""><i class="fas fa-cog"></i>
+       </a></li>
+       <li><a href=""><i class="fas fa-user-circle"></i>
+       </a></li>
+     </ul>
+    </aside>
 
-@section('content')
-  <section id="dashboard">
-    <div class="container">
-      <table class="table table-dark table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Indirizzo</th>
-            <th>Telefono</th>
-            <th>P.Iva</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{$restaurant->name}}</td>
-            <td>{{$restaurant->address}}</td>
-            <td>{{$restaurant->phone}}</td>
-            <td>{{$restaurant->p_iva}}</td>
-          </tr>
-        </tbody>
-      </table>
+    <header>
+      <h1>{{ $restaurant->name }}</h1>
+    </header>
+  </div> 
 
-      <h1>{{$restaurant->name}}</h1>
-      <a href="{{route('admin.restaurants.products.index')}}">Link ai prodotti</a>
-      <a href="{{route('admin.restaurants.order.index')}}">Link agli Ordini</a>
+</body>
+</html>l
 
-    </div>
-  </section>    
-@endsection

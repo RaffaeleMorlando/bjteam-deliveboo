@@ -1,0 +1,20 @@
+body{
+  background: black;
+}
+#dashboard{
+  background: rgba(110, 109, 109, 0.582);
+  box-shadow: 0 8px 32px 0 rgba(172, 173, 196, 0.37);
+  // backdrop-filter: blur( 2.0px );
+  // -webkit-backdrop-filter: blur( 2.0px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  display: flex;
+
+  margin: 20px auto;
+
+  height: 100vh;
+  header{
+    color: red;
+    
+  }
+}

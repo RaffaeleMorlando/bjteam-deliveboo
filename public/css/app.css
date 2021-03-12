@@ -8604,8 +8604,8 @@ readers do not read off random characters that represent icons */
 
   to {
     visibility: hidden;
-    -webkit-transform: translate3d(-150%, 0, 0);
-    transform: translate3d(-150%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
 }
 @keyframes slideOutLeft {
@@ -8616,8 +8616,8 @@ readers do not read off random characters that represent icons */
 
   to {
     visibility: hidden;
-    -webkit-transform: translate3d(-150%, 0, 0);
-    transform: translate3d(-150%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
 }
 .animate__slideOutLeft {
@@ -18684,26 +18684,19 @@ h3 {
     border-color: #dee2e6;
   }
 }
-#questions {
+body {
+  background: black;
+}
+
+#dashboard {
+  background: rgba(110, 109, 109, 0.582);
+  box-shadow: 0 8px 32px 0 rgba(172, 173, 196, 0.37);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 55px);
+  margin: 20px auto;
+  height: 100vh;
 }
-#questions input {
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid black;
-  box-shadow: none;
-}
-#questions input:focus {
-  outline: none;
-}
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 1s;
-}
-
-.fade-enter, .fade-leave-to {
-  opacity: 0;
+#dashboard header {
+  color: red;
 }
