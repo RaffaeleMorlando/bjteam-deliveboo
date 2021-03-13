@@ -31,7 +31,7 @@ Route::prefix('admin')
     ->name('admin.restaurants.')
     ->group(function(){
 
-        Route::resource('products', 'ProductController');
+        Route::resource('restaurants/products', 'ProductController');
 
         //Restituisce la vista con le domande per la creazione del ristorante
         Route::get('restaurants/create', 'RestaurantController@create')->name('create');
@@ -42,6 +42,6 @@ Route::prefix('admin')
 
         Route::get('restaurants/order', 'OrderController@index')->name('order.index');
 
-        Route::get('restaurants/order/{slug}', 'OrderController@show')->name('order.show');
+        Route::get('restaurants/order', 'OrderController@chart')->name('order.chart');
 
     });

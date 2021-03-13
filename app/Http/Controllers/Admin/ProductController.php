@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -29,7 +30,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.restaurants.products.create');
     }
 
     /**
@@ -40,7 +41,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $data['restaurant_id'] = Auth::user()->restaurant->id;
+        $data['slug'] = Str::slug($data['name']);
+
+        $product = new Product();
+        $product->fill($data);
+        $product->save();
+
+        return redirect()->route('admin.restaurants.products.index')
+            ->with('message', 'Il prodotto "' . $product->name . '" è stato creato correttamente');
     }
 
     /**
@@ -49,9 +59,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $product = Product::where('slug', $slug)->firstOrFail();
+        return view('admin.restaurants.products.show', compact('product'));
     }
 
     /**
@@ -62,7 +73,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**

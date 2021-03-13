@@ -9,6 +9,8 @@ class Product extends Model
     protected $fillable = [
         'restaurant_id',
         'name',
+        'slug',
+        'image',
         'description',
         'price',
         'is_vegetarian',

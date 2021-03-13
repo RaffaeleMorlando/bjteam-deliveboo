@@ -22,7 +22,7 @@
 
       <section class="bottom">
         <div class="left">
-
+          <a class="btn btn-primary" href="{{ route('admin.restaurants.products.index') }}">PRODOTTI</a>
         </div>
         <div class="right">
 

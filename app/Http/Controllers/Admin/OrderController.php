@@ -3,22 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Product;
+use App\Order;
 
 class OrderController extends Controller
 {
     public function index()
     {
-        return view('admin.restaurants.orders.index');
+        $orders = Order::all();
+        return view('admin.restaurants.orders.index', compact('orders'));
     }
 
-    
-    
-    public function show($slug)
+    // Funzione per vista statistiche ordini
+    public function chart()
     {
-        $product = Product::where('slug', $slug)->firstOrFail();
-        return view('admin.restaurants.orders.show', compact('product'));
+        $orders = Order::all();
+        return view('admin.restaurants.orders.chart', compact('orders'));
 
     }
 }

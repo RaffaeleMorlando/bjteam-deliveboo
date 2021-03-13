@@ -1,29 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
+  <div class="container">
     <h1>questa è la index dei prodotti</h1>
 
-    @foreach ($products as $product)
-      <div>Nome: {{ $product->name }}</div>
-      <div>descrizione: {{ $product->description }}</div>
-      <div>prezzo: {{ $product->price }}</div>
-      <div>immagine: <img style="width: 150px" src="{{ $product->image }}" alt="{{ $product->name }}"></div>
-      <a class="d-block" href="{{route('admin.restaurants.products.show', $product->slug)}}">questo link porta alla show del prodotto</a>
-      <br><hr>
-      
-        
-    @endforeach
+    @if (session('message'))
+      <div class="alert alert-success">
+          {{ session('message') }}
+      </div>
+    @endif
 
+    <table class="table table-dark table-striped table-bordered">
+      <thead>
+        <th>Nome piatto</th>
+        <th>Descrizione</th>
+        <th>Immagine</th>
+        <th>Prezzo</th>
+        <th>Vegetariano</th>
+        <th>Senza glutine</th>
+        <th colspan="3"></th>
+      </thead>
 
-    <a href="{{route('admin.restaurants.dashboard')}}">torna indietro</a>
+      <tbody>
+        @foreach ($products as $product)
+          <tr>
+            <td>{{ $product->name }}</td>
+            <td>{{ $product->description }}</td>
+            <td><img src="{{ $product->image }}" alt="" style="width: 100px"></td>
+            <td>{{ number_format($product->price, 2). ' €' }}</td>
+            <td>{{ $product->is_vegetarian == 0 ? 'No' : 'Si' }}</td>
+            <td>{{ $product->is_glutenfree == 0 ? 'No' : 'Si' }}</td>
+            <td>
+              <a class="btn btn-primary" href="{{ route('admin.restaurants.products.show', $product->slug) }}">Dettaglio</a>
+            </td>
+            <td>
+              <a class="btn btn-primary" href="{{ route('admin.restaurants.products.edit', $product->slug) }}">Modifica</a>
+            </td>
+            <td>
+              <form action="#">
+                <button class="btn btn-danger">Elimina</button>
+              </form>
+            </td>
+          </tr>
+        @endforeach
+      </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ route('admin.restaurants.products.create') }}">CREA</a>
+    <a class="btn btn-danger" href="{{ route('admin.restaurants.dashboard') }}">BACK</a>
+
+  </div>
+@endsection
+  
+
+    
 
 
   
-</body>
-</html>
