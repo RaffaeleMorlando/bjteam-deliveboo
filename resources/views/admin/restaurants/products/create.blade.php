@@ -19,37 +19,37 @@
 
       <div class="form-group">
         <label for="name">NOME</label>
-        <input class="form-control" type="text" name="name" id="name">
+        <input class="form-control" type="text" name="name" id="name" value="{{ old('name')}}">
       </div>
       
       <div class="form-group">
         <label for="image">IMMAGINE</label>
-        <input class="form-control" type="text" name="image" id="image">
+        <input class="form-control" type="text" name="image" id="image" value="{{ old('image')}}">
       </div>
 
       <div class="form-group">
         <label for="description">DESCRIZIONE</label>
-        <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
+        <textarea class="form-control" name="description" id="description" cols="30" rows="10">{{ old('description')}}</textarea>
       </div>
 
       <div class="form-group">
         <label for="price">PRICE</label>
-        <input class="form-control" type="text" name="price" id="price">
+        <input class="form-control" type="text" name="price" id="price" value="{{ old('price') }}">
       </div>
 
       <div class="form-group">
         <label for="is_vegetarian">VEGETARIANO</label>
-        <select class="form-control" name="is_vegetarian" id="">
-          <option value="0">No</option>
-          <option value="1">Si</option>
+        <select class="form-control" name="is_vegetarian" id="is_vegetarian">
+          <option {{ old('is_vegetarian') == 0  ? 'selected' : '' }} value="0">No</option>
+          <option {{ old('is_vegetarian') == 1  ? 'selected' : '' }} value="1">Si</option>
         </select>
       </div>
 
       <div class="form-group">
         <label for="is_glutenfree">SENZA GLUTINE</label>
-        <select class="form-control" name="is_glutenfree" id="">
-          <option value="0">No</option>
-          <option value="1">Si</option>
+        <select class="form-control" name="is_glutenfree" id="is_glutenfree">
+          <option {{ old('is_glutenfree') == 0 ? 'selected' : '' }} value="0">No</option>
+          <option {{ old('is_glutenfree') == 1 ? 'selected' : '' }} value="1">Si</option>
         </select>
       </div>
       
