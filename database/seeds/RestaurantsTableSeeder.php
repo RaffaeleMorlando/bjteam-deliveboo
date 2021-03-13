@@ -14,20 +14,9 @@ class RestaurantsTableSeeder extends Seeder
      */
     public function run()
     {
-      // for ($i=0; $i < 5; $i++) {
-      //   $newRestaurant = new Restaurant();
-      //   $newRestaurant->user_id = $i+1;
-      //   $newRestaurant->name = $faker->company;
-      //   $newRestaurant->slug = Str::slug($newRestaurant->name);
-      //   $newRestaurant->phone = $faker->phoneNumber;
-      //   $newRestaurant->address = $faker->address;
-      //   $newRestaurant->lat = $faker->randomNumber();
-      //   $newRestaurant->lon = $faker->randomNumber();
-      //   $newRestaurant->p_iva = "12345678901";
-      //   $newRestaurant->save();
-      // }
       $restaurants = [
         [
+          "id" => 1,
           "user_id" => 1,
           "name" => "Pizza Lampo",
           "slug" => "pizza-lampo",
@@ -40,10 +29,37 @@ class RestaurantsTableSeeder extends Seeder
         ],
       ];
 
+      $restaurantCategoryArray = [
+        [
+          "restaurant_id" => 1,
+          "category_id" => 31,
+        ],
+        [
+          "restaurant_id" => 1,
+          "category_id" => 40,
+        ],
+        [
+          "restaurant_id" => 1,
+          "category_id" => 44,
+        ],
+        [
+          "restaurant_id" => 1,
+          "category_id" => 58,
+        ],
+      ];
+
+
       foreach ($restaurants as $restaurant) {
         $newRestaurant = new Restaurant();
-
         $newRestaurant->fill($restaurant)->save();
+
+        foreach ($restaurantCategoryArray as $relation) {
+          if ($relation["restaurant_id"] === $newRestaurant->id) {
+
+            $newRestaurant->categories()->attach([$relation["category_id"]]);
+          }
+        }
+
       }
 
     }
