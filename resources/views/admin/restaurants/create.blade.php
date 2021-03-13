@@ -42,12 +42,18 @@
       <div class="container">
         <form class="" action="index.html" method="post">
 
+          <div class="box">
+            <div class="input_container">
+              <i class="fas fa-map-marker-alt"></i>
+              <input type="text" name="" value="" placeholder="Indirizzo">
+              <input type="checkbox" name="" value="">
+            </div>
+          </div>
+          {{-- <div class="box"></div>
           <div class="box"></div>
           <div class="box"></div>
           <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
+          <div class="box"></div> --}}
 
         </form>
       </div>

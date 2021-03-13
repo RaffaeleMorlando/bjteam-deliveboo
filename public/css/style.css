@@ -26,6 +26,34 @@
   border-radius: 20px;
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
 }
+#restaurant_form .container form .box .input_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+#restaurant_form .container form .box .input_container i {
+  font-size: 50px;
+  color: #008169;
+}
+#restaurant_form .container form .box .input_container input[type=text] {
+  width: 70%;
+  margin: 0 20px;
+  font-size: 30px;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #c1c1c1;
+  color: #303030;
+}
+#restaurant_form .container form .box .input_container input[type=text]:focus {
+  outline: none;
+}
+#restaurant_form .container form .box .input_container input[type=checkbox] {
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+}
 
 #dashboard {
   display: flex;
