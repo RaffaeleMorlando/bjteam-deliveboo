@@ -40,9 +40,16 @@
 
       </form> --}}
       <div class="container">
-        <div class="box">
+        <form class="" action="index.html" method="post">
 
-        </div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+
+        </form>
       </div>
   </section>
 
