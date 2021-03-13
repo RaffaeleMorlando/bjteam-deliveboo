@@ -2,8 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\DB;
-// use Faker\Generator as Faker;
 use App\User;
 
 class UsersTableSeeder extends Seeder
@@ -15,22 +13,8 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-      $users = [
-        [
-          "name" => "Marco Busellato",
-          "password" => "password",
-          "email" => "marco.busellato@mail.com"
-        ],
-      ];
+      $users = config('users');
 
-      // for ($i=0; $i < 5; $i++) {
-      //   $newUser = new User();
-      //   $newUser->name = $faker->name;
-      //   $newUser->password = Hash::make('password');
-      //   $newUser->email = $faker->email;
-      //   $newUser->save();
-      //
-      // }
       foreach ($users as $user) {
         $newUser = new User();
 

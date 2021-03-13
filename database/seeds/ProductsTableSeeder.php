@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Generator as Faker;
 use FakerRestaurant\Restaurant;
 use Illuminate\Support\Str;
 use App\Product;
