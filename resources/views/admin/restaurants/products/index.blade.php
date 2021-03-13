@@ -13,14 +13,6 @@
       <div class="alert alert-success">
           {{ session('message') }}
       </div>
-    @elseif (session('success'))
-      <div class="alert alert-success">
-        {{ session('success') }}
-      </div>
-    @elseif (session('deleted'))
-      <div class="alert alert-success">
-        {{ session('deleted') }}
-      </div>
     @endif
 
     <table class="table table-dark table-striped table-bordered">
@@ -47,7 +39,7 @@
               <a class="btn btn-primary" href="{{ route('admin.restaurants.products.show', $product->slug) }}">Dettaglio</a>
             </td>
             <td>
-              <a class="btn btn-primary" href="{{ route('admin.restaurants.products.edit', $product->slug) }}">Modifica</a>
+              <a class="btn btn-primary" href="{{ route('admin.restaurants.products.edit', $product->id) }}">Modifica</a>
             </td>
             <td>
               <form action="{{ route('admin.restaurants.products.destroy',$product) }}" method="post">

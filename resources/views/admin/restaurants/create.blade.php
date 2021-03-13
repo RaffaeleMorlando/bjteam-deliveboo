@@ -20,7 +20,7 @@
           <h3>nome</h3>
           <input type="text" name="name" required>
           <h3>address</h3>
-          <input type="text" name="address" required>
+          <input type="email" name="address" required>
           <h3>p.iva</h3>
           <input type="text" name="p_iva" required>
           <h3>phone (123-123-1234)</h3>

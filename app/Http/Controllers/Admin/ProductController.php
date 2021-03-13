@@ -85,10 +85,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug)
+    public function edit($id)
     {
-        $product = Product::where('slug', $slug)->firstOrFail();
-        return view('admin.restaurants.products.edit',compact('product'));
+        $product = Product::findOrFail($id);
+        return view('admin.restaurants.products.edit', compact('product'));
     }
 
     /**
@@ -113,7 +113,7 @@ class ProductController extends Controller
          * CAMBIARE MESSAGGIO AL UPDATE
          */
         
-        return redirect()->route('admin.restaurants.products.index')->with('success', 'Item addedd successfully');
+        return redirect()->route('admin.restaurants.products.index')->with('message', 'Il prodotto "' . $product->name . '" è stato modificato correttamente');
 
     }
 
@@ -131,6 +131,6 @@ class ProductController extends Controller
          * CAMBIARE MESSAGGIO AL DELETE
          */
 
-        return redirect()->route('admin.restaurants.products.index')->with('deleted', 'Item deleted successfully');
+        return redirect()->route('admin.restaurants.products.index')->with('message', 'Il prodotto "' . $product->name . '" è stato eliminato correttamente');
     }
 }
