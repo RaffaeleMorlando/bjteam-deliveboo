@@ -25,7 +25,12 @@
           <input type="text" name="p_iva" required>
           <h3>phone (123-123-1234)</h3>
           <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-
+          <h3>category</h3>
+          <select name="category" id="category">
+            @foreach ($categories as $category)
+                <option {{ old('category') == $category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->name }}</option>
+            @endforeach
+          </select>
           <button type="submit">SALVA</button>
         </div>
 

@@ -1,5 +1,3 @@
-<h1>questa è la index degli Ordini</h1>
+<h1>Orders Index</h1>
 
-
-
-<a href="{{route('admin.restaurants.dashboard')}}">torna indietro</a>
+<a href="{{route('admin.restaurants.dashboard')}}" class="btn btn-success">Dashboard</a>

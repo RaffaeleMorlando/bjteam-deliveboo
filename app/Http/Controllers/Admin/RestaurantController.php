@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Restaurant;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use App\Category;
 
 
 
@@ -21,7 +22,8 @@ class RestaurantController extends Controller
     //Ritorna il form per registrazione ristorante
     public function create() {
         
-        return view('admin.restaurants.create');
+        $categories = Category::all();
+        return view('admin.restaurants.create',compact('categories'));
 
     }
 
@@ -33,11 +35,13 @@ class RestaurantController extends Controller
         $request->validate($this->restaurantValidation);
 
         $newRestaurant = new Restaurant();
+
         $data['user_id'] = Auth::id();
         $data['slug'] = Str::slug($data['name']);
         $newRestaurant->fill($data);
-
         $newRestaurant->save();
+        
+        $newRestaurant->categories()->attach(Auth::id());
 
         return redirect()->route('admin.restaurants.dashboard');
     }
