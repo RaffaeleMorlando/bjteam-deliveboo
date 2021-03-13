@@ -1,9 +1,13 @@
 @extends('layouts.app')
 
+@section("page-script")
+  {{ asset("js/partials/restaurants/create.js") }}
+@endsection
+
 @section('content')
 
   <section id="restaurant_form">
-      @if ($errors->any())
+      {{-- @if ($errors->any())
         <div class="alert alert-danger">
           <ul>
             @foreach ($errors->all() as $error)
@@ -34,7 +38,12 @@
           <button type="submit">SALVA</button>
         </div>
 
-      </form>
+      </form> --}}
+      <div class="container">
+        <div class="box">
+
+        </div>
+      </div>
   </section>
 
 @endsection
