@@ -2,11 +2,24 @@
 
 @section('content')
   <div class="container">
-    <h1>questa è la index dei prodotti</h1>
+    <h1>Dashboard Products</h1>
+
+    {{-- 
+      Message = Creazione con successo
+      Success = Edit con successo
+     --}}
 
     @if (session('message'))
       <div class="alert alert-success">
           {{ session('message') }}
+      </div>
+    @elseif (session('success'))
+      <div class="alert alert-success">
+        {{ session('success') }}
+      </div>
+    @elseif (session('deleted'))
+      <div class="alert alert-success">
+        {{ session('deleted') }}
       </div>
     @endif
 
@@ -37,8 +50,10 @@
               <a class="btn btn-primary" href="{{ route('admin.restaurants.products.edit', $product->slug) }}">Modifica</a>
             </td>
             <td>
-              <form action="#">
-                <button class="btn btn-danger">Elimina</button>
+              <form action="{{ route('admin.restaurants.products.destroy',$product) }}" method="post">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-danger" type="submit" onclick="return confirm('Sei sicuro di voler cancellare: {{ $product->name}}?')">Elimina</button>
               </form>
             </td>
           </tr>

@@ -10,6 +10,16 @@ use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
+
+    protected $productValidation = [
+        'name' => 'required:max:60',
+        'image' => 'required',
+        'description' => 'required',
+        'price' => 'required|numeric',
+    ];
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -42,6 +52,9 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
+        $request->validate($this->productValidation);
+    
         $data['restaurant_id'] = Auth::user()->restaurant->id;
         $data['slug'] = Str::slug($data['name']);
 
@@ -71,9 +84,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        
+        $product = Product::where('slug', $slug)->firstOrFail();
+        return view('admin.restaurants.products.edit',compact('product'));
     }
 
     /**
@@ -83,9 +97,23 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        //
+
+        $data = $request->all();
+        
+        $request->validate($this->productValidation);
+
+        $data['restaurant_id'] = Auth::id();
+        $data['slug'] = Str::slug($data['name']);
+        $product->update($data);
+
+        /**
+         * CAMBIARE MESSAGGIO AL UPDATE
+         */
+        
+        return redirect()->route('admin.restaurants.products.index')->with('success', 'Item addedd successfully');
+
     }
 
     /**
@@ -94,8 +122,14 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        /**
+         * CAMBIARE MESSAGGIO AL DELETE
+         */
+
+        return redirect()->route('admin.restaurants.products.index')->with('deleted', 'Item deleted successfully');
     }
 }
