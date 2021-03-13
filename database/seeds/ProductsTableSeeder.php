@@ -14,7 +14,7 @@ class ProductsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
       $users = User::all();
      
@@ -22,19 +22,17 @@ class ProductsTableSeeder extends Seeder
       $productOrderArray = config('product_order');
 
        foreach ($users as $user) {
+          foreach ($products as $product) {
+            $newProduct = new Product();
+            $newProduct->fill($product)->save();
 
-           foreach ($products as $product) {
-             $newProduct = new Product();
+            foreach ($productOrderArray as $relation) {
+              if ($relation["product_id"] === $newProduct->id) {
 
-             $newProduct->fill($product)->save();
-
-             foreach ($productOrderArray as $relation) {
-               if ($relation["product_id"] === $newProduct->id) {
-
-                 $newProduct->orders()->attach([$relation["order_id"]]);
-               }
-             }
-           }
+                $newProduct->orders()->attach([$relation["order_id"]]);
+              }
+            }
+          }
        }
     }
 }

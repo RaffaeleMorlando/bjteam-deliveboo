@@ -14,39 +14,9 @@ class RestaurantsTableSeeder extends Seeder
      */
     public function run()
     {
-      $restaurants = [
-        [
-          "id" => 1,
-          "user_id" => 1,
-          "name" => "Pizza Lampo",
-          "slug" => "pizza-lampo",
-          "logo" => "",
-          "address" => "Via Lodovico Pavoni, 80, Milano, 20019",
-          "p_iva" => "10214930967",
-          "phone" => "346-7493675",
-          "lat" => "",
-          "lon" => "",
-        ],
-      ];
+      $restaurants = config('restaurants');
 
-      $restaurantCategoryArray = [
-        [
-          "restaurant_id" => 1,
-          "category_id" => 31,
-        ],
-        [
-          "restaurant_id" => 1,
-          "category_id" => 40,
-        ],
-        [
-          "restaurant_id" => 1,
-          "category_id" => 44,
-        ],
-        [
-          "restaurant_id" => 1,
-          "category_id" => 58,
-        ],
-      ];
+      $restaurantCategoryArray = config('restaurant_category');
 
 
       foreach ($restaurants as $restaurant) {
