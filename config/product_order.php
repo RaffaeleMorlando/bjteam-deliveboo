@@ -1,8 +1,6 @@
 <?php
 
 return $product_order_array = [
-  [
-    //ordine singolo
     [
       "product_id" => 3,
       "order_id" => 1
@@ -54,5 +52,4 @@ return $product_order_array = [
       "product_id" => 13,
       "order_id" => 4
     ],
-  ];
 ];
