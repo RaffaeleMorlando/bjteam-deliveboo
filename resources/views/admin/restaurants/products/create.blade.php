@@ -29,7 +29,7 @@
 
       <div class="form-group">
         <label for="description">DESCRIZIONE</label>
-        <input class="form-control" type="text" name="description" id="description">
+        <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
       </div>
 
       <div class="form-group">
@@ -53,7 +53,6 @@
         </select>
       </div>
       
-
       <button type="submit" class="btn btn-primary">SALVA</button>
     </form>
   </section>
