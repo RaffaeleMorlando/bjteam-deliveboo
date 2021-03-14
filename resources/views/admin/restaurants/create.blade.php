@@ -40,7 +40,7 @@
 
       </form> --}}
       <div class="container">
-        <form class="" action="index.html" method="post">
+        <form class="" action="{{ route('admin.restaurants.store') }}" method="post">
         @csrf
         @method('POST')
 
