@@ -41,6 +41,8 @@ return $categories = [
     "name" => "Francese",
     "slug" => "francese"
   ],
-
-
+  [
+    "name" => "Dolci",
+    "slug" => "dolci"
+  ]
 ];

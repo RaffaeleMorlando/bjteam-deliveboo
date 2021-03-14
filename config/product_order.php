@@ -125,4 +125,21 @@ return $product_order_array = [
       "product_id" => 23,
       "order_id" => 9
     ],
+    //ordine singolo
+    [
+      "product_id" => 29,
+      "order_id" => 10
+    ],
+    [
+      "product_id" => 30,
+      "order_id" => 10
+    ],
+    [
+      "product_id" => 33,
+      "order_id" => 10
+    ],
+    [
+      "product_id" => 34,
+      "order_id" => 10
+    ],
 ];
