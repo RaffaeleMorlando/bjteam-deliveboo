@@ -17,17 +17,27 @@
         </tr>
         <tr>
           <th scope="row">Prezzo</th>
-          <td>{{$product->price}} €</td>
+          <td>{{number_format($product->price, 2). ' €'}}</td>
         </tr>
         <tr>
           <th>Vegetariano</th>
           <td>{{$product->is_vegetarian ? "SI" : "NO"}}</td>
         </tr>
         <tr>
-          <th>Senza Glutine</th>
+          <th>Creato il</th>
           <td>{{$product->is_glutenfree ? "SI" : "NO"}}</td>
         </tr>
+        <tr>
+          <th>Senza Glutine</th>
+          <td>{{$product->created_at->format('d-m-Y')}}</td>
+        </tr>
+        <tr>
+          <td><a class="btn btn-warning" href="{{route('admin.restaurants.products.edit', $product->id)}}">Modifica</a></td>
+          <td><a class="btn btn-info" href="{{route('admin.restaurants.products.index')}}">Tutti i prodotti</a></td>
+        </tr>
+        
       
       </tbody>
     </div> 
+
 @endsection
