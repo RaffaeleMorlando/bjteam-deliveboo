@@ -9,9 +9,11 @@
   <title>Document</title>
 </head>
 <body>
+  
 
   <div id="dashboard">
     <aside class="">
+       <a class="btn btn-primary" href="{{ route('admin.restaurants.products.index') }}">PRODOTTI</a>
 
     </aside>
 
@@ -22,9 +24,10 @@
 
       <section class="bottom">
         <div class="left">
-          <a class="btn btn-primary" href="{{ route('admin.restaurants.products.index') }}">PRODOTTI</a>
+         {{--  <a class="btn btn-primary" href="{{ route('admin.restaurants.products.index') }}">PRODOTTI</a> --}}
         </div>
         <div class="right">
+          @yield('central-content-dashboard')
 
         </div>
       </section>

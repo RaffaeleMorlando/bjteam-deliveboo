@@ -28,8 +28,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Auth::user()->restaurant->products;
-
-
+        
         return view('admin.restaurants.products.index', compact('products'));
     }
 

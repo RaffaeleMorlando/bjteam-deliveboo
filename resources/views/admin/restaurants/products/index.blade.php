@@ -27,6 +27,7 @@
       </thead>
 
       <tbody>
+       
         @foreach ($products as $product)
           <tr>
             <td>{{ $product->name }}</td>
