@@ -52,4 +52,77 @@ return $product_order_array = [
       "product_id" => 13,
       "order_id" => 4
     ],
+    //ordine singolo
+    [
+      "product_id" => 14,
+      "order_id" => 5
+    ],
+    [
+      "product_id" => 18,
+      "order_id" => 5
+    ],
+    [
+      "product_id" => 25,
+      "order_id" => 5
+    ],
+    //ordine singolo
+    [
+      "product_id" => 21,
+      "order_id" => 6
+    ],
+    //ordine singolo
+    [
+      "product_id" => 28,
+      "order_id" => 7
+    ],
+    [
+      "product_id" => 17,
+      "order_id" => 7
+    ],
+    [
+      "product_id" => 19,
+      "order_id" => 7
+    ],
+    [
+      "product_id" => 15,
+      "order_id" => 7
+    ],
+    [
+      "product_id" => 27,
+      "order_id" => 7
+    ],
+    [
+      "product_id" => 22,
+      "order_id" => 7
+    ],
+    //ordine singolo
+    [
+      "product_id" => 22,
+      "order_id" => 8
+    ],
+    [
+      "product_id" => 23,
+      "order_id" => 8
+    ],
+    [
+      "product_id" => 27,
+      "order_id" => 8
+    ],
+    //ordine singolo
+    [
+      "product_id" => 15,
+      "order_id" => 9
+    ],
+    [
+      "product_id" => 16,
+      "order_id" => 9
+    ],
+    [
+      "product_id" => 20,
+      "order_id" => 9
+    ],
+    [
+      "product_id" => 23,
+      "order_id" => 9
+    ],
 ];

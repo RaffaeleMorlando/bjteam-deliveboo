@@ -1,6 +1,7 @@
 <?php
 
 return $restaurantCategoryArray = [
+  // ristorante
   [
     "restaurant_id" => 1,
     "category_id" => 1,
@@ -16,5 +17,18 @@ return $restaurantCategoryArray = [
   [
     "restaurant_id" => 1,
     "category_id" => 7,
+  ],
+  // ristorante
+  [
+    "restaurant_id" => 2,
+    "category_id" => 8,
+  ],
+  [
+    "restaurant_id" => 2,
+    "category_id" => 9,
+  ],
+  [
+    "restaurant_id" => 2,
+    "category_id" => 1,
   ],
 ];

@@ -12,6 +12,17 @@ $restaurants = [
     "lat" => "",
     "lon" => "",
   ],
+  [
+    "user_id" => 2,
+    "name" => "Yesushi & Poke",
+    "slug" => "yesushi-and-poke",
+    "logo" => "",
+    "address" => "Via Tiburtina, 188, Milano, 20023",
+    "p_iva" => "82546932157",
+    "phone" => "345-9158234",
+    "lat" => "",
+    "lon" => "",
+  ],
 ];
 
 return $restaurants;

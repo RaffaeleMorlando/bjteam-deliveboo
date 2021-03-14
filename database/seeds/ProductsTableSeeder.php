@@ -16,20 +16,26 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
       $users = User::all();
-     
+
       $products = config('products');
       $productOrderArray = config('product_order');
 
        foreach ($users as $user) {
           foreach ($products as $product) {
-            $newProduct = new Product();
-            $newProduct->fill($product)->save();
 
-            foreach ($productOrderArray as $relation) {
-              if ($relation["product_id"] === $newProduct->id) {
+            if ($user->restaurant->id === $product["restaurant_id"]) {
 
-                $newProduct->orders()->attach([$relation["order_id"]]);
+              $newProduct = new Product();
+              $newProduct->fill($product)->save();
+
+              foreach ($productOrderArray as $relation) {
+                
+                if ($relation["product_id"] === $newProduct->id) {
+
+                  $newProduct->orders()->attach([$relation["order_id"]]);
+                }
               }
+
             }
           }
        }
