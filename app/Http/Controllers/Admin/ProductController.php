@@ -15,7 +15,7 @@ class ProductController extends Controller
 
     protected $productValidation = [
         'name' => 'required:max:60',
-        'image' => 'mimes:jpg, png, jpeg, gif|required',
+        'image' => 'image|required',
         'description' => 'required',
         'price' => 'required|numeric',
     ];
@@ -57,9 +57,9 @@ class ProductController extends Controller
         $data = $request->all();
 
         $request->validate($this->productValidation);
-    
+
         $data['restaurant_id'] = Auth::user()->restaurant->id;
-        $data['slug'] = Str::slug($data['name']); 
+        $data['slug'] = Str::slug($data['name']);
         $data["image"] = Storage::disk('public')->put('images', $data["image"]);
         $product = new Product();
         $product->fill($data);
@@ -104,13 +104,17 @@ class ProductController extends Controller
     {
 
         $data = $request->all();
-        
+
+        $this->productValidation["image"] = "nullable";
+
         $request->validate($this->productValidation);
         if(!empty($data["image"])){
            Storage::disk('public')->delete($product->image);
            $data["image"] = Storage::disk('public')->put('images', $data["image"]);
+        } else {
+          $data["image"] = $product->image;
         }
-   
+
 
         $data['restaurant_id'] = Auth::id();
         $data['slug'] = Str::slug($data['name']);
@@ -119,7 +123,7 @@ class ProductController extends Controller
         /**
          * CAMBIARE MESSAGGIO AL UPDATE
          */
-        
+
         return redirect()->route('admin.restaurants.products.index')->with('message', 'Il prodotto "' . $product->name . '" è stato modificato correttamente');
 
     }
