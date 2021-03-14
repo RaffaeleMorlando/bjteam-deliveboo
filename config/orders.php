@@ -82,5 +82,14 @@ return $orders = [
     "created_at" => "2019-06-03 19:47:42",
     "updated_at" => "2019-06-03 19:47:42",
   ],
+  [
+    "guest_name" => "Michele Alti",
+    "guest_address" => "Via Garibaldi, 35, Milano 20131",
+    "order_number" => "#00010",
+    "total_price" => 21.60,
+    "status" => "Pagato",
+    "created_at" => "2019-06-03 19:47:42",
+    "updated_at" => "2019-06-03 19:47:42",
+  ],
 
 ];
