@@ -24,11 +24,11 @@
           <td>{{$product->is_vegetarian ? "SI" : "NO"}}</td>
         </tr>
         <tr>
-          <th>Creato il</th>
+          <th>Senza Glutine</th>
           <td>{{$product->is_glutenfree ? "SI" : "NO"}}</td>
         </tr>
         <tr>
-          <th>Senza Glutine</th>
+          <th>Creato il</th>
           <td>{{$product->created_at->format('d-m-Y')}}</td>
         </tr>
         <tr>
