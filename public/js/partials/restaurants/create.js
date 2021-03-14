@@ -31345,9 +31345,44 @@ __webpack_require__.r(__webpack_exports__);
 var restaurantForm = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
   el: '#restaurant_form',
   data: {
-    prova: "ciao"
+    questions: [{
+      icon: "fas fa-utensils",
+      placeholder: "Inserisci il nome del ristorante",
+      active: true,
+      name: "name",
+      userInput: "",
+      checked: false
+    }, {
+      icon: "fas fa-map-marker-alt",
+      placeholder: "Indirizzo",
+      active: false,
+      name: "address",
+      userInput: "",
+      checked: false
+    }, {
+      icon: "fas fa-money-check-alt",
+      placeholder: "Partita Iva",
+      active: false,
+      name: "p_iva",
+      userInput: "",
+      checked: false
+    }, {
+      icon: "fas fa-phone-alt",
+      placeholder: "Telefono XXX-XXX-XXXX",
+      active: false,
+      name: "phone",
+      userInput: "",
+      checked: false
+    }]
   },
-  methods: {}
+  methods: {
+    activeNextQuestion: function activeNextQuestion(index) {
+      if (this.questions[index].userInput != "") {
+        this.questions[index].checked = true;
+        this.questions[index + 1].active = true;
+      }
+    }
+  }
 });
 })();
 

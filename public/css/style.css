@@ -10,6 +10,7 @@
   height: calc(100vh - 55px);
   padding: 20px 0;
   background-image: url("/img/main-bg.jpg");
+  overflow-x: hidden;
 }
 #restaurant_form .container {
   height: 100%;
@@ -17,11 +18,11 @@
 #restaurant_form .container form {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   height: 100%;
 }
 #restaurant_form .container form .box {
   height: calc(100% / 6 - 20px);
+  margin-bottom: 20px;
   background-color: #F9F9F9;
   border-radius: 20px;
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
@@ -35,6 +36,7 @@
 #restaurant_form .container form .box .input_container i {
   font-size: 50px;
   color: #008169;
+  transition: opacity 0.5s linear;
 }
 #restaurant_form .container form .box .input_container input[type=text] {
   width: 70%;
@@ -44,15 +46,17 @@
   background-color: transparent;
   border: none;
   border-bottom: 3px solid #c1c1c1;
-  color: #303030;
+  color: #c1c1c1;
 }
 #restaurant_form .container form .box .input_container input[type=text]:focus {
   outline: none;
 }
-#restaurant_form .container form .box .input_container input[type=checkbox] {
-  height: 50px;
-  width: 50px;
+#restaurant_form .container form .box .input_container button {
   background-color: transparent;
+  border: none;
+}
+#restaurant_form .container form .box .input_container button i {
+  color: #303030;
 }
 
 #dashboard {
