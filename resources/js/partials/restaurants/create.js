@@ -5,6 +5,7 @@ import Vue from 'vue';
 const restaurantForm = new Vue({
   el: '#restaurant_form',
   data: {
+    select2: false,
     questions: [
       {
         icon: "fas fa-utensils",
@@ -37,15 +38,23 @@ const restaurantForm = new Vue({
         name: "phone",
         userInput: "",
         checked: false
-      }
+      },
     ]
   },
   methods: {
     activeNextQuestion: function(index) {
+      const self = this;
 
-      if(this.questions[index].userInput != "") {
-        this.questions[index].checked = true;
-        this.questions[index + 1].active = true;
+      if(self.questions[index].userInput != "") {
+        self.questions[index].checked = true;
+
+        if(self.questions[index] != self.questions[self.questions.length -1]) {
+          self.questions[index + 1].active = true;
+        }
+
+        if(self.questions[index] == self.questions[self.questions.length -1]) {
+          self.select2 = true;
+        }
       }
     }
   }

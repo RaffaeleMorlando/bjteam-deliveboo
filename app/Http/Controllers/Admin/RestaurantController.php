@@ -21,7 +21,7 @@ class RestaurantController extends Controller
     ];
     //Ritorna il form per registrazione ristorante
     public function create() {
-        
+
         $categories = Category::all();
         return view('admin.restaurants.create',compact('categories'));
 
@@ -40,9 +40,10 @@ class RestaurantController extends Controller
         $data['slug'] = Str::slug($data['name']);
         $newRestaurant->fill($data);
         $newRestaurant->save();
-        
-        $newRestaurant->categories()->attach(Auth::id());
+
+        $newRestaurant->categories()->attach($data["categories"]);
 
         return redirect()->route('admin.restaurants.dashboard');
     }
+
 }

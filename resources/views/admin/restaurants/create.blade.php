@@ -48,20 +48,27 @@
             <div class="input_container">
               <i :class="question.icon"></i>
               <input type="text" :name="question.name" value="" :placeholder="question.placeholder" v-model="question.userInput" required>
-              <button v-if="question != questions[questions.length - 1]" type="button" @click="activeNextQuestion(index)"><i class="fab fa-angellist"></i></button>
-              <button v-else type="submit">Fine</button>
+              <button type="button" @click="activeNextQuestion(index)"><i class="fab fa-angellist"></i></button>
               <i class="fas fa-check mx-3" :style="question.checked ? 'opacity: 1' : 'opacity: 0'"></i>
             </div>
           </div>
 
-          {{-- <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div> --}}
+          <select class="" id="categories" name="categories[]" multiple>
+            @foreach ($categories as $category)
+              <option value="{{ $category->id }}">{{ $category->name }}</option>
+            @endforeach
+            {{-- <option value="">Prova</option>
+            <option value="">Prova2</option>
+            <option value="">Prova3</option>
+            <option value="">Prova4</option>
+            <option value="">Prova5</option>
+            <option value="">Prova6</option>
+            <option value="">Prova7</option> --}}
+          </select>
 
+          <button type="submit" name="button">Registrati</button>
         </form>
       </div>
   </section>
-
+ {{-- v-if="question != questions[questions.length - 1]"  --}}
 @endsection
