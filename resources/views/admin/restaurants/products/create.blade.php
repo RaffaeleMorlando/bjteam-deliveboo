@@ -13,7 +13,7 @@
     </div>
     @endif
 
-    <form action="{{ route('admin.restaurants.products.store') }}" method="post">
+    <form action="{{ route('admin.restaurants.products.store') }}" method="post" enctype="multipart/form-data">
       @csrf
       @method('POST')
 
@@ -23,8 +23,8 @@
       </div>
       
       <div class="form-group">
-        <label for="image">IMMAGINE</label>
-        <input class="form-control" type="text" name="image" id="image" value="{{ old('image')}}">
+          <label for="image">IMMAGINE</label>
+          <input accept="image/*" type="file" name="image" class="form-control" id="image" placeholder="aggiungi immagine">
       </div>
 
       <div class="form-group">
