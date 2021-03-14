@@ -25,9 +25,11 @@ class DashboardController extends Controller
     public function changeLogo(Request $request, $id) {
       $data = $request->all();
       $restaurant = Restaurant::where("user_id", $id)->firstOrFail();
-      //dd($data, $restaurant);
 
+
+      Storage::disk('public')->delete($restaurant->logo);
       $data["logo"] = Storage::disk("public")->put("images", $data["logo"]);
+
       $restaurant->update($data);
 
       return redirect()->route("admin.restaurants.dashboard");
