@@ -40,8 +40,12 @@ Route::prefix('admin')
 
         Route::get('restaurants/dashboard', 'DashboardController@index')->name('dashboard');
 
+        // cambiare il logo del ristorante
+        Route::put("restaurants/dashboard/logo/{id}", "DashboardController@changeLogo")->name('dashboard.logo');
+
         Route::get('restaurants/order', 'OrderController@index')->name('order.index');
 
         Route::get('restaurants/order', 'OrderController@chart')->name('order.chart');
+
 
     });

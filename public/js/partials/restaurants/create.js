@@ -31345,6 +31345,7 @@ __webpack_require__.r(__webpack_exports__);
 var restaurantForm = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
   el: '#restaurant_form',
   data: {
+    select2: false,
     questions: [{
       icon: "fas fa-utensils",
       placeholder: "Inserisci il nome del ristorante",
@@ -31377,9 +31378,18 @@ var restaurantForm = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
   },
   methods: {
     activeNextQuestion: function activeNextQuestion(index) {
-      if (this.questions[index].userInput != "") {
-        this.questions[index].checked = true;
-        this.questions[index + 1].active = true;
+      var self = this;
+
+      if (self.questions[index].userInput != "") {
+        self.questions[index].checked = true;
+
+        if (self.questions[index] != self.questions[self.questions.length - 1]) {
+          self.questions[index + 1].active = true;
+        }
+
+        if (self.questions[index] == self.questions[self.questions.length - 1]) {
+          self.select2 = true;
+        }
       }
     }
   }
