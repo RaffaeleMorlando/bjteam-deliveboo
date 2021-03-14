@@ -5,7 +5,15 @@
       <tbody>
         <tr>
           <th scope="row">Immagine</th>
-          <td><img height="180px" src="{{$product->image ? $product->image : "https://www.food4fuel.com/wp-content/uploads/woocommerce-placeholder-600x600.png"}}" alt="{{$product->name}}"></td>
+          
+          <td>
+            @if ($product->image == null)
+              <img height="180px" src="{{asset('img/foods-placeholder-600x600.png')}}" alt="{{$product->name}}">
+            @else 
+              <img height="180px" src="{{asset('storage/'.$product->image)}}" alt="{{$product->name}}">
+            @endif
+          </td>  
+            
         </tr>
         <tr>
           <th scope="row">Nome piatto</th>

@@ -13,7 +13,7 @@
     </div>
     @endif
 
-    <form action="{{ route('admin.restaurants.products.update', $product->id) }}" method="post">
+    <form action="{{ route('admin.restaurants.products.update', $product->id) }}" method="post" enctype="multipart/form-data">
       @csrf
       @method('PUT')
       <div class="form-group">
@@ -21,9 +21,9 @@
         <input class="form-control" type="text" name="name" id="name" value="{{ $product->name }}">
       </div>
       
-      <div class="form-group">
-        <label for="image">IMMAGINE</label>
-        <input class="form-control" type="text" name="image" id="image" value="{{ $product->image }}">
+       <div class="form-group">
+          <label for="image">IMMAGINE</label>
+          <input accept="image/*" type="file" name="image" class="form-control" id="image" placeholder="aggiungi immagine">
       </div>
 
       <div class="form-group">

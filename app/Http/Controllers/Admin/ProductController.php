@@ -1,19 +1,21 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
+use function PHPUnit\Framework\isEmpty;
+
 class ProductController extends Controller
 {
 
     protected $productValidation = [
         'name' => 'required:max:60',
-        'image' => 'required',
+        'image' => 'mimes:jpg, png, jpeg, gif|required',
         'description' => 'required',
         'price' => 'required|numeric',
     ];
@@ -57,8 +59,8 @@ class ProductController extends Controller
         $request->validate($this->productValidation);
     
         $data['restaurant_id'] = Auth::user()->restaurant->id;
-        $data['slug'] = Str::slug($data['name']);
-
+        $data['slug'] = Str::slug($data['name']); 
+        $data["image"] = Storage::disk('public')->put('images', $data["image"]);
         $product = new Product();
         $product->fill($data);
         $product->save();
@@ -104,6 +106,11 @@ class ProductController extends Controller
         $data = $request->all();
         
         $request->validate($this->productValidation);
+        if(!empty($data["image"])){
+           Storage::disk('public')->delete($product->image);
+           $data["image"] = Storage::disk('public')->put('images', $data["image"]);
+        }
+   
 
         $data['restaurant_id'] = Auth::id();
         $data['slug'] = Str::slug($data['name']);
