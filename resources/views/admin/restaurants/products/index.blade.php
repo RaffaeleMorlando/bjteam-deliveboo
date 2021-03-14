@@ -15,6 +15,12 @@
       </div>
     @endif
 
+    <h1>{{ Auth::user()->restaurant->name }}</h1>
+    @foreach (Auth::user()->restaurant->categories as $category)
+      <span class="badge badge-info">{{ $category->name }}</span>
+    @endforeach
+    
+
     <table class="table table-dark table-striped table-bordered">
       <thead>
         <th>Nome piatto</th>

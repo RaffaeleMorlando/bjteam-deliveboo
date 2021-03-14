@@ -17,7 +17,10 @@
 
     <main>
       <header>
-
+        <h1>{{ $restaurant->name }}</h1>
+        @foreach ($restaurant->categories as $category)
+            <span class="badge badge-info">{{ $category->name }}</span>
+        @endforeach
       </header>
 
       <section class="bottom">

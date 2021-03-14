@@ -1,9 +1,13 @@
 @extends('layouts.app')
 
+@section("page-script")
+  {{ asset("js/partials/restaurants/create.js") }}
+@endsection
+
 @section('content')
 
   <section id="restaurant_form">
-      @if ($errors->any())
+      {{-- @if ($errors->any())
         <div class="alert alert-danger">
           <ul>
             @foreach ($errors->all() as $error)
@@ -34,7 +38,30 @@
           <button type="submit">SALVA</button>
         </div>
 
-      </form>
+      </form> --}}
+      <div class="container">
+        <form class="" action="{{ route('admin.restaurants.store') }}" method="post">
+        @csrf
+        @method('POST')
+
+          <div class="box animate__animated animate__slideInRight" v-for="(question, index) in questions" v-if="question.active">
+            <div class="input_container">
+              <i :class="question.icon"></i>
+              <input type="text" :name="question.name" value="" :placeholder="question.placeholder" v-model="question.userInput" required>
+              <button v-if="question != questions[questions.length - 1]" type="button" @click="activeNextQuestion(index)"><i class="fab fa-angellist"></i></button>
+              <button v-else type="submit">Fine</button>
+              <i class="fas fa-check mx-3" :style="question.checked ? 'opacity: 1' : 'opacity: 0'"></i>
+            </div>
+          </div>
+
+          {{-- <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div> --}}
+
+        </form>
+      </div>
   </section>
 
 @endsection
