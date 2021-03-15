@@ -28,12 +28,13 @@
     }
 
     aside{
+      width: 20%;
       height: 100%;
       padding: $paddingAside;
       border-left: 4px solid rgba(248, 248, 247, 1);
       background-color: $grayAside;
       overflow-y: auto;
-      
+
       header {
         @include SetFlexContainer(row, flex-start, center, nowrap);
         height: 80px;
@@ -48,10 +49,10 @@
       }
 
       main {
-
+        width: 80%;
 
         //Pages
-        ul {
+        .route_list {
           border-top: 2px solid $gray;
           border-bottom: 2px solid $gray;
 
@@ -89,15 +90,23 @@
         .settings{
           text-align: center;
 
-          &:hover{
-            color: $greenPrimary;
-            cursor: pointer;
-          }
         }
       }
 
 
     }
+    .image_curve {
+      position: absolute;
+      bottom: 0;
+      right: -775px;
+      width: 100%;
+      height: 100px;
+      background-image: url("/img/wave.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
 
 ::-webkit-scrollbar-track
 {
@@ -228,7 +237,7 @@
             }
           }
         }
-        
+
         h3{
           display: none;
         }
@@ -240,7 +249,7 @@
       }
 
       .settings{
-        
+
         span{
           display: none;
         }

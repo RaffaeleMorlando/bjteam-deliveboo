@@ -1,10 +1,8 @@
 @extends('layouts.backend')
 
 @section('main')
-  <div class="container">
-    <h1>Dashboard Products</h1>
-
-    {{-- 
+  <h1>Dashboard Products</h1>
+    {{--
       Message = Creazione con successo
       Success = Edit con successo
      --}}
@@ -19,7 +17,7 @@
     @foreach (Auth::user()->restaurant->categories as $category)
       <span class="badge badge-info">{{ $category->name }}</span>
     @endforeach
-    
+
 
     <table class="table table-dark table-striped table-bordered">
       <thead>
@@ -62,11 +60,4 @@
     <a class="btn btn-primary" href="{{ route('admin.restaurants.products.create') }}">CREA</a>
     <a class="btn btn-danger" href="{{ route('admin.restaurants.dashboard') }}">BACK</a>
 
-  </div>
 @endsection
-  
-
-    
-
-
-  

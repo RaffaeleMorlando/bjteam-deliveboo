@@ -19,6 +19,7 @@ class RestaurantController extends Controller
         'address' => 'required',
         'p_iva' => 'required|max:11',
     ];
+
     //Ritorna il form per registrazione ristorante
     public function create() {
 

@@ -12,6 +12,7 @@ a {
 }
 a:hover {
   text-decoration: none;
+  color: #00A082;
 }
 a:hover i {
   color: #00A082;
@@ -81,6 +82,26 @@ a:hover i {
           animation-timing-function: ease;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+
+.slide-enter-active {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+}
+
+.slide-leave-active {
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.slide-enter-to, .slide-leave {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.slide-enter, .slide-leave-to {
+  overflow: hidden;
+  max-height: 0;
 }
 
 @-webkit-keyframes aside_slide_right {
@@ -336,6 +357,7 @@ a:hover i {
   overflow-y: auto;
 }
 #backend aside {
+  width: 20%;
   height: 100%;
   padding: 50px 30px;
   border-left: 4px solid #f8f8f7;
@@ -357,34 +379,44 @@ a:hover i {
 #backend aside header span {
   display: inline-block;
 }
-#backend aside main ul {
+#backend aside main {
+  width: 80%;
+}
+#backend aside main .route_list {
   border-top: 2px solid #9B9B9B;
   border-bottom: 2px solid #9B9B9B;
 }
-#backend aside main ul li {
+#backend aside main .route_list li {
   transition: transform 0.3s linear;
 }
-#backend aside main ul li .link-aside i {
+#backend aside main .route_list li .link-aside i {
   font-size: 25px;
   vertical-align: middle;
 }
-#backend aside main ul li .link-aside small {
+#backend aside main .route_list li .link-aside small {
   margin: 0 10px;
   font-size: 15px;
   font-weight: 600;
 }
-#backend aside main ul li:hover {
+#backend aside main .route_list li:hover {
   transform: scale(1.1);
 }
-#backend aside main ul li:hover .link-aside {
+#backend aside main .route_list li:hover .link-aside {
   color: #00A082;
 }
 #backend aside main .settings {
   text-align: center;
 }
-#backend aside main .settings:hover {
-  color: #00A082;
-  cursor: pointer;
+#backend .image_curve {
+  position: absolute;
+  bottom: 0;
+  right: -775px;
+  width: 100%;
+  height: 100px;
+  background-image: url("/img/wave.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 #backend ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);

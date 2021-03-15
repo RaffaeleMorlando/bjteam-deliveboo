@@ -11,11 +11,12 @@ a {
 
   &:hover {
     text-decoration: none;
-    
+    color: $greenPrimary;
+
     i {
       color: $greenPrimary;
     }
 
   }
-  
+
 }

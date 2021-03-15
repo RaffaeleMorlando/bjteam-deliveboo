@@ -49337,12 +49337,15 @@ __webpack_require__(/*! ../../bootstrap */ "./resources/js/bootstrap.js");
 var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: '#backend',
   data: {
-    activeAside: true
+    activeAside: true,
+    activeSettings: false
   },
   methods: {
     toggleShow: function toggleShow() {
       this.activeAside = !this.activeAside;
-      console.log(this.activeAside);
+    },
+    toggleSettings: function toggleSettings() {
+      this.activeSettings = !this.activeSettings;
     }
   }
 });

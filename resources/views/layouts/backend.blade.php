@@ -22,6 +22,7 @@
 
         {{-- parte destra del layout --}}
         <aside :class="activeAside ? 'aside_slide_left' : 'aside_slide_right'">
+
           <div class="content" :class="activeAside ? 'fade_in' : 'fade_out'">
 
             <header>
@@ -30,14 +31,15 @@
             </header>
 
             <main>
-              <h3>Pages</h3>
-              <ul class="list-unstyled">
-                <li class="my-5">
-                  <a class="link-aside" href="{{ route('admin.restaurants.dashboard') }}">
-                    <i class="fas fa-home dashboard-icon"></i>
-                    <small>Home</small>
-                  </a>
-                </li>
+              {{-- <h3>Pages</h3> --}}
+
+              <ul class="route_list list-unstyled">
+                  <li class="my-5">
+                    <a class="link-aside" href="{{ route('admin.restaurants.dashboard') }}">
+                      <i class="fas fa-home dashboard-icon"></i>
+                      <small>Home</small>
+                    </a>
+                  </li>
                 <li class="my-5">
                   <a class="link-aside" href="{{ route('admin.restaurants.products.index') }}">
                     <i class="fas fa-pizza-slice dashboard-icon"></i>
@@ -54,40 +56,37 @@
               </ul>
 
               <div class="settings">
-                <span>SETTINGS</span>
-                <i class="fas fa-chevron-down"></i>
-              </div>
-
-              <div style="border: 1px solid red">
-                <a href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
+                <a href="#" @click="toggleSettings">
+                  <span>SETTINGS</span>
+                  <i class="fas fa-chevron-down"></i>
                 </a>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                    @csrf
-                </form>
+                {{-- mostra/nascondi li dei settings --}}
+                <transition name="slide">
+                  <ul class="setting_list list-unstyled" v-if="activeSettings">
+                    <li class="my-3">
+                      <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
+
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                          @csrf
+                      </form>
+                    </li>
+                    <li class="my-3">
+                      <a href="#">Modifca profilo</a>
+                    </li>
+                  </ul>
+                </transition>
+
               </div>
-              
+
             </main>
-            <ul>
-              <li>Ciao</li>
-              <li>Ciao</li>
-              <li>Ciao</li>
-              <li>Ciao</li>
-              <li>Ciao</li>
-              <li>Ciao</li>
-              <li>Ciao</li>
-              <li>Ciao</li>
-              <li>Ciao</li>
-              <li>Ciao</li>
-            </ul>
           </div>
         </aside>
 
        {{-- burgericon --}}
       <a id="burgerIcon" @click="toggleShow" :class="activeAside ? 'active' : '' "><i></i></a>
+      {{-- box con il form per editare le informazioni del ristorante --}}
+      <div class="image_curve"></div>
 
     </div>
   </div>
