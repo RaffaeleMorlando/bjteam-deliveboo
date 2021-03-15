@@ -27,13 +27,28 @@
       overflow-y: auto;
     }
 
-    aside{
+    aside {
+      position: relative;
       width: 20%;
       height: 100%;
       padding: $paddingAside;
       border-left: 4px solid rgba(248, 248, 247, 1);
       background-color: $grayAside;
       overflow-y: auto;
+
+      //image curve
+      .image_curve {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 200px;
+        background-image: url("/img/wave.svg");
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+      }
+
 
       header {
         @include SetFlexContainer(row, flex-start, center, nowrap);
@@ -95,17 +110,7 @@
 
 
     }
-    .image_curve {
-      position: absolute;
-      bottom: 0;
-      right: -775px;
-      width: 100%;
-      height: 100px;
-      background-image: url("/img/wave.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-    }
+
 
 
 ::-webkit-scrollbar-track

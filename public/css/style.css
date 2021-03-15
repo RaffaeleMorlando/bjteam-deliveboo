@@ -357,12 +357,24 @@ a:hover i {
   overflow-y: auto;
 }
 #backend aside {
+  position: relative;
   width: 20%;
   height: 100%;
   padding: 50px 30px;
   border-left: 4px solid #f8f8f7;
   background-color: #FCFCFA;
   overflow-y: auto;
+}
+#backend aside .image_curve {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 200px;
+  background-image: url("/img/wave.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
 }
 #backend aside header {
   display: flex;
@@ -406,17 +418,6 @@ a:hover i {
 }
 #backend aside main .settings {
   text-align: center;
-}
-#backend .image_curve {
-  position: absolute;
-  bottom: 0;
-  right: -775px;
-  width: 100%;
-  height: 100px;
-  background-image: url("/img/wave.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
 }
 #backend ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
