@@ -14,28 +14,20 @@
 <body>
   <div id="background">
     <div id="backend" class="container-fluid">
-      <div class="row">
-
         {{-- parte sinistra del layout --}}
-        <main class="col-xs-12 col-lg-10">
+        <main>
+          <h2>titolo della main</h2>
         </main>
 
         {{-- parte destra del layout --}}
-        <aside class="col-lg-2">
+        <aside :class=" activeAside ? '' : 'slide-right' ">
           <header>
-            <div class="left">
-              <a href="#"><i class="far fa-user-circle"></i></a>
-              <p>Nome utente</p>
-            </div>
-
-            <div class="right">
-              <i class="fas fa-bars"></i>
-            </div>
-
+            <a href="#"><i class="far fa-user-circle"></i></a>
+            <span>name utente</span>        
           </header>
         </aside>
-
-      </div>
+       {{-- burgericon --}}
+      <a id="burgerIcon" @click="toggleShow" :class="activeAside ? 'active' : '' "><i></i></a>
     </div>
   </div>
 

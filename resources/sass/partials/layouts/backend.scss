@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 #background {
   width: 100%;
   height: 100vh;
@@ -10,55 +11,159 @@
   background-color: $greenPrimaryHover;
   // background-image: url("/img/main-bg.jpg");
 }
+
 #backend {
   height:100%;
   background-color: $white;
   border-radius: $borderRadCard;
   box-shadow: $shadowDashboard;
   overflow: hidden;
-
-
-  .row {
-    height: 100%;
+  position: relative;
+  @include SetFlexContainer(row, flex-start, stretch, wrap);
+  
 
     main {
       height: 100%;
+      width: 80%;
       padding: $paddingMain;
     }
 
     aside{
       height: 100%;
+      width: 20%;
       padding: $paddingAside;
       border-left: $standardBorder;
-      background-color: $grayAside;
+      background-color: green;
+      &.slide-right{
+        animation-name: slide-right;
+        animation-duration: 10s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+      }
 
       header {
-        @include SetFlexContainer(row, flex-start, stretch, wrap);
+        @include SetFlexContainer(row, flex-start, center, wrap);
         height: 80px;
 
-
-        .left {
-          @include SetFlexContainer(column, center, flex-start, wrap);
-          width: 80%;
-          height: 100%;
-        }
-        .right {
-          @include SetFlexContainer(column, flex-start, flex-end, wrap);
-          width: 20%;
-        }
-
-        i {
-          font-size: 30px;
+        a{
+          margin-right: 10px;
+          font-size: 20px;
         }
       }
     }
+  
+  #burgerIcon {
+    display: inline-block;
+    width:18px;
+    height:18px;
+    cursor: pointer;
+    text-decoration: none;
   }
-}
+  #burgerIcon i {
+    position: relative;
+    display: inline-block;
+    width: 18px;
+    height: 3px;
+    color:#252525;
+    font:bold 14px/.4 Helvetica;
+    text-transform: uppercase;
+    text-indent:-55px;
+    background: #252525;
+    transition:all .2s ease-out;
+  }
+  #burgerIcon i::before, #burgerIcon i::after {
+    content:'';
+    width: 18px;
+    height: 3px;
+    background: #252525;
+    position: absolute;
+    left:0;
+    transition:all .2s ease-out;
+  }
+  #burgerIcon i::before {
+    top: -7px;
+  }
+  #burgerIcon i::after {
+    bottom: -7px;
+  }
+  #burgerIcon:hover i::before {
+    top: -10px;
+  }
+  #burgerIcon:hover i::after {
+    bottom: -10px;
+  }
+  #burgerIcon.active i {
+    background: #fff;
+  }
+  #burgerIcon.active i::before {
+    top:0;
+    -webkit-transform: rotateZ(45deg);
+      -moz-transform: rotateZ(45deg);
+        -ms-transform: rotateZ(45deg);
+        -o-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+  }
+  #burgerIcon.active i::after {
+    bottom:0;
+    -webkit-transform: rotateZ(-45deg);
+      -moz-transform: rotateZ(-45deg);
+        -ms-transform: rotateZ(-45deg);
+        -o-transform: rotateZ(-45deg);
+            transform: rotateZ(-45deg);
+  }
+  /* Button placement */
+  #burgerIcon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}    
+   
+
+
 
 
 // MEDIA QUERY --------------------------------------------------------------------------------
 @media all and (max-width: 576px) {
   #background {
     padding: 0;
+  }
+}
+
+
+
+// ANIMATION ----------------------------------------------------------------------------------
+@-webkit-keyframes slide-right {
+  0% {
+    width: 100%;
+  }
+  25% {
+    width: 75%;
+  }
+  50% {
+    width: 50%;
+  }
+  75% {
+    width: 25%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+@keyframes slide-right {
+  0% {
+    width: 100%;
+  }
+  25% {
+    width: 75%;
+  }
+  50% {
+    width: 50%;
+  }
+  75% {
+    width: 25%;
+  }
+  100% {
+    width: 0%;
   }
 }
