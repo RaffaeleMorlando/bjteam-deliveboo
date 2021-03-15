@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {  //da cancellare
-    return view('welcome');
+    return view('layouts.backend');
 });
 
 Auth::routes();

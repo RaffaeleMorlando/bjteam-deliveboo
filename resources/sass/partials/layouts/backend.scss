@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#background {
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  background-color: $greenPrimaryHover;
+  // background-image: url("/img/main-bg.jpg");
+}
+#backend {
+  height:100%;
+  background-color: $white;
+  border-radius: $borderRadCard;
+  box-shadow: $shadowDashboard;
+  overflow: hidden;
+
+
+  .row {
+    height: 100%;
+
+    main {
+      height: 100%;
+      padding: $paddingMain;
+    }
+
+    aside{
+      height: 100%;
+      padding: $paddingAside;
+      border-left: $standardBorder;
+      background-color: $grayAside;
+
+      header {
+        @include SetFlexContainer(row, flex-start, stretch, wrap);
+        height: 80px;
+
+
+        .left {
+          @include SetFlexContainer(column, center, flex-start, wrap);
+          width: 80%;
+          height: 100%;
+        }
+        .right {
+          @include SetFlexContainer(column, flex-start, flex-end, wrap);
+          width: 20%;
+        }
+
+        i {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+
+
+// MEDIA QUERY --------------------------------------------------------------------------------
+@media all and (max-width: 576px) {
+  #background {
+    padding: 0;
+  }
+}

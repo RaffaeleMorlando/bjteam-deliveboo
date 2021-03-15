@@ -1,5 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/partials/layouts/backend.js": "/js/partials/layouts/backend.js",
     "/js/partials/restaurants/create.js": "/js/partials/restaurants/create.js",
     "/css/app.css": "/css/app.css",
     "/css/style.css": "/css/style.css"
