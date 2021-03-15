@@ -17,7 +17,7 @@
 
         {{-- parte sinistra del layout --}}
         <main :class="activeAside ? 'main_slide_right' : 'main_slide_left'" id="dashboard-main">
-          <h2>titolo della main</h2>
+          @yield('main')
         </main>
 
         {{-- parte destra del layout --}}
@@ -26,39 +26,63 @@
 
             <header>
               <i class="far fa-user-circle"></i>
-              {{-- <img src="" alt=""> --}}
-              <span>name utente</span>
+              <span>{{ Auth::user()->name }}</span>
             </header>
 
             <main>
               <h3>Pages</h3>
               <ul class="list-unstyled">
                 <li class="my-5">
-                  <a class="link-aside" href="#">
-                    <i class="fas fa-home"></i>
+                  <a class="link-aside" href="{{ route('admin.restaurants.dashboard') }}">
+                    <i class="fas fa-home dashboard-icon"></i>
                     <small>Home</small>
                   </a>
                 </li>
                 <li class="my-5">
-                  <a class="link-aside" href="#">
-                    <i class="fas fa-pizza-slice"></i>
+                  <a class="link-aside" href="{{ route('admin.restaurants.products.index') }}">
+                    <i class="fas fa-pizza-slice dashboard-icon"></i>
                     <small>Prodotti</small>
                   </a>
                 </li>
                 <li class="my-5">
-                  <a class="link-aside" href="#">
-                    <i class="far fa-chart-bar"></i>
+                  <a class="link-aside" href="{{ route('admin.restaurants.orders.index') }}">
+                    <i class="far fa-chart-bar dashboard-icon"></i>
                     <small>Ordini</small>
                   </a>
                 </li>
 
               </ul>
 
-              <div class="info">
-                <i class="fas fa-cogs"></i>
+              <div class="settings">
+                <span>SETTINGS</span>
+                <i class="fas fa-chevron-down"></i>
               </div>
 
+              <div style="border: 1px solid red">
+                <a href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                </form>
+              </div>
+              
             </main>
+            <ul>
+              <li>Ciao</li>
+              <li>Ciao</li>
+              <li>Ciao</li>
+              <li>Ciao</li>
+              <li>Ciao</li>
+              <li>Ciao</li>
+              <li>Ciao</li>
+              <li>Ciao</li>
+              <li>Ciao</li>
+              <li>Ciao</li>
+            </ul>
           </div>
         </aside>
 

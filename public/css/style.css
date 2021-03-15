@@ -313,15 +313,15 @@ a:hover i {
 #background {
   width: 100%;
   height: 100vh;
-  padding: 0px;
-  background-color: #008169;
+  padding: 50px;
+  background-color: #00A082;
 }
 
 #backend {
   height: 100%;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 2px 20px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 20px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   position: relative;
   display: flex;
@@ -333,12 +333,14 @@ a:hover i {
 #backend #dashboard-main {
   height: 100%;
   padding: 50px 80px;
+  overflow-y: auto;
 }
 #backend aside {
   height: 100%;
   padding: 50px 30px;
   border-left: 4px solid #f8f8f7;
   background-color: #FCFCFA;
+  overflow-y: auto;
 }
 #backend aside header {
   display: flex;
@@ -350,7 +352,7 @@ a:hover i {
 }
 #backend aside header i {
   margin-right: 10px;
-  font-size: 30px;
+  font-size: 25px;
 }
 #backend aside header span {
   display: inline-block;
@@ -363,7 +365,7 @@ a:hover i {
   transition: transform 0.3s linear;
 }
 #backend aside main ul li .link-aside i {
-  font-size: 30px;
+  font-size: 25px;
   vertical-align: middle;
 }
 #backend aside main ul li .link-aside small {
@@ -376,6 +378,27 @@ a:hover i {
 }
 #backend aside main ul li:hover .link-aside {
   color: #00A082;
+}
+#backend aside main .settings {
+  text-align: center;
+}
+#backend aside main .settings:hover {
+  color: #00A082;
+  cursor: pointer;
+}
+#backend ::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+#backend ::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+#backend ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #9B9B9B;
 }
 #backend #burgerIcon {
   display: inline-block;
@@ -434,14 +457,40 @@ a:hover i {
   right: 20px;
 }
 
-@media all and (min-width: 768px) and (max-width: 992px) {
+@media all and (max-width: 992px) {
   #background {
-    padding: 0px;
+    padding: 50px;
+  }
+
+  #backend aside header {
+    justify-content: center;
+  }
+  #backend aside header i {
+    margin-right: 0;
+    font-size: 30px;
+  }
+  #backend aside header span {
+    display: none;
+  }
+  #backend aside main {
+    text-align: center;
+  }
+  #backend aside main ul li a .dashboard-icon {
+    font-size: 30px;
+  }
+  #backend aside main h3 {
+    display: none;
+  }
+  #backend aside small {
+    display: none;
+  }
+  #backend aside .settings span {
+    display: none;
   }
 }
-@media all and (min-width: 576px) and (max-width: 767px) {
+@media all and (max-width: 767px) {
   #background {
-    padding: 0px;
+    padding: 20px;
   }
 }
 @media all and (max-width: 575px) {
@@ -451,11 +500,5 @@ a:hover i {
 
   #backend {
     border-radius: 0;
-  }
-  #backend aside header span {
-    display: none;
-  }
-  #backend aside small {
-    display: none;
   }
 }

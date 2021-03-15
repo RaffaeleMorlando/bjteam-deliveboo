@@ -1,3 +1,5 @@
-<h1>Orders Index</h1>
+@extends('layouts.backend')
 
-<a href="{{route('admin.restaurants.dashboard')}}" class="btn btn-success">Dashboard</a>
+@section('main')
+    <h1>ORDINI</h1>
+@endsection

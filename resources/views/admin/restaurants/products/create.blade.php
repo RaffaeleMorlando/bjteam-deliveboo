@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.backend')
 
-@section('content')
+@section('main')
   <section id="product_create" class="container my-3">
 
     @if ($errors->any())

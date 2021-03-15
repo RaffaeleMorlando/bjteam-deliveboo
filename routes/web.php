@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {  //da cancellare
-    return view('layouts.backend');
+    return view('welcome');
 });
 
 Auth::routes();
@@ -43,9 +43,9 @@ Route::prefix('admin')
         // cambiare il logo del ristorante
         Route::put("restaurants/dashboard/logo/{id}", "DashboardController@changeLogo")->name('dashboard.logo');
 
-        Route::get('restaurants/order', 'OrderController@index')->name('order.index');
+        Route::get('restaurants/orders', 'OrderController@index')->name('orders.index');
 
-        Route::get('restaurants/order', 'OrderController@chart')->name('order.chart');
+        Route::get('restaurants/orders/charts', 'OrderController@chart')->name('orders.chart');
 
 
     });

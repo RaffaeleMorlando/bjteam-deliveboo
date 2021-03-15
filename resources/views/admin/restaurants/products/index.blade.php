@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.backend')
 
-@section('content')
+@section('main')
   <div class="container">
     <h1>Dashboard Products</h1>
 
