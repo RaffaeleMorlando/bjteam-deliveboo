@@ -11,5 +11,11 @@ a {
 
   &:hover {
     text-decoration: none;
+    
+    i {
+      color: $greenPrimary;
+    }
+
   }
+  
 }

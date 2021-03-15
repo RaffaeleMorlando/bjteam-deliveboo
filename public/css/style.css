@@ -13,6 +13,9 @@ a {
 a:hover {
   text-decoration: none;
 }
+a:hover i {
+  color: #00A082;
+}
 
 .aside_slide_right {
   -webkit-animation-name: aside_slide_right;
@@ -310,7 +313,7 @@ a:hover {
 #background {
   width: 100%;
   height: 100vh;
-  padding: 100px;
+  padding: 0px;
   background-color: #008169;
 }
 
@@ -345,9 +348,12 @@ a:hover {
   flex-wrap: nowrap;
   height: 80px;
 }
-#backend aside header a {
+#backend aside header i {
   margin-right: 10px;
   font-size: 30px;
+}
+#backend aside header span {
+  display: inline-block;
 }
 #backend aside main ul {
   border-top: 2px solid #9B9B9B;
@@ -356,17 +362,20 @@ a:hover {
 #backend aside main ul li {
   transition: transform 0.3s linear;
 }
-#backend aside main ul li a i {
+#backend aside main ul li .link-aside i {
   font-size: 30px;
   vertical-align: middle;
 }
-#backend aside main ul li a small {
+#backend aside main ul li .link-aside small {
   margin: 0 10px;
   font-size: 15px;
   font-weight: 600;
 }
 #backend aside main ul li:hover {
   transform: scale(1.1);
+}
+#backend aside main ul li:hover .link-aside {
+  color: #00A082;
 }
 #backend #burgerIcon {
   display: inline-block;
@@ -425,8 +434,28 @@ a:hover {
   right: 20px;
 }
 
-@media all and (max-width: 576px) {
+@media all and (min-width: 768px) and (max-width: 992px) {
+  #background {
+    padding: 0px;
+  }
+}
+@media all and (min-width: 576px) and (max-width: 767px) {
+  #background {
+    padding: 0px;
+  }
+}
+@media all and (max-width: 575px) {
   #background {
     padding: 0;
+  }
+
+  #backend {
+    border-radius: 0;
+  }
+  #backend aside header span {
+    display: none;
+  }
+  #backend aside small {
+    display: none;
   }
 }

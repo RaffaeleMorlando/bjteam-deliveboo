@@ -25,33 +25,39 @@
           <div class="content" :class="activeAside ? 'fade_in' : 'fade_out'">
 
             <header>
-              <a href="#"><i class="far fa-user-circle"></i></a>
+              <i class="far fa-user-circle"></i>
+              {{-- <img src="" alt=""> --}}
               <span>name utente</span>
             </header>
 
             <main>
-              <h3></h3>
+              <h3>Pages</h3>
               <ul class="list-unstyled">
                 <li class="my-5">
-                  <a href="#">
+                  <a class="link-aside" href="#">
                     <i class="fas fa-home"></i>
                     <small>Home</small>
                   </a>
                 </li>
                 <li class="my-5">
-                  <a href="#">
+                  <a class="link-aside" href="#">
                     <i class="fas fa-pizza-slice"></i>
                     <small>Prodotti</small>
                   </a>
                 </li>
                 <li class="my-5">
-                  <a href="#">
+                  <a class="link-aside" href="#">
                     <i class="far fa-chart-bar"></i>
                     <small>Ordini</small>
                   </a>
                 </li>
 
               </ul>
+
+              <div class="info">
+                <i class="fas fa-cogs"></i>
+              </div>
+
             </main>
           </div>
         </aside>
