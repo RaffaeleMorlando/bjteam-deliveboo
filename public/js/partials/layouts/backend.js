@@ -49335,10 +49335,11 @@ __webpack_require__(/*! ../../bootstrap */ "./resources/js/bootstrap.js");
 
 
 var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
-  el: '#backend',
+  el: '#background',
   data: {
     activeAside: true,
-    activeSettings: false
+    activeSettings: false,
+    editForm: false
   },
   methods: {
     toggleShow: function toggleShow() {
@@ -49346,6 +49347,9 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     },
     toggleSettings: function toggleSettings() {
       this.activeSettings = !this.activeSettings;
+    },
+    activeEditForm: function activeEditForm() {
+      this.editForm = !this.editForm;
     }
   }
 });

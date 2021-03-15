@@ -4,10 +4,11 @@ require('../../bootstrap');
 import Vue from 'vue';
 
 const backend = new Vue({
-  el: '#backend',
+  el: '#background',
   data: {
     activeAside: true,
     activeSettings: false,
+    editForm: false,
   },
   methods: {
     toggleShow(){
@@ -16,7 +17,11 @@ const backend = new Vue({
 
     toggleSettings() {
       this.activeSettings = !this.activeSettings;
+    },
+
+    activeEditForm() {
+      this.editForm = !this.editForm;
     }
 
-  }
+  },
 });

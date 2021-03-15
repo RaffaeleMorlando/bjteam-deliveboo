@@ -13,6 +13,14 @@
 </head>
 <body>
   <div id="background">
+
+    {{-- FORM PER LA MODIFICA DEL RISTORANTE --}}
+    <div class="dashboard_edit_restaurant_form" :style="editForm ? 'display: block' : ''">
+      <div class="edit_content">
+        <button type="button" name="button" @click="activeEditForm">Indietro</button>
+      </div>
+    </div>
+
     <div id="backend" class="container-fluid p-0">
 
         {{-- parte sinistra del layout --}}
@@ -72,7 +80,7 @@
                       </form>
                     </li>
                     <li class="my-3">
-                      <a href="#">Modifca profilo</a>
+                      <a href="#" @click="activeEditForm">Modifca profilo</a>
                     </li>
                   </ul>
                 </transition>
@@ -88,11 +96,10 @@
        {{-- burgericon --}}
       <a id="burgerIcon" @click="toggleShow" :class="activeAside ? 'active' : '' "><i></i></a>
       {{-- box con il form per editare le informazioni del ristorante --}}
-      
+
 
     </div>
   </div>
-
 
   <script src="{{ asset("js/partials/layouts/backend.js") }}" charset="utf-8"></script>
 </body>

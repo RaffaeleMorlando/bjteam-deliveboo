@@ -282,49 +282,6 @@ a:hover i {
   color: #303030;
 }
 
-#dashboard {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  padding: 80px;
-  background-color: #303030;
-}
-#dashboard aside {
-  height: 100%;
-  width: 100px;
-  margin-right: 10px;
-  background: rgba(255, 254, 254, 0.75);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(3.5px);
-  -webkit-backdrop-filter: blur(3.5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-#dashboard main {
-  height: 100%;
-  width: calc(100% - 110px);
-  padding: 20px;
-  background: rgba(255, 254, 254, 0.75);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(3.5px);
-  -webkit-backdrop-filter: blur(3.5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-#dashboard main header {
-  width: 90%;
-  height: 200px;
-  margin: auto;
-  background-color: #303030;
-  border-radius: 10px;
-}
-#dashboard main .bottom {
-  width: calc(100% - 110px);
-  height: calc(100% - 200px);
-  padding: 20px;
-  margin: auto;
-  background-color: red;
-}
 * {
   margin: 0;
   padding: 0;
@@ -332,10 +289,32 @@ a:hover i {
 }
 
 #background {
+  position: relative;
   width: 100%;
   height: 100vh;
   padding: 50px;
   background-color: #00A082;
+}
+#background .dashboard_edit_restaurant_form {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+#background .dashboard_edit_restaurant_form .edit_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 400px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px 8px rgba(0, 0, 0, 0.2);
 }
 
 #backend {
@@ -534,4 +513,8 @@ a:hover i {
   #backend {
     border-radius: 0;
   }
+}
+#dashboard_index .bottom {
+  display: flex;
+  justify-content: space-between;
 }

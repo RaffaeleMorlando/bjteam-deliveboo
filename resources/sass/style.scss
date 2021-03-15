@@ -4,8 +4,8 @@
 @import 'partials/_mixins';
 @import 'animations/_dashboard-animations';
 @import 'partials/restaurants/_create'; // form per le domande e registrare il ristorante
-@import 'partials/_dashboard';
-@import 'partials/layouts/backend';
+@import 'partials/layouts/backend'; // layout BACKEND
+@import 'partials/backend/dashboard'; // stile dashboard (main, NON layout) backend
 
 // fonts
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
