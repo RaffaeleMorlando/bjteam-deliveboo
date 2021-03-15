@@ -13,18 +13,18 @@
 </head>
 <body>
   <div id="background">
-    <div id="backend" class="container-fluid">
+    <div id="backend" class="container-fluid p-0">
         {{-- parte sinistra del layout --}}
         <main>
           <h2>titolo della main</h2>
         </main>
 
         {{-- parte destra del layout --}}
-        <aside :class=" activeAside ? '' : 'slide-right' ">
-          <header>
+        <aside :class="activeAside ? 'aside_slide_left' : 'aside_slide_right' ">
+          {{-- <header>
             <a href="#"><i class="far fa-user-circle"></i></a>
-            <span>name utente</span>        
-          </header>
+            <span>name utente</span>
+          </header> --}}
         </aside>
        {{-- burgericon --}}
       <a id="burgerIcon" @click="toggleShow" :class="activeAside ? 'active' : '' "><i></i></a>

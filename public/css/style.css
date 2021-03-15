@@ -136,20 +136,9 @@
 }
 #backend aside {
   height: 100%;
-  width: 20%;
   padding: 50px 30px;
   border-left: 4px solid #F8F8F7;
-  background-color: green;
-}
-#backend aside.slide-right {
-  -webkit-animation-name: slide-right;
-          animation-name: slide-right;
-  -webkit-animation-duration: 10s;
-          animation-duration: 10s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  background-color: #FCFCFA;
 }
 #backend aside header {
   display: flex;
@@ -220,42 +209,78 @@
   right: 20px;
 }
 
+.aside_slide_right {
+  -webkit-animation-name: aside_slide_right;
+          animation-name: aside_slide_right;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.aside_slide_left {
+  -webkit-animation-name: aside_slide_left;
+          animation-name: aside_slide_left;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
 @media all and (max-width: 576px) {
   #background {
     padding: 0;
   }
 }
-@-webkit-keyframes slide-right {
+@-webkit-keyframes aside_slide_right {
   0% {
-    width: 100%;
-  }
-  25% {
-    width: 75%;
-  }
-  50% {
-    width: 50%;
-  }
-  75% {
-    width: 25%;
+    width: 20%;
+    padding: 50px 30px;
+    border-left: 4px solid #F8F8F7;
   }
   100% {
     width: 0%;
+    padding: 0;
+    border-left: 0;
   }
 }
-@keyframes slide-right {
+@keyframes aside_slide_right {
   0% {
-    width: 100%;
-  }
-  25% {
-    width: 75%;
-  }
-  50% {
-    width: 50%;
-  }
-  75% {
-    width: 25%;
+    width: 20%;
+    padding: 50px 30px;
+    border-left: 4px solid #F8F8F7;
   }
   100% {
     width: 0%;
+    padding: 0;
+    border-left: 0;
+  }
+}
+@-webkit-keyframes aside_slide_left {
+  0% {
+    width: 0%;
+    padding: 0;
+    border-left: 0;
+  }
+  100% {
+    width: 20%;
+    padding: 50px 30px;
+    border-left: 4px solid #F8F8F7;
+  }
+}
+@keyframes aside_slide_left {
+  0% {
+    width: 0%;
+    padding: 0;
+    border-left: 0;
+  }
+  100% {
+    width: 20%;
+    padding: 50px 30px;
+    border-left: 4px solid #F8F8F7;
   }
 }

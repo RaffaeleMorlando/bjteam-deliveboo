@@ -20,7 +20,7 @@
   overflow: hidden;
   position: relative;
   @include SetFlexContainer(row, flex-start, stretch, wrap);
-  
+
 
     main {
       height: 100%;
@@ -30,16 +30,10 @@
 
     aside{
       height: 100%;
-      width: 20%;
+      //width: 20%;
       padding: $paddingAside;
       border-left: $standardBorder;
-      background-color: green;
-      &.slide-right{
-        animation-name: slide-right;
-        animation-duration: 10s;
-        animation-timing-function: ease;
-        animation-fill-mode: forwards;
-      }
+      background-color: $grayAside;
 
       header {
         @include SetFlexContainer(row, flex-start, center, wrap);
@@ -51,7 +45,7 @@
         }
       }
     }
-  
+
   #burgerIcon {
     display: inline-block;
     width:18px;
@@ -117,9 +111,20 @@
     top: 20px;
     right: 20px;
   }
-}    
-   
+}
+.aside_slide_right {
+  animation-name: aside_slide_right;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
 
+.aside_slide_left {
+  animation-name: aside_slide_left;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
 
 
 
@@ -133,37 +138,45 @@
 
 
 // ANIMATION ----------------------------------------------------------------------------------
-@-webkit-keyframes slide-right {
+// @-webkit-keyframes slide-right {
+//   0% {
+//     width: 100%;
+//   }
+//   25% {
+//     width: 75%;
+//   }
+//   50% {
+//     width: 50%;
+//   }
+//   75% {
+//     width: 25%;
+//   }
+//   100% {
+//     width: 0%;
+//   }
+// }
+@keyframes aside_slide_right {
   0% {
-    width: 100%;
-  }
-  25% {
-    width: 75%;
-  }
-  50% {
-    width: 50%;
-  }
-  75% {
-    width: 25%;
+    width: 20%;
+    padding: $paddingAside;
+    border-left: $standardBorder;
   }
   100% {
     width: 0%;
+    padding: 0;
+    border-left: 0;
   }
 }
-@keyframes slide-right {
+
+@keyframes aside_slide_left {
   0% {
-    width: 100%;
-  }
-  25% {
-    width: 75%;
-  }
-  50% {
-    width: 50%;
-  }
-  75% {
-    width: 25%;
+    width: 0%;
+    padding: 0;
+    border-left: 0;
   }
   100% {
-    width: 0%;
+    width: 20%;
+    padding: $paddingAside;
+    border-left: $standardBorder;
   }
 }
