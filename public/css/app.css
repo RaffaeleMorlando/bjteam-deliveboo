@@ -8603,8 +8603,8 @@ readers do not read off random characters that represent icons */
 
   to {
     visibility: hidden;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-150%, 0, 0);
+    transform: translate3d(-150%, 0, 0);
   }
 }
 @keyframes slideOutLeft {
@@ -8615,8 +8615,8 @@ readers do not read off random characters that represent icons */
 
   to {
     visibility: hidden;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-150%, 0, 0);
+    transform: translate3d(-150%, 0, 0);
   }
 }
 .animate__slideOutLeft {
@@ -19224,6 +19224,14 @@ h3 {
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+}
+
+a {
+  color: #303030;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
 }
 
 #dashboard {
