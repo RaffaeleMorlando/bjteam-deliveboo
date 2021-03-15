@@ -1,3 +1,27 @@
-$cl_black: #303030;
-$cl_green: #008169;
-$cl_grey: #c1c1c1;
+  $cl_black: #303030;
+  $cl_green: #008169;
+  $cl_grey: #c1c1c1;
+
+  // Primary
+  $yellowPrimary: #FFC244;
+  $greenPrimary: #00A082;
+  $black: #1E1E1E;
+  $gray: #9B9B9B;
+  $white: #ffffff;
+
+
+  //Hover
+  $greenPrimaryHover: #008169;
+
+
+  //Box shadow
+  $shadowCard: 0 2px 20px 0 rgb(0 0 0 / 10%);
+
+  //Border Radius Card
+  $borderRadCard: 10px;
+
+
+  //Button Header
+  $borderRadiusButtonHeader: 3px 3px 5px 0 rgb(0 0 0 / 10%);
+  $buttonPadding: 12px 28px;
+  $fontWeightButton: 700;
