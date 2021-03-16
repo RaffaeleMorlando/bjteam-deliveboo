@@ -37,11 +37,11 @@
             <p>Ultimi Ordini</p>
           </div>
           <div class="dashboard_container_orders">
-            <div class="dashboard_item dashbord_order"><span>14:15</span> - Order n° #00001</div>
-            <div class="dashboard_item dashbord_order"><span>20:00</span> - Order n° #00002</div>
-            <div class="dashboard_item dashbord_order"><span>16:15</span> - Order n° #00003</div>
-            <div class="dashboard_item dashbord_order"><span>23:20</span> - Order n° #00004</div>
-            <div class="dashboard_item dashbord_order"><span>17:10</span> - Order n° #00005</div>
+            <div class="dashboard_item dashbord_order"><span class="badge badge-success">14:15</span> - Order n° #00001</div>
+            <div class="dashboard_item dashbord_order"><span class="badge badge-success">20:00</span> - Order n° #00002</div>
+            <div class="dashboard_item dashbord_order"><span class="badge badge-success">16:15</span> - Order n° #00003</div>
+            <div class="dashboard_item dashbord_order"><span class="badge badge-success">23:20</span> - Order n° #00004</div>
+            <div class="dashboard_item dashbord_order"><span class="badge badge-success">17:10</span> - Order n° #00005</div>
           </div>
         </li>
         <li class="dashboard_middle_card">
@@ -49,13 +49,12 @@
             <p>Ultimi aggiornamenti menù</p>
           </div>
           <div class="dashboard_container_plates">
-            <p class="dashboard_item">Pasta al Pomodoro</p>
-            <p class="dashboard_item">Pasta al Pomodoro</p>
-            <p class="dashboard_item">Pasta al Pomodoro</p>
-            <p class="dashboard_item">Pasta al Pomodoro</p>
-            <p class="dashboard_item">Pasta al Pomodoro</p>
-            <p class="dashboard_item">Pasta al Pomodoro</p>
-            <p class="dashboard_item">Pasta al Pomodoro</p>
+            @foreach ($restaurant->products as $key => $product)
+            @if($key == 0) 
+            <p class="dashboard_item">{{$product->name}} <span class="badge badge-danger">new</span></p>
+            @endif
+            <p class="dashboard_item">{{$product->name}}</p>
+            @endforeach
           </div>
         </li>
 
