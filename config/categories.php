@@ -3,46 +3,57 @@
 return $categories = [
   [
     "name" => "Ristorante",
-    "slug" => "ristorante"
+    "slug" => "ristorante",
+    "image" => "restaurant.webp"
   ],
   [
     "name" => "Pizzeria",
-    "slug" => "pizzeria"
+    "slug" => "pizzeria",
+    "image" => "pizza.webp"
   ],
   [
     "name" => "Paninoteca",
-    "slug" => "paninoteca"
+    "slug" => "paninoteca",
+    "image" => "paninoteca.webp"
   ],
   [
     "name" => "Osteria",
-    "slug" => "osteria"
+    "slug" => "osteria",
+    "image" => "osteria.webp"
   ],
   [
     "name" => "Fast food",
-    "slug" => "fast-food"
+    "slug" => "fast-food",
+    "image" => "fast-food.webp"
   ],
   [
     "name" => "Pub",
-    "slug" => "pub"
+    "slug" => "pub",
+    "image" => "pub.webp"
   ],
   [
     "name" => "Italiano",
-    "slug" => "italiano"
+    "slug" => "italiano",
+    "image" => "italiano.webp"
   ],
   [
     "name" => "Cinese",
-    "slug" => "cinese"
+    "slug" => "cinese",
+    "image" => "cinese.webp"
   ],
   [
     "name" => "Giapponese",
-    "slug" => "giapponese"
+    "slug" => "giapponese",
+    "image" => "giapponese.webp"
   ],
   [
     "name" => "Francese",
-    "slug" => "francese"
+    "slug" => "francese",
+    "image" => "francese.webp"
   ],
   [
     "name" => "Dolci",
-    "slug" => "dolci"
+    "slug" => "dolci",
+    "image" => "dolci.webp"
   ]
 ];

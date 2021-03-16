@@ -10,7 +10,8 @@ class Category extends Model
 
     protected $fillable = [
         'name',
-        'slug'
+        'slug',
+        'image'
     ];
 
     /**
@@ -20,5 +21,5 @@ class Category extends Model
     {
         return $this->belongsToMany('App\Restaurant', 'restaurant_category');
     }
-    
+
 }

@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('name', 30)->required();
             $table->string('slug', 30)->required();
+            $table->string('image', 30)->required();
         });
     }
 
