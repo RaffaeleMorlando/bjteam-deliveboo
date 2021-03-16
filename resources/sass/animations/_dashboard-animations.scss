@@ -72,6 +72,20 @@
    max-height: 0;
 }
 
+//animazione per far ruotare la freccia della scritta settings
+.counterclockwise_180 {
+  animation-name: counterclockwise180;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+.clockwise_180 {
+  animation-name: clockwise180;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+
+}
 // ANIMATION ----------------------------------------------------------------------------------
 // quando l'aside si chiude
 @keyframes aside_slide_right {
@@ -139,5 +153,24 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+// routa la freccia di 180 gradi
+@keyframes counterclockwise180 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes clockwise180 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }

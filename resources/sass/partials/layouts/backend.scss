@@ -74,7 +74,7 @@
       }
 
 
-      div#aside_top {
+      #aside_top {
         @include SetFlexContainer(row, flex-start, center, nowrap);
         height: 80px;
         i {
@@ -88,7 +88,7 @@
       }
 
       #aside_center {
-        width: 80%;
+        width: 100%;
 
         //Pages
         #route_list {
@@ -126,7 +126,7 @@
         }
 
 
-       
+
       }
 
 
@@ -237,10 +237,19 @@
     aside{
       .content{
         #aside_top{
+          @include SetFlexContainer(row, center, center, nowrap);
 
+          i {
+            margin-right: 0;
+          }
+          
+          #name_admin {
+            display: none;
+          }
         }
         #aside_center{
           #route_list{
+
             li{
               text-align: center;
               a{
@@ -277,7 +286,7 @@
   //       text-align: center;
 
   //       #route_list{
-          
+
   //         li{
   //             text-align: center;
   //           a{
@@ -315,8 +324,8 @@
   #background {
     padding: 20px;
   }
-  
-   
+
+
 
 }
 
@@ -330,7 +339,7 @@
     aside{
       padding: 50px 0;
     }
-  
+
   }
-  
+
 }
