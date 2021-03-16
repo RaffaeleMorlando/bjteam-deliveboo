@@ -107,7 +107,6 @@ a:hover i {
 @-webkit-keyframes aside_slide_right {
   0% {
     width: 20%;
-    /* padding: $paddingAside; */
     border-left: 4px solid #f8f8f7;
   }
   100% {
@@ -120,7 +119,6 @@ a:hover i {
 @keyframes aside_slide_right {
   0% {
     width: 20%;
-    /* padding: $paddingAside; */
     border-left: 4px solid #f8f8f7;
   }
   100% {
@@ -137,7 +135,6 @@ a:hover i {
   }
   100% {
     width: 20%;
-    /* padding: $paddingAside; */
     border-left: 4px solid #f8f8f7;
   }
 }
@@ -149,7 +146,6 @@ a:hover i {
   }
   100% {
     width: 20%;
-    /* padding: $paddingAside; */
     border-left: 4px solid #f8f8f7;
   }
 }
@@ -339,7 +335,7 @@ a:hover i {
   position: relative;
   width: 20%;
   height: 100%;
-  padding: 50px 30px;
+  padding: 50px 22px;
   border-left: 4px solid #f8f8f7;
   background-color: #FCFCFA;
   overflow-y: auto;
@@ -385,7 +381,7 @@ a:hover i {
   vertical-align: middle;
 }
 #container_dashboard aside #aside_center #route_list li .link-aside small {
-  margin: 0 10px;
+  margin: 0 5px;
   font-size: 15px;
   font-weight: 600;
 }
@@ -471,42 +467,16 @@ a:hover i {
     padding: 50px;
   }
 
-  #container_dashboard aside header {
-    justify-content: center;
-  }
-  #container_dashboard aside header i {
-    margin-right: 0;
-    font-size: 30px;
-  }
-  #container_dashboard aside header span {
-    display: none;
-  }
-  #container_dashboard aside main {
+  #container_dashboard aside .content #aside_center #route_list li {
     text-align: center;
   }
-  #container_dashboard aside main ul li a .dashboard-icon {
-    font-size: 30px;
-  }
-  #container_dashboard aside main h3 {
-    display: none;
-  }
-  #container_dashboard aside small {
-    display: none;
-  }
-  #container_dashboard aside #settings_dashboard span {
+  #container_dashboard aside .content #aside_center #route_list li a small {
     display: none;
   }
 }
 @media all and (max-width: 767px) {
   #background {
     padding: 20px;
-  }
-
-  aside {
-    padding: 0 !important;
-    /* .aside_slide_left {
-      padding: 0!important;
-    } */
   }
 }
 @media all and (max-width: 575px) {
@@ -516,6 +486,9 @@ a:hover i {
 
   #container_dashboard {
     border-radius: 0;
+  }
+  #container_dashboard aside {
+    padding: 50px 0;
   }
 }
 * {
@@ -678,7 +651,7 @@ a:hover i {
   }
 }
 @media all and (max-width: 576px) {
-  #backend #dashboard-main {
+  #container_dashboard #dashboard_main {
     padding: 30px 15px;
   }
 }

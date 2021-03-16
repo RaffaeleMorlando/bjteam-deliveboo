@@ -97,6 +97,7 @@
 
           li {
             transition: transform 0.3s linear;
+            // text-align: center;
 
             .link-aside {
 
@@ -106,7 +107,7 @@
               }
 
               small {
-                margin: 0 10px;
+                margin: 0 5px;
                 font-size: 15px;
                 font-weight: 600;
               }
@@ -230,58 +231,83 @@
   }
 
   #container_dashboard{
-    aside {
+    #dashboard_main{
 
-      header {
+    }
+    aside{
+      .content{
+        #aside_top{
 
-        justify-content: center;
-
-        i {
-          margin-right: 0;
-          font-size: 30px;
         }
-        span {
-          display: none;
-        }
-
-      }
-
-      main{
-
-        text-align: center;
-
-        ul{
-
-          li{
-
-            a{
-
-              .dashboard-icon{
-                font-size: 30px;
+        #aside_center{
+          #route_list{
+            li{
+              text-align: center;
+              a{
+                small{
+                  display: none;
+                }
               }
             }
           }
         }
-
-        h3{
-          display: none;
-        }
-
-      }
-
-      small {
-        display: none;
-      }
-
-      #settings_dashboard {
-
-        span{
-          display: none;
-        }
-
       }
     }
   }
+
+  // #container_dashboard{
+  //   aside {
+
+  //     #aside_center {
+
+  //       justify-content: center;
+
+  //       i {
+  //         margin-right: 0;
+  //         font-size: 30px;
+  //       }
+  //       #settings {
+  //         display: none;
+  //       }
+
+  //     }
+
+  //     main{
+
+  //       text-align: center;
+
+  //       #route_list{
+          
+  //         li{
+  //             text-align: center;
+  //           a{
+
+  //             .dashboard-icon{
+  //               font-size: 30px;
+  //             }
+  //           }
+  //         }
+  //       }
+
+  //       h3{
+  //         display: none;
+  //       }
+
+  //     }
+
+  //     small {
+  //       display: none;
+  //     }
+
+  //     #settings_dashboard_container {
+
+  //       span#settings_dashboard{
+  //         display: none;
+  //       }
+
+  //     }
+  //   }
+  // }
 }
 
 //SM
@@ -289,12 +315,8 @@
   #background {
     padding: 20px;
   }
-    aside {
-      padding: 0!important;
-      /* .aside_slide_left {
-        padding: 0!important;
-      } */
-    }
+  
+   
 
 }
 
@@ -305,6 +327,10 @@
   }
   #container_dashboard {
     border-radius: 0;
+    aside{
+      padding: 50px 0;
+    }
   
   }
+  
 }

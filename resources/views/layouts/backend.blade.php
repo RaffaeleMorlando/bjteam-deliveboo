@@ -63,9 +63,9 @@
 
               </ul>
 
-              <div id="settings_dashboard" class="text-center">
+              <div id="settings_dashboard_container" class="text-center">
                 <a href="#" @click="toggleSettings">
-                  <span>SETTINGS</span>
+                  <span id="settings_dashboard">SETTINGS</span>
                   <i class="fas fa-chevron-down"></i>
                 </a>
 
