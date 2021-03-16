@@ -49338,9 +49338,7 @@ var guest = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: '#home_page_guest',
   data: {},
   methods: {},
-  mounted: function mounted() {
-    console.log("ciao");
-  }
+  mounted: function mounted() {}
 });
 })();
 

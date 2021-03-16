@@ -47,7 +47,22 @@ header {
 
 //parte css che non fa parte del layout
 #main_homepage_guest {
-
+  margin-top: $headerHeight;
+  position: relative;
+  height: calc(100vh - #{$headerHeight});
+  .round_box {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: $white;
+    box-shadow: $shadowCard;
+  }
+  #search_by_categories {
+    
+    @include setPositionAbsolute(50%, 50px);
+    transform: translateY(-50%);
+    
+  }
 }
 // FOOTER farà parte del layout
 footer {
@@ -56,7 +71,7 @@ footer {
   left: 0;
   height: $footerHeight;
   background-color: $black;
-  transition: width 0.5s linear;
+  transition: width 1s linear;
 
   .show_footer {
     position: absolute;

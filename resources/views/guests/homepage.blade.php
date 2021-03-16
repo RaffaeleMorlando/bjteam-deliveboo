@@ -39,7 +39,12 @@
       <main>
         {{-- MAIN, qui dentro ci andra a finire il segnaposto per le varie viste pubbliche --}}
         <div id="main_homepage_guest">
-          <div id="searchBy">
+          <div id="search_by_categories" class="round_box">
+            <div class="round_box"></div>
+            <div class="round_box"></div>
+            <div class="round_box"></div>
+            <div class="round_box"></div>
+            <div class="round_box"></div>
 
           </div>
         </div>

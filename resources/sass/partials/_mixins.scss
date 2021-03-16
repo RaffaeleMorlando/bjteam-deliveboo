@@ -5,3 +5,9 @@
   align-items: $a_i;
   flex-wrap: $f_w;
 }
+
+@mixin setPositionAbsolute($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left; 
+}
