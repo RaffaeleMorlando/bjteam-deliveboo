@@ -167,11 +167,11 @@
       display: inline-block;
       width: 18px;
       height: 3px;
-      color:#252525;
+      color:$black;
       font:bold 14px/.4 Helvetica;
       text-transform: uppercase;
       text-indent:-55px;
-      background: #252525;
+      background: $black;
       transition:all .2s ease-out;
     }
   }
@@ -179,7 +179,7 @@
     content:'';
     width: 18px;
     height: 3px;
-    background: #252525;
+    background: $black;
     position: absolute;
     left:0;
     transition:all .2s ease-out;
@@ -197,7 +197,7 @@
     bottom: -10px;
   }
   #burgerIcon.active i {
-    background: #fff;
+    background: $white;
   }
   #burgerIcon.active i::before {
     top:0;
@@ -273,7 +273,7 @@
         display: none;
       }
 
-      .settings{
+      #settings_dashboard {
 
         span{
           display: none;
@@ -291,6 +291,12 @@
   #background {
     padding: 20px;
   }
+    aside {
+      padding: 0!important;
+      /* .aside_slide_left {
+        padding: 0!important;
+      } */
+    }
 
 }
 
@@ -301,5 +307,6 @@
   }
   #container_dashboard {
     border-radius: 0;
+  
   }
 }

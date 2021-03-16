@@ -35,7 +35,7 @@
 
             <div id="aside_top">
               <i class="far fa-user-circle"></i>
-              <span>{{ Auth::user()->name }}</span>
+              <span id="name_admin">{{ Auth::user()->name }}</span>
             </div>
 
             <div id="aside_center">

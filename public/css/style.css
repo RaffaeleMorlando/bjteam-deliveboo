@@ -107,7 +107,7 @@ a:hover i {
 @-webkit-keyframes aside_slide_right {
   0% {
     width: 20%;
-    padding: 50px 30px;
+    /* padding: $paddingAside; */
     border-left: 4px solid #f8f8f7;
   }
   100% {
@@ -120,7 +120,7 @@ a:hover i {
 @keyframes aside_slide_right {
   0% {
     width: 20%;
-    padding: 50px 30px;
+    /* padding: $paddingAside; */
     border-left: 4px solid #f8f8f7;
   }
   100% {
@@ -137,7 +137,7 @@ a:hover i {
   }
   100% {
     width: 20%;
-    padding: 50px 30px;
+    /* padding: $paddingAside; */
     border-left: 4px solid #f8f8f7;
   }
 }
@@ -149,7 +149,7 @@ a:hover i {
   }
   100% {
     width: 20%;
-    padding: 50px 30px;
+    /* padding: $paddingAside; */
     border-left: 4px solid #f8f8f7;
   }
 }
@@ -421,18 +421,18 @@ a:hover i {
   display: inline-block;
   width: 18px;
   height: 3px;
-  color: #252525;
+  color: #1E1E1E;
   font: bold 14px/0.4 Helvetica;
   text-transform: uppercase;
   text-indent: -55px;
-  background: #252525;
+  background: #1E1E1E;
   transition: all 0.2s ease-out;
 }
 #container_dashboard #burgerIcon i::before, #container_dashboard #burgerIcon i::after {
   content: "";
   width: 18px;
   height: 3px;
-  background: #252525;
+  background: #1E1E1E;
   position: absolute;
   left: 0;
   transition: all 0.2s ease-out;
@@ -450,7 +450,7 @@ a:hover i {
   bottom: -10px;
 }
 #container_dashboard #burgerIcon.active i {
-  background: #fff;
+  background: #ffffff;
 }
 #container_dashboard #burgerIcon.active i::before {
   top: 0;
@@ -493,13 +493,20 @@ a:hover i {
   #container_dashboard aside small {
     display: none;
   }
-  #container_dashboard aside .settings span {
+  #container_dashboard aside #settings_dashboard span {
     display: none;
   }
 }
 @media all and (max-width: 767px) {
   #background {
     padding: 20px;
+  }
+
+  aside {
+    padding: 0 !important;
+    /* .aside_slide_left {
+      padding: 0!important;
+    } */
   }
 }
 @media all and (max-width: 575px) {
