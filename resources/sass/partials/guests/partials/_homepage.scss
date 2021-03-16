@@ -1,0 +1,90 @@
+// HEADER farà parte del layout
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $headerHeight;
+  background-color: $yellowPrimary;
+
+  .container {
+    height: 100%;
+
+    .row {
+      height: 100%;
+
+      .left {
+        @include SetFlexContainer (row, center, center, wrap);
+        height: 100%;
+        //background-color: green;
+      }
+
+      .center {
+        @include SetFlexContainer (row, center, center, wrap);
+        height: 100%;
+        //background-color: red;
+
+        input[type=text] {
+          width: 80%;
+          padding: 5px 10px;
+          border-radius: 20px;
+          background-color: $darkWhite;
+          border: none;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .right {
+        height: 100%;
+        //background-color: green;
+      }
+    }
+  }
+}
+
+//parte css che non fa parte del layout
+#main_homepage_guest {
+  margin-top: $headerHeight;
+  position: relative;
+  height: calc(100vh - #{$headerHeight});
+  .round_box {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: $white;
+    box-shadow: $shadowCard;
+  }
+  #search_by_categories {
+    
+    @include setPositionAbsolute(50%, 50px);
+    transform: translateY(-50%);
+    
+  }
+}
+// FOOTER farà parte del layout
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: $footerHeight;
+  background-color: $black;
+  transition: width 1s linear;
+
+  .show_footer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $footerHeight;
+    height: $footerHeight;
+    line-height: $footerHeight;
+    text-align: center;
+    cursor: pointer;
+
+    i {
+      color: $yellowPrimary;
+    }
+  }
+}
