@@ -732,3 +732,88 @@ a:hover i {
     padding: 30px 15px;
   }
 }
+#product_create {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+#product_create .form_box {
+  position: relative;
+  padding: 200px 0;
+}
+#product_create .form_box .product_create_img {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  padding: 15px;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+#product_create .form_box .product_create_img img {
+  width: 100%;
+}
+#product_create .form_box .create_add_image {
+  position: absolute;
+  top: -25px;
+  left: 120px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #FFC244;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+#product_create .form_box .create_add_image input[type=file] {
+  display: none;
+}
+#product_create .form_box .create_product_input {
+  margin: 10px 0;
+  padding: 10px;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
+  border-radius: 5px;
+}
+#product_create .form_box .create_product_input i {
+  font-size: 25px;
+  color: #9B9B9B;
+}
+#product_create .form_box .create_product_input label {
+  font-weight: 600;
+  font-style: italic;
+}
+#product_create .form_box .create_product_input input[type=text] {
+  width: 80%;
+  padding: 0 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #FFC244;
+  vertical-align: text-bottom;
+}
+#product_create .form_box .create_product_input input[type=text]:focus {
+  outline: none;
+}
+#product_create .form_box .create_product_input textarea {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  resize: none;
+  border: none;
+  border-right: 2px solid #FFC244;
+  border-bottom: 2px solid #FFC244;
+  border-radius: 0 0 5px 0;
+}
+#product_create .form_box .create_product_input textarea:focus {
+  outline: none;
+}
+#product_create .form_box .create_product_input .check_option {
+  display: inline-block;
+  margin-left: 30px;
+  padding: 0 10px;
+  border-left: 2px solid #FFC244;
+  border-bottom: 2px solid #FFC244;
+}

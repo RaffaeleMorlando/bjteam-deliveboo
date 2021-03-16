@@ -75,7 +75,7 @@
                     <li class="my-3">
                       <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <span>Log Out</span>
-                        <i class="fas fa-sign-out-alt settings-icon mb-5"></i>
+                        <i class="fas fa-sign-out-alt settings-icon mb-3"></i>
                       </a>
 
                       <form id="logout-form" action="{{ route('logout') }}" method="POST">
@@ -85,7 +85,7 @@
                     <li class="my-3">
                       <a href="#" @click="activeEditForm">
                         <span>Modifca profilo</span>
-                        <i class="fas fa-edit settings-icon mb-5"></i>
+                        <i class="fas fa-edit settings-icon mb-3"></i>
                       </a>
                     </li>
                   </ul>
