@@ -21,7 +21,9 @@ Route::get('/', function () {  //da cancellare
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home'); //da cancellare
+//Route::get('/home', 'HomeController@index')->name('home'); //da cancellare
+
+//rotta momentanea per la home page VERA
 
 
 
@@ -49,3 +51,10 @@ Route::prefix('admin')
 
 
     });
+
+  Route::namespace('Guest')
+      ->group(function(){
+
+        Route::get("home", "GuestController@homePage")->name("home");
+
+      });
