@@ -1,65 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
+@extends("../layouts.guest")
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+@section("page-guest-script")
+  <script src="{{ asset("js/partials/guest/homepage.js") }}" charset="utf-8"></script>
+@endsection
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style-guest.css') }}" rel="stylesheet">
-
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <div id="guest_layout">
-
-      <header>
-        <div class="container">
-          <div class="row">
-
-            <div class="left col-lg-2">
-              <img class="logo" src="{{ asset("img/logo_glovo-prova.svg") }}" alt="">
-            </div>
-
-            <div class="center col-lg-8">
-              <input type="text" name="" value="" placeholder="Cerca">
-            </div>
-
-            <div class="right col-lg-2"></div>
-          </div>
-        </div>
-      </header>
-
-
-      <main>
-        {{-- MAIN, qui dentro ci andra a finire il segnaposto per le varie viste pubbliche --}}
-        <div id="main_homepage_guest">
-          <div id="search_by_categories" class="round_box">
-            <div class="round_box"></div>
-            <div class="round_box"></div>
-            <div class="round_box"></div>
-            <div class="round_box"></div>
-            <div class="round_box"></div>
-
-          </div>
-        </div>
-      </main>
-
-      <footer :style="!activeFooter ? 'width: 50px' : 'width: 100%'">
-        {{-- icona che mostra/nasconde footer --}}
-        <div class="show_footer" @click="footerToggleShow">
-          <i class="fas fa-dot-circle"></i>
-        </div>
-      </footer>
-
+@section("guest-main")
+  <div id="main_homepage_guest">
+    <div id="search_by_categories" class="round_box">
     </div>
-
-    <script src="{{ asset("js/partials/layouts/guest.js") }}" charset="utf-8"></script>
-    <script src="{{ asset("js/partials/guest/homepage.js") }}" charset="utf-8"></script>
-  </body>
-</html>
+  </div>
+@endsection
