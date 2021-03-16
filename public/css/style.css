@@ -734,13 +734,12 @@ a:hover i {
 }
 #product_create {
   width: 100%;
-  height: 100%;
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 #product_create .form_box {
   position: relative;
-  padding: 200px 0;
+  padding: 200px 0 30px;
 }
 #product_create .form_box .product_create_img {
   position: absolute;
@@ -773,7 +772,7 @@ a:hover i {
   display: none;
 }
 #product_create .form_box .create_product_input {
-  margin: 10px 0;
+  margin: 20px 0;
   padding: 10px;
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
   border-radius: 5px;
@@ -816,4 +815,14 @@ a:hover i {
   padding: 0 10px;
   border-left: 2px solid #FFC244;
   border-bottom: 2px solid #FFC244;
+}
+#product_create .form_box .btn-submit {
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00A082;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  font-weight: 700;
 }

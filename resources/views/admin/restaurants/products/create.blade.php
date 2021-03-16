@@ -72,36 +72,36 @@
         <div class="create_product_input">
           <i class="fas fa-hamburger"></i>
           <label for="name" class="mx-1 my-0">Nome</label>
-          <input type="text" name="name" id="name" placeholder="Inserisci il nome del ristorante">
+          <input type="text" name="name" id="name" value="{{ old('name')}}" placeholder="Inserisci il nome del prodotto">
         </div>
 
         <div class="create_product_input">
           <i class="fas fa-align-left"></i>
           <label for="description" class="mx-1 my-0">Descrizione</label>
-          <textarea name="description" id="description" placeholder="Descrizione prodotto"></textarea>
+          <textarea name="description" id="description" placeholder="Descrizione prodotto">{{ old('description')}}</textarea>
         </div>
 
         <div class="create_product_input">
           <i class="fas fa-dollar-sign"></i>
           <label for="price" class="mx-1 my-0">Prezzo</label>
-          <input type="text" name="price" id="price" placeholder="Prezzo (€)">
+          <input type="text" name="price" id="price" value="{{ old('price') }}" placeholder="Prezzo (€)">
         </div>
 
         <div class="create_product_input">
           <div class="check_option">
             <i class="fas fa-carrot"></i>
             <label for="is_vegetarian" class="mx-1 my-0">Vegetariano</label>
-            <input type="checkbox" name="is_vegetarian" id="is_vegetarian" value="1">
+            <input {{ old('is_vegetarian') == 1 ? 'checked' : '' }} type="checkbox" name="is_vegetarian" id="is_vegetarian" value="1">
           </div>
 
           <div class="check_option">
             <i class="fas fa-bread-slice"></i>
             <label for="is_glutenfree" class="mx-1 my-0">Gluten Free</label>
-            <input type="checkbox" name="is_glutenfree" id="is_glutenfree" value="1">
+            <input {{ old('is_glutenfree') == 1 ? 'checked' : '' }} type="checkbox" name="is_glutenfree" id="is_glutenfree" value="1">
           </div>
         </div>
 
-        <input type="submit" name="" value="vai">
+        <input type="submit" id="submit" value="ADD" class="btn-submit">
       </form>
     </div>
   </section>
