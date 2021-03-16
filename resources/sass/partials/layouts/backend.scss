@@ -126,7 +126,9 @@
         }
 
 
-
+        i.settings-icon {
+          display: none;
+        }
       }
 
 
@@ -242,7 +244,7 @@
           i {
             margin-right: 0;
           }
-          
+
           #name_admin {
             display: none;
           }
@@ -340,6 +342,20 @@
       padding: 50px 0;
     }
 
+    #settings_dashboard_container {
+
+      .setting_list {
+
+        span {
+          display: none;
+        }
+
+        i.settings-icon {
+          display: block;
+          font-size: 25px;
+        }
+      }
+    }
   }
 
 }

@@ -445,6 +445,9 @@ a:hover i {
 #container_dashboard aside #aside_center #route_list li:hover .link-aside {
   color: #00A082;
 }
+#container_dashboard aside #aside_center i.settings-icon {
+  display: none;
+}
 #container_dashboard ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -556,6 +559,13 @@ a:hover i {
   }
   #container_dashboard aside {
     padding: 50px 0;
+  }
+  #container_dashboard #settings_dashboard_container .setting_list span {
+    display: none;
+  }
+  #container_dashboard #settings_dashboard_container .setting_list i.settings-icon {
+    display: block;
+    font-size: 25px;
   }
 }
 * {
