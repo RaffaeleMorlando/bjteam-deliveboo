@@ -1,0 +1,43 @@
+.title-products{
+  color: red;
+}
+
+.container-fluid{
+  margin-top: 20px;
+  .card{
+    margin: 20px 15px;
+    img{
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .card-body{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+
+    }
+  }
+}
+
+
+@media all and (max-width: 1200px){
+  .container-fluid{
+    .card{
+      min-height: 50vh;
+      margin: 20px 0;
+    }
+  }
+  
+}
+
+
+@media all and (max-width: 576px){
+  #backend{
+    #dashboard-main{
+      padding: 30px 15px;
+    }
+  }
+}

@@ -2,7 +2,18 @@
 
 @section('main')
   <div>
-    <table class="table table-dark table-striped table-bordered">
+    
+    <div class="my-3">
+      <a class="btn btn-primary" href="{{route('admin.restaurants.products.index')}}">
+        <i class="fas fa-chevron-circle-left"></i> Tutti i prodotti
+      </a>
+      <a class="btn btn-warning" href="{{route('admin.restaurants.products.edit', $product->id)}}">
+        <i class="fas fa-pencil-alt"></i> Modifica prodotto
+      </a>
+    </div>
+    
+    
+    <table class="table table-striped table-bordered">
       <tbody>
         <tr>
           <th>Immagine</th>
@@ -10,7 +21,9 @@
           <td>
             @if ($product->image == null)
               <img height="180px" src="{{asset('img/foods-placeholder-600x600.png')}}" alt="{{$product->name}}">
-            @else 
+            @elseif(substr($product->image, 0, 5) == 'https')
+              <img src="{{ $product->image }}" alt="" style="width: 100px">
+            @else
               <img height="180px" src="{{asset('storage/'.$product->image)}}" alt="{{$product->name}}">
             @endif
           </td>  
@@ -39,13 +52,7 @@
         <tr>
           <th>Creato il</th>
           <td>{{$product->created_at->format('d-m-Y')}}</td>
-        </tr>
-        <tr>
-          <td><a class="btn btn-warning" href="{{route('admin.restaurants.products.edit', $product->id)}}">Modifica</a></td>
-          <td><a class="btn btn-info" href="{{route('admin.restaurants.products.index')}}">Tutti i prodotti</a></td>
-        </tr>
-        
-      
+        </tr>      
       </tbody>
     </table>
 
