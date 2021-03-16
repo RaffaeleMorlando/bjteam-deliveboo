@@ -813,7 +813,6 @@ a:hover i {
   display: inline-block;
   margin-left: 30px;
   padding: 0 10px;
-  border-left: 2px solid #FFC244;
   border-bottom: 2px solid #FFC244;
 }
 #product_create .form_box .btn-submit {
@@ -825,4 +824,24 @@ a:hover i {
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
   color: #ffffff;
   font-weight: 700;
+}
+
+@media all and (max-width: 992px) {
+  #product_create .form_box .create_product_input .check_option {
+    margin-bottom: 15px;
+  }
+}
+@media all and (max-width: 575px) {
+  #product_create .form_box .product_create_img {
+    position: absolute;
+    top: -40px;
+    left: -30px;
+    width: 150px;
+    height: 150px;
+  }
+  #product_create .form_box .create_add_image {
+    position: absolute;
+    top: -25px;
+    left: 100px;
+  }
 }
