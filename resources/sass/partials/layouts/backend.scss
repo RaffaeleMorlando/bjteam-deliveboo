@@ -10,7 +10,7 @@
   height: 100vh;
   padding: 50px;
   background-color: $greenPrimary;
-
+  //da modificare?
   .dashboard_edit_restaurant_form {
     display: none;
     position: absolute;
@@ -35,7 +35,7 @@
   }
 }
 
-#backend {
+#container_dashboard {
   height:100%;
   background-color: $white;
   border-radius: $borderRadCard;
@@ -45,7 +45,7 @@
   @include SetFlexContainer(row, flex-start, stretch, wrap);
 
 
-    #dashboard-main {
+    #dashboard_main {
       height: 100%;
       padding: $paddingMain;
       overflow-y: auto;
@@ -74,7 +74,7 @@
       }
 
 
-      header {
+      div#aside_top {
         @include SetFlexContainer(row, flex-start, center, nowrap);
         height: 80px;
         i {
@@ -87,11 +87,11 @@
         }
       }
 
-      main {
+      #aside_center {
         width: 80%;
 
         //Pages
-        .route_list {
+        #route_list {
           border-top: 2px solid $gray;
           border-bottom: 2px solid $gray;
 
@@ -125,11 +125,7 @@
         }
 
 
-        //Impostazioni
-        .settings{
-          text-align: center;
-
-        }
+       
       }
 
 
@@ -233,7 +229,7 @@
     padding: 50px;
   }
 
-  #backend{
+  #container_dashboard{
     aside {
 
       header {
@@ -303,7 +299,7 @@
   #background {
     padding: 0;
   }
-  #backend {
+  #container_dashboard {
     border-radius: 0;
   }
 }

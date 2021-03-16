@@ -317,7 +317,7 @@ a:hover i {
   box-shadow: 0 2px 20px 8px rgba(0, 0, 0, 0.2);
 }
 
-#backend {
+#container_dashboard {
   height: 100%;
   background-color: #ffffff;
   border-radius: 10px;
@@ -330,12 +330,12 @@ a:hover i {
   align-items: stretch;
   flex-wrap: wrap;
 }
-#backend #dashboard-main {
+#container_dashboard #dashboard_main {
   height: 100%;
   padding: 50px 80px;
   overflow-y: auto;
 }
-#backend aside {
+#container_dashboard aside {
   position: relative;
   width: 20%;
   height: 100%;
@@ -344,7 +344,7 @@ a:hover i {
   background-color: #FCFCFA;
   overflow-y: auto;
 }
-#backend aside .image_curve {
+#container_dashboard aside .image_curve {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -355,7 +355,7 @@ a:hover i {
   background-position: top;
   background-size: cover;
 }
-#backend aside header {
+#container_dashboard aside div#aside_top {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -363,63 +363,60 @@ a:hover i {
   flex-wrap: nowrap;
   height: 80px;
 }
-#backend aside header i {
+#container_dashboard aside div#aside_top i {
   margin-right: 10px;
   font-size: 25px;
 }
-#backend aside header span {
+#container_dashboard aside div#aside_top span {
   display: inline-block;
 }
-#backend aside main {
+#container_dashboard aside #aside_center {
   width: 80%;
 }
-#backend aside main .route_list {
+#container_dashboard aside #aside_center #route_list {
   border-top: 2px solid #9B9B9B;
   border-bottom: 2px solid #9B9B9B;
 }
-#backend aside main .route_list li {
+#container_dashboard aside #aside_center #route_list li {
   transition: transform 0.3s linear;
 }
-#backend aside main .route_list li .link-aside i {
+#container_dashboard aside #aside_center #route_list li .link-aside i {
   font-size: 25px;
   vertical-align: middle;
 }
-#backend aside main .route_list li .link-aside small {
+#container_dashboard aside #aside_center #route_list li .link-aside small {
   margin: 0 10px;
   font-size: 15px;
   font-weight: 600;
 }
-#backend aside main .route_list li:hover {
+#container_dashboard aside #aside_center #route_list li:hover {
   transform: scale(1.1);
 }
-#backend aside main .route_list li:hover .link-aside {
+#container_dashboard aside #aside_center #route_list li:hover .link-aside {
   color: #00A082;
 }
-#backend aside main .settings {
-  text-align: center;
-}
-#backend ::-webkit-scrollbar-track {
+#container_dashboard ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   background-color: #F5F5F5;
 }
-#backend ::-webkit-scrollbar {
+#container_dashboard ::-webkit-scrollbar {
   width: 10px;
   background-color: #F5F5F5;
 }
-#backend ::-webkit-scrollbar-thumb {
+#container_dashboard ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #9B9B9B;
 }
-#backend #burgerIcon {
+#container_dashboard #burgerIcon {
   display: inline-block;
   width: 18px;
   height: 18px;
   cursor: pointer;
   text-decoration: none;
 }
-#backend #burgerIcon i {
+#container_dashboard #burgerIcon i {
   position: relative;
   display: inline-block;
   width: 18px;
@@ -431,7 +428,7 @@ a:hover i {
   background: #252525;
   transition: all 0.2s ease-out;
 }
-#backend #burgerIcon i::before, #backend #burgerIcon i::after {
+#container_dashboard #burgerIcon i::before, #container_dashboard #burgerIcon i::after {
   content: "";
   width: 18px;
   height: 3px;
@@ -440,30 +437,30 @@ a:hover i {
   left: 0;
   transition: all 0.2s ease-out;
 }
-#backend #burgerIcon i::before {
+#container_dashboard #burgerIcon i::before {
   top: -7px;
 }
-#backend #burgerIcon i::after {
+#container_dashboard #burgerIcon i::after {
   bottom: -7px;
 }
-#backend #burgerIcon:hover i::before {
+#container_dashboard #burgerIcon:hover i::before {
   top: -10px;
 }
-#backend #burgerIcon:hover i::after {
+#container_dashboard #burgerIcon:hover i::after {
   bottom: -10px;
 }
-#backend #burgerIcon.active i {
+#container_dashboard #burgerIcon.active i {
   background: #fff;
 }
-#backend #burgerIcon.active i::before {
+#container_dashboard #burgerIcon.active i::before {
   top: 0;
   transform: rotateZ(45deg);
 }
-#backend #burgerIcon.active i::after {
+#container_dashboard #burgerIcon.active i::after {
   bottom: 0;
   transform: rotateZ(-45deg);
 }
-#backend #burgerIcon {
+#container_dashboard #burgerIcon {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -474,29 +471,29 @@ a:hover i {
     padding: 50px;
   }
 
-  #backend aside header {
+  #container_dashboard aside header {
     justify-content: center;
   }
-  #backend aside header i {
+  #container_dashboard aside header i {
     margin-right: 0;
     font-size: 30px;
   }
-  #backend aside header span {
+  #container_dashboard aside header span {
     display: none;
   }
-  #backend aside main {
+  #container_dashboard aside main {
     text-align: center;
   }
-  #backend aside main ul li a .dashboard-icon {
+  #container_dashboard aside main ul li a .dashboard-icon {
     font-size: 30px;
   }
-  #backend aside main h3 {
+  #container_dashboard aside main h3 {
     display: none;
   }
-  #backend aside small {
+  #container_dashboard aside small {
     display: none;
   }
-  #backend aside .settings span {
+  #container_dashboard aside .settings span {
     display: none;
   }
 }
@@ -510,7 +507,7 @@ a:hover i {
     padding: 0;
   }
 
-  #backend {
+  #container_dashboard {
     border-radius: 0;
   }
 }
