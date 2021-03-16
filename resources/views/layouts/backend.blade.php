@@ -21,10 +21,10 @@
       </div>
     </div>
 
-    <div id="backend" class="container-fluid p-0">
+    <div id="container_dashboard" class="container-fluid p-0">
 
         {{-- parte sinistra del layout --}}
-        <main :class="activeAside ? 'main_slide_right' : 'main_slide_left'" id="dashboard-main">
+        <main :class="activeAside ? 'main_slide_right' : 'main_slide_left'" id="dashboard_main">
           @yield('main')
         </main>
 
@@ -33,15 +33,15 @@
 
           <div class="content" :class="activeAside ? 'fade_in' : 'fade_out'">
 
-            <header>
+            <div id="aside_top">
               <i class="far fa-user-circle"></i>
-              <span>{{ Auth::user()->name }}</span>
-            </header>
+              <span id="name_admin">{{ Auth::user()->name }}</span>
+            </div>
 
-            <main>
+            <div id="aside_center">
               {{-- <h3>Pages</h3> --}}
 
-              <ul class="route_list list-unstyled">
+              <ul id="route_list" class="list-unstyled">
                   <li class="my-5">
                     <a class="link-aside" href="{{ route('admin.restaurants.dashboard') }}">
                       <i class="fas fa-home dashboard-icon"></i>
@@ -63,7 +63,7 @@
 
               </ul>
 
-              <div class="settings">
+              <div id="settings_dashboard" class="text-center">
                 <a href="#" @click="toggleSettings">
                   <span>SETTINGS</span>
                   <i class="fas fa-chevron-down"></i>
@@ -87,7 +87,7 @@
 
               </div>
 
-            </main>
+            </div>
           </div>
 
           <div class="image_curve"></div>

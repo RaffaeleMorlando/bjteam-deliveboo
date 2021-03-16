@@ -10,7 +10,7 @@
   height: 100vh;
   padding: 50px;
   background-color: $greenPrimary;
-
+  //da modificare?
   .dashboard_edit_restaurant_form {
     display: none;
     position: absolute;
@@ -35,7 +35,7 @@
   }
 }
 
-#backend {
+#container_dashboard {
   height:100%;
   background-color: $white;
   border-radius: $borderRadCard;
@@ -45,7 +45,7 @@
   @include SetFlexContainer(row, flex-start, stretch, wrap);
 
 
-    #dashboard-main {
+    #dashboard_main {
       height: 100%;
       padding: $paddingMain;
       overflow-y: auto;
@@ -74,7 +74,7 @@
       }
 
 
-      header {
+      div#aside_top {
         @include SetFlexContainer(row, flex-start, center, nowrap);
         height: 80px;
         i {
@@ -87,11 +87,11 @@
         }
       }
 
-      main {
+      #aside_center {
         width: 80%;
 
         //Pages
-        .route_list {
+        #route_list {
           border-top: 2px solid $gray;
           border-bottom: 2px solid $gray;
 
@@ -125,11 +125,7 @@
         }
 
 
-        //Impostazioni
-        .settings{
-          text-align: center;
-
-        }
+       
       }
 
 
@@ -171,11 +167,11 @@
       display: inline-block;
       width: 18px;
       height: 3px;
-      color:#252525;
+      color:$black;
       font:bold 14px/.4 Helvetica;
       text-transform: uppercase;
       text-indent:-55px;
-      background: #252525;
+      background: $black;
       transition:all .2s ease-out;
     }
   }
@@ -183,7 +179,7 @@
     content:'';
     width: 18px;
     height: 3px;
-    background: #252525;
+    background: $black;
     position: absolute;
     left:0;
     transition:all .2s ease-out;
@@ -201,7 +197,7 @@
     bottom: -10px;
   }
   #burgerIcon.active i {
-    background: #fff;
+    background: $white;
   }
   #burgerIcon.active i::before {
     top:0;
@@ -233,7 +229,7 @@
     padding: 50px;
   }
 
-  #backend{
+  #container_dashboard{
     aside {
 
       header {
@@ -277,7 +273,7 @@
         display: none;
       }
 
-      .settings{
+      #settings_dashboard {
 
         span{
           display: none;
@@ -293,6 +289,12 @@
   #background {
     padding: 20px;
   }
+    aside {
+      padding: 0!important;
+      /* .aside_slide_left {
+        padding: 0!important;
+      } */
+    }
 
 }
 
@@ -301,7 +303,8 @@
   #background {
     padding: 0;
   }
-  #backend {
+  #container_dashboard {
     border-radius: 0;
+  
   }
 }
