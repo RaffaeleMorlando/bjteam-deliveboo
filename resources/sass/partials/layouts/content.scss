@@ -2,6 +2,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  z-index:100;
   width: 100%;
   height: $headerHeight;
   background-color: $yellowPrimary;
@@ -44,27 +45,15 @@ header {
   }
 }
 
+
+
+
 // FOOTER farà parte del layout
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  height: $footerHeight;
-  background-color: $black;
-  transition: width 1s linear;
-
-  .show_footer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: $footerHeight;
-    height: $footerHeight;
-    line-height: $footerHeight;
-    text-align: center;
-    cursor: pointer;
-
-    i {
-      color: $yellowPrimary;
-    }
+  
+  #footer-bottom {
+    background-color: #1d1d1d;
+    min-height: 100px;
   }
+  
 }
