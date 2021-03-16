@@ -18,20 +18,43 @@
   <body>
     <div id="guest_layout">
 
-      <header></header>
+      <header>
+        <div class="container">
+          <div class="row">
 
-      {{-- MAIN, qui dentro ci andra a finire il segnaposto per le varie viste pubbliche --}}
-      <main></main>
+            <div class="left col-lg-2">
+              <img class="logo" src="{{ asset("img/logo_glovo-prova.svg") }}" alt="">
+            </div>
+
+            <div class="center col-lg-8">
+              <input type="text" name="" value="" placeholder="Cerca">
+            </div>
+
+            <div class="right col-lg-2"></div>
+          </div>
+        </div>
+      </header>
+
+
+      <main>
+        {{-- MAIN, qui dentro ci andra a finire il segnaposto per le varie viste pubbliche --}}
+        <div id="main_homepage_guest">
+          <div id="searchBy">
+
+          </div>
+        </div>
+      </main>
 
       <footer :style="!activeFooter ? 'width: 50px' : 'width: 100%'">
         {{-- icona che mostra/nasconde footer --}}
         <div class="show_footer" @click="footerToggleShow">
-          <i :class="!activeFooter ? 'fas fa-arrow-right' : 'fas fa-arrow-left'"></i>
+          <i class="fas fa-dot-circle"></i>
         </div>
       </footer>
 
     </div>
 
     <script src="{{ asset("js/partials/layouts/guest.js") }}" charset="utf-8"></script>
+    <script src="{{ asset("js/partials/guest/homepage.js") }}" charset="utf-8"></script>
   </body>
 </html>
