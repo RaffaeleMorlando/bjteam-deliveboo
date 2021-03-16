@@ -1,7 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/partials/layouts/backend.js": "/js/partials/layouts/backend.js",
+    "/js/partials/layouts/guest.js": "/js/partials/layouts/guest.js",
     "/js/partials/restaurants/create.js": "/js/partials/restaurants/create.js",
     "/css/app.css": "/css/app.css",
-    "/css/style.css": "/css/style.css"
+    "/css/style.css": "/css/style.css",
+    "/css/style-guest.css": "/css/style-guest.css"
 }

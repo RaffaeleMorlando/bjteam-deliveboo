@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  color: #303030;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  color: #00A082;
+}
+a:hover i {
+  color: #00A082;
+}
+
+header {
+  height: 80px;
+  background-color: #FFC244;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  background-color: #1E1E1E;
+  transition: width 0.5s linear;
+}
+footer .show_footer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+footer .show_footer i {
+  color: #FFC244;
+}

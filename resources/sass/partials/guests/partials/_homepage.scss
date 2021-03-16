@@ -1,0 +1,28 @@
+header {
+  height: $headerHeight;
+  background-color: $yellowPrimary;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: $footerHeight;
+  background-color: $black;
+  transition: width 0.5s linear;
+
+  .show_footer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $footerHeight;
+    height: $footerHeight;
+    line-height: $footerHeight;
+    text-align: center;
+    cursor: pointer;
+
+    i {
+      color: $yellowPrimary;
+    }
+  }
+}
