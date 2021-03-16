@@ -1,35 +1,66 @@
 @extends('layouts.backend')
 
 @section("main")
-  <div id="dashboard_index">
-    <div class="top">
-      <h1>{{ $restaurant->name }}</h1>
-      <img style="width: 100%" src="https://www.b-eat.it/sites/default/files/styles/slider/public/home/logo-ristorante.jpg?itok=N11NFXSR" class="img-fluid" alt="Responsive image">
+  <div id="dashboard_index" class="container">
+ 
+    <div class="dashboard_top_section">
+
+      <ul class="dashboard_top_container_cards">
+
+        <li class="dashboard_top_card">
+          <div class="dashboard_top_card_icon">
+            <i class="fas fa-store"></i>
+          </div>
+          <p>{{$restaurant->name}}</p>
+        </li>
+        <li class="dashboard_top_card" id="first-child">
+          <div class="dashboard_top_card_icon">
+            <i class="fas fa-wallet"></i>
+          </div>
+        </li>
+        <li class="dashboard_top_card">
+          <div class="dashboard_top_card_icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <p>{{$restaurant->address}}</p>
+        </li>
+
+      </ul>
+
     </div>
 
-    <div class="bottom">
-      {{-- DA CANCELLARE --}}
-      <div class="card mt-4" style="width: 18rem;">
-        <img class="card-img-top" src="https://www.tavolartegusto.it/wp/wp-content/uploads/2019/12/Spaghetti-vongole-e-bottarga-Ricetta-Spaghetti-vongole-e-bottarga-1280x720.jpg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      {{-- DA CANCELLARE --}}
-      <div class="card mt-4" style="width: 18rem;">
-        <img class="card-img-top" src="https://www.tavolartegusto.it/wp/wp-content/uploads/2019/12/Spaghetti-vongole-e-bottarga-Ricetta-Spaghetti-vongole-e-bottarga-1280x720.jpg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      {{-- DA CANCELLARE --}}
-      <div class="card mt-4" style="width: 18rem;">
-        <img class="card-img-top" src="https://www.tavolartegusto.it/wp/wp-content/uploads/2019/12/Spaghetti-vongole-e-bottarga-Ricetta-Spaghetti-vongole-e-bottarga-1280x720.jpg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
+    <div class="dashboard_middle_section">
+      <ul class="dashboard_middle_container_cards">
+
+        <li class="dashboard_middle_card" id="first-child">
+          <div class="dashboard_middle_card_icon">
+            <p>Ultimi Ordini</p>
+          </div>
+          <div class="dashboard_container_orders">
+            <div class="dashboard_item dashbord_order"><span class="badge badge-success">14:15</span> - Order n° #00001</div>
+            <div class="dashboard_item dashbord_order"><span class="badge badge-success">20:00</span> - Order n° #00002</div>
+            <div class="dashboard_item dashbord_order"><span class="badge badge-success">16:15</span> - Order n° #00003</div>
+            <div class="dashboard_item dashbord_order"><span class="badge badge-success">23:20</span> - Order n° #00004</div>
+            <div class="dashboard_item dashbord_order"><span class="badge badge-success">17:10</span> - Order n° #00005</div>
+          </div>
+        </li>
+        <li class="dashboard_middle_card">
+          <div class="dashboard_middle_card_icon">
+            <p>Ultimi aggiornamenti menù</p>
+          </div>
+          <div class="dashboard_container_plates">
+            @foreach ($restaurant->products as $key => $product)
+            @if($key == 0) 
+            <p class="dashboard_item">{{$product->name}} <span class="badge badge-danger">new</span></p>
+            @endif
+            <p class="dashboard_item">{{$product->name}}</p>
+            @endforeach
+          </div>
+        </li>
+
+      </ul>
     </div>
+
   </div>
 
 @endsection
