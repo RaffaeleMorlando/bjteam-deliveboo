@@ -18,7 +18,7 @@
   <body>
     <div id="guest_layout">
 
-      <header>
+      <header id="header" :class="headerStatus ? 'active' : ''">
         <div class="container">
           <div class="row">
 
@@ -34,17 +34,18 @@
           </div>
         </div>
       </header>
-   
+
 
 
       <main>
         {{-- MAIN, qui dentro ci andra a finire il segnaposto per le varie viste pubbliche --}}
-    
+
         @yield("guest-main")
       </main>
       @include('/layouts/footer')
     </div>
-    
+
+    <script src="{{ asset("js/partials/layouts/frontend.js") }}" charset="utf-8"></script>
     @yield("page-guest-script")
   </body>
 </html>

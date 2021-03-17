@@ -13,6 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js').vue({ version: 2 })
   .js('resources/js/partials/layouts/backend.js', 'public/js/partials/layouts').vue({ version: 2 })
+  .js('resources/js/partials/layouts/frontend.js', 'public/js/partials/layouts').vue({ version: 2 })
   .js('resources/js/partials/guest/homepage.js', 'public/js/partials/guest').vue({ version: 2 })
   .js('resources/js/partials/restaurants/create.js', 'public/js/partials/restaurants').vue({ version: 2 })
   .sass('resources/sass/style.scss', 'public/css')
