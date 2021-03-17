@@ -18,6 +18,12 @@ a:hover i {
   color: #00A082;
 }
 
+.icon_category {
+  height: 30px;
+  width: 30px;
+  display: block;
+}
+
 .aside_slide_right {
   -webkit-animation-name: aside_slide_right;
           animation-name: aside_slide_right;

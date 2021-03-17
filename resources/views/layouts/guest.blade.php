@@ -34,19 +34,14 @@
           </div>
         </div>
       </header>
+   
 
 
       <main>
         {{-- MAIN, qui dentro ci andra a finire il segnaposto per le varie viste pubbliche --}}
         @yield("guest-main")
       </main>
-
-      <footer :style="!activeFooter ? 'width: 50px' : 'width: 100%'">
-        {{-- icona che mostra/nasconde footer --}}
-        <div class="show_footer" @click="footerToggleShow">
-          <i class="fas fa-dot-circle"></i>
-        </div>
-      </footer>
+      @include('/layouts/footer')
 
     </div>
 
