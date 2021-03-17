@@ -49272,6 +49272,18 @@ Vue.compile = compileToFunctions;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -49330,25 +49342,47 @@ var __webpack_exports__ = {};
   !*** ./resources/js/partials/guest/homepage.js ***!
   \*************************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-__webpack_require__(/*! ../../bootstrap */ "./resources/js/bootstrap.js"); // import axios from 'axios';
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+__webpack_require__(/*! ../../bootstrap */ "./resources/js/bootstrap.js");
+
+ // import axios from 'axios';
 
 
-
-var prova = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
+var prova = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: '#main_home_page_guest',
   data: {
-    categories: []
+    categories: [],
+    searchedRestaurants: []
   },
   created: function created() {
     var _this = this;
 
-    axios.get('api/categories').then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/categories').then(function (response) {
       _this.categories = response.data;
       console.log(_this.categories);
     });
   },
-  methods: {}
+  methods: {
+    getRestaurantsByCategory: function getRestaurantsByCategory(index) {
+      var self = this;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
+        var restaurants = response.data;
+        var clickedCategory = self.categories[index].name;
+        console.log(clickedCategory);
+        restaurants.forEach(function (restaurant) {
+          restaurant.categories.forEach(function (category) {
+            if (category.name == clickedCategory) {
+              self.searchedRestaurants.push(restaurant);
+            }
+          });
+        }); // console.log(response.data);
+
+        console.log(self.searchedRestaurants);
+      });
+    }
+  }
 });
 })();
 

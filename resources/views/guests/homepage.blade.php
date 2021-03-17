@@ -18,7 +18,7 @@
   </div>
 
   <ul>
-    <li v-for="category in categories">
+    <li v-for="(category, index) in categories" @click="getRestaurantsByCategory(index)">
       @{{ category.name }}
     </li>
   </ul>
