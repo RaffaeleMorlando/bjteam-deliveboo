@@ -49338,21 +49338,17 @@ __webpack_require__(/*! ../../bootstrap */ "./resources/js/bootstrap.js"); // im
 var prova = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: '#main_home_page_guest',
   data: {
-    categories: [],
-    prova: 'dioporco'
+    categories: []
   },
-  // created() {
-  //   axios.get('api/categories')
-  //     .then(response => {
-  //       this.categories = response.data;
-  //       console.log(this.categories);
-  //     });
-  // },
-  methods: {
-    funzione: function() {
-      console.log(this.prova);
-    }
-  }
+  created: function created() {
+    var _this = this;
+
+    axios.get('api/categories').then(function (response) {
+      _this.categories = response.data;
+      console.log(_this.categories);
+    });
+  },
+  methods: {}
 });
 })();
 

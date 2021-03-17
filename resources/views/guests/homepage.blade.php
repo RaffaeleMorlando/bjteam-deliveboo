@@ -4,7 +4,6 @@
 <div id="main_home_page_guest">
   <div id="jumbotron">
     {{-- sarà un bottone --}}
-    <button @click="funzione">PROVA</button>
     <p>Consegne in
     <strong>Giovanni Battista Sammartini, 9</strong></p>
     <div id="container_categories">
@@ -17,6 +16,12 @@
     </div>
     <img id="jumbotron_circle" src="{{asset('img/jumbotron_semicircle.svg')}}">
   </div>
+
+  <ul>
+    <li v-for="category in categories">
+      @{{ category.name }}
+    </li>
+  </ul>
 
  </div> 
  

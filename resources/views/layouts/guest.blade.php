@@ -39,14 +39,12 @@
 
       <main>
         {{-- MAIN, qui dentro ci andra a finire il segnaposto per le varie viste pubbliche --}}
-    </div>
+    
         @yield("guest-main")
       </main>
       @include('/layouts/footer')
-
+    </div>
     
-
-    <script src="{{ asset("js/partials/layouts/guest.js") }}" charset="utf-8"></script>
     @yield("page-guest-script")
   </body>
 </html>
