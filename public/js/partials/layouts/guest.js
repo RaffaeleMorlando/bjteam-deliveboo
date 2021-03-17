@@ -49337,12 +49337,16 @@ __webpack_require__(/*! ../../bootstrap */ "./resources/js/bootstrap.js");
 var guest = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: '#guest_layout',
   data: {
-    activeFooter: false
+    activeFooter: false // prova: 'dioporco'
+
   },
   methods: {
     footerToggleShow: function footerToggleShow() {
       this.activeFooter = !this.activeFooter;
-    }
+    } // funzione: function() {
+    //   console.log(this.prova);
+    // }
+
   },
   mounted: function mounted() {}
 });

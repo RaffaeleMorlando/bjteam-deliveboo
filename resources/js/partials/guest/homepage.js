@@ -1,31 +1,28 @@
 require('../../bootstrap');
 
-import axios from 'axios';
+// import axios from 'axios';
 import Vue from 'vue';
 
-const guest = new Vue({
+const prova = new Vue({
   el: '#main_home_page_guest',
   data: {
-    categories:[],
+    categories : [],
+    prova: 'dioporco'
   },
   
-  created() {
-    var self= this;
-    axios.get('api/categories')
-      .then(response => {
-        self.categories = response.data;
-        console.log(self.categories);
-      });
-  },
+  // created() {
+  //   axios.get('api/categories')
+  //     .then(response => {
+  //       this.categories = response.data;
+  //       console.log(this.categories);
+  //     });
+  // },
   
   methods: {
-    getRestaurantsByCategory: function (index) {
-      axios.get('api/categories')
-            .then(response => {
-              console.log(response);
-            });
-    } 
+    funzione: function(){
+      console.log(this.prova);
+    }
 
-  },
+  }
 
 });
