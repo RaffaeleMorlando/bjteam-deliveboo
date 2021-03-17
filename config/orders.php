@@ -91,5 +91,14 @@ return $orders = [
     "created_at" => "2019-06-03 19:47:42",
     "updated_at" => "2019-06-03 19:47:42",
   ],
+  [
+    "guest_name" => "Felice Ma Stronzo",
+    "guest_address" => "Via Bella, 42, Milano 20131",
+    "order_number" => "#00011",
+    "total_price" => 25.00,
+    "status" => "Pagato",
+    "created_at" => "2019-06-03 19:47:42",
+    "updated_at" => "2019-06-03 19:47:42",
+  ],
 
 ];

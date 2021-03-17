@@ -15,4 +15,9 @@ return $users = [
     "password" => "password",
     "email" => "mario.rossi@mail.com"
   ],
+  [
+    "name" => "Pino Bello",
+    "password" => "password",
+    "email" => "pino.bello@mail.com"
+  ],
 ];
