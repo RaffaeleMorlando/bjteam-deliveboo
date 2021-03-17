@@ -66,21 +66,27 @@
               <div id="settings_dashboard_container" class="text-center">
                 <a href="#" @click="toggleSettings">
                   <span id="settings_dashboard">SETTINGS</span>
-                  <i class="fas fa-chevron-down"></i>
+                  <i class="fas fa-chevron-down" :class="activeSettings ? 'counterclockwise_180' : 'clockwise_180'"></i>
                 </a>
 
                 {{-- mostra/nascondi li dei settings --}}
                 <transition name="slide">
                   <ul class="setting_list list-unstyled" v-if="activeSettings">
                     <li class="my-3">
-                      <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
+                      <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <span>Log Out</span>
+                        <i class="fas fa-sign-out-alt settings-icon mb-3"></i>
+                      </a>
 
                       <form id="logout-form" action="{{ route('logout') }}" method="POST">
                           @csrf
                       </form>
                     </li>
                     <li class="my-3">
-                      <a href="#" @click="activeEditForm">Modifca profilo</a>
+                      <a href="#" @click="activeEditForm">
+                        <span>Modifca profilo</span>
+                        <i class="fas fa-edit settings-icon mb-3"></i>
+                      </a>
                     </li>
                   </ul>
                 </transition>

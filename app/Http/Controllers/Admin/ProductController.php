@@ -56,7 +56,6 @@ class ProductController extends Controller
     {
         // dd($request->all());
         $data = $request->all();
-
         $request->validate($this->productValidation);
 
         $data['restaurant_id'] = Auth::user()->restaurant->id;

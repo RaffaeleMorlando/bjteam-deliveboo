@@ -104,6 +104,28 @@ a:hover i {
   max-height: 0;
 }
 
+.counterclockwise_180 {
+  -webkit-animation-name: counterclockwise180;
+          animation-name: counterclockwise180;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.clockwise_180 {
+  -webkit-animation-name: clockwise180;
+          animation-name: clockwise180;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
 @-webkit-keyframes aside_slide_right {
   0% {
     width: 20%;
@@ -223,6 +245,38 @@ a:hover i {
   }
   100% {
     opacity: 0;
+  }
+}
+@-webkit-keyframes counterclockwise180 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+@keyframes counterclockwise180 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+@-webkit-keyframes clockwise180 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes clockwise180 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 #restaurant_form {
@@ -351,7 +405,7 @@ a:hover i {
   background-position: top;
   background-size: cover;
 }
-#container_dashboard aside div#aside_top {
+#container_dashboard aside #aside_top {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -359,15 +413,15 @@ a:hover i {
   flex-wrap: nowrap;
   height: 80px;
 }
-#container_dashboard aside div#aside_top i {
+#container_dashboard aside #aside_top i {
   margin-right: 10px;
   font-size: 25px;
 }
-#container_dashboard aside div#aside_top span {
+#container_dashboard aside #aside_top span {
   display: inline-block;
 }
 #container_dashboard aside #aside_center {
-  width: 80%;
+  width: 100%;
 }
 #container_dashboard aside #aside_center #route_list {
   border-top: 2px solid #9B9B9B;
@@ -390,6 +444,9 @@ a:hover i {
 }
 #container_dashboard aside #aside_center #route_list li:hover .link-aside {
   color: #00A082;
+}
+#container_dashboard aside #aside_center i.settings-icon {
+  display: none;
 }
 #container_dashboard ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -467,6 +524,19 @@ a:hover i {
     padding: 50px;
   }
 
+  #container_dashboard aside .content #aside_top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  #container_dashboard aside .content #aside_top i {
+    margin-right: 0;
+  }
+  #container_dashboard aside .content #aside_top #name_admin {
+    display: none;
+  }
   #container_dashboard aside .content #aside_center #route_list li {
     text-align: center;
   }
@@ -489,6 +559,13 @@ a:hover i {
   }
   #container_dashboard aside {
     padding: 50px 0;
+  }
+  #container_dashboard #settings_dashboard_container .setting_list span {
+    display: none;
+  }
+  #container_dashboard #settings_dashboard_container .setting_list i.settings-icon {
+    display: block;
+    font-size: 25px;
   }
 }
 * {
@@ -653,5 +730,118 @@ a:hover i {
 @media all and (max-width: 576px) {
   #container_dashboard #dashboard_main {
     padding: 30px 15px;
+  }
+}
+#product_create {
+  width: 100%;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+#product_create .form_box {
+  position: relative;
+  padding: 200px 0 30px;
+}
+#product_create .form_box .product_create_img {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  padding: 15px;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+#product_create .form_box .product_create_img img {
+  width: 100%;
+}
+#product_create .form_box .create_add_image {
+  position: absolute;
+  top: -25px;
+  left: 120px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #FFC244;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+#product_create .form_box .create_add_image input[type=file] {
+  display: none;
+}
+#product_create .form_box .create_product_input {
+  margin: 20px 0;
+  padding: 10px;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
+  border-radius: 5px;
+}
+#product_create .form_box .create_product_input i {
+  font-size: 25px;
+  color: #9B9B9B;
+}
+#product_create .form_box .create_product_input label {
+  font-weight: 600;
+  font-style: italic;
+}
+#product_create .form_box .create_product_input input[type=text] {
+  width: 80%;
+  padding: 0 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #FFC244;
+  vertical-align: text-bottom;
+}
+#product_create .form_box .create_product_input input[type=text]:focus {
+  outline: none;
+}
+#product_create .form_box .create_product_input textarea {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  resize: none;
+  border: none;
+  border-right: 2px solid #FFC244;
+  border-bottom: 2px solid #FFC244;
+  border-radius: 0 0 5px 0;
+}
+#product_create .form_box .create_product_input textarea:focus {
+  outline: none;
+}
+#product_create .form_box .create_product_input .check_option {
+  display: inline-block;
+  margin-left: 30px;
+  padding: 0 10px;
+  border-bottom: 2px solid #FFC244;
+}
+#product_create .form_box .btn-submit {
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00A082;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+@media all and (max-width: 992px) {
+  #product_create .form_box .create_product_input .check_option {
+    margin-bottom: 15px;
+  }
+}
+@media all and (max-width: 575px) {
+  #product_create .form_box .product_create_img {
+    position: absolute;
+    top: -40px;
+    left: -30px;
+    width: 150px;
+    height: 150px;
+  }
+  #product_create .form_box .create_add_image {
+    position: absolute;
+    top: -25px;
+    left: 100px;
   }
 }
