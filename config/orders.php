@@ -100,5 +100,25 @@ return $orders = [
     "created_at" => "2019-06-03 19:47:42",
     "updated_at" => "2019-06-03 19:47:42",
   ],
+  [
+    "guest_name" => "Pippo bene",
+    "guest_address" => "Via ragna, 2, Milano 20135",
+    "order_number" => "#00012",
+    "total_price" => 25.00,
+    "status" => "Pagato",
+    "created_at" => "2019-06-03 19:47:42",
+    "updated_at" => "2019-06-03 19:47:42",
+  ],
+  [
+    "guest_name" => "nino casagrande",
+    "guest_address" => "Via sesso, 69, Milano 20138",
+    "order_number" => "#00013",
+    "total_price" => 19.00,
+    "status" => "Pagato",
+    "created_at" => "2019-06-03 18:47:42",
+    "updated_at" => "2019-06-03 18:47:42",
+  ],
+ 
+ 
 
 ];

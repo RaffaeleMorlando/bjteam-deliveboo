@@ -159,4 +159,13 @@ return $product_order_array = [
       "product_id" => 41,
       "order_id" => 11
     ],
+
+  [
+    "product_id" => 43,
+    "order_id" => 12
+  ],
+  [
+    "product_id" => 43,
+    "order_id" => 13
+  ],
 ];
