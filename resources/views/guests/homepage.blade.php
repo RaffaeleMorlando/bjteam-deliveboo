@@ -2,29 +2,58 @@
 
 @section("guest-main")
 <div id="main_home_page_guest">
-  <div id="jumbotron">
-    {{-- sarà un bottone --}}
-    <p>Consegne in
-    <strong>Giovanni Battista Sammartini, 9</strong></p>
-    <div id="container_categories">
-      <div id="main_homepage_guest">
-        <div id="search_by_categories" class="round_box">
-          <img class="icon_category" src="{{asset('img\categories\search-flat.png')}}" alt="">
-          <small>Search</small>
-        </div>
-      </div>
-    </div>
-    <img id="jumbotron_circle" src="{{asset('img/jumbotron_semicircle.svg')}}">
+  <div class="contenitore_di_tutto_il_casino">
+    <nav class="menu">
+      <input checked="checked" class="menu-toggler" type="checkbox">
+      {{-- <label for="menu-toggler"></label> --}}
+      <ul>
+        <li class="menu-item">
+          <a class="fas fa-cat" href=""></a>
+        </li>
+        <li class="menu-item">
+          <a class="fas fa-cookie-bite" href="#"></a>
+        </li>
+        <li class="menu-item">
+          <a class="fab fa-earlybirds" href="#"></a>
+        </li>
+        <li class="menu-item">
+          <a class="fab fa-fly"href="#"></a>
+        </li>
+        <li class="menu-item">
+          <a class ="far fa-gem" href="#"></a>
+        </li>
+        <li class="menu-item">
+          <a class="fas fa-glass-cheers" href="#"></a>
+        </li>
+            <li class="menu-item">
+          <a class="fas fa-glass-cheers" href="#"></a>
+        </li>
+            </li>
+            <li class="menu-item">
+          <a class="fas fa-glass-cheers" href="#"></a>
+        </li>
+          </li>
+            <li class="menu-item">
+          <a class="fas fa-glass-cheers" href="#"></a>
+        </li>
+        </li>
+            <li class="menu-item">
+          <a class="fas fa-glass-cheers" href="#"></a>
+        </li>
+        </li>
+            <li class="menu-item">
+          <a class="fas fa-glass-cheers" href="#"></a>
+        </li>
+      </li>
+      <li class="menu-item gadget_button_category">
+        <a class="fas fa-glass-cheers" href="#"></a>
+      </li>
+
+      </ul>
+    </nav>
   </div>
+</div>
 
-  <ul>
-    <li v-for="(category, index) in categories" @click="getRestaurantsByCategory(index)">
-      @{{ category.name }}
-    </li>
-  </ul>
-
- </div> 
- 
 @endsection
 
 @section("page-guest-script")

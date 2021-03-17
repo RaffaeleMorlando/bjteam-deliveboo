@@ -1,40 +1,171 @@
  main {
    min-height:calc(100vh - 80px)
  }
- 
- #jumbotron {
-    margin-top: 80px;
-    position: relative;
-    p {
-      background-color: $yellowPrimary;
-      margin: 0;
-      text-align: center;
-    }  
-    #container_categories {
-      background-color: $yellowPrimary;
-      height: 320px;
-      display: flex;
-      justify-content: center;
+
+#main_home_page_guest {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
+  //background-color: red;
+  background-image: url("https://images.creativemarket.com/0.1.0/ps/7583374/1820/893/m1/fpnw/wm1/copl0pcbgxikqywwqiloq9zlalzbscrfhse997942gpslz6vvagc38kjwt0bspbr-.jpg?1578938585&s=cf8e38a875f5639a8d16789c774bff03");
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .contenitore_di_tutto_il_casino {
+    position: absolute;
+    top: 50%;
+    right: 80px;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
   }
 }
 
-#main_homepage_guest {
-  margin-top: $headerHeight;
-  position: relative;
+// TUTTO IL CSS DEL NOSTRO CASINO CHE DEVE FUNZIOANRE, E FUNZIONERà
+.menu-toggler {
+  position: absolute;
+  display: block;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+  margin:auto;
+  width:40px;
+  height:40px;
+  z-index:2;
+  opacity:0;
+  cursor:pointer;
+}
+.menu-toggler:checked ~ ul .menu-item {
+  opacity: 1;
+}
+.menu-toggler:checked ~ ul .menu-item:nth-child(1) {
+  transform: rotate(0deg) translate(-150px);
+}
+.menu-toggler:checked ~ ul .menu-item:nth-child(2) {
+  transform: rotate(32.7deg) translateX(-150px);
+}
+.menu-toggler:checked ~ ul .menu-item:nth-child(3) {
+  transform: rotate(65.4deg) translateX(-150px);
+}
+.menu-toggler:checked ~ ul .menu-item:nth-child(4) {
+  transform: rotate(98.1deg) translateX(-150px);
+}
+.menu-toggler:checked ~ ul .menu-item:nth-child(5) {
+  transform: rotate(130.8deg) translateX(-150px);
+}
+.menu-toggler:checked ~ ul .menu-item:nth-child(6) {
+  transform: rotate(163.5deg) translateX(-150px);
+}
+.menu-toggler:checked ~ ul .menu-item:nth-child(7) {
+  transform: rotate(196.2deg) translateX(-150px);
+}
+.menu-toggler:checked ~ ul .menu-item:nth-child(8) {
+  transform: rotate(228.9deg) translateX(-150px);
+}
+.menu-toggler:checked ~ ul .menu-item:nth-child(9) {
+  transform: rotate(261.6deg) translateX(-150px);
+}
+.menu-toggler:checked ~ ul .menu-item:nth-child(10) {
+  transform: rotate(294.3deg) translateX(-150px);
+}
+.menu-toggler:checked ~ ul .menu-item:nth-child(11) {
+  transform: rotate(327deg) translateX(-150px);
+}
 
-  height: calc(100vh - #{$headerHeight});
-  .round_box {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    background-color: $white;
-    box-shadow: $shadowCard;
-  }
- 
-  #search_by_categories {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;   
-  }
+.menu-toggler:checked ~ ul .menu-item a {
+  pointer-events:auto;
+}
+.menu-toggler + label {
+  width: 40px;
+  height: 5px;
+  display: block;
+  z-index: 1;
+  border-radius: 2.5px;
+  background: rgba(230, 239, 250, 0.9);
+  transition: transform 0.5s top 0.5s;
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.menu-toggler + label:before,
+.menu-toggler + label:after {
+  width: 40px;
+  height: 5px;
+  display: block;
+  z-index: 1;
+  border-radius: 2.5px;
+  background: rgba(255, 255, 255, 0.7);
+  transition: transform 0.5s top 0.5s;
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+}
+.menu-toggler + label:before {
+  top: 10px;
+}
+.menu-toggler + label:after {
+  top: -10px;
+}
+.menu-item:nth-child(1) a {
+  transform: rotate(0deg);
+}
+.menu-item:nth-child(2) a {
+  transform: rotate(-60deg);
+}
+.menu-item:nth-child(3) a {
+  transform: rotate(-120deg);
+}
+.menu-item:nth-child(4) a {
+  transform: rotate(-180deg);
+}
+.menu-item:nth-child(5) a {
+  transform: rotate(-240deg);
+}
+.menu-item:nth-child(6) a {
+  transform: rotate(-300deg);
+}
+.menu-item {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 80px;
+  height: 80px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.menu-item a {
+  display: block;
+  width: inherit;
+  height: inherit;
+  line-height: 80px;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(230, 230, 250, 0.7);
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 40px;
+  pointer-events: none;
+  transition: 0.2s;
+}
+.menu-item a:hover {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+  color: white;
+  background: rgba(255, 255, 255, 0.3);
+  font-size: 44.44px
+}
+.gadget_button_category {
+  opacity: 1;
 }
