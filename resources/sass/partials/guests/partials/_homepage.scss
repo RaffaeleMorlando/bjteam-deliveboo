@@ -2,15 +2,16 @@
    min-height:calc(100vh - 80px)
  }
 
-#main_home_page_guest {
+#main_home_page_top {
   position: relative;
   width: 100%;
   height: calc(100vh - 80px);
-  //background-color: red;
-  background-image: url("https://images.creativemarket.com/0.1.0/ps/7583374/1820/893/m1/fpnw/wm1/copl0pcbgxikqywwqiloq9zlalzbscrfhse997942gpslz6vvagc38kjwt0bspbr-.jpg?1578938585&s=cf8e38a875f5639a8d16789c774bff03");
+  background-color: $yellowPrimary;
+  // background-image: url("https://images.creativemarket.com/0.1.0/ps/7583374/1820/893/m1/fpnw/wm1/copl0pcbgxikqywwqiloq9zlalzbscrfhse997942gpslz6vvagc38kjwt0bspbr-.jpg?1578938585&s=cf8e38a875f5639a8d16789c774bff03");
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: 2;
 
   .contenitore_di_tutto_il_casino {
     position: absolute;
@@ -23,6 +24,21 @@
     border-radius: 50%;
   }
 }
+
+.searched_restaurants_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .card{
+    margin: 40px 20px;
+  }
+}
+
+
+
+
+
+
 
 // TUTTO IL CSS DEL NOSTRO CASINO CHE DEVE FUNZIOANRE, E FUNZIONERà
 .menu-toggler {
@@ -38,6 +54,9 @@
   z-index:2;
   opacity:0;
   cursor:pointer;
+  &:hover .gadget_button_category{
+    background: white;
+  }
 }
 .menu-toggler:checked ~ ul .menu-item {
   opacity: 1;
@@ -119,19 +138,34 @@
   transform: rotate(0deg);
 }
 .menu-item:nth-child(2) a {
-  transform: rotate(-60deg);
+  transform: rotate(0deg);
 }
 .menu-item:nth-child(3) a {
-  transform: rotate(-120deg);
+  transform: rotate(-65deg);
 }
 .menu-item:nth-child(4) a {
-  transform: rotate(-180deg);
+  transform: rotate(-99deg);
 }
 .menu-item:nth-child(5) a {
-  transform: rotate(-240deg);
+  transform: rotate(-130deg);
 }
 .menu-item:nth-child(6) a {
-  transform: rotate(-300deg);
+  transform: rotate(196deg);
+}
+.menu-item:nth-child(7) a {
+  transform: rotate(198deg);
+}
+.menu-item:nth-child(8) a {
+  transform: rotate(127deg);
+}
+.menu-item:nth-child(9) a {
+  transform: rotate(7deg);
+}
+.menu-item:nth-child(10) a {
+  transform: rotate(68deg);
+}
+.menu-item:nth-child(11) a {
+  transform: rotate(30deg);
 }
 .menu-item {
   position: absolute;
@@ -159,12 +193,23 @@
   font-size: 40px;
   pointer-events: none;
   transition: 0.2s;
+  span{
+    display: none;
+  }
 }
 .menu-item a:hover {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
   color: white;
-  background: rgba(255, 255, 255, 0.3);
-  font-size: 44.44px
+  background: rgba(255, 255, 255, 1);
+  font-size: 44.44px;
+  img{
+    display: none;
+  }
+  span{
+    display: block;
+    font-size: 12px;
+    color: black;
+  }
 }
 .gadget_button_category {
   opacity: 1;

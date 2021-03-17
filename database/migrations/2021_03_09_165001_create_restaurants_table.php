@@ -23,7 +23,7 @@ class CreateRestaurantsTable extends Migration
             $table->string("lat", 20)->nullable();
             $table->string("lon", 20)->nullable();
             $table->char("p_iva", 11)->required();
-            $table->string("logo", 80)->nullable();
+            $table->string("logo")->nullable(); //da rimettere 80
             $table->timestamps();
 
             $table->foreign("user_id")

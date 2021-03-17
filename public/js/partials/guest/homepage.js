@@ -49354,7 +49354,8 @@ var prova = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: '#main_home_page_guest',
   data: {
     categories: [],
-    searchedRestaurants: []
+    searchedRestaurants: [],
+    isChecked: false
   },
   created: function created() {
     var _this = this;
@@ -49367,6 +49368,7 @@ var prova = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   methods: {
     getRestaurantsByCategory: function getRestaurantsByCategory(index) {
       var self = this;
+      self.searchedRestaurants = [];
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
         var restaurants = response.data;
         var clickedCategory = self.categories[index].name;
@@ -49380,7 +49382,23 @@ var prova = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         }); // console.log(response.data);
 
         console.log(self.searchedRestaurants);
+        setTimeout(function () {
+          self.scrollToElement({
+            behavior: 'smooth'
+          });
+        }, 300);
       });
+    },
+    scrollToElement: function scrollToElement(options) {
+      var el = this.$el.getElementsByClassName('searched_restaurants_container')[0];
+
+      if (el) {
+        el.scrollIntoView(options);
+      }
+    },
+    checked: function checked() {
+      this.isChecked = !this.isChecked;
+      console.log(this.isChecked);
     }
   }
 });

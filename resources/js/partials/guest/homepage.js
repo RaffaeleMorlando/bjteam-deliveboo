@@ -9,6 +9,7 @@ const prova = new Vue({
   data: {
     categories : [],
     searchedRestaurants: [],
+    isChecked: false,
   },
   
   created() {
@@ -23,6 +24,7 @@ const prova = new Vue({
     getRestaurantsByCategory: function(index){
 
       const self = this;
+      self.searchedRestaurants = [];
 
       axios
         .get('api/restaurants')
@@ -40,7 +42,26 @@ const prova = new Vue({
           });
           // console.log(response.data);
           console.log(self.searchedRestaurants);
+          setTimeout(() => {
+            self.scrollToElement({behavior: 'smooth'});
+          }, 300);
+          
         });
+
+
+    },
+
+    scrollToElement: function(options){
+      const el = this.$el.getElementsByClassName('searched_restaurants_container')[0];
+      
+      if (el) {
+        el.scrollIntoView(options);
+      }
+    },
+
+    checked: function(){
+      this.isChecked = !this.isChecked;
+      console.log(this.isChecked);
     }
 
   }

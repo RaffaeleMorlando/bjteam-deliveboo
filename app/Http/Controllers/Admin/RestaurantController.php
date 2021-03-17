@@ -8,6 +8,7 @@ use App\Restaurant;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\Category;
+use Illuminate\Support\Facades\Storage;
 
 
 
@@ -39,7 +40,11 @@ class RestaurantController extends Controller
 
         $data['user_id'] = Auth::id();
         $data['slug'] = Str::slug($data['name']);
+
+        $url = Storage::url($data['logo']);
+
         $newRestaurant->fill($data);
+        $newRestaurant->logo = $url;
         $newRestaurant->save();
 
         $newRestaurant->categories()->attach($data["categories"]);

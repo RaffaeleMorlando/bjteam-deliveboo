@@ -4,56 +4,56 @@ return $categories = [
   [
     "name" => "Ristorante",
     "slug" => "ristorante",
-    "image" => "restaurant.webp"
+    "image" => "http://127.0.0.1:8000/img/categories/restaurant.webp"
   ],
   [
     "name" => "Pizzeria",
     "slug" => "pizzeria",
-    "image" => "pizza.webp"
+    "image" => "http://127.0.0.1:8000/img/categories/pizza.webp"
   ],
   [
     "name" => "Paninoteca",
     "slug" => "paninoteca",
-    "image" => "paninoteca.webp"
+    "image" => "http://127.0.0.1:8000/img/categories/paninoteca.webp"
   ],
   [
     "name" => "Osteria",
     "slug" => "osteria",
-    "image" => "osteria.webp"
+    "image" => "http://127.0.0.1:8000/img/categories/osteria.webp"
   ],
   [
     "name" => "Fast food",
     "slug" => "fast-food",
-    "image" => "fast-food.webp"
+    "image" => "http://127.0.0.1:8000/img/categories/fast-food.webp"
   ],
   [
     "name" => "Pub",
     "slug" => "pub",
-    "image" => "pub.webp"
+    "image" => "http://127.0.0.1:8000/img/categories/pub.webp"
   ],
   [
     "name" => "Italiano",
     "slug" => "italiano",
-    "image" => "italiano.webp"
+    "image" => "http://127.0.0.1:8000/img/categories/italiano.webp"
   ],
   [
     "name" => "Cinese",
     "slug" => "cinese",
-    "image" => "cinese.webp"
+    "image" => "http://127.0.0.1:8000/img/categories/cinese.webp"
   ],
   [
     "name" => "Giapponese",
     "slug" => "giapponese",
-    "image" => "giapponese.webp"
+    "image" => "http://127.0.0.1:8000/img/categories/giapponese.webp"
   ],
   [
     "name" => "Francese",
     "slug" => "francese",
-    "image" => "francese.webp"
+    "image" => "http://127.0.0.1:8000/img/categories/francese.webp"
   ],
   [
     "name" => "Dolci",
     "slug" => "dolci",
-    "image" => "dolci.webp"
+    "image" => "http://127.0.0.1:8000/img/categories/dolci.webp"
   ]
 ];
