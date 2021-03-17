@@ -6,8 +6,9 @@ header {
   width: 100%;
   height: $headerHeight;
   background-color: $yellowPrimary;
+  transition: all 0.3s linear;
   &.active {
-    box-shadow: $shadowCard;
+    box-shadow:  0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   }
 
   .container {
