@@ -16,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace("Api")->group(function (){
   Route::get('restaurants', 'RestaurantController@getRestaurants');
+  //tutte le categorie
+  Route::get('categories', 'RestaurantController@getCategories');
 
 });
