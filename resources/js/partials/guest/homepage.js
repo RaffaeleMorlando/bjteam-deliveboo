@@ -10,16 +10,17 @@ const prova = new Vue({
     categories : [],
     searchedRestaurants: [],
     isChecked: false,
+    headerStatus: false
   },
-  
-  created() {
+
+  mounted() {
     axios.get('api/categories')
       .then(response => {
         this.categories = response.data;
         console.log(this.categories);
       });
-  },
-  
+},
+
   methods: {
     getRestaurantsByCategory: function(index){
 
@@ -36,16 +37,16 @@ const prova = new Vue({
             restaurant.categories.forEach((category) => {
               if(category.name == clickedCategory){
                 self.searchedRestaurants.push(restaurant);
-              }  
+              }
             })
-                      
+
           });
           // console.log(response.data);
           console.log(self.searchedRestaurants);
           setTimeout(() => {
             self.scrollToElement({behavior: 'smooth'});
           }, 300);
-          
+
         });
 
 
@@ -53,7 +54,7 @@ const prova = new Vue({
 
     scrollToElement: function(options){
       const el = this.$el.getElementsByClassName('searched_restaurants_container')[0];
-      
+
       if (el) {
         el.scrollIntoView(options);
       }
@@ -64,6 +65,7 @@ const prova = new Vue({
       console.log(this.isChecked);
     }
 
-  }
+  },
+
 
 });

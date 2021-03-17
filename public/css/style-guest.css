@@ -32,6 +32,9 @@ header {
   height: 80px;
   background-color: #FFC244;
 }
+header.active {
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+}
 header .container {
   height: 100%;
 }
@@ -80,7 +83,7 @@ main {
 #main_home_page_top {
   position: relative;
   width: 100%;
-  height: calc(100vh - 80px);
+  height: calc(80vh - 80px);
   background-color: #FFC244;
   background-position: left;
   background-size: cover;

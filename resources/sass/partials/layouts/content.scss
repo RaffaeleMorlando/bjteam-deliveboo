@@ -6,6 +6,9 @@ header {
   width: 100%;
   height: $headerHeight;
   background-color: $yellowPrimary;
+  &.active {
+    box-shadow: $shadowCard;
+  }
 
   .container {
     height: 100%;
@@ -50,10 +53,10 @@ header {
 
 // FOOTER farà parte del layout
 footer {
-  
+
   #footer-bottom {
     background-color: #1d1d1d;
     min-height: 100px;
   }
-  
+
 }
