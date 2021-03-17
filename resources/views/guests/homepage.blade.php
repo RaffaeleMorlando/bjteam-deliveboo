@@ -3,7 +3,7 @@
 @section("guest-main")
 <div id="main_home_page_guest">
   <div id="main_home_page_top">
-    <div class="contenitore_di_tutto_il_casino">
+    <div class="contenitore_di_tutto_il_casino" :class="isChecked ? 'active' : ''">
       <nav class="menu">
         <input class="menu-toggler" type="checkbox" v-model="isChecked" @click="checked()">
         {{-- <label for="menu-toggler"></label> --}}
@@ -18,8 +18,10 @@
 
 
 
-        <li class="menu-item gadget_button_category">
-          <a href="#"></a>
+        <li class="menu-item gadget_button_category text-center" :class="isChecked ? '' : 'blob'">
+          <a href="#">
+            <img src="{{ asset("img/categories/search.webp") }}" alt="" style="width: 50px; height: 50px">
+          </a>
         </li>
 
         </ul>

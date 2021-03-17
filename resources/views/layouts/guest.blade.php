@@ -27,7 +27,7 @@
             </div>
 
             <div class="center col-lg-8">
-              <input type="text" name="" value="" placeholder="Cerca">
+              <input type="text" name="" value="" :placeholder="searchBarPlaceholder">
             </div>
 
             <div class="right col-lg-2"></div>

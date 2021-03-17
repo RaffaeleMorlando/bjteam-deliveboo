@@ -49337,11 +49337,13 @@ __webpack_require__(/*! ../../bootstrap */ "./resources/js/bootstrap.js");
 var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: '#header',
   data: {
-    headerStatus: false
+    headerStatus: false,
+    searchBarPlaceholder: ""
   },
   mounted: function mounted() {
     var _this = this;
 
+    var self = this;
     window.addEventListener('scroll', function () {
       if (window.scrollY > 1) {
         _this.headerStatus = true;
@@ -49351,6 +49353,21 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
 
       ;
     });
+    var string = "Cerca per nome";
+    var placeholderArray = string.split("");
+    var i = 0;
+    var prova = setInterval(function () {
+      self.searchBarPlaceholder += placeholderArray[i];
+      i++;
+
+      if (i > placeholderArray.length - 1) {
+        clearInterval(prova);
+        setTimeout(function () {
+          i = 0;
+          self.searchBarPlaceholder = "";
+        }, 1000);
+      }
+    }, 150);
   }
 });
 })();
