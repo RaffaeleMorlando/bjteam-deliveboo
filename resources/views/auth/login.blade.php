@@ -32,7 +32,7 @@
                 </div>
             </li> --}}
         @endguest
-    </ul
+      </ul>
 
 @endsection
 
