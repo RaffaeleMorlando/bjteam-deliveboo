@@ -35,6 +35,7 @@ header {
           padding: 5px 10px;
           border-radius: 20px;
           background-color: $darkWhite;
+          box-shadow: $darkShadowCard;
           border: none;
 
           &:focus {
