@@ -881,11 +881,8 @@ a:hover i {
 #product_edit .form_box .create_product_input input[type=text]:focus {
   outline: none;
 }
-#product_create .form_box .create_product_input .select2-container--default .select2-selection--multiple {
-  border: none;
-  border-bottom: 2px solid #FFC244;
-}
-#product_create .form_box .create_product_input textarea {
+#product_create .form_box .create_product_input textarea,
+#product_edit .form_box .create_product_input textarea {
   display: block;
   width: 100%;
   padding: 5px;
@@ -893,7 +890,8 @@ a:hover i {
   border: none;
   border-bottom: 2px solid #FFC244;
 }
-#product_create .form_box .create_product_input textarea:focus {
+#product_create .form_box .create_product_input textarea:focus,
+#product_edit .form_box .create_product_input textarea:focus {
   outline: none;
 }
 #product_create .form_box .create_product_check_box,
