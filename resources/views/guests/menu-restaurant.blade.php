@@ -10,11 +10,34 @@
     </div>
     <div class="container-menu-main">
         <div class="menu_container container">
+
             <div id="menu_left">
-                <div class="menu_item">
-                    <h1>Nome Ristorante</h1>
+                <div class="menu_info">
+                    <div class="menu_info_container">
+                        {{-- informazioni aggiuntive del ristorante o categorie --}}
+                    </div>
+                    <h2>Ristorante Nome</h2>
+                </div>
+                {{-- sezione contenente piatti , scrollabile --}}
+                <div class="menu_item_sections_container">
+                    <div class="menu_plate">
+                        <div class="menu_img">
+                            <img src="" alt="">
+                        </div>
+                        <h3>NOME PIATTO</h3>
+                        <p>descrizione piatto...</p>
+                        <div class="plate_price_add">
+                            <span>13€</span>
+                            <span><i class="fas fa-plus"></i></span>
+                        </div>
+
+                    </div>
+                    <div class="menu_plate"></div>
+                    <div class="menu_plate"></div>
+                    <div class="menu_plate"></div>
                 </div>
             </div>
+
             <div id="menu_cart">
                 <div id="cart">
                     <h3>Il tuo ordine</h3>
@@ -44,6 +67,7 @@
                     </ul>
                 </div>
             </div>
+
         </div>
     </div>
 @endsection
