@@ -1,3 +1,34 @@
+// classi comuni
+.orange_icon_box {
+  @include SetFlexContainer (row, center, center, nowrap);
+  @include setPositionAbsolute(-30px, 20px);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(60deg, #ffa726, #fb8c00);
+  border-radius: 5px;
+  box-shadow: $darkShadowCard;
+
+  i {
+    font-size: 25px;
+    color: $white;
+  }
+}
+
+.small_green_box {
+  @include setPositionAbsolute(-18px, 75px);
+  width: 100px;
+  height: 20px;
+  background: linear-gradient(60deg, #66bb6a, #43a047);
+  border-radius: 5px;
+  box-shadow: $darkShadowCard;
+
+    label {
+      font-weight: 600;
+      font-style: italic;
+    }
+}
+
+// css specifico
 #product_create {
   width: 100%;
   box-shadow: $shadowCard;
@@ -6,7 +37,7 @@
   .form_box {
     width: 100%;
     position: relative;
-    padding: 100px 0 30px;
+    padding: 150px 0 30px;
 
     // cerchio grande che contiene l'icona principale della sezione
     .product_create_img {
@@ -60,23 +91,24 @@
     }
 
     .create_product_input {
-      margin: 20px 0;
-      padding: 10px;
+      position: relative;
+      margin-bottom: 50px;
+      padding: 10px 10px 10px 100px;
       box-shadow: 0 4px 20px 0px rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(0 188 212 / 40%);
       border-radius: 5px;
 
-      i {
-        font-size: 25px;
-        color: $gray;
-      }
+      // i {
+      //   font-size: 25px;
+      //   color: $gray;
+      // }
 
-      label {
-        font-weight: 600;
-        font-style: italic;
-      }
+      // label {
+      //   font-weight: 600;
+      //   font-style: italic;
+      // }
 
       input[type=text] {
-        width: 80%;
+        width: 100%;
         padding: 0 10px;
         background-color: transparent;
         border: none;
@@ -93,26 +125,42 @@
         padding: 5px;
         resize: none;
         border: none;
-        border-right: 2px solid $yellowPrimary;
         border-bottom: 2px solid $yellowPrimary;
-        border-radius: 0 0 5px 0;
 
         &:focus {
           outline: none;
         }
       }
 
-      .check_option {
-        display: inline-block;
-        margin-left: 30px;
-        padding: 0 10px;
-        border-bottom: 2px solid $yellowPrimary;
-
-      }
-
     }
 
+    //box per le check box di vegetariano e gluten free
+    .create_product_check_box {
+      position: relative;
+      display: inline-block;
+      width: 200px;
+      height: 100px;
+      margin: 0px 20px 20px 0;
+      box-shadow: $shadowCard;
+      border-radius: $borderRadCard;
+
+      //box con l'input e la label
+      .input_control {
+        @include SetFlexContainer (column, center, center, nowrap);
+        height: 100%;
+
+        label {
+          font-weight: 600;
+          font-style: italic;
+
+        }
+      }
+    }
+
+
+    //bottone submit
     .btn-submit {
+      display: block;
       border: none;
       width: 50px;
       height: 50px;

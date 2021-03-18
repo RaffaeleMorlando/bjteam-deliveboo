@@ -738,6 +738,41 @@ a:hover i {
     padding: 30px 15px;
   }
 }
+.orange_icon_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: -30px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(60deg, #ffa726, #fb8c00);
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.orange_icon_box i {
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.small_green_box {
+  position: absolute;
+  top: -18px;
+  left: 75px;
+  width: 100px;
+  height: 20px;
+  background: linear-gradient(60deg, #66bb6a, #43a047);
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.small_green_box label {
+  font-weight: 600;
+  font-style: italic;
+}
+
 #product_create {
   width: 100%;
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
@@ -746,7 +781,7 @@ a:hover i {
 #product_create .form_box {
   width: 100%;
   position: relative;
-  padding: 100px 0 30px;
+  padding: 150px 0 30px;
 }
 #product_create .form_box .product_create_img {
   display: flex;
@@ -806,21 +841,14 @@ a:hover i {
   display: none;
 }
 #product_create .form_box .create_product_input {
-  margin: 20px 0;
-  padding: 10px;
+  position: relative;
+  margin-bottom: 50px;
+  padding: 10px 10px 10px 100px;
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
   border-radius: 5px;
 }
-#product_create .form_box .create_product_input i {
-  font-size: 25px;
-  color: #9B9B9B;
-}
-#product_create .form_box .create_product_input label {
-  font-weight: 600;
-  font-style: italic;
-}
 #product_create .form_box .create_product_input input[type=text] {
-  width: 80%;
+  width: 100%;
   padding: 0 10px;
   background-color: transparent;
   border: none;
@@ -836,20 +864,34 @@ a:hover i {
   padding: 5px;
   resize: none;
   border: none;
-  border-right: 2px solid #FFC244;
   border-bottom: 2px solid #FFC244;
-  border-radius: 0 0 5px 0;
 }
 #product_create .form_box .create_product_input textarea:focus {
   outline: none;
 }
-#product_create .form_box .create_product_input .check_option {
+#product_create .form_box .create_product_check_box {
+  position: relative;
   display: inline-block;
-  margin-left: 30px;
-  padding: 0 10px;
-  border-bottom: 2px solid #FFC244;
+  width: 200px;
+  height: 100px;
+  margin: 0px 20px 20px 0;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+#product_create .form_box .create_product_check_box .input_control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 100%;
+}
+#product_create .form_box .create_product_check_box .input_control label {
+  font-weight: 600;
+  font-style: italic;
 }
 #product_create .form_box .btn-submit {
+  display: block;
   border: none;
   width: 50px;
   height: 50px;
