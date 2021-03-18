@@ -19,14 +19,14 @@
     <div id="guest_layout">
 
 
-      <header id="header" :class="headerStatus ? 'active' : ''">
+      <header id="header" :class="headerStatus ? 'active' : ''" :style="headerStatus ? 'background-color: #FCF6B1' : 'transparent'">
         <div class="container">
           <div class="row">
 
             <div class="left col-lg-3">
               <img class="logo" src="{{ asset("img/logo_glovo-prova.svg") }}" alt="logo">
             </div>
-            
+
             <div class="center col-lg-6">
               @auth
               <input type="text" name="" value="" :placeholder="searchBarPlaceholder">

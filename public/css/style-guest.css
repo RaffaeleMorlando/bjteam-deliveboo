@@ -30,7 +30,6 @@ header {
   z-index: 100;
   width: 100%;
   height: 80px;
-  background-color: #FFC244;
   transition: all 0.3s linear;
 }
 header.active {
@@ -70,10 +69,6 @@ header .container .row .center input[type=text]:focus {
 }
 header .container .row .right {
   height: 100%;
-}
-
-main {
-  margin-top: 80px;
 }
 
 footer #footer-bottom {
