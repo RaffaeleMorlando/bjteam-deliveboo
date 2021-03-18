@@ -24,29 +24,45 @@
 
         <label for="logo" class="create_add_image" title="aggiungi logo">
           <input type="file" accept="image/*" name="logo" id="logo">
-          <i class="fas fa-file-image"></i>
+          <i class="fas fa-camera-retro"></i>
         </label>
 
         <div class="create_product_input">
-          <i class="fas fa-store"></i>
+           <div class="orange_icon_box">
+            <i class="fas fa-store"></i>
+        </div>
+        <div class="small_green_box">
           <label for="name" class="mx-1 my-0">Nome</label>
+        </div>  
           <input type="text" name="name" id="name" value="{{ old('name')}}" placeholder="Inserisci il nome del prodotto">
         </div>
 
         <div class="create_product_input">
-          <i class="fas fa-id-card"></i>
-          <label for="p_iva" class="mx-1 my-0">partia iva</label>
-          <textarea name="p_iva" id="p_iva" placeholder="partita iva">{{ old('p_iva')}}</textarea>
+          <div class="orange_icon_box">
+            <i class="fas fa-id-card"></i>
+          </div>  
+          <div class="small_green_box">  
+            <label for="p_iva" class="mx-1 my-0">partia iva</label>
+          </div>  
+          <input type="text" name="p_iva" id="p_iva" placeholder="partita iva" value="{{ old('p_iva')}}">
         </div>
 
         <div class="create_product_input">
-          <i class="fas fa-map-marker-alt"></i>
-          <label for="address" class="mx-1 my-0">Indirizzo</label>
+           <div class="orange_icon_box">
+              <i class="fas fa-map-marker-alt"></i>
+           </div> 
+          <div class="small_green_box">   
+            <label for="address" class="mx-1 my-0">Indirizzo</label>
+          </div>  
           <input type="text" name="address" id="address" value="{{ old('address') }}" placeholder="Inserisci l'indirizzo del tuo locale">
         </div>
         <div class="create_product_input">
-          <i class="fas fa-phone"></i>
-          <label for="phone" class="mx-1 my-0">Telefono</label>
+          <div class="orange_icon_box">
+            <i class="fas fa-phone"></i>
+          </div>  
+          <div class="small_green_box">   
+            <label for="phone" class="mx-1 my-0">Telefono</label>
+          </div>  
           <input type="text" name="phone" id="phone" value="{{ old('phone') }}" placeholder="Inserisci il numero del tuo locale">
         </div>
         <div class="create_product_input">

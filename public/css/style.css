@@ -887,7 +887,6 @@ a:hover i {
     display: none;
   }
 }
-#product_create {
 .orange_icon_box {
   display: flex;
   flex-direction: row;
@@ -1030,6 +1029,12 @@ a:hover i {
 #product_edit .form_box .create_product_input input[type=text]:focus {
   outline: none;
 }
+#product_create .form_box .create_product_input .select2-container--default .select2-selection--multiple,
+#product_edit .form_box .create_product_input .select2-container--default .select2-selection--multiple {
+  border: none;
+  border-bottom: 2px solid #FFC244;
+  padding-bottom: 0;
+}
 #product_create .form_box .create_product_input textarea,
 #product_edit .form_box .create_product_input textarea {
   display: block;
@@ -1038,6 +1043,13 @@ a:hover i {
   resize: none;
   border: none;
   border-bottom: 2px solid #FFC244;
+}
+#product_create .form_box .create_product_input textarea.select2-search__field,
+#product_edit .form_box .create_product_input textarea.select2-search__field {
+  height: 28px;
+  border-right: none;
+  border-bottom: none;
+  margin: 0px;
 }
 #product_create .form_box .create_product_input textarea:focus,
 #product_edit .form_box .create_product_input textarea:focus {
