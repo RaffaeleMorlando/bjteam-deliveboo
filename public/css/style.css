@@ -773,17 +773,20 @@ a:hover i {
   font-style: italic;
 }
 
-#product_create {
+#product_create,
+#product_edit {
   width: 100%;
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
-#product_create .form_box {
+#product_create .form_box,
+#product_edit .form_box {
   width: 100%;
   position: relative;
   padding: 150px 0 30px;
 }
-#product_create .form_box .product_create_img {
+#product_create .form_box .product_create_img,
+#product_edit .form_box .product_create_img {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -794,13 +797,26 @@ a:hover i {
   left: -50px;
   width: 150px;
   height: 150px;
+  padding: 7px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 50%;
 }
-#product_create .form_box .product_create_img i {
+#product_create .form_box .product_create_img i,
+#product_edit .form_box .product_create_img i {
   font-size: 80px;
 }
-#product_create .form_box .product_name_green_box {
+#product_create .form_box .product_create_img img,
+#product_edit .form_box .product_create_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 50%;
+}
+#product_create .form_box .product_name_green_box,
+#product_edit .form_box .product_name_green_box {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -816,14 +832,16 @@ a:hover i {
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-#product_create .form_box .product_name_green_box p {
+#product_create .form_box .product_name_green_box p,
+#product_edit .form_box .product_name_green_box p {
   margin: 0;
   text-transform: uppercase;
   color: #ffffff;
   font-weight: bold;
   font-size: 20px;
 }
-#product_create .form_box .create_add_image {
+#product_create .form_box .create_add_image,
+#product_edit .form_box .create_add_image {
   position: absolute;
   top: -30px;
   left: 80px;
@@ -837,17 +855,20 @@ a:hover i {
   text-align: center;
   cursor: pointer;
 }
-#product_create .form_box .create_add_image input[type=file] {
+#product_create .form_box .create_add_image input[type=file],
+#product_edit .form_box .create_add_image input[type=file] {
   display: none;
 }
-#product_create .form_box .create_product_input {
+#product_create .form_box .create_product_input,
+#product_edit .form_box .create_product_input {
   position: relative;
   margin-bottom: 50px;
   padding: 10px 10px 10px 100px;
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
   border-radius: 5px;
 }
-#product_create .form_box .create_product_input input[type=text] {
+#product_create .form_box .create_product_input input[type=text],
+#product_edit .form_box .create_product_input input[type=text] {
   width: 100%;
   padding: 0 10px;
   background-color: transparent;
@@ -855,10 +876,12 @@ a:hover i {
   border-bottom: 2px solid #FFC244;
   vertical-align: text-bottom;
 }
-#product_create .form_box .create_product_input input[type=text]:focus {
+#product_create .form_box .create_product_input input[type=text]:focus,
+#product_edit .form_box .create_product_input input[type=text]:focus {
   outline: none;
 }
-#product_create .form_box .create_product_input textarea {
+#product_create .form_box .create_product_input textarea,
+#product_edit .form_box .create_product_input textarea {
   display: block;
   width: 100%;
   padding: 5px;
@@ -866,10 +889,12 @@ a:hover i {
   border: none;
   border-bottom: 2px solid #FFC244;
 }
-#product_create .form_box .create_product_input textarea:focus {
+#product_create .form_box .create_product_input textarea:focus,
+#product_edit .form_box .create_product_input textarea:focus {
   outline: none;
 }
-#product_create .form_box .create_product_check_box {
+#product_create .form_box .create_product_check_box,
+#product_edit .form_box .create_product_check_box {
   position: relative;
   display: inline-block;
   width: 200px;
@@ -878,7 +903,8 @@ a:hover i {
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
-#product_create .form_box .create_product_check_box .input_control {
+#product_create .form_box .create_product_check_box .input_control,
+#product_edit .form_box .create_product_check_box .input_control {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -886,20 +912,31 @@ a:hover i {
   flex-wrap: nowrap;
   height: 100%;
 }
-#product_create .form_box .create_product_check_box .input_control label {
+#product_create .form_box .create_product_check_box .input_control label,
+#product_edit .form_box .create_product_check_box .input_control label {
   font-weight: 600;
   font-style: italic;
 }
-#product_create .form_box .btn-submit {
-  display: block;
+#product_create .form_box .btn-submit,
+#product_create .form_box .btn_back,
+#product_edit .form_box .btn-submit,
+#product_edit .form_box .btn_back {
   border: none;
-  width: 50px;
+  width: 150px;
   height: 50px;
-  border-radius: 50%;
-  background-color: #00A082;
+  border-radius: 30px;
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
   color: #ffffff;
   font-weight: 700;
+}
+#product_create .form_box .btn-submit,
+#product_edit .form_box .btn-submit {
+  background-color: #00A082;
+}
+#product_create .form_box .btn_back,
+#product_edit .form_box .btn_back {
+  display: inline-block;
+  background-color: #E56668;
 }
 
 @media all and (max-width: 1450px) {
@@ -914,17 +951,20 @@ a:hover i {
   }
 }
 @media all and (max-width: 992px) {
-  #product_create .form_box .product_create_img {
+  #product_create .form_box .product_create_img,
+#product_edit .form_box .product_create_img {
     position: absolute;
     top: -40px;
     left: -30px;
     width: 100px;
     height: 100px;
   }
-  #product_create .form_box .product_create_img i {
+  #product_create .form_box .product_create_img i,
+#product_edit .form_box .product_create_img i {
     font-size: 50px;
   }
-  #product_create .form_box .create_add_image {
+  #product_create .form_box .create_add_image,
+#product_edit .form_box .create_add_image {
     position: absolute;
     top: -25px;
     left: 55px;
@@ -932,27 +972,39 @@ a:hover i {
     height: 30px;
     line-height: 30px;
   }
-  #product_create .form_box .product_name_green_box {
+  #product_create .form_box .product_name_green_box,
+#product_edit .form_box .product_name_green_box {
     position: absolute;
     top: -50px;
     left: 50%;
     width: 40%;
   }
-  #product_create .form_box .product_name_green_box p {
+  #product_create .form_box .product_name_green_box p,
+#product_edit .form_box .product_name_green_box p {
     font-size: 12px;
     text-align: center;
   }
-  #product_create .form_box .create_product_input .check_option {
+  #product_create .form_box .create_product_input .check_option,
+#product_edit .form_box .create_product_input .check_option {
     margin-bottom: 15px;
+  }
+  #product_create .buttons_container .btn-submit,
+#product_create .buttons_container .btn-back,
+#product_edit .buttons_container .btn-submit,
+#product_edit .buttons_container .btn-back {
+    display: block;
+    margin-bottom: 10px;
   }
 }
 @media all and (max-width: 575px) {
-  #product_create .form_box .product_create_img {
+  #product_create .form_box .product_create_img,
+#product_edit .form_box .product_create_img {
     position: absolute;
     top: -40px;
     left: -20px;
   }
-  #product_create .form_box .product_name_green_box {
+  #product_create .form_box .product_name_green_box,
+#product_edit .form_box .product_name_green_box {
     display: none;
   }
 }

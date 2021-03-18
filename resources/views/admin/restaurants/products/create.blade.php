@@ -30,7 +30,7 @@
 
         <label for="image" class="create_add_image" title="add photo">
           <input type="file" accept="image/*" name="image" id="image">
-          <i class="fas fa-pen"></i>
+          <i class="fas fa-camera-retro"></i>
         </label>
 
         <div class="create_product_input">
@@ -100,7 +100,12 @@
 
         </div>
 
-        <input type="submit" id="submit" value="ADD" class="btn-submit">
+        <div class="buttons_container">
+          <input type="submit" id="submit" value="EDIT" class="btn-submit">
+          <a href="{{ route("admin.restaurants.products.index") }}">
+            <button type="button" class="btn_back">BACK</button>
+          </a>
+        </div>
       </form>
     </div>
   </section>

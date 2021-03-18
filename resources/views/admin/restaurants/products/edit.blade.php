@@ -1,7 +1,7 @@
 @extends('layouts.backend')
 
 @section('main')
-  <section id="product_create" class="container my-3">
+  <section id="product_edit" class="container my-3">
 
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -13,50 +13,105 @@
     </div>
     @endif
 
-    <form action="{{ route('admin.restaurants.products.update', $product->id) }}" method="post" enctype="multipart/form-data">
-      @csrf
-      @method('PUT')
-      <div class="form-group">
-        <label for="name">NOME</label>
-        <input class="form-control" type="text" name="name" id="name" value="{{ $product->name }}">
-      </div>
-      
-       <div class="form-group">
-          <label for="image">IMMAGINE</label>
-          <input accept="image/*" type="file" name="image" class="form-control" id="image" placeholder="aggiungi immagine">
+    <div class="form_box">
+
+      {{-- cerchio grande che contiene l'icona principale della sezione --}}
+      <div class="product_create_img">
+        @if($product->image)
+          <img src="{{ $product->image }}" alt="product-image">
+        @else
+          <i class="fas fa-hotdog"></i>
+        @endif
       </div>
 
-      <div class="form-group">
-        <label for="description">DESCRIZIONE</label>
-        <textarea class="form-control" name="description" id="description" cols="30" rows="10">{{  $product->description }}</textarea>
+      {{-- rettangolo verde che contiene il nome della sezione --}}
+      <div class="product_name_green_box">
+        <p>Aggiungi un nuovo prodotto</p>
       </div>
+      <form class="" action="{{ route('admin.restaurants.products.update', $product->id) }}" method="post" enctype="multipart/form-data">
+        @csrf
+        @method("PUT")
 
-      <div class="form-group">
-        <label for="price">PRICE</label>
-        <input class="form-control" type="text" name="price" id="price" value="{{ $product->price }}">
-      </div>
+        <label for="image" class="create_add_image" title="add photo">
+          <input type="file" accept="image/*" name="image" id="image">
+          <i class="fas fa-camera-retro"></i>
+        </label>
 
-      <div class="form-group">
-        <label for="is_vegetarian">VEGETARIANO</label>
-        <select class="form-control" name="is_vegetarian" id="">
-          <option {{ $product->is_vegetarian === 0 ? 'selected' : '' }}  value="0">No</option>
-          <option {{ $product->is_vegetarian === 1 ? 'selected' : '' }} value="1">Si</option>
-        </select>
-      </div>
+        <div class="create_product_input">
+          {{-- box arancione contente l'icona --}}
+          <div class="orange_icon_box">
+            <i class="fas fa-hamburger"></i>
+          </div>
 
-      <div class="form-group">
-        <label for="is_glutenfree">SENZA GLUTINE</label>
-        <select class="form-control" name="is_glutenfree" id="">
-          <option {{ $product->is_glutenfree === 0 ? 'selected' : '' }} value="0">No</option>
-          <option {{ $product->is_glutenfree === 1 ? 'selected' : '' }} value="1">Si</option>
-        </select>
-      </div>
-      
-      <button type="submit" class="btn btn-primary">SALVA</button>
-      <a href="{{ route('admin.restaurants.products.index') }}" class="btn btn-secondary">BACK</a>
+          {{-- retangolo piccolo verde con la label --}}
+          <div class="small_green_box">
+            <label for="name" class="mx-1 my-0">Nome</label>
+          </div>
+          <input type="text" name="name" id="name" value="{{ $product->name }}" placeholder="Inserisci il nome del prodotto">
+        </div>
 
-    </form>
+        <div class="create_product_input">
+          {{-- box arancione contente l'icona --}}
+          <div class="orange_icon_box">
+            <i class="fas fa-align-left"></i>
+          </div>
+
+          {{-- retangolo piccolo verde con la label --}}
+          <div class="small_green_box">
+            <label for="description" class="mx-1 my-0">Descrizione</label>
+          </div>
+          <textarea name="description" id="description" placeholder="Descrizione prodotto">{{  $product->description }}</textarea>
+        </div>
+
+        <div class="create_product_input">
+          {{-- box arancione contente l'icona --}}
+          <div class="orange_icon_box">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+
+          {{-- retangolo piccolo verde con la label --}}
+          <div class="small_green_box">
+            <label for="price" class="mx-1 my-0">Prezzo</label>
+          </div>
+          <input type="text" name="price" id="price" value="{{ $product->price }}" placeholder="Prezzo (€)">
+        </div>
+
+        <div class="create_product_check_box">
+          {{-- qudrato arancione in position absolute --}}
+          <div class="orange_icon_box">
+            <i class="fas fa-carrot"></i>
+          </div>
+
+          {{-- box con l'input e la label --}}
+          <div class="input_control">
+            <input {{ $product->is_vegetarian === 1 ? 'checked' : '' }} type="checkbox" name="is_vegetarian" id="is_vegetarian" value="1">
+            <label for="is_vegetarian" class="mx-1 my-0">Vegetariano</label>
+          </div>
+
+        </div>
+
+        <div class="create_product_check_box">
+          {{-- qudrato arancione in position absolute --}}
+          <div class="orange_icon_box">
+            <i class="fas fa-bread-slice"></i>
+          </div>
+
+          {{-- box con l'input e la label --}}
+          <div class="input_control">
+            <input {{ $product->is_glutenfree === 1 ? 'checked' : '' }} type="checkbox" name="is_glutenfree" id="is_glutenfree" value="1">
+            <label for="is_glutenfree" class="mx-1 my-0">Gluten Free</label>
+          </div>
+
+        </div>
+
+        <div class="buttons_container">
+          <input type="submit" id="submit" value="EDIT" class="btn-submit">
+          <a href="{{ route("admin.restaurants.products.show", $product->slug) }}">
+            <button type="button" class="btn_back">BACK</button>
+          </a>
+        </div>
+      </form>
+    </div>
 
   </section>
 @endsection
-
