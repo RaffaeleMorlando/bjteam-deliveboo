@@ -744,8 +744,9 @@ a:hover i {
   border-radius: 10px;
 }
 #product_create .form_box {
+  width: 100%;
   position: relative;
-  padding: 200px 0 30px;
+  padding: 100px 0 30px;
 }
 #product_create .form_box .product_create_img {
   display: flex;
@@ -756,19 +757,41 @@ a:hover i {
   position: absolute;
   top: -50px;
   left: -50px;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 50%;
-  background-color: rgba(0, 188, 212, 0.9);
 }
 #product_create .form_box .product_create_img i {
   font-size: 80px;
 }
+#product_create .form_box .product_name_green_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  width: 45%;
+  height: 100px;
+  padding: 0 16px;
+  background: linear-gradient(60deg, #66bb6a, #43a047);
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+#product_create .form_box .product_name_green_box p {
+  margin: 0;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 20px;
+}
 #product_create .form_box .create_add_image {
   position: absolute;
-  top: -25px;
-  left: 120px;
+  top: -30px;
+  left: 80px;
   display: block;
   width: 50px;
   height: 50px;
@@ -837,7 +860,46 @@ a:hover i {
   font-weight: 700;
 }
 
+@media all and (max-width: 1450px) {
+  #product_create .form_box .product_name_green_box {
+    position: absolute;
+    top: -50px;
+    left: 40%;
+    width: 55%;
+  }
+  #product_create .form_box .product_name_green_box p {
+    font-size: 17px;
+  }
+}
 @media all and (max-width: 992px) {
+  #product_create .form_box .product_create_img {
+    position: absolute;
+    top: -40px;
+    left: -30px;
+    width: 100px;
+    height: 100px;
+  }
+  #product_create .form_box .product_create_img i {
+    font-size: 50px;
+  }
+  #product_create .form_box .create_add_image {
+    position: absolute;
+    top: -25px;
+    left: 55px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+  #product_create .form_box .product_name_green_box {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    width: 40%;
+  }
+  #product_create .form_box .product_name_green_box p {
+    font-size: 12px;
+    text-align: center;
+  }
   #product_create .form_box .create_product_input .check_option {
     margin-bottom: 15px;
   }
@@ -846,13 +908,9 @@ a:hover i {
   #product_create .form_box .product_create_img {
     position: absolute;
     top: -40px;
-    left: -30px;
-    width: 150px;
-    height: 150px;
+    left: -20px;
   }
-  #product_create .form_box .create_add_image {
-    position: absolute;
-    top: -25px;
-    left: 100px;
+  #product_create .form_box .product_name_green_box {
+    display: none;
   }
 }

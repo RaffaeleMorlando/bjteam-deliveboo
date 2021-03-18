@@ -14,11 +14,16 @@
     @endif
 
     <div class="form_box">
+
+      {{-- cerchio grande che contiene l'icona principale della sezione --}}
       <div class="product_create_img">
-        {{-- <img src="{{ asset("img/create-food.png") }}" alt="create-img"> --}}
         <i class="fas fa-hotdog"></i>
       </div>
 
+      {{-- rettangolo verde che contiene il nome della sezione --}}
+      <div class="product_name_green_box">
+        <p>Aggiungi un nuovo prodotto</p>
+      </div>
       <form class="" action="{{ route('admin.restaurants.products.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         @method("POST")
