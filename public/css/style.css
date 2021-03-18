@@ -817,6 +817,10 @@ a:hover i {
   border-bottom: 2px solid #FFC244;
   border-radius: 0 0 5px 0;
 }
+#product_create .form_box .create_product_input textarea.select2-search__field {
+  border-right: none;
+  border-bottom: none;
+}
 #product_create .form_box .create_product_input textarea:focus {
   outline: none;
 }
