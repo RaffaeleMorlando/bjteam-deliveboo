@@ -711,20 +711,66 @@ a:hover i {
 }
 .container-fluid .card {
   margin: 20px 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  position: relative;
 }
-.container-fluid .card img {
+.container-fluid .card .card_image {
+  position: relative;
+  width: 100%;
+}
+.container-fluid .card .card_image img {
   width: 100%;
   height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  transition: all 0.3s;
+}
+.container-fluid .card .card_image .position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container-fluid .card .card_image .position i {
+  font-size: 20px;
+}
+.container-fluid .card .card_image .my_btn {
+  display: block;
+  opacity: 0;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  border: 1px solid grey;
+  transition: all 0.3s;
 }
 .container-fluid .card .card-body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+}
+.container-fluid .card .my_edit_btn {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: linear-gradient(60deg, #ffa726, #fb8c00);
+  color: white;
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.container-fluid .card:hover img {
+  filter: blur(2px);
+}
+.container-fluid .card:hover .my_btn {
+  opacity: 1;
 }
 
 @media all and (max-width: 1200px) {
@@ -733,7 +779,7 @@ a:hover i {
     margin: 20px 0;
   }
 }
-@media all and (max-width: 576px) {
+@media all and (max-width: 768px) {
   #container_dashboard #dashboard_main {
     padding: 30px 15px;
   }

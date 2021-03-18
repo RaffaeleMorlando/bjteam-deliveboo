@@ -22,15 +22,27 @@
   <div class="container-fluid">
     <div class="row">
       @foreach ($products as $product)
-        <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card">
-            <img src="{{ $product->image }}" class="card-img-top" alt="{{ $product->name }}">
-            <div class="card-body">
-              <h5 class="card-title">{{ $product->name }}</h5>
-              <p>{{ substr($product->description, 0, 20).'...' }}</p>
-              <a href="{{ route('admin.restaurants.products.show', $product->slug) }}" class="btn btn-primary">Dettaglio</a>
+        <div class="col-lg-4 col-md-12">
+          <a href="{{ route('admin.restaurants.products.show', $product->slug) }}">
+            <div class="card">
+              <div class="card_image">
+                <img src="@substr($product->image, 0, 6) == 'images' ? 'asset('storage/'.$product->image')'" class="card-img-top" alt="{{ $product->name }}">
+                <div class="my_btn position"><i class="fas fa-eye"></i></div>
+              </div>
+  
+              <div class="card-body">
+                <h5 class="card-title">{{ $product->name }}</h5>
+                <p>{{ substr($product->description, 0, 20).'...' }}</p>
+                
+              </div>
+              <a class="my_edit_btn" href="{{ route('admin.restaurants.products.edit', $product->id) }}"><i class="fas fa-pencil-alt"></i></a>
             </div>
-          </div>
+          </a>
+
+          {{-- <div class="product">
+            <img src="{{ $product->image }}" alt="">
+          </div> --}}
+         
         </div>
         
       @endforeach
