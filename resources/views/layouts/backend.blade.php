@@ -65,7 +65,7 @@
                 <li class="my-5">
                   <a class="link-aside" href="{{ route('home') }}">
                     <i class="fas fa-home"></i>
-                    <small>Home Page</small>
+                    <small>Home</small>
                   </a>
                 </li>
               </ul>

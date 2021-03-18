@@ -421,10 +421,11 @@ a:hover i {
 }
 #container_dashboard aside #aside_top i {
   margin-right: 10px;
-  font-size: 25px;
+  font-size: 30px;
 }
 #container_dashboard aside #aside_top span {
   display: inline-block;
+  font-size: 20px;
 }
 #container_dashboard aside #aside_center {
   width: 100%;
@@ -442,7 +443,7 @@ a:hover i {
 }
 #container_dashboard aside #aside_center #route_list li .link-aside small {
   margin: 0 5px;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 600;
 }
 #container_dashboard aside #aside_center #route_list li:hover {
