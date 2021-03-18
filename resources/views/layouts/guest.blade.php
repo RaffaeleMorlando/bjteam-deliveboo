@@ -46,6 +46,7 @@
 
         {{-- main login --}}
         @yield("guest-main")
+        @yield('restaurant-main')
       </main>
 
       @include('/layouts/footer')

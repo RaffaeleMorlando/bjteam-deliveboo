@@ -14,4 +14,11 @@ class GuestController extends Controller
 
     return view("guests.homepage", compact("categories"));
   }
+
+  public function menuRestaurant() {
+
+    return view("guests.menu-restaurant");
+    
+  }
+
 }
