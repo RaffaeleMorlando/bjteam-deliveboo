@@ -11,7 +11,8 @@ $(document).ready(
         maximumSelectionLength: 5,
         placeholder: "inserisci categoria",
         width: 'resolve',
-        border: "none",
+        height: 'resolve',
+        border: 'resolve',
       });
 
 

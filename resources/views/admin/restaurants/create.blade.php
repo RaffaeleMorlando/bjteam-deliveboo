@@ -50,7 +50,7 @@
           <input type="text" name="phone" id="phone" value="{{ old('phone') }}" placeholder="Inserisci il numero del tuo locale">
         </div>
         <div class="create_product_input">
-          <select style=" width:100%" class="select_form_category" id="categories" name="categories[]" multiple>
+          <select style=" width:100%; height:25px" class="select_form_category" id="categories" name="categories[]" multiple>
             @foreach ($categories as $category)
               <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach

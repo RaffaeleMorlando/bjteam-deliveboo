@@ -807,6 +807,10 @@ a:hover i {
 #product_create .form_box .create_product_input input[type=text]:focus {
   outline: none;
 }
+#product_create .form_box .create_product_input .select2-container--default .select2-selection--multiple {
+  border: none;
+  border-bottom: 2px solid #FFC244;
+}
 #product_create .form_box .create_product_input textarea {
   display: block;
   width: 100%;
@@ -818,8 +822,10 @@ a:hover i {
   border-radius: 0 0 5px 0;
 }
 #product_create .form_box .create_product_input textarea.select2-search__field {
+  height: 28px;
   border-right: none;
   border-bottom: none;
+  margin: 0px;
 }
 #product_create .form_box .create_product_input textarea:focus {
   outline: none;
