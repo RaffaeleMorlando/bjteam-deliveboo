@@ -26,7 +26,7 @@
       
       @foreach ($products as $product)
         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-          <a href="{{ route('admin.restaurants.products.show', $product->slug) }}">
+          <a class="card_link" href="{{ route('admin.restaurants.products.show', $product->slug) }}">
             <div class="card">
               <div class="card_image">
                 @if(substr($product->image, 0, 6) == 'images')
@@ -70,7 +70,8 @@
     </div>
 
     <div class="my_buttons">
-      <a class="my_create_btn">Aggiungi piatto</a>
+      <a class="my_dashboard_btn" href="{{ route('admin.restaurants.dashboard') }}" class="my_dashboard_btn">Torna alla dashboard</a>
+      <a href="{{ route('admin.restaurants.products.create') }}" class="my_create_btn">Aggiungi piatto</a>
     </div>
     
   </div>

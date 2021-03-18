@@ -737,6 +737,8 @@ a:hover i {
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
   position: relative;
   border: 0;
+  background: linear-gradient(60deg, #66bb6a, #43a047);
+  max-height: 49vh;
 }
 .container-fluid .card .card_image {
   position: relative;
@@ -783,7 +785,6 @@ a:hover i {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  background: linear-gradient(60deg, #66bb6a, #43a047);
   color: white;
 }
 .container-fluid .card .card-body:hover {
@@ -828,16 +829,20 @@ a:hover i {
 .container-fluid .my_buttons {
   margin-top: 20px;
 }
-.container-fluid .my_buttons .my_create_btn {
+.container-fluid .my_buttons .my_create_btn, .container-fluid .my_buttons .my_dashboard_btn {
   border: none;
-  width: 150px;
   height: 50px;
   border-radius: 30px;
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
   color: #ffffff;
   font-weight: 700;
-  background-color: #00A082;
   padding: 15px;
+}
+.container-fluid .my_buttons .my_create_btn {
+  background-color: #00A082;
+}
+.container-fluid .my_buttons .my_dashboard_btn {
+  background-color: #E56668;
 }
 
 @media all and (max-width: 1200px) {
@@ -845,14 +850,40 @@ a:hover i {
     padding: 30px 15px;
   }
 
+  .card_title .menu_icon {
+    height: 70px;
+    width: 70px;
+  }
+
   .container-fluid .card {
-    min-height: 50vh;
     margin: 20px 0;
   }
 }
 @media all and (max-width: 992px) {
   #container_dashboard #dashboard_main {
     padding: 30px 15px;
+  }
+}
+@media all and (max-width: 768px) {
+  .my_buttons {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .my_buttons .my_create_btn {
+    margin: 10px 0;
+  }
+
+  .card_title .menu_icon {
+    height: 70px;
+    width: 70px;
+    top: -15%;
+    left: 0;
+  }
+}
+@media all and (max-width: 576px) {
+  .card_title .menu_icon {
+    display: none;
   }
 }
 #product_create {
