@@ -1,13 +1,37 @@
-.title-products{
-  color: red;
+.card_title{
+  box-shadow: 0 4px 20px 0px rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(0 188 212 / 40%);
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 40px;
+  .menu_icon{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    background: linear-gradient(60deg, #ffa726, #fb8c00);
+    color: white;
+    position: absolute;
+    top: -7%;
+    left: -3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $darkShadowCard;
+    i{
+      font-size: 40px;
+    }
+  }
 }
 
 .container-fluid{
   margin-top: 20px;
   .card{
     margin: 20px 15px;
-    box-shadow: $darkShadowCard;
+    box-shadow: 0 4px 20px 0px rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(0 188 212 / 40%);
     position: relative;
+    border: 0;
     .card_image{
       position: relative;
       width: 100%;
@@ -17,6 +41,12 @@
         object-fit: cover;
         object-position: center;
         transition: all .3s;
+      }
+      &:hover img{
+        filter: blur(2px);
+      }
+      &:hover .my_btn{
+        opacity: 1;
       }
       .position{
         position: absolute;
@@ -36,13 +66,20 @@
         border: 1px solid grey;
         transition: all .3s;
       }
+      &:hover ~ .card-body{
+        color: green;
+      }
     } 
     .card-body{
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: space-between;
-
+      background: linear-gradient(60deg, #66bb6a, #43a047);
+      color: white;
+      &:hover{
+        color: green;
+      }
     }
     .my_edit_btn{
       display: block;
@@ -52,36 +89,47 @@
       background: linear-gradient(60deg, #ffa726, #fb8c00);
       color: white;
       position: absolute;
-      top: -10%;
+      top: -7%;
       left: -10%;
       display: flex;
       justify-content: center;
       align-items: center;
       box-shadow: $darkShadowCard;
+      z-index: 2;
+      &:hover ~ .card_image .my_btn{
+        opacity: 0;
+      }
+     
     }
-    &:hover img{
-      filter: blur(2px);
-    }
-    &:hover .my_btn{
-      opacity: 1;
+    .my_delete_btn{
+      display: block;
+      background:white;
+      padding: 5px;
+      border: 0;
+      border-top-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      color: red;
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: $darkShadowCard;
+      z-index: 2;
     }
   }
 
-  // .product{
-  //   width: calc(100% - 30px);
-  //   margin: 20px 15px;
-  //   img{
-  //     width: 100%;
-  //     height: 200px;
-  //     object-fit: cover;
-  //     object-position: center;
-  //     filter: blur(2px);
-  //   }
-  // }
 }
 
 
 @media all and (max-width: 1200px){
+  #container_dashboard{
+    #dashboard_main{
+      padding: 30px 15px;
+    }
+  }
+
   .container-fluid{
     .card{
       min-height: 50vh;
@@ -92,7 +140,7 @@
 }
 
 
-@media all and (max-width: 768px){
+@media all and (max-width: 992px){
   #container_dashboard{
     #dashboard_main{
       padding: 30px 15px;

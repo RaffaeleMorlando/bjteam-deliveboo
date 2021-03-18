@@ -1,11 +1,6 @@
 @extends('layouts.backend')
 
 @section('main')
-  <h1 class="title-products">Il mio menù</h1>
-    {{--
-      Message = Creazione con successo
-      Success = Edit con successo
-     --}}
 
   @if (session('message'))
     <div class="alert alert-success">
@@ -13,21 +8,35 @@
     </div>
   @endif
 
-  <h1>{{ Auth::user()->restaurant->name }}</h1>
+  {{-- <h1>{{ Auth::user()->restaurant->name }}</h1>
   @foreach (Auth::user()->restaurant->categories as $category)
     <span class="badge badge-info">{{ $category->name }}</span>
-  @endforeach
+  @endforeach --}}
+
+  <div class="card_title">
+    <h1>{{ Auth::user()->restaurant->name }} menù</h1>
+    <div class="menu_icon">
+      <i class="fas fa-utensils"></i>
+    </div>
+  </div>
 
 
   <div class="container-fluid">
     <div class="row">
+      
       @foreach ($products as $product)
-        <div class="col-lg-4 col-md-12">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
           <a href="{{ route('admin.restaurants.products.show', $product->slug) }}">
             <div class="card">
               <div class="card_image">
-                <img src="@substr($product->image, 0, 6) == 'images' ? 'asset('storage/'.$product->image')'" class="card-img-top" alt="{{ $product->name }}">
-                <div class="my_btn position"><i class="fas fa-eye"></i></div>
+                @if(substr($product->image, 0, 6) == 'images')
+                  <img src="{{ asset('storage/'.$product->image) }}" class="card-img-top" alt="{{ $product->name }}">
+                @else
+                  <img src="{{ $product->image }}" alt="">
+                @endif
+                <div class="my_btn position">
+                  <i class="fas fa-eye"></i>
+                </div>
               </div>
   
               <div class="card-body">
@@ -35,7 +44,16 @@
                 <p>{{ substr($product->description, 0, 20).'...' }}</p>
                 
               </div>
-              <a class="my_edit_btn" href="{{ route('admin.restaurants.products.edit', $product->id) }}"><i class="fas fa-pencil-alt"></i></a>
+              <a class="my_edit_btn" href="{{ route('admin.restaurants.products.edit', $product->id) }}">
+                <i class="fas fa-pencil-alt"></i>
+              </a>
+              <div class="delete_product">
+                <form action="{{ route('admin.restaurants.products.destroy', $product->id) }}" method="post">
+                  @csrf
+                  @method('DELETE')
+                  <button class="my_delete_btn" type="submit"><i class="fas fa-trash-alt"></i></button>
+                </form>
+              </div>
             </div>
           </a>
 
