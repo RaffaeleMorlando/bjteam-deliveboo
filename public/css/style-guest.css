@@ -78,6 +78,13 @@ header .container .row .right img.restaurant_logo {
   border-radius: 50%;
   border: 2px solid #A9E5BB;
 }
+header .container .row .right i {
+  padding: 5px;
+  font-size: 30px;
+  color: #2D1E2F;
+  border: 2px solid #2D1E2F;
+  border-radius: 3px;
+}
 
 footer #footer-bottom {
   background-color: #1d1d1d;
