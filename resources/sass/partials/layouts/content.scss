@@ -7,8 +7,10 @@ header {
   height: $headerHeight;
   background-color: $yellowPrimary;
   transition: all 0.3s linear;
+
   &.active {
     box-shadow:  $darkShadowCard;
+    
   }
 
   .container {
@@ -49,6 +51,10 @@ header {
   }
 }
 
+main {
+  // min-height: calc( 100vh - 160px);
+  margin-top: 80px;
+}
 
 
 

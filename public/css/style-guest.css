@@ -72,13 +72,13 @@ header .container .row .right {
   height: 100%;
 }
 
+main {
+  margin-top: 80px;
+}
+
 footer #footer-bottom {
   background-color: #1d1d1d;
   min-height: 100px;
-}
-
-main {
-  min-height: calc(100vh - 80px);
 }
 
 #main_home_page_top {
@@ -359,4 +359,41 @@ main {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
+}
+#container_buttons_log_reg {
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+#container_buttons_log_reg .button_log_reg {
+  border-radius: 5px;
+  background-color: #00A082;
+  padding: 5px 10px;
+  font-weight: 700;
+}
+#container_buttons_log_reg .button_log_reg a {
+  color: #fff;
+}
+#container_buttons_log_reg .button_log_reg:hover {
+  background-color: #008169;
+}
+
+.container_form_login {
+  padding: 50px 0;
+  min-height: calc( 100vh - 180px);
+}
+.container_form_login #login_form {
+  border: 2px solid #FFC244;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  padding: 30px;
+  max-width: 30%;
+  border-radius: 5px;
+}
+.container_form_login #login_form #login_btn_form {
+  background-color: #00A082;
+  color: white;
 }

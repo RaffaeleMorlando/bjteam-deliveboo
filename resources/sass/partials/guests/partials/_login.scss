@@ -1,0 +1,46 @@
+#container_buttons_log_reg {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+
+    .button_log_reg {
+        // border: 1px solid red;
+        border-radius: 5px;
+        background-color: $greenPrimary;
+        padding: 5px 10px;
+        font-weight: $fontWeightButton;
+        
+        a {
+            color: #fff;
+        }
+
+        &:hover {
+            background-color: $greenPrimaryHover;
+        }
+    }
+}
+
+.container_form_login {
+    padding: 50px 0;
+     min-height: calc( 100vh - 180px);
+  // margin-top: 80px;
+
+    #login_form {
+        border: 2px solid $yellowPrimary;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        padding: 30px;
+        max-width: 30%;
+        border-radius: 5px;
+    
+        #login_btn_form {
+            background-color: $greenPrimary;
+            color: white;
+        }
+    }
+}
+
+
