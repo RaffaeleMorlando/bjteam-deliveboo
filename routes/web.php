@@ -56,5 +56,6 @@ Route::prefix('admin')
       ->group(function(){
 
         Route::get("home", "GuestController@homePage")->name("home");
+        Route::get("restaurants/{slug}", "GuestController@menuRestaurant")->name("menu-restaurant");
 
       });
