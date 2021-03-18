@@ -10,16 +10,37 @@ use App\Category;
 class RestaurantController extends Controller
 {
 
-  //recuperare i ristoranti
-  public function getRestaurants() {
-    $restaurants = Restaurant::with('categories', 'products')->get();
+  //recuperare i ristoranti in base alla categoria
+  public function getRestaurantsByCategory($categoryParam) {
 
-    return response()->json($restaurants);
+    $allRestaurants = Restaurant::with("categories", "products")->get(); //Tutti i ristoranti
+    $filterRestaurants = []; //Ristoranti filtrati
+
+    foreach ($allRestaurants as $restaurant) {
+      foreach ($restaurant->categories as $category) {
+
+        if ($category->name == $categoryParam) {
+          $filterRestaurants[] = $restaurant;
+        }
+      }
+    }
+
+    return response()->json($filterRestaurants);
   }
+
+  //recuperare tutte le categorie
   public function getCategories()
   {
     $categories = Category::all();
 
     return response()->json($categories);
+  }
+
+  //ristoranti da mostrare in homepage
+  public function getRestaurants() {
+
+    $homeRestaurants = Restaurant::limit(10)->get();
+
+    return response()->json($homeRestaurants);
   }
 }

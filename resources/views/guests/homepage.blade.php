@@ -33,7 +33,7 @@
 
   {{-- Ristoranti ricercati --}}
   <div class="searched_restaurants_container">
-    <a v-for="restaurant in searchedRestaurants" :href="`http://127.0.0.1:8000/restaurants/${restaurant.slug}`" class="animate__animated animate__backInDown">
+    <a v-for="restaurant in filteredRestaurants" :href="`http://127.0.0.1:8000/restaurants/${restaurant.slug}`" class="animate__animated animate__backInDown">
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" :src="restaurant.logo">
         <div class="card-body">

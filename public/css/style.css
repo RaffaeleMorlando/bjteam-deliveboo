@@ -748,17 +748,22 @@ a:hover i {
   padding: 200px 0 30px;
 }
 #product_create .form_box .product_create_img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   position: absolute;
   top: -50px;
   left: -50px;
   width: 200px;
   height: 200px;
-  padding: 15px;
-  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 50%;
+  background-color: rgba(0, 188, 212, 0.9);
 }
-#product_create .form_box .product_create_img img {
-  width: 100%;
+#product_create .form_box .product_create_img i {
+  font-size: 80px;
 }
 #product_create .form_box .create_add_image {
   position: absolute;
@@ -769,7 +774,7 @@ a:hover i {
   height: 50px;
   line-height: 50px;
   background-color: #FFC244;
-  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 50%;
   text-align: center;
   cursor: pointer;

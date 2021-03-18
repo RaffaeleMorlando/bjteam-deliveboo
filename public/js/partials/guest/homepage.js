@@ -49354,35 +49354,32 @@ var prova = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: '#main_home_page_guest',
   data: {
     categories: [],
-    searchedRestaurants: [],
+    homeRestaurants: [],
+    filteredRestaurants: [],
     isChecked: false,
     headerStatus: false
   },
   mounted: function mounted() {
     var _this = this;
 
+    //chiamata che mi restituisce tutte le categorie presenti nel database
     axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/categories').then(function (response) {
       _this.categories = response.data;
-      console.log(_this.categories);
+    }); //chiamata che mi restituisce i ristoranti di default da mostrare nella homepage
+
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
+      _this.homeRestaurants = response.data;
+      console.log(_this.homeRestaurants);
     });
   },
   methods: {
     getRestaurantsByCategory: function getRestaurantsByCategory(index) {
       var self = this;
-      self.searchedRestaurants = [];
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
+      var categoryParam = self.categories[index].name;
+      self.filteredRestaurants = [];
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("api/restaurants/".concat(categoryParam)).then(function (response) {
         var restaurants = response.data;
-        var clickedCategory = self.categories[index].name;
-        console.log(clickedCategory);
-        restaurants.forEach(function (restaurant) {
-          restaurant.categories.forEach(function (category) {
-            if (category.name == clickedCategory) {
-              self.searchedRestaurants.push(restaurant);
-            }
-          });
-        }); // console.log(response.data);
-
-        console.log(self.searchedRestaurants);
+        self.filteredRestaurants = restaurants;
         setTimeout(function () {
           self.scrollToElement({
             behavior: 'smooth'
