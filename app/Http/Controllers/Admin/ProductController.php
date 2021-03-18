@@ -17,7 +17,7 @@ class ProductController extends Controller
         'name' => 'required:max:60',
         'image' => 'image|required',
         'description' => 'required',
-        'price' => 'required|numeric',
+        'price' => 'required|numeric|min:1',
     ];
 
 
