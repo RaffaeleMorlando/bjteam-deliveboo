@@ -44,23 +44,30 @@
               <ul id="route_list" class="list-unstyled">
                   <li class="my-5">
                     <a class="link-aside" href="{{ route('admin.restaurants.dashboard') }}">
-                      <i class="fas fa-home dashboard-icon"></i>
-                      <small>Home</small>
+                      <i class="fas fa-user-lock"></i>
+                      <small>Admin</small>
                     </a>
                   </li>
+                @if(Auth::user()->restaurant->user_id)
+                  <li class="my-5">
+                    <a class="link-aside" href="{{ route('admin.restaurants.products.index') }}">
+                      <i class="fas fa-pizza-slice dashboard-icon"></i>
+                      <small>Prodotti</small>
+                    </a>
+                  </li>
+                  <li class="my-5">
+                    <a class="link-aside" href="{{ route('admin.restaurants.orders.index') }}">
+                      <i class="far fa-chart-bar dashboard-icon"></i>
+                      <small>Ordini</small>
+                    </a>
+                  </li>
+                @endif
                 <li class="my-5">
-                  <a class="link-aside" href="{{ route('admin.restaurants.products.index') }}">
-                    <i class="fas fa-pizza-slice dashboard-icon"></i>
-                    <small>Prodotti</small>
+                  <a class="link-aside" href="{{ route('home') }}">
+                    <i class="fas fa-home"></i>
+                    <small>Home Page</small>
                   </a>
                 </li>
-                <li class="my-5">
-                  <a class="link-aside" href="{{ route('admin.restaurants.orders.index') }}">
-                    <i class="far fa-chart-bar dashboard-icon"></i>
-                    <small>Ordini</small>
-                  </a>
-                </li>
-
               </ul>
 
               <div id="settings_dashboard_container" class="text-center">
