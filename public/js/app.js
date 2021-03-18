@@ -1852,8 +1852,7 @@ $(document).ready(function () {
     maximumSelectionLength: 5,
     placeholder: "inserisci categoria",
     width: 'resolve',
-    height: 'resolve',
-    border: 'resolve'
+    height: 'resolve'
   });
 });
 

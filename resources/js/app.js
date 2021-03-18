@@ -12,7 +12,6 @@ $(document).ready(
         placeholder: "inserisci categoria",
         width: 'resolve',
         height: 'resolve',
-        border: 'resolve',
       });
 
 
