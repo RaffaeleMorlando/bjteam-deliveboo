@@ -3,6 +3,7 @@
     "/js/partials/layouts/backend.js": "/js/partials/layouts/backend.js",
     "/js/partials/layouts/frontend.js": "/js/partials/layouts/frontend.js",
     "/js/partials/guest/homepage.js": "/js/partials/guest/homepage.js",
+    "/js/partials/restaurants/create.js": "/js/partials/restaurants/create.js",
     "/css/app.css": "/css/app.css",
     "/css/style.css": "/css/style.css",
     "/css/style-guest.css": "/css/style-guest.css"
