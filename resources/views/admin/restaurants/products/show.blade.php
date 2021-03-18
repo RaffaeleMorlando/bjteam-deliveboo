@@ -1,9 +1,30 @@
 @extends('layouts.backend')
 
 @section('main')
-  <div>
-    
-    <div class="my-3">
+  <div id="admin_product_show">
+
+    <div class="product_show_container">
+      <div class="image_box">
+        {{-- immagine del prodotto --}}
+        @if ($product->image == null)
+          <img height="180px" src="{{asset('img/foods-placeholder-600x600.png')}}" alt="{{$product->name}}">
+        @elseif(substr($product->image, 0, 5) == 'https')
+          <img src="{{ $product->image }}" alt="product-image">
+        @else
+          <img height="180px" src="{{asset('storage/'.$product->image)}}" alt="{{$product->name}}">
+        @endif
+
+        {{-- box verde con nome del prodotto --}}
+        <div class="green_name_box">
+          <h3>{{$product->name}}</h3>
+        </div>
+
+        <div class="orange_icon_box">
+
+        </div>
+      </div>
+    </div>
+    {{-- <div class="my-3">
       <a class="btn btn-primary" href="{{route('admin.restaurants.products.index')}}">
         <i class="fas fa-chevron-circle-left"></i> Tutti i prodotti
       </a>
@@ -11,13 +32,13 @@
         <i class="fas fa-pencil-alt"></i> Modifica prodotto
       </a>
     </div>
-    
-    
+
+
     <table class="table table-striped table-bordered">
       <tbody>
         <tr>
           <th>Immagine</th>
-          
+
           <td>
             @if ($product->image == null)
               <img height="180px" src="{{asset('img/foods-placeholder-600x600.png')}}" alt="{{$product->name}}">
@@ -26,8 +47,8 @@
             @else
               <img height="180px" src="{{asset('storage/'.$product->image)}}" alt="{{$product->name}}">
             @endif
-          </td>  
-            
+          </td>
+
         </tr>
         <tr>
           <th>Nome piatto</th>
@@ -52,10 +73,10 @@
         <tr>
           <th>Creato il</th>
           <td>{{$product->created_at->format('d-m-Y')}}</td>
-        </tr>      
+        </tr>
       </tbody>
-    </table>
+    </table> --}}
 
-  </div> 
+  </div>
 
 @endsection
