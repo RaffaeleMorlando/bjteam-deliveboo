@@ -120,6 +120,20 @@
     }
   }
 
+  .my_buttons{
+    margin-top: 20px;
+    .my_create_btn{
+      border: none;
+      width: 150px;
+      height: 50px;
+      border-radius: 30px;
+      box-shadow: $shadowCard;
+      color: $white;
+      font-weight: 700;
+      background-color: $greenPrimary;
+      padding: 15px;
+    }
+  }
 }
 
 

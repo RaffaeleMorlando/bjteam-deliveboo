@@ -44,9 +44,11 @@
                 <p>{{ substr($product->description, 0, 20).'...' }}</p>
                 
               </div>
+
               <a class="my_edit_btn" href="{{ route('admin.restaurants.products.edit', $product->id) }}">
                 <i class="fas fa-pencil-alt"></i>
               </a>
+
               <div class="delete_product">
                 <form action="{{ route('admin.restaurants.products.destroy', $product->id) }}" method="post">
                   @csrf
@@ -54,6 +56,7 @@
                   <button class="my_delete_btn" type="submit"><i class="fas fa-trash-alt"></i></button>
                 </form>
               </div>
+
             </div>
           </a>
 
@@ -65,13 +68,19 @@
         
       @endforeach
     </div>
+
+    <div class="my_buttons">
+      <a class="my_create_btn">Aggiungi piatto</a>
+    </div>
+    
   </div>
 
+ 
     
 
 
 
-    <a class="btn btn-primary" href="{{ route('admin.restaurants.products.create') }}">Aggiungi un nuovo piatto</a>
-    <a class="btn btn-danger" href="{{ route('admin.restaurants.dashboard') }}">BACK</a>
+    {{-- <a class="btn btn-primary" href="{{ route('admin.restaurants.products.create') }}">Aggiungi un nuovo piatto</a>
+    <a class="btn btn-danger" href="{{ route('admin.restaurants.dashboard') }}">BACK</a> --}}
 
 @endsection
