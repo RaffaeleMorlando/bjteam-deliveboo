@@ -40,11 +40,17 @@ class RestaurantController extends Controller
 
         $data['user_id'] = Auth::id();
         $data['slug'] = Str::slug($data['name']);
+        if (str_starts_with($data['logo'], 'http')) {
+            $url = Storage::url($data['logo']);
+             $newRestaurant->logo = $url;
+        } else {
+          $data["logo"] = Storage::disk('public')->put('images', $data["logo"]);  
+        }
 
-        $url = Storage::url($data['logo']);
+        
 
         $newRestaurant->fill($data);
-        $newRestaurant->logo = $url;
+        
         $newRestaurant->save();
 
         $newRestaurant->categories()->attach($data["categories"]);

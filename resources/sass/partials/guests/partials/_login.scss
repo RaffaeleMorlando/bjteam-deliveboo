@@ -29,14 +29,14 @@
      min-height: calc( 100vh - 180px);
   // margin-top: 80px;
 
-    #login_form {
+    #register_form,#login_form {
         border: 2px solid $yellowPrimary;
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
         padding: 30px;
         max-width: 30%;
         border-radius: 5px;
     
-        #login_btn_form {
+        #register_btn_form, #login_btn_form {
             background-color: $greenPrimary;
             color: white;
         }

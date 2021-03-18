@@ -32,7 +32,7 @@
                 </div>
             </li> --}}
         @endguest
-    </ul
+      </ul>
 
 @endsection
 
@@ -41,6 +41,7 @@
 
     <div class="container_form_login">
         <form id="login_form" action="{{ route('login') }}" method="POST" class="container">
+            @csrf
         
             <div class="form-group">
                 <label for="email">{{ __('E-Mail Address') }}</label>
@@ -51,6 +52,7 @@
                     </span>
                 @enderror
             </div>
+
             <div class="form-group">
                 <label for="password">{{ __('Password') }}</label>
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -60,6 +62,7 @@
                     </span>
                 @enderror
             </div>
+
             <div class="form-group row">
                 <div class="col-md-6">
                     <div class="form-check">
@@ -70,6 +73,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="form-group row mb-0">
                 <div class="col-md-8">
                     <button id="login_btn_form" type="submit" class="btn">
@@ -82,6 +86,7 @@
                     @endif
                 </div>
             </div>
+
         </form>
     </div>
 

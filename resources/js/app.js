@@ -8,7 +8,10 @@ $(document).ready(
 
     $("#categories").select2(
       {
-        maximumSelectionLength: 5
+        maximumSelectionLength: 5,
+        placeholder: "inserisci categoria",
+        width: 'resolve',
+        height: 'resolve',
       });
 
 

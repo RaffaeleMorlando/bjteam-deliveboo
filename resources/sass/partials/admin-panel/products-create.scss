@@ -65,8 +65,19 @@
           outline: none;
         }
       }
+      .select2-container--default .select2-selection--multiple {
+        border: none;
+        border-bottom: 2px solid #FFC244;
+      }
 
       textarea {
+      
+        &.select2-search__field {
+          height: 28px;
+          border-right: none;
+          border-bottom: none;
+          margin:0px;
+        }
         display: block;
         width: 100%;
         padding: 5px;

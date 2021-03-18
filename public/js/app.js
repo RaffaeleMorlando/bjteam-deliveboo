@@ -1849,7 +1849,10 @@ __webpack_require__(/*! select2 */ "./node_modules/select2/dist/js/select2.js");
 
 $(document).ready(function () {
   $("#categories").select2({
-    maximumSelectionLength: 5
+    maximumSelectionLength: 5,
+    placeholder: "inserisci categoria",
+    width: 'resolve',
+    height: 'resolve'
   });
 });
 
