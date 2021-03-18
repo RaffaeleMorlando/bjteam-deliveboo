@@ -71,6 +71,13 @@ header .container .row .center input[type=text]:focus {
 header .container .row .right {
   height: 100%;
 }
+header .container .row .right img.restaurant_logo {
+  width: 60px;
+  height: 60px;
+  padding: 2px;
+  border-radius: 50%;
+  border: 2px solid #A9E5BB;
+}
 
 footer #footer-bottom {
   background-color: #1d1d1d;
@@ -381,6 +388,7 @@ footer #footer-bottom {
 .container_form_login {
   padding: 50px 0;
   min-height: calc( 100vh - 180px);
+  margin-top: 80px;
 }
 .container_form_login #register_form, .container_form_login #login_form {
   border: 2px solid #FFC244;
@@ -403,6 +411,9 @@ footer #footer-bottom {
   background-color: #f5f5f5;
   overflow: hidden;
 }
+#menu_hero_img_container:hover img {
+  transform: scale(1.1);
+}
 #menu_hero_img_container img {
   width: 100%;
   max-height: 100%;
@@ -410,7 +421,7 @@ footer #footer-bottom {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  opacity: 0.8;
+  transition: all 0.5s ease;
 }
 
 .container-menu-main {

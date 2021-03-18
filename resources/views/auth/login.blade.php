@@ -1,6 +1,6 @@
 @extends('layouts.guest')
 
-@section('header-content')
+{{-- @section('header-content')
 
     <ul id="container_buttons_log_reg" class="ml-auto">
         <!-- Authentication Links -->
@@ -13,7 +13,7 @@
                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
             @endif
-        @else
+        @else --}}
             {{-- <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }}
@@ -31,10 +31,16 @@
                     </form>
                 </div>
             </li> --}}
+            {{-- <li>
+              <a href="#">Prova</a>
+            </li>
+            <li>
+              <a href="#">Prova</a>
+            </li>
         @endguest
       </ul>
 
-@endsection
+@endsection --}}
 
 
 @section('guest-main')
@@ -42,7 +48,7 @@
     <div class="container_form_login">
         <form id="login_form" action="{{ route('login') }}" method="POST" class="container">
             @csrf
-        
+
             <div class="form-group">
                 <label for="email">{{ __('E-Mail Address') }}</label>
                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -90,4 +96,4 @@
         </form>
     </div>
 
-@endsection 
+@endsection
