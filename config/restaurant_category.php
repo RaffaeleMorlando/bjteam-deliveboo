@@ -78,5 +78,10 @@ return $restaurantCategoryArray = [
     "restaurant_id" => 6,
     "category_id" => 5,
   ],
+  [
+    "restaurant_id" => 7,
+    "category_id" => 1,
+  ],
+
 
 ];

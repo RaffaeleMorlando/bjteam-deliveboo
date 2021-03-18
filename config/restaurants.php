@@ -67,6 +67,17 @@ $restaurants = [
     "lat" => "",
     "lon" => "",
   ],
+  [
+    "user_id" => 7,
+    "name" => "Ristorante Indiano Curry Twist",
+    "slug" => "ristorante-indiano-curry-twist",
+    "logo" => "https://d2egcvq7li5bpq.cloudfront.net/it/images/restaurants/219257.gif",
+    "address" => " Via Carlo Farini 37,Milano 20159",
+    "p_iva" => "36336788418",
+    "phone" => "348-0607956",
+    "lat" => "",
+    "lon" => "",
+  ],
   // [
   //   "user_id" => 5,
   //   "name" => "Square Food Milano",

@@ -118,6 +118,25 @@ return $orders = [
     "created_at" => "2019-06-03 18:47:42",
     "updated_at" => "2019-06-03 18:47:42",
   ],
+  [
+    "guest_name" => "Pitta Mattia",
+    "guest_address" => "Via Garibaldi, 69, Milano 20137",
+    "order_number" => "#00014",
+    "total_price" => 23.00,
+    "status" => "Pagato",
+    "created_at" => "2019-06-03 18:47:42",
+    "updated_at" => "2019-06-03 18:47:42",
+  ],
+  [
+    "guest_name" => "Gerry D'Angelo",
+    "guest_address" => "Via Saffi, 12, Milano 20139",
+    "order_number" => "#00015",
+    "total_price" => 9.00,
+    "status" => "Pagato",
+    "created_at" => "2019-06-03 20:47:42",
+    "updated_at" => "2019-06-03 20:47:42",
+  ],
+ 
  
  
 
