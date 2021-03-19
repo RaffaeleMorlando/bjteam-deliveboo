@@ -25,7 +25,7 @@
             <div class="menu_item_sections_container">
 
               {{-- singolo piatto --}}
-              <div class="menu_plate" v-for="plate in menu">
+              <div class="menu_plate" v-for="(plate, index) in menu">
 
                 <div class="menu_img">
                   <img :src="plate.image" alt="">
@@ -34,7 +34,8 @@
                 <p>@{{plate.description}}</p>
                 <div class="plate_price_add">
                   <span>@{{plate.price}}€</span>
-                  <span><i class="fas fa-plus"></i></span>
+                  <span @click="addToCart(index)"><i class="fas fa-shopping-cart"></i>
+                  </span>
                 </div>
               </div>
 
@@ -50,18 +51,19 @@
               <h3>Il tuo ordine</h3>
               <span><img src="{{ asset('img/store-delivery-light.svg') }}" alt=""></span>
               <ul id="cart_order_items">
-                <li>
+                <li v-if='prova.length != 0' v-for="(product, index) in prova">
                   <div class="order_item_top">
-                    <span>count</span>
-                    <p>Pasta al sugo di pomodoro di olive e capperi sotto sale</p>
-                    <span>price</span>
+                    <span>@{{ product.counter }}X</span>
+                    <p>@{{ product.name }}</p>
+                    <span>@{{ (product.price * product.counter).toFixed(2) }}€</span>
                   </div>
                   <div class="order_item_bottom">
-                    <span><i class="fas fa-minus"></i></span>
-                    <span><i class="fas fa-plus"></i></span>
+                    <span @click="decrementCounter(index)"><i class="fas fa-minus"></i></span>
+                    <span @click="incrementCounter(index)"><i class="fas fa-plus"></i></span>
                   </div>
                 </li>
               </ul>
+              <button @click="clearCart()">PAGA</button>
             </div>
 
           </div>
