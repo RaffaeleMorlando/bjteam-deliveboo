@@ -1,6 +1,7 @@
 #admin_product_show {
 
   .product_show_container {
+    width: 100%;
 
     .image_box {
       position: relative;
@@ -74,6 +75,37 @@
         i {
           font-size: 20px;
           color: $white;
+        }
+      }
+    }
+
+    .description_box {
+      position: relative;
+      width: 70%;
+      height: max-content;
+      margin: 100px 0;
+      padding: 20px;
+      background-color: $white;
+      box-shadow: $darkShadowCard;
+      border-radius: $borderRadCard;
+
+      p {
+        margin: 0;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .price_box {
+        @include setPositionAbsolute(55px, 20px);
+        width: max-content;
+        padding: 10px 20px;
+        background-color: #FCF6B1;
+        box-shadow: $darkShadowCard;
+        border-radius: $borderRadCard;
+
+        small {
+          font-size: 20px;
+          font-weight: bold;
         }
       }
     }
