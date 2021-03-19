@@ -23,17 +23,17 @@
         <div class="container">
           <div class="row">
 
-            <div class="left col-lg-3">
+            <div class="left col-lg-3 col-md-4">
               <img class="logo" src="{{ asset("img/logo_glovo-prova.svg") }}" alt="logo">
             </div>
 
-            <div class="center col-lg-6">
+            <div class="center col-lg-6 col-md-4 ">
             @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')
               <input type="text" name="" value="" :placeholder="searchBarPlaceholder">
             @endif
             </div>
 
-            <div class="right col-lg-3 text-right">
+            <div class="right col-lg-3 col-md-4 text-right">
               {{-- header content login --}}
               <ul id="container_buttons_log_reg" class="ml-auto">
                   <!-- Authentication Links -->
