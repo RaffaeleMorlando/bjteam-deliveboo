@@ -49357,11 +49357,7 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     restaurant: {},
     menu: [],
     categories: [],
-    products: [],
-    //Array per local storage
-    // actualCart: [],
-    // provaCart: [JSON.parse(window.localStorage.getItem('cart'))],
-    prova: []
+    cartProducts: []
   },
   mounted: function mounted() {
     var _this = this;
@@ -49381,62 +49377,51 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     var slug = stringSplitterd[stringSplitterd.length - 1];
     axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/restaurant/".concat(slug)).then(function (response) {
       self.restaurant = response.data[0];
-      self.menu = self.restaurant.products; // console.log(self.menu, 'MENU');
-
+      self.menu = self.restaurant.products;
       self.categories = self.restaurant.categories;
     });
 
     if (JSON.parse(window.localStorage.getItem('cart')) == null) {
-      this.prova = [];
+      this.cartProducts = [];
     } else {
-      this.prova = JSON.parse(window.localStorage.getItem('cart'));
-    } // this.prova = JSON.parse(window.localStorage.getItem('cart'));
-
-
-    console.log(this.prova, 'PROVA');
-    console.log(JSON.parse(window.localStorage.getItem('cart')), 'GET'); // this.actualCart = JSON.parse(window.localStorage.getItem('cart'));
+      this.cartProducts = JSON.parse(window.localStorage.getItem('cart'));
+    }
   },
   methods: {
     addToCart: function addToCart(index) {
-      var self = this; //Verifica prodotto già presente
+      var self = this;
+      self.menu[index].counter = 1; //Verifica prodotto già presente
 
-      if (!self.products.includes(self.menu[index])) {
-        self.products.push(self.menu[index]);
-      } //Popoliamo local storage in cart
+      if (!self.cartProducts.includes(self.menu[index])) {
+        self.cartProducts.push(self.menu[index]);
+      }
 
-
-      window.localStorage.setItem('cart', JSON.stringify(self.products[index])); //Salvataggio in una variabile
-
-      self.prova.push(JSON.parse(window.localStorage.getItem('cart')));
-      console.log(self.prova, 'prova');
-      self.prova[index].counter = 1;
-      console.log(self.products, 'CARRELLO');
-      window.localStorage.setItem('cart', JSON.stringify(self.products)); // self.provaCart = self.prova;
+      window.localStorage.setItem('cart', JSON.stringify(self.cartProducts));
+      console.log(JSON.parse(window.localStorage.getItem('cart')));
+      self.cartProducts = JSON.parse(window.localStorage.getItem('cart'));
+      window.localStorage.setItem('cart', JSON.stringify(self.cartProducts));
     },
     clearCart: function clearCart() {
       window.localStorage.removeItem('cart');
-      this.prova = [];
+      this.cartProducts = [];
     },
     incrementCounter: function incrementCounter(index) {
-      console.log(this.prova[index].counter);
-      this.prova[index].counter++;
-      this.prova = window.localStorage.setItem('cart', JSON.stringify(this.prova));
-      this.prova = JSON.parse(window.localStorage.getItem('cart'));
+      console.log(this.cartProducts[index].counter);
+      this.cartProducts[index].counter++;
+      this.cartProducts = window.localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+      this.cartProducts = JSON.parse(window.localStorage.getItem('cart'));
       this.$forceUpdate();
     },
     decrementCounter: function decrementCounter(index) {
-      if (this.prova[index].counter > 1) {
-        this.prova[index].counter--;
+      if (this.cartProducts[index].counter > 1) {
+        this.cartProducts[index].counter--;
         this.$forceUpdate();
       } else {
-        this.prova.splice(index, 1);
+        this.cartProducts.splice(index, 1);
         window.localStorage.clear();
-        window.localStorage.setItem('cart', JSON.stringify(this.prova)); // this.deleteSingleElement(index);
+        window.localStorage.setItem('cart', JSON.stringify(this.cartProducts));
       }
-    } // deleteSingleElement(index){
-    //   this.prova.splice()
-    // }
-
+    }
   }
 });
 })();

@@ -1215,8 +1215,8 @@ a:hover i {
 }
 #admin_product_show .product_show_container .image_box .orange_icon_box {
   position: absolute;
-  top: 255px;
-  left: 18px;
+  top: 205px;
+  left: -20px;
 }
 
 #dashboard_order h1 {
