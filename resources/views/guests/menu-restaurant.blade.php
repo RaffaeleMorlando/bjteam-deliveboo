@@ -51,7 +51,7 @@
               <h3>Il tuo ordine</h3>
               <span><img src="{{ asset('img/store-delivery-light.svg') }}" alt=""></span>
               <ul id="cart_order_items">
-                <li v-for="(product, index) in provaCart">
+                <li v-if='prova.length != 0' v-for="(product, index) in prova">
                   <div class="order_item_top">
                     <span>@{{ product.counter }}X</span>
                     <p>@{{ product.name }}</p>
@@ -63,7 +63,7 @@
                   </div>
                 </li>
               </ul>
-              <button @click="clearCart(index)">PAGA</button>
+              <button @click="clearCart()">PAGA</button>
             </div>
 
           </div>

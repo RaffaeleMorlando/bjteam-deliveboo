@@ -13,8 +13,9 @@ const menuRestaurant = new Vue({
     menu: [],
     categories: [],
     products: [], //Array per local storage
-    actualCart: [],
-    provaCart: [JSON.parse(window.localStorage.getItem('cart'))]
+    // actualCart: [],
+    // provaCart: [JSON.parse(window.localStorage.getItem('cart'))],
+    prova: [],
   },
 
   mounted() {
@@ -41,18 +42,21 @@ const menuRestaurant = new Vue({
         self.restaurant = response.data[0];
 
         self.menu = self.restaurant.products;
+        // console.log(self.menu, 'MENU');
 
         self.categories = self.restaurant.categories;
 
       });
 
-      if(this.provaCart == null){
-        this.provaCart = [];
-      } else {
-        this.provaCart.push(JSON.parse(window.localStorage.getItem('cart'))); 
-      }
-
-      this.provaCart = this.actualCart;
+     if(JSON.parse(window.localStorage.getItem('cart')) == null){
+        this.prova = [];
+     } else {
+        this.prova = (JSON.parse(window.localStorage.getItem('cart')));
+     }
+      
+      
+      // this.prova = JSON.parse(window.localStorage.getItem('cart'));
+      console.log(this.prova, 'PROVA');
       console.log(JSON.parse(window.localStorage.getItem('cart')), 'GET');
       // this.actualCart = JSON.parse(window.localStorage.getItem('cart'));
   },
@@ -63,41 +67,44 @@ const menuRestaurant = new Vue({
       //Verifica prodotto già presente
       if(!self.products.includes(self.menu[index])){
         self.products.push(self.menu[index]);
-        self.menu[index].counter = 1;
       } 
 
       //Popoliamo local storage in cart
       window.localStorage.setItem('cart', JSON.stringify(self.products[index]));
 
       //Salvataggio in una variabile
-      self.actualCart.push(JSON.parse(window.localStorage.getItem('cart'))); 
-      console.log(self.actualCart, 'ACTUALCART');
+      self.prova.push(JSON.parse(window.localStorage.getItem('cart'))); 
+      console.log(self.prova, 'prova');
+      self.prova[index].counter = 1;
 
       console.log(self.products, 'CARRELLO'); 
       
       window.localStorage.setItem('cart', JSON.stringify(self.products));
 
-      self.provaCart = self.actualCart;
+      // self.provaCart = self.prova;
     },
 
-    clearCart: function(index){
-      window.localStorage.removeItem('cart')
+    clearCart: function(){
+      window.localStorage.removeItem('cart');
+      this.prova = [];
     },
 
     incrementCounter: function(index){
-      console.log(this.actualCart[index].counter);
-      this.actualCart[index].counter++;
+      console.log(this.prova[index].counter);
+      this.prova[index].counter++;
+      this.prova = window.localStorage.setItem('cart', JSON.stringify(this.prova));
+      this.prova = JSON.parse(window.localStorage.getItem('cart'));
       this.$forceUpdate();
     },
 
     decrementCounter: function(index){
-      if(this.actualCart[index].counter > 1){
-        this.actualCart[index].counter--;
+      if(this.prova[index].counter > 1){
+        this.prova[index].counter--;
         this.$forceUpdate();
       } else{
-        this.actualCart.splice(index, 1);
+        this.prova.splice(index, 1);
         window.localStorage.clear();
-        window.localStorage.setItem('cart', JSON.stringify(this.actualCart));
+        window.localStorage.setItem('cart', JSON.stringify(this.prova));
         // this.deleteSingleElement(index);
       }
 
@@ -105,7 +112,7 @@ const menuRestaurant = new Vue({
     },
 
     // deleteSingleElement(index){
-    //   this.actualCart.splice()
+    //   this.prova.splice()
     // }
   }
 
