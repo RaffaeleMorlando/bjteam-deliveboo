@@ -13,37 +13,41 @@
         <div class="menu_container container">
 
           <div id="menu_left">
+
+            {{-- SEZIONE INFORMAZIONI RISTORANTE --}}
             <div class="menu_info">
               <div class="menu_info_container">
-                {{-- informazioni aggiuntive del ristorante o categorie --}}
               </div>
-              {{-- <h2>Ristorante Nome</h2> --}}
-              <h2>nome ristorante</h2>
+              <h2>@{{restaurant.name}}</h2>
             </div>
+
             {{-- sezione contenente piatti , scrollabile --}}
             <div class="menu_item_sections_container">
-              <div class="menu_plate">
+
+              {{-- singolo piatto --}}
+              <div class="menu_plate" v-for="plate in menu">
+
                 <div class="menu_img">
-                  <img src="" alt="">
+                  <img :src="plate.image" alt="">
                 </div>
-                <h3>nome</h3>
-                <p>descrizione piatto...</p>
+                <h3>@{{plate.name}}</h3>
+                <p>@{{plate.description}}</p>
                 <div class="plate_price_add">
-                  <span>13€</span>
+                  <span>@{{plate.price}}€</span>
                   <span><i class="fas fa-plus"></i></span>
                 </div>
-
               </div>
-              <div class="menu_plate"></div>
-              <div class="menu_plate"></div>
-              <div class="menu_plate"></div>
+
             </div>
+
           </div>
 
+          {{-- Container del carrello --}}
           <div id="menu_cart">
+
+            {{-- CARRELLO --}}
             <div id="cart">
               <h3>Il tuo ordine</h3>
-              {{-- <span><i class="fas fa-cart-plus"></i></span> --}}
               <span><img src="{{ asset('img/store-delivery-light.svg') }}" alt=""></span>
               <ul id="cart_order_items">
                 <li>
@@ -57,17 +61,9 @@
                     <span><i class="fas fa-plus"></i></span>
                   </div>
                 </li>
-                <li>
-                  <p>Pasta al sugo di pomodoro di olive e capperi sotto sale</p>
-                </li>
-                <li>
-                  <p>Pasta al sugo di pomodoro di olive e capperi sotto sale</p>
-                </li>
-                <li>
-                  <p>Pasta al sugo di pomodoro di olive e capperi sotto sale</p>
-                </li>
               </ul>
             </div>
+
           </div>
 
         </div>
