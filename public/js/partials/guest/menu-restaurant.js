@@ -49390,14 +49390,24 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   methods: {
     addToCart: function addToCart(index) {
       var self = this;
-      self.menu[index].counter = 1; //Verifica prodotto già presente
+      self.menu[index].counter = 1;
 
-      if (!self.cartProducts.includes(self.menu[index])) {
+      if (self.cartProducts.length > 0) {
+        var found = false;
+        self.cartProducts.forEach(function (element) {
+          if (element.name == self.menu[index].name) {
+            found = true;
+          }
+        });
+
+        if (!found) {
+          self.cartProducts.push(self.menu[index]);
+        }
+      } else {
         self.cartProducts.push(self.menu[index]);
       }
 
       window.localStorage.setItem('cart', JSON.stringify(self.cartProducts));
-      console.log(JSON.parse(window.localStorage.getItem('cart')));
       self.cartProducts = JSON.parse(window.localStorage.getItem('cart'));
       window.localStorage.setItem('cart', JSON.stringify(self.cartProducts));
     },
