@@ -2,7 +2,12 @@
 
 @section("guest-main")
 <div id="main_home_page_guest">
-  <div id="main_home_page_top">
+  
+  <div id="main_home_page_top" >
+    
+    <img id="razzo" class="animate__animated animate__bounceInLeft"  src="{{asset("img/rider2.png")}}" alt="">
+ 
+    
     <div class="contenitore_di_tutto_il_casino" :class="isChecked ? 'active' : ''">
       <nav class="menu">
         <input class="menu-toggler" type="checkbox" v-model="isChecked" @click="checked()">
@@ -41,6 +46,10 @@
         </div>
       </div>
     </a>
+  </div>
+  <div v-else>
+    <h1>prova</h1>
+
   </div>
 </div>
 
