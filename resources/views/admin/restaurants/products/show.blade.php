@@ -19,10 +19,29 @@
           <h3>{{$product->name}}</h3>
         </div>
 
+        {{-- box arancione con il link alla edit del prodotto --}}
         <div class="orange_icon_box">
-          <a href="{{ route("admin.restaurants.products.edit", $product->slug) }}">
+          <a href="{{ route("admin.restaurants.products.edit", $product->id) }}">
             <i class="fas fa-edit"></i>
           </a>
+        </div>
+
+        {{-- box giallo con icona is_vegetarian --}}
+        <div class="is_vegetal_box">
+          <i class="fab fa-envira"></i>
+        </div>
+
+        {{-- box rosso con icona is_glutenfree --}}
+        <div class="gluten_free_box">
+          <i class="fas fa-bread-slice"></i>
+        </div>
+      </div>
+
+      <div class="description_box">
+        <p>{{ $product->description }}</p>
+
+        <div class="price_box">
+          <small>{{ $product->price }}&euro;</small>
         </div>
       </div>
     </div>
