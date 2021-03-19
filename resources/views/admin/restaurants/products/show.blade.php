@@ -20,9 +20,17 @@
         </div>
 
         <div class="orange_icon_box">
-          <a href="{{ route("admin.restaurants.products.edit", $product->slug) }}">
+          <a href="{{ route("admin.restaurants.products.edit", $product->id) }}">
             <i class="fas fa-edit"></i>
           </a>
+        </div>
+
+        <div class="is_vegetal_box">
+          <i class="fab fa-envira"></i>
+        </div>
+
+        <div class="gluten_free_box">
+          <i class="fas fa-bread-slice"></i>
         </div>
       </div>
     </div>
