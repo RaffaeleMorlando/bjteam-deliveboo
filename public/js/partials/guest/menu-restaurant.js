@@ -49354,7 +49354,7 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   data: {
     heroStatus: false,
     currentUrl: window.location.href,
-    restaurant: [],
+    restaurant: null,
     menu: [],
     categories: []
   },
@@ -49375,15 +49375,9 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     var stringSplitterd = this.currentUrl.split('/');
     var slug = stringSplitterd[stringSplitterd.length - 1];
     axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/restaurant/".concat(slug)).then(function (response) {
-      var data = response.data; // console.log(data[0].products);
-
-      self.restaurant = data;
-      console.log(restaurant); // self.restaurant = ristorante[0]; // tutto il ristorante
-      // console.log(restaurant, 'restaurant');
-      // self.menu = ristorante.products; // solo il menu
-      // console.log(menu,'menu');
-      // self.categories = ristorante.categories; // solo categorie
-      // console.log(categories,'categories');
+      self.restaurant = response.data[0];
+      self.menu = self.restaurant.products;
+      self.categories = self.restaurant.categories;
     });
   },
   methods: {}

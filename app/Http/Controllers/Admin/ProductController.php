@@ -54,13 +54,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $data = $request->all();
         $request->validate($this->productValidation);
 
         $data['restaurant_id'] = Auth::user()->restaurant->id;
         $data['slug'] = Str::slug($data['name']);
         $data["image"] = Storage::disk('public')->put('images', $data["image"]);
+        $data["image"] = Storage::url($data['image']);
         $product = new Product();
         $product->fill($data);
         $product->save();
