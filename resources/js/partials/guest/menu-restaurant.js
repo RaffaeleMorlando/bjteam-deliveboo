@@ -8,7 +8,10 @@ const menuRestaurant = new Vue({
   el: '#menu-restaurant',
   data: {
     heroStatus: false,
-    currentUrl: window.location.href
+    currentUrl: window.location.href,
+    restaurant: [],
+    menu: [],
+    categories: []
   },
 
   mounted() {
@@ -31,7 +34,22 @@ const menuRestaurant = new Vue({
     axios
       .get(`/api/restaurant/${slug}`)
       .then(response => {
-          console.log(response.data);
+          
+          let data = response.data;
+          // console.log(data[0].products);
+
+          self.restaurant = data;
+          console.log(restaurant);
+
+          // self.restaurant = ristorante[0]; // tutto il ristorante
+          // console.log(restaurant, 'restaurant');
+
+          // self.menu = ristorante.products; // solo il menu
+          // console.log(menu,'menu');
+
+          // self.categories = ristorante.categories; // solo categorie
+          // console.log(categories,'categories');
+
       });
 
   },

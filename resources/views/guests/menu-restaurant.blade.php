@@ -17,7 +17,8 @@
               <div class="menu_info_container">
                 {{-- informazioni aggiuntive del ristorante o categorie --}}
               </div>
-              <h2>Ristorante Nome</h2>
+              {{-- <h2>Ristorante Nome</h2> --}}
+              <h2>nome ristorante</h2>
             </div>
             {{-- sezione contenente piatti , scrollabile --}}
             <div class="menu_item_sections_container">
@@ -25,7 +26,7 @@
                 <div class="menu_img">
                   <img src="" alt="">
                 </div>
-                <h3>NOME PIATTO</h3>
+                <h3>nome</h3>
                 <p>descrizione piatto...</p>
                 <div class="plate_price_add">
                   <span>13€</span>
