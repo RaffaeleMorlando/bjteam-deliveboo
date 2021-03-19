@@ -101,6 +101,8 @@ const menuRestaurant = new Vue({
     decrementCounter: function(index){
       if(this.cartProducts[index].counter > 1){
         this.cartProducts[index].counter--;
+        this.cartProducts = window.localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+        this.cartProducts = JSON.parse(window.localStorage.getItem('cart'));
         this.$forceUpdate();
       } else{
         this.cartProducts.splice(index, 1);

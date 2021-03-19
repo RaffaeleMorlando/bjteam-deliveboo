@@ -101,7 +101,7 @@
         </div>
 
         <div class="buttons_container">
-          <input type="submit" id="submit" value="EDIT" class="btn-submit">
+          <input type="submit" id="submit" value="SAVE" class="btn-submit">
           <a href="{{ route("admin.restaurants.products.index") }}">
             <button type="button" class="btn_back">BACK</button>
           </a>
