@@ -1218,3 +1218,7 @@ a:hover i {
   top: 255px;
   left: 18px;
 }
+
+#dashboard_order h1 {
+  color: red;
+}

@@ -1,5 +1,8 @@
 @extends('layouts.backend')
 
 @section('main')
-    <h1>ORDINI</h1>
+    <div id="dashboard_order">
+        <h1>ORDINI</h1>
+    </div>
+    
 @endsection
