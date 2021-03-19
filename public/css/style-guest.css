@@ -94,12 +94,18 @@ footer #footer-bottom {
 #main_home_page_top {
   position: relative;
   width: 100%;
-  height: calc(80vh - 80px);
-  background-color: #FCF6B1;
+  height: calc(80vh );
+  background-image: url("/img/homepage_hero.svg");
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 2;
+}
+#main_home_page_top #razzo {
+  position: absolute;
+  top: 170px;
+  left: 200px;
+  height: 400px;
 }
 #main_home_page_top .contenitore_di_tutto_il_casino {
   position: absolute;

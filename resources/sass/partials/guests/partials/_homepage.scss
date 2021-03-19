@@ -5,13 +5,20 @@
 #main_home_page_top {
   position: relative;
   width: 100%;
-  height: calc(80vh - 80px);
-  background-color: #FCF6B1;
+  height: calc(80vh );
+  background-image: url('/img/homepage_hero.svg');
   // background-image: url("https://images.creativemarket.com/0.1.0/ps/7583374/1820/893/m1/fpnw/wm1/copl0pcbgxikqywwqiloq9zlalzbscrfhse997942gpslz6vvagc38kjwt0bspbr-.jpg?1578938585&s=cf8e38a875f5639a8d16789c774bff03");
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 2;
+
+  #razzo {
+    position: absolute;
+    top:170px;
+    left: 200px;
+    height: 400px;
+  }
 
   .contenitore_di_tutto_il_casino {
     position: absolute;
