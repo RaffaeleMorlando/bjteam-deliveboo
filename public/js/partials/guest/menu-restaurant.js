@@ -49359,7 +49359,8 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     categories: [],
     products: [],
     //Array per local storage
-    actualCart: []
+    actualCart: [],
+    provaCart: [JSON.parse(window.localStorage.getItem('cart'))]
   },
   mounted: function mounted() {
     var _this = this;
@@ -49382,17 +49383,19 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       self.menu = self.restaurant.products;
       self.categories = self.restaurant.categories;
     });
+
+    if (this.provaCart == null) {
+      this.provaCart = [];
+    } else {
+      this.provaCart.push(JSON.parse(window.localStorage.getItem('cart')));
+    }
+
+    this.provaCart = this.actualCart;
+    console.log(JSON.parse(window.localStorage.getItem('cart')), 'GET'); // this.actualCart = JSON.parse(window.localStorage.getItem('cart'));
   },
   methods: {
     addToCart: function addToCart(index) {
-      var self = this;
-
-      if (JSON.parse(window.localStorage.getItem('cart')) == null) {
-        self.actualCart = [];
-      } else {
-        self.actualCart.push(JSON.parse(window.localStorage.getItem('cart')));
-      } //Verifica prodotto già presente
-
+      var self = this; //Verifica prodotto già presente
 
       if (!self.products.includes(self.menu[index])) {
         self.products.push(self.menu[index]);
@@ -49406,23 +49409,29 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       console.log(self.actualCart, 'ACTUALCART');
       console.log(self.products, 'CARRELLO');
       window.localStorage.setItem('cart', JSON.stringify(self.products));
+      self.provaCart = self.actualCart;
     },
-    clearCart: function clearCart() {
-      window.localStorage.clear();
+    clearCart: function clearCart(index) {
+      window.localStorage.removeItem('cart');
     },
     incrementCounter: function incrementCounter(index) {
-      console.log(this.products[index].counter);
-      this.products[index].counter++;
+      console.log(this.actualCart[index].counter);
+      this.actualCart[index].counter++;
       this.$forceUpdate();
     },
     decrementCounter: function decrementCounter(index) {
-      if (this.products[index].counter > 1) {
-        this.products[index].counter--;
+      if (this.actualCart[index].counter > 1) {
+        this.actualCart[index].counter--;
         this.$forceUpdate();
       } else {
-        this.products.splice(index, 1);
+        this.actualCart.splice(index, 1);
+        window.localStorage.clear();
+        window.localStorage.setItem('cart', JSON.stringify(this.actualCart)); // this.deleteSingleElement(index);
       }
-    }
+    } // deleteSingleElement(index){
+    //   this.actualCart.splice()
+    // }
+
   }
 });
 })();
