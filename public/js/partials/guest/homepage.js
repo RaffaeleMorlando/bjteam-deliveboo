@@ -49363,11 +49363,11 @@ var prova = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     var _this = this;
 
     //chiamata che mi restituisce tutte le categorie presenti nel database
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/categories').then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/categories').then(function (response) {
       _this.categories = response.data;
     }); //chiamata che mi restituisce i ristoranti di default da mostrare nella homepage
 
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/restaurants').then(function (response) {
       _this.homeRestaurants = response.data;
       console.log(_this.homeRestaurants);
     });
@@ -49377,7 +49377,7 @@ var prova = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       var self = this;
       var categoryParam = self.categories[index].name;
       self.filteredRestaurants = [];
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get("api/restaurants/".concat(categoryParam)).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/restaurants/".concat(categoryParam)).then(function (response) {
         var restaurants = response.data;
         self.filteredRestaurants = restaurants;
         setTimeout(function () {

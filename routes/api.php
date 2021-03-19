@@ -23,4 +23,7 @@ Route::namespace("Api")->group(function (){
 
   //ristoranti da mostrare in homepage
   Route::get('restaurants', 'RestaurantController@getRestaurants');
+
+  //menu ristorante da mostrare in show
+  Route::get('restaurant/{slug}', 'RestaurantController@getRestaurantMenu');
 });

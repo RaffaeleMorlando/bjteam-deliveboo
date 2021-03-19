@@ -17,13 +17,13 @@ const prova = new Vue({
   mounted() {
 
     //chiamata che mi restituisce tutte le categorie presenti nel database
-    axios.get('api/categories')
+    axios.get('/api/categories')
       .then(response => {
         this.categories = response.data;
       });
 
     //chiamata che mi restituisce i ristoranti di default da mostrare nella homepage
-    axios.get('api/restaurants')
+    axios.get('/api/restaurants')
       .then(response => {
         this.homeRestaurants = response.data;
         console.log(this.homeRestaurants);
@@ -39,7 +39,7 @@ const prova = new Vue({
       self.filteredRestaurants = [];
 
       axios
-        .get(`api/restaurants/${categoryParam}`)
+        .get(`/api/restaurants/${categoryParam}`)
         .then(response => {
 
           const restaurants = response.data;

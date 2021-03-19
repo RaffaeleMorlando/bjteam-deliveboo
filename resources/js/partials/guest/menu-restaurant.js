@@ -1,10 +1,14 @@
 require('../../bootstrap');
+
+import axios from 'axios';
+
 import Vue from 'vue';
 
 const menuRestaurant = new Vue({
   el: '#menu-restaurant',
   data: {
-    heroStatus: false
+    heroStatus: false,
+    currentUrl: window.location.href
   },
 
   mounted() {
@@ -19,7 +23,20 @@ const menuRestaurant = new Vue({
       };
     });
 
+
+    //Fetch api per recupero ristorante
+    let stringSplitterd = this.currentUrl.split('/');
+    let slug = stringSplitterd[stringSplitterd.length - 1];
+
+    axios
+      .get(`/api/restaurant/${slug}`)
+      .then(response => {
+          console.log(response.data);
+      });
+
   },
   methods: {
+
   }
+
 });

@@ -43,4 +43,12 @@ class RestaurantController extends Controller
 
     return response()->json($homeRestaurants);
   }
+
+  //ristorante da mostrare in show
+  public function getRestaurantMenu($slug) {
+
+    $menuRestaurant = Restaurant::where('slug',$slug)->with('products','categories')->get();
+
+    return response()->json($menuRestaurant);
+  }
 }
