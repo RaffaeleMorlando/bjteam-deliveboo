@@ -35,6 +35,7 @@ header {
           padding: 5px 10px;
           border-radius: 20px;
           background-color: $darkWhite;
+          box-shadow: $darkShadowCard;
           border: none;
 
           &:focus {
@@ -46,6 +47,22 @@ header {
       .right {
         height: 100%;
         //background-color: green;
+
+        img.restaurant_logo {
+          width: 60px;
+          height: 60px;
+          padding: 2px;
+          border-radius: 50%;
+          border: 2px solid #A9E5BB;
+        }
+
+        i {
+          padding: 5px;
+          font-size: 30px;
+          color: #2D1E2F;
+          border: 2px solid #2D1E2F;
+          border-radius: 3px;
+        }
       }
     }
   }

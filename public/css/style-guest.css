@@ -62,6 +62,7 @@ header .container .row .center input[type=text] {
   padding: 5px 10px;
   border-radius: 20px;
   background-color: #F5F5F5;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border: none;
 }
 header .container .row .center input[type=text]:focus {
@@ -69,6 +70,20 @@ header .container .row .center input[type=text]:focus {
 }
 header .container .row .right {
   height: 100%;
+}
+header .container .row .right img.restaurant_logo {
+  width: 60px;
+  height: 60px;
+  padding: 2px;
+  border-radius: 50%;
+  border: 2px solid #A9E5BB;
+}
+header .container .row .right i {
+  padding: 5px;
+  font-size: 30px;
+  color: #2D1E2F;
+  border: 2px solid #2D1E2F;
+  border-radius: 3px;
 }
 
 footer #footer-bottom {
@@ -80,7 +95,7 @@ footer #footer-bottom {
   position: relative;
   width: 100%;
   height: calc(80vh - 80px);
-  background-color: #FFC244;
+  background-color: #FCF6B1;
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
@@ -380,6 +395,7 @@ footer #footer-bottom {
 .container_form_login {
   padding: 50px 0;
   min-height: calc( 100vh - 180px);
+  margin-top: 80px;
 }
 .container_form_login #register_form, .container_form_login #login_form {
   border: 2px solid #FFC244;
@@ -402,6 +418,9 @@ footer #footer-bottom {
   background-color: #f5f5f5;
   overflow: hidden;
 }
+#menu_hero_img_container:hover img {
+  transform: scale(1.1);
+}
 #menu_hero_img_container img {
   width: 100%;
   max-height: 100%;
@@ -409,7 +428,7 @@ footer #footer-bottom {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  opacity: 0.8;
+  transition: all 0.5s ease;
 }
 
 .container-menu-main {

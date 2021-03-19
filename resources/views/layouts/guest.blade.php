@@ -28,14 +28,41 @@
             </div>
 
             <div class="center col-lg-6">
-              @auth
+            @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')
               <input type="text" name="" value="" :placeholder="searchBarPlaceholder">
-              @endauth
+            @endif
             </div>
 
             <div class="right col-lg-3 text-right">
               {{-- header content login --}}
-              @yield('header-content')
+              <ul id="container_buttons_log_reg" class="ml-auto">
+                  <!-- Authentication Links -->
+                @guest
+                  <li class="button_log_reg">
+                      <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                  </li>
+                  @if (Route::has('register'))
+                    <li class="button_log_reg">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                  @endif
+                @else
+                  <li>
+                    <a href="{{ route('admin.restaurants.dashboard') }}">
+                      <img class="restaurant_logo" src="{{ Auth::user()->restaurant->logo }}" alt="restaurant_logo">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                  </li>
+                @endguest
+              </ul>
             </div>
           </div>
         </div>
