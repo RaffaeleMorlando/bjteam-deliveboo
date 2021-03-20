@@ -24,7 +24,7 @@
           <div class="row">
 
             <div class="left col-lg-3 col-md-4">
-              <img class="logo" src="{{ asset("img/logo_glovo-prova.svg") }}" alt="logo">
+              <a href="{{ route('home') }}"><img class="logo" src="{{ asset("img/logo_glovo-prova.svg") }}" alt="logo"></a>
             </div>
 
             <div class="center col-lg-6 col-md-4 ">
