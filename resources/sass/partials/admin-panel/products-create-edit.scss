@@ -28,6 +28,26 @@
     }
 }
 
+    //buttons
+    .btn-submit,
+    .btn_back {
+      border: none;
+      width: 150px;
+      height: 50px;
+      border-radius: 30px;
+      box-shadow: $shadowCard;
+      color: $white;
+      font-weight: 700;
+    }
+    .btn-submit {
+      background-color: $greenPrimary;
+    }
+    .btn_back {
+      display: inline-block;
+      background-color: #E56668;
+    }
+
+
 // css specifico
 #product_create,
 #product_edit {
@@ -126,7 +146,7 @@
       }
 
       textarea {
-        
+
         &.select2-search__field {
           height: 28px;
           border-right: none;
@@ -168,26 +188,6 @@
 
         }
       }
-    }
-
-
-    //bottone submit
-    .btn-submit,
-    .btn_back {
-      border: none;
-      width: 150px;
-      height: 50px;
-      border-radius: 30px;
-      box-shadow: $shadowCard;
-      color: $white;
-      font-weight: 700;
-    }
-    .btn-submit {
-      background-color: $greenPrimary;
-    }
-    .btn_back {
-      display: inline-block;
-      background-color: #E56668;
     }
   }
 }

@@ -48,6 +48,12 @@
           <small>{{ $product->price }}&euro;</small>
         </div>
       </div>
+      
+      <div class="buttons_container">
+        <a href="{{ route("admin.restaurants.products.index") }}">
+          <button type="button" class="btn_back">BACK</button>
+        </a>
+      </div>
     </div>
     {{-- <div class="my-3">
       <a class="btn btn-primary" href="{{route('admin.restaurants.products.index')}}">
