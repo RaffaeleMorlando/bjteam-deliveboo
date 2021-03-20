@@ -18,7 +18,7 @@ class OrderController extends Controller
         foreach ($allOrders as $order) {
           foreach ($order->products as $product) {
 
-            if ($product->restaurant_id === Auth::user()->id && !in_array($order, $orders)) {
+            if ($product->restaurant_id === Auth::user()->restaurant->id && !in_array($order, $orders)) {
               $orders[] = $order;
               
             }
