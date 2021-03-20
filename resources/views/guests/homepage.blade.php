@@ -37,7 +37,7 @@
   </div>
 
   {{-- Ristoranti ricercati --}}
-  <div class="searched_restaurants_container">
+  <div class="searched_restaurants_container" v-if="filteredRestaurants.length != 0">
     <a v-for="restaurant in filteredRestaurants" :href="`http://127.0.0.1:8000/restaurants/${restaurant.slug}`" class="animate__animated animate__backInDown">
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" :src="restaurant.logo">
@@ -47,9 +47,15 @@
       </div>
     </a>
   </div>
-  <div v-else>
-    <h1>prova</h1>
-
+  <div v-else id="static_restaurants_home" class="container">
+    <ul id="static_restaurants_container">
+      <li>CARD</li>
+      <li>CARD</li>
+      <li>CARD</li>
+      <li>CARD</li>
+      <li>CARD</li>
+      <li>CARD</li>
+    </ul>
   </div>
 </div>
 

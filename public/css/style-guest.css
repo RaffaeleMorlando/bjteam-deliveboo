@@ -130,6 +130,22 @@ footer #footer-bottom {
   margin: 40px 20px;
 }
 
+#static_restaurants_home {
+  border: 1px solid red;
+  height: 800px;
+}
+#static_restaurants_home #static_restaurants_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 50px;
+  list-style: none;
+}
+#static_restaurants_home #static_restaurants_container li {
+  border: 1px solid red;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
 .menu-toggler {
   position: absolute;
   display: block;

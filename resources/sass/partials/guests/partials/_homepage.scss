@@ -45,9 +45,24 @@
   }
 }
 
+#static_restaurants_home {
+  border: 1px solid red;
+  height: 800px;  
 
+  #static_restaurants_container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 50px;
+      list-style: none;
+      
+      li {
+      border: 1px solid red;
+      height: 300px;
+      margin-bottom: 20px;
+    }
+  }
 
-
+}
 
 
 
@@ -208,6 +223,7 @@
     display: none;
   }
 }
+
 .menu-item a:hover {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
   color: white;
@@ -222,6 +238,7 @@
     color: black;
   }
 }
+
 .gadget_button_category {
   opacity: 1;
   width: 85px;
@@ -239,6 +256,7 @@
 }
 
 @keyframes pulse {
+
 	0% {
 		transform: scale(0.95);
 		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
@@ -253,4 +271,5 @@
 		transform: scale(0.95);
 		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 	}
+
 }
