@@ -132,12 +132,11 @@ footer #footer-bottom {
 
 #static_restaurants_home {
   border: 1px solid red;
-  height: 800px;
 }
 #static_restaurants_home #static_restaurants_container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 50px;
+  grid-column-gap: 40px;
   list-style: none;
 }
 #static_restaurants_home #static_restaurants_container li {
@@ -455,10 +454,17 @@ footer #footer-bottom {
 
 .container-menu-main {
   width: 100%;
+  background-image: url("/img/homepage_hero.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: top;
 }
 .container-menu-main .menu_container {
   display: flex;
   width: 100%;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border-radius: 5px;
+  background-color: #fff;
 }
 .container-menu-main .menu_container #menu_left {
   width: 60%;
@@ -577,6 +583,8 @@ footer #footer-bottom {
   padding: 10px 15px;
 }
 .container-menu-main .menu_container #menu_cart #cart #cart_order_items {
+  height: 300px;
+  overflow-y: scroll;
   list-style: none;
 }
 .container-menu-main .menu_container #menu_cart #cart #cart_order_items #cart_order_placeholder_container {
@@ -619,11 +627,15 @@ footer #footer-bottom {
   border-radius: 50%;
   cursor: pointer;
 }
-.container-menu-main .menu_container #menu_cart #cart #cart_order_items li #container_button_cart {
+.container-menu-main .menu_container #menu_cart #cart #container_button_cart {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.container-menu-main .menu_container #menu_cart #cart #cart_order_items li #container_button_cart #container_button_cart #button_cart {
-  background-color: red;
+.container-menu-main .menu_container #menu_cart #cart #container_button_cart #button_cart {
+  background-color: #00A07F;
+  padding: 16px 28px;
+  border-radius: 50px;
+  color: #fff;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
 }

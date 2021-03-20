@@ -25,7 +25,7 @@
 
         <li class="menu-item gadget_button_category text-center" :class="isChecked ? '' : 'blob'">
           <a href="#">
-            <img src="{{ asset("img/categories/search.webp") }}" alt="" style="width: 50px; height: 50px">
+            <img src="{{ asset("img/categories/backpack.png") }}" alt="" style="width: 50px; height: 50px">
           </a>
         </li>
 
@@ -49,9 +49,6 @@
   </div>
   <div v-else id="static_restaurants_home" class="container">
     <ul id="static_restaurants_container">
-      <li>CARD</li>
-      <li>CARD</li>
-      <li>CARD</li>
       <li>CARD</li>
       <li>CARD</li>
       <li>CARD</li>
