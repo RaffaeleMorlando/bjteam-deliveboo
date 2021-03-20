@@ -33,7 +33,7 @@
                 <h3>@{{plate.name}}</h3>
                 <p>@{{plate.description}}</p>
                 <div class="plate_price_add">
-                  <span class="plate_infos" id="plate_price">@{{plate.price}}€</span>
+                  <span class="plate_infos" id="plate_price">@{{plate.price.toFixed(2)}}€</span>
                   <span class="plate_infos" id="plate_add_cart" @click="addToCart(index)"><i class="fas fa-shopping-cart"></i>
                   </span>
                 </div>
