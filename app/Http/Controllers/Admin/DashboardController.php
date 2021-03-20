@@ -21,20 +21,23 @@ class DashboardController extends Controller
 
         $allOrders = Order::all();
         $orders = [];
+        $totalEarnings = 0;
 
         foreach ($allOrders as $order) {
           foreach ($order->products as $product) {
 
             if ($product->restaurant_id === Auth::user()->restaurant->id && !in_array($order, $orders)) {
               $orders[] = $order;
-              
+
             }
           }
         }
 
-
-        return view('admin.restaurants.dashboard', compact('restaurant', 'orders'));
-
+        //prendo i guadagni totali
+        foreach ($orders as $order) {
+          $totalEarnings += $order["total_price"];
+        }
+        return view('admin.restaurants.dashboard', compact('restaurant', 'orders', 'totalEarnings'));
     }
 
     //cambiare il logo del ristorante

@@ -20,7 +20,7 @@ class OrderController extends Controller
 
             if ($product->restaurant_id === Auth::user()->restaurant->id && !in_array($order, $orders)) {
               $orders[] = $order;
-              
+
             }
           }
         }
