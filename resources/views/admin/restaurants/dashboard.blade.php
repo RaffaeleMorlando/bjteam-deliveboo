@@ -2,7 +2,7 @@
 
 @section("main")
   <div id="dashboard_index" class="container">
- 
+
     <div class="dashboard_top_section">
 
       <ul class="dashboard_top_container_cards">
@@ -17,6 +17,7 @@
           <div class="dashboard_top_card_icon">
             <i class="fas fa-wallet"></i>
           </div>
+          <p>Total: {{ number_format($totalEarnings, 2) }}&euro;</p>
         </li>
         <li class="dashboard_top_card">
           <div class="dashboard_top_card_icon">
@@ -48,11 +49,11 @@
           </div>
           <div class="dashboard_container_plates">
             @foreach ($restaurant->products->reverse() as $key => $product)
-              @if($key === $restaurant->products->count() - 1) 
+              @if($key === $restaurant->products->count() - 1)
               <p class="dashboard_item">{{ $product->name }} <span class="badge badge-danger">new</span></p>
-              @else 
+              @else
               <p class="dashboard_item">{{ $product->name }}</p>
-              @endif              
+              @endif
             @endforeach
           </div>
         </li>
