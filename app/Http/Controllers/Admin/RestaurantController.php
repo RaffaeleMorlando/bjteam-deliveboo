@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Storage;
 class RestaurantController extends Controller
 {
     private $restaurantValidation = [
+        'logo' => 'required|image', //da modificare a nullable (con immagine default)
         'name' => 'required|max:100',
         'phone' => 'required|max:20',
         'address' => 'required',
@@ -44,13 +45,13 @@ class RestaurantController extends Controller
             $url = Storage::url($data['logo']);
             $newRestaurant->logo = $url;
         } else {
-          $data["logo"] = Storage::disk('public')->put('images', $data["logo"]);  
+          $data["logo"] = Storage::disk('public')->put('images', $data["logo"]);
         }
 
-        
+
 
         $newRestaurant->fill($data);
-        
+
         $newRestaurant->save();
 
         $newRestaurant->categories()->attach($data["categories"]);

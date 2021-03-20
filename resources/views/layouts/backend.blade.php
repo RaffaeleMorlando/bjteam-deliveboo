@@ -48,7 +48,7 @@
                       <small>Admin</small>
                     </a>
                   </li>
-                @if(Auth::user()->restaurant->user_id)
+                @if(Auth::user()->restaurant)
                   <li class="my-5">
                     <a class="link-aside" href="{{ route('admin.restaurants.products.index') }}">
                       <i class="fas fa-pizza-slice dashboard-icon"></i>
