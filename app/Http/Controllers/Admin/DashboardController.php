@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Restaurant;
+use App\Order;
 
 
 
@@ -17,7 +18,22 @@ class DashboardController extends Controller
 
         $restaurant = Auth::user()->restaurant;
 
-        return view('admin.restaurants.dashboard', compact('restaurant'));
+
+        $allOrders = Order::all();
+        $orders = [];
+
+        foreach ($allOrders as $order) {
+          foreach ($order->products as $product) {
+
+            if ($product->restaurant_id === Auth::user()->restaurant->id && !in_array($order, $orders)) {
+              $orders[] = $order;
+              
+            }
+          }
+        }
+
+
+        return view('admin.restaurants.dashboard', compact('restaurant', 'orders'));
 
     }
 
