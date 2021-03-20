@@ -6,6 +6,9 @@
   align-items: center;
   position: relative;
   margin-bottom: 40px;
+  background-color: $white;
+  border-radius: $borderRadCard;
+
   .menu_icon{
     width: 100px;
     height: 100px;
@@ -35,11 +38,11 @@
     background: linear-gradient(60deg, #66bb6a, #43a047);
     max-height: 47vh;
     // overflow-y: scroll;
-   
+
     // white-space: nowrap;
     // overflow: hidden;
     // text-overflow: ellipsis;
-    
+
 
     .card_image{
       position: relative;
@@ -78,7 +81,7 @@
       &:hover ~ .card-body{
         color: green;
       }
-    } 
+    }
     .card-body{
       color: white;
       padding: 20px;
@@ -109,7 +112,7 @@
       &:hover ~ .card_image .my_btn{
         opacity: 0;
       }
-     
+
     }
     .my_delete_btn{
       display: block;
@@ -145,7 +148,7 @@
     .my_create_btn{
       background-color: $greenPrimary;
     }
-    .my_dashboard_btn{     
+    .my_dashboard_btn{
       background-color: #E56668;
     }
 
@@ -171,7 +174,7 @@
       margin: 20px 0;
     }
   }
-  
+
 }
 
 
