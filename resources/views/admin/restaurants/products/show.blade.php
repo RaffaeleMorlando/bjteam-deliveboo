@@ -27,14 +27,18 @@
         </div>
 
         {{-- box giallo con icona is_vegetarian --}}
-        <div class="is_vegetal_box">
-          <i class="fab fa-envira"></i>
-        </div>
+        @if ($product->is_vegetarian)
+          <div class="is_vegetal_box">
+            <i class="fab fa-envira"></i>
+          </div>
+        @endif
 
-        {{-- box rosso con icona is_glutenfree --}}
-        <div class="gluten_free_box">
-          <i class="fas fa-bread-slice"></i>
-        </div>
+        @if ($product->is_glutenfree)
+          {{-- box rosso con icona is_glutenfree --}}
+          <div class="gluten_free_box">
+            <i class="fas fa-bread-slice"></i>
+          </div>
+        @endif
       </div>
 
       <div class="description_box">
