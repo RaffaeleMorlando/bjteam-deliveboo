@@ -81,9 +81,9 @@
 
     .description_box {
       position: relative;
-      width: 70%;
+      width: 90%;
       height: max-content;
-      margin: 100px 0;
+      margin: 100px 0 60px 0;
       padding: 20px;
       background-color: $white;
       box-shadow: $darkShadowCard;
@@ -110,4 +110,27 @@
       }
     }
   }
+}
+
+// Media Query -----------------------------------------------------------------
+
+//MD
+@media all and (max-width: 992px) {
+
+  #admin_product_show {
+
+    .product_show_container {
+      padding: 0 20px; //
+
+      .description_box {
+        width: 100%; //
+
+        .price_box {
+          @include setPositionAbsolute(85%, 20px); //
+
+        }
+      }
+    }
+  }
+
 }
