@@ -390,6 +390,9 @@ a:hover i {
   height: 100%;
   padding: 50px 80px;
   overflow-y: auto;
+  background-image: url("/img/backend_hero.svg");
+  background-repeat: no-repeat;
+  background-position: top;
 }
 #container_dashboard aside {
   position: relative;
