@@ -49,6 +49,9 @@
       height: 100%;
       padding: $paddingMain;
       overflow-y: auto;
+      background-image: url("/img/backend_hero.svg");
+      background-repeat: no-repeat;
+      background-position: top;
     }
 
     aside {

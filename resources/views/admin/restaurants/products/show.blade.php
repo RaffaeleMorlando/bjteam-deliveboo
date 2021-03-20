@@ -27,14 +27,18 @@
         </div>
 
         {{-- box giallo con icona is_vegetarian --}}
-        <div class="is_vegetal_box">
-          <i class="fab fa-envira"></i>
-        </div>
+        @if ($product->is_vegetarian)
+          <div class="is_vegetal_box">
+            <i class="fab fa-envira"></i>
+          </div>
+        @endif
 
-        {{-- box rosso con icona is_glutenfree --}}
-        <div class="gluten_free_box">
-          <i class="fas fa-bread-slice"></i>
-        </div>
+        @if ($product->is_glutenfree)
+          {{-- box rosso con icona is_glutenfree --}}
+          <div class="gluten_free_box">
+            <i class="fas fa-bread-slice"></i>
+          </div>
+        @endif
       </div>
 
       <div class="description_box">
@@ -43,6 +47,12 @@
         <div class="price_box">
           <small>{{ $product->price }}&euro;</small>
         </div>
+      </div>
+      
+      <div class="buttons_container">
+        <a href="{{ route("admin.restaurants.products.index") }}">
+          <button type="button" class="btn_back">BACK</button>
+        </a>
       </div>
     </div>
     {{-- <div class="my-3">

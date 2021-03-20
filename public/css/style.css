@@ -390,6 +390,9 @@ a:hover i {
   height: 100%;
   padding: 50px 80px;
   overflow-y: auto;
+  background-image: url("/img/backend_hero.svg");
+  background-repeat: no-repeat;
+  background-position: top;
 }
 #container_dashboard aside {
   position: relative;
@@ -924,6 +927,26 @@ a:hover i {
   font-style: italic;
 }
 
+.btn-submit,
+.btn_back {
+  border: none;
+  width: 150px;
+  height: 50px;
+  border-radius: 30px;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.btn-submit {
+  background-color: #00A082;
+}
+
+.btn_back {
+  display: inline-block;
+  background-color: #E56668;
+}
+
 #product_create,
 #product_edit {
   width: 100%;
@@ -1080,27 +1103,6 @@ a:hover i {
 #product_edit .form_box .create_product_check_box .input_control label {
   font-weight: 600;
   font-style: italic;
-}
-#product_create .form_box .btn-submit,
-#product_create .form_box .btn_back,
-#product_edit .form_box .btn-submit,
-#product_edit .form_box .btn_back {
-  border: none;
-  width: 150px;
-  height: 50px;
-  border-radius: 30px;
-  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
-  color: #ffffff;
-  font-weight: 700;
-}
-#product_create .form_box .btn-submit,
-#product_edit .form_box .btn-submit {
-  background-color: #00A082;
-}
-#product_create .form_box .btn_back,
-#product_edit .form_box .btn_back {
-  display: inline-block;
-  background-color: #E56668;
 }
 
 @media all and (max-width: 1450px) {
