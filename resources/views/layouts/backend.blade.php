@@ -9,7 +9,9 @@
   {{-- my style --}}
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <script src="{{ asset('js/app.js') }}" defer></script>
-
+  
+  {{-- chart.js --}}
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
 <body>
   <div id="background">
@@ -115,5 +117,6 @@
   </div>
 
   <script src="{{ asset("js/partials/layouts/backend.js") }}" charset="utf-8"></script>
+  @yield("backend-script")
 </body>
 </html>

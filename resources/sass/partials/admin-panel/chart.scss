@@ -1,0 +1,4 @@
+#chart_container {
+  height: 100%;
+  @include SetFlexContainer (row, center, center, nowrap)
+}

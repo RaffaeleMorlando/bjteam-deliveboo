@@ -28,11 +28,12 @@
                 @endforeach
             </tbody>
         </table>
+        <a href="{{ route("admin.restaurants.orders.chart") }}">grafico</a>
 
 
 
 
 
     </div>
-    
+
 @endsection

@@ -1,6 +1,4 @@
 require('../../bootstrap');
-
-
 import Vue from 'vue';
 
 const backend = new Vue({
