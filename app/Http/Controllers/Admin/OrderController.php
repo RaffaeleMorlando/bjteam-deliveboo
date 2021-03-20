@@ -11,11 +11,19 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $prodotti = Product::where('restaurant_id', Auth::user()->restaurant->id)->get();
-        foreach ($prodotti as $prodotto) {
-           $orders = $prodotto->orders;
-        }
 
+        $allOrders = Order::all();
+        $orders = [];
+
+        foreach ($allOrders as $order) {
+          foreach ($order->products as $product) {
+
+            if ($product->restaurant_id === Auth::user()->id && !in_array($order, $orders)) {
+              $orders[] = $order;
+              
+            }
+          }
+        }
 
         return view('admin.restaurants.orders.index', compact('orders'));
     }
