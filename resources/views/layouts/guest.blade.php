@@ -49,7 +49,8 @@
                 @else
                   <li>
                     <a href="{{ route('admin.restaurants.dashboard') }}">
-                      <img class="restaurant_logo" src="{{ Auth::user()->restaurant->logo }}" alt="restaurant_logo">
+                      <img class="restaurant_logo" src="{{ Auth::user()->restaurant->logo }}" 
+                      alt="restaurant_logo">
                     </a>
                   </li>
                   <li>

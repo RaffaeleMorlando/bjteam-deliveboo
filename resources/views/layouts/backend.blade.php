@@ -29,6 +29,7 @@
         </main>
 
         {{-- parte destra del layout --}}
+        
         <aside :class="activeAside ? 'aside_slide_left' : 'aside_slide_right'">
 
           <div class="content" :class="activeAside ? 'fade_in' : 'fade_out'">
@@ -37,7 +38,7 @@
               <i class="far fa-user-circle"></i>
               <span id="name_admin">{{ Auth::user()->name }}</span>
             </div>
-
+            @if(Auth::user()->restaurant)
             <div id="aside_center">
               {{-- <h3>Pages</h3> --}}
 
@@ -48,7 +49,7 @@
                       <small>Admin</small>
                     </a>
                   </li>
-                @if(Auth::user()->restaurant)
+                
                   <li class="my-5">
                     <a class="link-aside" href="{{ route('admin.restaurants.products.index') }}">
                       <i class="fas fa-pizza-slice dashboard-icon"></i>
@@ -61,7 +62,7 @@
                       <small>Ordini</small>
                     </a>
                   </li>
-                @endif
+             
                 <li class="my-5">
                   <a class="link-aside" href="{{ route('home') }}">
                     <i class="fas fa-home"></i>
@@ -101,10 +102,12 @@
               </div>
 
             </div>
+            @endif
           </div>
 
           <div class="image_curve"></div>
         </aside>
+   
 
        {{-- burgericon --}}
       <a id="burgerIcon" @click="toggleShow" :class="activeAside ? 'active' : '' "><i></i></a>

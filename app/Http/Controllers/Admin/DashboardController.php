@@ -37,6 +37,7 @@ class DashboardController extends Controller
         foreach ($orders as $order) {
           $totalEarnings += $order["total_price"];
         }
+        
         return view('admin.restaurants.dashboard', compact('restaurant', 'orders', 'totalEarnings'));
     }
 

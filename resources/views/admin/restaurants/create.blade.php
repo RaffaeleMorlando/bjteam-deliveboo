@@ -1,7 +1,7 @@
 @extends('layouts.backend')
 
 @section('main')
-  <section id="product_create" class="container my-3">
+  <section id="restaurant_create" class="container my-3">
 
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -12,7 +12,11 @@
         </ul>
     </div>
     @endif
+
      <div class="form_box">
+      <div class="product_name_green_box">
+        <p>Crea Ristorante</p>
+      </div>
       <div class="product_create_img">
         {{-- <img src="{{ asset("img/create-food.png") }}" alt="create-img"> --}}
         <i class="fas fa-store"></i>
