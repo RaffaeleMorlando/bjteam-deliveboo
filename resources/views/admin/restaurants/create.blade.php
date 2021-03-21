@@ -1,7 +1,7 @@
 @extends('layouts.backend')
 
 @section('main')
-  <section id="product_create" class="container my-3">
+  <section id="restaurant_create" class="container my-3">
 
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -12,7 +12,11 @@
         </ul>
     </div>
     @endif
+
      <div class="form_box">
+      <div class="product_name_green_box">
+        <p>Crea Ristorante</p>
+      </div>
       <div class="product_create_img">
         {{-- <img src="{{ asset("img/create-food.png") }}" alt="create-img"> --}}
         <i class="fas fa-store"></i>
@@ -24,7 +28,10 @@
 
         <label for="logo" class="create_add_image" title="aggiungi logo">
           <input type="file" accept="image/*" name="logo" id="logo">
-          <i class="fas fa-camera-retro"></i>
+          <div  id="preview">
+            <img src="" />
+          </div>
+          <i  class="fas fa-camera-retro"></i>
         </label>
 
         <div class="create_product_input">
@@ -33,7 +40,8 @@
         </div>
         <div class="small_green_box">
           <label for="name" class="mx-1 my-0">Nome</label>
-        </div>  
+        </div>
+          <p>@{{url}}</p>
           <input type="text" name="name" id="name" value="{{ old('name')}}" placeholder="Inserisci il nome del prodotto">
         </div>
 
@@ -78,4 +86,8 @@
        
     </div>
   </section>
+@endsection
+
+@section('backend-script')
+    <script src="{{ asset('js/partials/admin/create-restaurant.js') }}"></script>
 @endsection
