@@ -11,7 +11,8 @@ const prova = new Vue({
     homeRestaurants: [],
     filteredRestaurants: [],
     isChecked: false,
-    headerStatus: false
+    headerStatus: false,
+    visible: true
   },
 
   mounted() {
@@ -53,7 +54,7 @@ const prova = new Vue({
     },
 
     scrollToElement: function(options){
-      const el = this.$el.getElementsByClassName('pino')[0];
+      const el = this.$el.getElementsByClassName('scroll')[0];
 
       if (el) {
         el.scrollIntoView(options);
@@ -63,6 +64,7 @@ const prova = new Vue({
     checked: function(){
       this.isChecked = !this.isChecked;
       console.log(this.isChecked);
+      this.visible = !this.visible;
     }
 
   },

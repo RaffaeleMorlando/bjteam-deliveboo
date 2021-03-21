@@ -49357,7 +49357,8 @@ var prova = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     homeRestaurants: [],
     filteredRestaurants: [],
     isChecked: false,
-    headerStatus: false
+    headerStatus: false,
+    visible: true
   },
   mounted: function mounted() {
     var _this = this;
@@ -49388,7 +49389,7 @@ var prova = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       });
     },
     scrollToElement: function scrollToElement(options) {
-      var el = this.$el.getElementsByClassName('pino')[0];
+      var el = this.$el.getElementsByClassName('scroll')[0];
 
       if (el) {
         el.scrollIntoView(options);
@@ -49397,6 +49398,7 @@ var prova = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     checked: function checked() {
       this.isChecked = !this.isChecked;
       console.log(this.isChecked);
+      this.visible = !this.visible;
     }
   }
 });

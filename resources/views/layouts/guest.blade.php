@@ -19,7 +19,7 @@
     <div id="guest_layout">
 
 
-      <header id="header" :class="headerStatus ? 'active' : ''" :style="headerStatus ? 'background-color: #FCF6B1' : 'transparent'">
+      <header id="header" :class="headerStatus ? 'active' : ''" :style="headerStatus ? 'background-color: #01BAEF' : 'transparent'">
         <div class="container">
           <div class="row">
 

@@ -4,11 +4,17 @@
 <div id="main_home_page_guest">
   
   <div id="main_home_page_top" >
+    <div class="slogan animate__animated animate__zoomInDown">
+      <h1>COMPRA SU COMODO</h1>
+      <h3>Cerca il tuo ristorante preferito</h3>
+    </div>
+    
     
     <img id="razzo" class="animate__animated animate__bounceInLeft"  src="{{asset("img/rider2.png")}}" alt="">
  
     
     <div class="contenitore_di_tutto_il_casino" :class="isChecked ? 'active' : ''">
+      <h3 v-if="visible" style="text-align: center; padding-top: 40px">Search for category</h3>
       <nav class="menu">
         <input class="menu-toggler" type="checkbox" v-model="isChecked" @click="checked()">
         {{-- <label for="menu-toggler"></label> --}}
@@ -37,7 +43,7 @@
   </div>
 
   {{-- Ristoranti ricercati --}}
-  <div v-if="filteredRestaurants.length != 0" class="static_restaurants_home container pino">
+  <div v-if="filteredRestaurants.length != 0" class="static_restaurants_home container scroll">
     <ul class="static_restaurants_container">
       <a v-for="restaurant in filteredRestaurants" :href="`http://127.0.0.1:8000/restaurants/${restaurant.slug}`" class="animate__animated animate__backInDown">
         <li class="static_restaurant_card">

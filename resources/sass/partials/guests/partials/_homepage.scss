@@ -5,13 +5,27 @@
 #main_home_page_top {
   position: relative;
   width: 100%;
-  height: calc(80vh );
+  height: calc(80vh);
   background-image: url('/img/homepage_hero.svg');
   // background-image: url("https://images.creativemarket.com/0.1.0/ps/7583374/1820/893/m1/fpnw/wm1/copl0pcbgxikqywwqiloq9zlalzbscrfhse997942gpslz6vvagc38kjwt0bspbr-.jpg?1578938585&s=cf8e38a875f5639a8d16789c774bff03");
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 2;
+
+  .slogan{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30%;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+
+    h1{
+    font-size: 70px;
+    }
+  }
 
   #razzo {
     position: absolute;
@@ -23,7 +37,7 @@
   .contenitore_di_tutto_il_casino {
     position: absolute;
     top: 50%;
-    right: 80px;
+    right: 150px;
     transform: translateY(-50%);
     width: 300px;
     height: 300px;
@@ -51,7 +65,7 @@
   // ul
   .static_restaurants_container {
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 40px;
     list-style: none;
 
@@ -116,6 +130,10 @@
       }
     }
   }
+}
+
+.scroll{
+  padding-top: 150px;
 }
 
 
