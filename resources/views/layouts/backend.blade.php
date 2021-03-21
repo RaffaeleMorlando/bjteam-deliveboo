@@ -15,9 +15,68 @@
   <div id="background">
 
     {{-- FORM PER LA MODIFICA DEL RISTORANTE --}}
-    <div class="dashboard_edit_restaurant_form" :style="editForm ? 'display: block' : ''">
-      <div class="edit_content">
-        <button type="button" name="button" @click="activeEditForm">Indietro</button>
+    <div class="dashboard_edit_restaurant_form" :style="editForm ? 'display: block' : 'display: none'">
+      <div class="form_box">
+
+        <div class="product_create_img" v-if="url == null">
+          @if($restaurant->logo)
+            <img src="{{ $restaurant->logo }}" alt="product-image">
+          @else
+            <i class="fas fa-hotdog"></i>
+          @endif
+        </div>
+
+        <div class="product_create_img" v-else>
+            <img :src="url" alt="product-image">
+        </div>
+
+        {{-- rettangolo verde che contiene il nome della sezione --}}
+        <div class="product_name_green_box text-center">
+          <p>Modifica informazioni ristorante</p>
+        </div>
+
+        <form class="px-3" action="{{ route('admin.restaurants.update', $restaurant->id) }}" method="post" enctype="multipart/form-data">
+          @csrf
+          @method("PUT")
+
+          <label for="logo" class="create_add_image" title="add photo">
+            <input type="file" accept="image/*" name="logo" id="logo" @change="onFileChange">
+            <i class="fas fa-camera-retro"></i>
+          </label>
+
+          <div class="create_product_input">
+            {{-- box arancione contente l'icona --}}
+            <div class="orange_icon_box">
+              <i class="fas fa-store"></i>
+            </div>
+
+            {{-- retangolo piccolo verde con la label --}}
+            <div class="small_green_box">
+              <label for="name" class="mx-1 my-0">Indirizzo</label>
+            </div>
+            <input type="text" name="name" id="name" value="{{ $restaurant->name }}" placeholder="Inserisci il nome del ristorante">
+          </div>
+
+          <div class="create_product_input">
+            {{-- box arancione contente l'icona --}}
+            <div class="orange_icon_box">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+
+            {{-- retangolo piccolo verde con la label --}}
+            <div class="small_green_box">
+              <label for="address" class="mx-1 my-0">Nome</label>
+            </div>
+            <input type="text" name="address" id="address" value="{{ $restaurant->address }}" placeholder="Inserisci l'indirizzo">
+          </div>
+
+          <div class="buttons_container">
+            <input type="submit" id="submit" value="SAVE" class="btn-submit">
+            <a href="#">
+              <button type="button" class="btn_back" @click="activeEditForm">BACK</button>
+            </a>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -29,7 +88,7 @@
         </main>
 
         {{-- parte destra del layout --}}
-        
+
         <aside :class="activeAside ? 'aside_slide_left' : 'aside_slide_right'">
 
           <div class="content" :class="activeAside ? 'fade_in' : 'fade_out'">
@@ -49,7 +108,7 @@
                       <small>Dashboard</small>
                     </a>
                   </li>
-                
+
                   <li class="my-5">
                     <a class="link-aside" href="{{ route('admin.restaurants.products.index') }}">
                       <i class="fas fa-pizza-slice dashboard-icon"></i>
@@ -62,7 +121,7 @@
                       <small>Ordini</small>
                     </a>
                   </li>
-             
+
                 <li class="my-5">
                   <a class="link-aside" href="{{ route('home') }}">
                     <i class="fas fa-home"></i>
@@ -107,7 +166,7 @@
 
           {{-- <div class="image_curve"></div> --}}
         </aside>
-   
+
 
        {{-- burgericon --}}
       <a id="burgerIcon" @click="toggleShow" :class="activeAside ? 'active' : '' "><i></i></a>

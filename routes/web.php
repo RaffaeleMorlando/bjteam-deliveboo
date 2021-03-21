@@ -39,11 +39,12 @@ Route::prefix('admin')
         Route::get('restaurants/create', 'RestaurantController@create')->name('create');
         //salvo i dati del nuovo ristorante
         Route::post('restaurants/store', 'RestaurantController@store')->name('store');
+        Route::put('restaurants/update/{id}', 'RestaurantController@update')->name('update');
 
         //restituisce le informazino necessarie per la "home page" della dashboard (backend)
         Route::get('restaurants/dashboard', 'DashboardController@index')->name('dashboard');
-        // cambiare il logo del ristorante ?? da cancellare (utilizzare la edit del ristorante)
-        Route::put("restaurants/dashboard/logo/{id}", "DashboardController@changeLogo")->name('dashboard.logo');
+        // // cambiare il logo del ristorante ?? da cancellare (utilizzare la edit del ristorante)
+        // Route::put("restaurants/dashboard/logo/{id}", "DashboardController@changeLogo")->name('dashboard.logo');
 
         //restituisce tutti gli ordini del ristorante
         Route::get('restaurants/orders', 'OrderController@index')->name('orders.index');

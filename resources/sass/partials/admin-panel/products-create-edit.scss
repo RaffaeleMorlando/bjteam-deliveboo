@@ -51,7 +51,8 @@
 // css specifico
 #product_create,
 #product_edit,
-#restaurant_create{
+#restaurant_create,
+.dashboard_edit_restaurant_form {
   width: 100%;
   box-shadow: $shadowCard;
   border-radius: $borderRadCard;
