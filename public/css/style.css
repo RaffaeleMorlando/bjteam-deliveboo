@@ -1269,7 +1269,7 @@ a:hover i {
 }
 #admin_product_show .product_show_container .description_box {
   position: relative;
-  width: 90%;
+  width: 70%;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -1286,7 +1286,7 @@ a:hover i {
 }
 #admin_product_show .product_show_container .description_box .price_box {
   position: absolute;
-  top: 55px;
+  top: 85%;
   left: 20px;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -1307,11 +1307,6 @@ a:hover i {
   }
   #admin_product_show .product_show_container .description_box {
     width: 100%;
-  }
-  #admin_product_show .product_show_container .description_box .price_box {
-    position: absolute;
-    top: 85%;
-    left: 20px;
   }
 }
 #dashboard_order h1 {
