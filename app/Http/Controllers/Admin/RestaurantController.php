@@ -44,18 +44,23 @@ class RestaurantController extends Controller
             $url = Storage::url($data['logo']);
             $newRestaurant->logo = $url;
         } else {
-          $data["logo"] = Storage::disk('public')->put('images', $data["logo"]);  
+          $data["logo"] = Storage::disk('public')->put('images', $data["logo"]);
         }
 
-        
+
 
         $newRestaurant->fill($data);
-        
+
         $newRestaurant->save();
 
         $newRestaurant->categories()->attach($data["categories"]);
 
         return redirect()->route('admin.restaurants.dashboard');
+    }
+
+    //Modifica informazioni del ristorante
+    public function update() {
+
     }
 
 }
