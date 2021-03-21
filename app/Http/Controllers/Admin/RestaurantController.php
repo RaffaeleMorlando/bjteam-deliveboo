@@ -59,4 +59,9 @@ class RestaurantController extends Controller
         return redirect()->route('admin.restaurants.dashboard');
     }
 
+    //Modifica informazioni del ristorante
+    public function update() {
+
+    }
+
 }

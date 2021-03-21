@@ -35,18 +35,20 @@ Route::prefix('admin')
 
         Route::resource('restaurants/products', 'ProductController');
 
-        //Restituisce la vista con le domande per la creazione del ristorante
+        //Restituisce la vista con il form per la creazione del ristorante
         Route::get('restaurants/create', 'RestaurantController@create')->name('create');
-
+        //salvo i dati del nuovo ristorante
         Route::post('restaurants/store', 'RestaurantController@store')->name('store');
 
+        //restituisce le informazino necessarie per la "home page" della dashboard (backend)
         Route::get('restaurants/dashboard', 'DashboardController@index')->name('dashboard');
-
-        // cambiare il logo del ristorante
+        // cambiare il logo del ristorante ?? da cancellare (utilizzare la edit del ristorante)
         Route::put("restaurants/dashboard/logo/{id}", "DashboardController@changeLogo")->name('dashboard.logo');
 
+        //restituisce tutti gli ordini del ristorante
         Route::get('restaurants/orders', 'OrderController@index')->name('orders.index');
 
+        //restituisce la vista con il grafico
         Route::get('restaurants/orders/charts', 'OrderController@chart')->name('orders.chart');
 
 
