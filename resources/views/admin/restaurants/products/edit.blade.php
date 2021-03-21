@@ -26,7 +26,7 @@
 
       {{-- rettangolo verde che contiene il nome della sezione --}}
       <div class="product_name_green_box">
-        <p>Aggiungi un nuovo prodotto</p>
+        <p>Modifica prodotto</p>
       </div>
       <form class="" action="{{ route('admin.restaurants.products.update', $product->id) }}" method="post" enctype="multipart/form-data">
         @csrf
