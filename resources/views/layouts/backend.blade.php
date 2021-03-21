@@ -46,7 +46,7 @@
                   <li class="my-5">
                     <a class="link-aside" href="{{ route('admin.restaurants.dashboard') }}">
                       <i class="fas fa-user-lock"></i>
-                      <small>Admin</small>
+                      <small>Dashboard</small>
                     </a>
                   </li>
                 
@@ -105,7 +105,7 @@
             @endif
           </div>
 
-          <div class="image_curve"></div>
+          {{-- <div class="image_curve"></div> --}}
         </aside>
    
 
@@ -118,6 +118,5 @@
   </div>
 
   <script src="{{ asset("js/partials/layouts/backend.js") }}" charset="utf-8"></script>
-  @yield('backend-script')
 </body>
 </html>

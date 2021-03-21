@@ -18,8 +18,8 @@
         <p>Crea Ristorante</p>
       </div>
       <div class="product_create_img">
-        {{-- <img src="{{ asset("img/create-food.png") }}" alt="create-img"> --}}
-        <i class="fas fa-store"></i>
+        <img :src="url" v-if="url != null"/>
+        <i class="fas fa-store" v-else></i>
       </div>
 
       <form class="" action="{{ route('admin.restaurants.store') }}" method="post" enctype="multipart/form-data">
@@ -27,11 +27,8 @@
         @method("POST")
 
         <label for="logo" class="create_add_image" title="aggiungi logo">
-          <input type="file" accept="image/*" name="logo" id="logo">
-          <div  id="preview">
-            <img src="" />
-          </div>
-          <i  class="fas fa-camera-retro"></i>
+          <input type="file" accept="image/*" name="logo" id="logo" @change="onFileChange">
+          <i class="fas fa-camera-retro"></i>
         </label>
 
         <div class="create_product_input">
@@ -41,7 +38,6 @@
         <div class="small_green_box">
           <label for="name" class="mx-1 my-0">Nome</label>
         </div>
-          <p>@{{url}}</p>
           <input type="text" name="name" id="name" value="{{ old('name')}}" placeholder="Inserisci il nome del prodotto">
         </div>
 
@@ -76,9 +72,9 @@
         <div class="create_product_input">
           <select style=" width:100%; height:25px" class="select_form_category" id="categories" name="categories[]" multiple>
             @foreach ($categories as $category)
-              <option value="{{ $category->id }}">{{ $category->name }}</option>
+            <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
-          </select>  
+          </select> 
         </div>  
         <input type="submit" id="submit" value="ADD" class="btn-submit">
       </form>
@@ -86,8 +82,4 @@
        
     </div>
   </section>
-@endsection
-
-@section('backend-script')
-    <script src="{{ asset('js/partials/admin/create-restaurant.js') }}"></script>
 @endsection

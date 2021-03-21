@@ -37,18 +37,28 @@
   </div>
 
   {{-- Ristoranti ricercati --}}
-  <div class="searched_restaurants_container" v-if="filteredRestaurants.length != 0">
-    <a v-for="restaurant in filteredRestaurants" :href="`http://127.0.0.1:8000/restaurants/${restaurant.slug}`" class="animate__animated animate__backInDown">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" :src="restaurant.logo">
-        <div class="card-body">
-          <h2 class="card-text">@{{ restaurant.name }}</h2>
-        </div>
-      </div>
-    </a>
+  <div v-if="filteredRestaurants.length != 0" class="static_restaurants_home container pino">
+    <ul class="static_restaurants_container">
+      <a v-for="restaurant in filteredRestaurants" :href="`http://127.0.0.1:8000/restaurants/${restaurant.slug}`" class="animate__animated animate__backInDown">
+        <li class="static_restaurant_card">
+          <div class="static_restaurant_card_thumbnail_container">
+            <img :src="restaurant.logo" alt="">
+          </div>
+          <div class="static_restaurant_card_info">
+            <div class="static_restaurant_card_info_logo">
+              <img :src="restaurant.logo" alt="">
+            </div>
+            <div class="static_restaurant_card_info_name">
+              <p>@{{ restaurant.name }}</p>
+            </div>
+          </div>
+        </li>
+      </a>
+    </ul>
   </div>
-  <div v-else id="static_restaurants_home" class="container">
-    <ul id="static_restaurants_container">
+
+  <div v-else class="container static_restaurants_home">
+    <ul class="animate__animated animate__fadeInUp static_restaurants_container">
       <li class="static_restaurant_card">
         <div class="static_restaurant_card_thumbnail_container">
           <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="">

@@ -49388,7 +49388,7 @@ var prova = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       });
     },
     scrollToElement: function scrollToElement(options) {
-      var el = this.$el.getElementsByClassName('searched_restaurants_container')[0];
+      var el = this.$el.getElementsByClassName('pino')[0];
 
       if (el) {
         el.scrollIntoView(options);

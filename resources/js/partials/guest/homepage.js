@@ -53,7 +53,7 @@ const prova = new Vue({
     },
 
     scrollToElement: function(options){
-      const el = this.$el.getElementsByClassName('searched_restaurants_container')[0];
+      const el = this.$el.getElementsByClassName('pino')[0];
 
       if (el) {
         el.scrollIntoView(options);

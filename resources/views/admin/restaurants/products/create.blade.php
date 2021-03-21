@@ -17,7 +17,8 @@
 
       {{-- cerchio grande che contiene l'icona principale della sezione --}}
       <div class="product_create_img">
-        <i class="fas fa-hotdog"></i>
+        <img :src="url" v-if="url != null"/>
+        <i class="fas fa-hotdog" v-else></i>
       </div>
 
       {{-- rettangolo verde che contiene il nome della sezione --}}
@@ -29,7 +30,7 @@
         @method("POST")
 
         <label for="image" class="create_add_image" title="add photo">
-          <input type="file" accept="image/*" name="image" id="image">
+          <input type="file" accept="image/*" name="image" id="image" @change="onFileChange">
           <i class="fas fa-camera-retro"></i>
         </label>
 

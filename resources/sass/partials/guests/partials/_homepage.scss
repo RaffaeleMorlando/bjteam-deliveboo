@@ -45,12 +45,11 @@
   }
 }
 
-#static_restaurants_home {
+.static_restaurants_home {
   // border: 1px solid red;
-  min-height: 500px;
-
+  // min-height: 500px;
   // ul
-  #static_restaurants_container {
+  .static_restaurants_container {
     display: grid;
     grid-template-columns: 2fr 2fr;
     grid-column-gap: 40px;

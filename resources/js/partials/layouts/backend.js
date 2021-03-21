@@ -9,6 +9,7 @@ const backend = new Vue({
     activeAside: true,
     activeSettings: false,
     editForm: false,
+    url: null
   },
   methods: {
     toggleShow(){
@@ -21,7 +22,10 @@ const backend = new Vue({
 
     activeEditForm() {
       this.editForm = !this.editForm;
+    },
+    onFileChange(e) {
+      const file = e.target.files[0];
+      this.url = URL.createObjectURL(file);
     }
-
   },
 });

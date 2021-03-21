@@ -49339,7 +49339,8 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   data: {
     activeAside: true,
     activeSettings: false,
-    editForm: false
+    editForm: false,
+    url: null
   },
   methods: {
     toggleShow: function toggleShow() {
@@ -49350,6 +49351,10 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     },
     activeEditForm: function activeEditForm() {
       this.editForm = !this.editForm;
+    },
+    onFileChange: function onFileChange(e) {
+      var file = e.target.files[0];
+      this.url = URL.createObjectURL(file);
     }
   }
 });

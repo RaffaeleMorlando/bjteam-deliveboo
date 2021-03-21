@@ -16,13 +16,17 @@
     <div class="form_box">
 
       {{-- cerchio grande che contiene l'icona principale della sezione --}}
-      <div class="product_create_img">
+      <div class="product_create_img" v-if="url == null">
         @if($product->image)
           <img src="{{ $product->image }}" alt="product-image">
         @else
           <i class="fas fa-hotdog"></i>
         @endif
       </div>
+      <div class="product_create_img" v-else>
+          <img :src="url" alt="product-image">
+      </div>
+
 
       {{-- rettangolo verde che contiene il nome della sezione --}}
       <div class="product_name_green_box">
@@ -33,7 +37,7 @@
         @method("PUT")
 
         <label for="image" class="create_add_image" title="add photo">
-          <input type="file" accept="image/*" name="image" id="image">
+          <input type="file" accept="image/*" name="image" id="image" @change="onFileChange">
           <i class="fas fa-camera-retro"></i>
         </label>
 
