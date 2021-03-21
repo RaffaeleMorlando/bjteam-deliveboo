@@ -361,7 +361,7 @@ a:hover i {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
-#background .dashboard_edit_restaurant_form .edit_content {
+#background .dashboard_edit_restaurant_form .form_box {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -953,7 +953,8 @@ a:hover i {
 
 #product_create,
 #product_edit,
-#restaurant_create {
+#restaurant_create,
+.dashboard_edit_restaurant_form {
   width: 100%;
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -961,14 +962,16 @@ a:hover i {
 }
 #product_create .form_box,
 #product_edit .form_box,
-#restaurant_create .form_box {
+#restaurant_create .form_box,
+.dashboard_edit_restaurant_form .form_box {
   width: 100%;
   position: relative;
   padding: 150px 0 30px;
 }
 #product_create .form_box .product_create_img,
 #product_edit .form_box .product_create_img,
-#restaurant_create .form_box .product_create_img {
+#restaurant_create .form_box .product_create_img,
+.dashboard_edit_restaurant_form .form_box .product_create_img {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -985,12 +988,14 @@ a:hover i {
 }
 #product_create .form_box .product_create_img i,
 #product_edit .form_box .product_create_img i,
-#restaurant_create .form_box .product_create_img i {
+#restaurant_create .form_box .product_create_img i,
+.dashboard_edit_restaurant_form .form_box .product_create_img i {
   font-size: 80px;
 }
 #product_create .form_box .product_create_img img,
 #product_edit .form_box .product_create_img img,
-#restaurant_create .form_box .product_create_img img {
+#restaurant_create .form_box .product_create_img img,
+.dashboard_edit_restaurant_form .form_box .product_create_img img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -1001,7 +1006,8 @@ a:hover i {
 }
 #product_create .form_box .product_name_green_box,
 #product_edit .form_box .product_name_green_box,
-#restaurant_create .form_box .product_name_green_box {
+#restaurant_create .form_box .product_name_green_box,
+.dashboard_edit_restaurant_form .form_box .product_name_green_box {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -1019,7 +1025,8 @@ a:hover i {
 }
 #product_create .form_box .product_name_green_box p,
 #product_edit .form_box .product_name_green_box p,
-#restaurant_create .form_box .product_name_green_box p {
+#restaurant_create .form_box .product_name_green_box p,
+.dashboard_edit_restaurant_form .form_box .product_name_green_box p {
   margin: 0;
   text-transform: uppercase;
   color: #ffffff;
@@ -1028,7 +1035,8 @@ a:hover i {
 }
 #product_create .form_box .create_add_image,
 #product_edit .form_box .create_add_image,
-#restaurant_create .form_box .create_add_image {
+#restaurant_create .form_box .create_add_image,
+.dashboard_edit_restaurant_form .form_box .create_add_image {
   position: absolute;
   top: -30px;
   left: 80px;
@@ -1044,12 +1052,14 @@ a:hover i {
 }
 #product_create .form_box .create_add_image input[type=file],
 #product_edit .form_box .create_add_image input[type=file],
-#restaurant_create .form_box .create_add_image input[type=file] {
+#restaurant_create .form_box .create_add_image input[type=file],
+.dashboard_edit_restaurant_form .form_box .create_add_image input[type=file] {
   display: none;
 }
 #product_create .form_box .create_product_input,
 #product_edit .form_box .create_product_input,
-#restaurant_create .form_box .create_product_input {
+#restaurant_create .form_box .create_product_input,
+.dashboard_edit_restaurant_form .form_box .create_product_input {
   position: relative;
   margin-bottom: 50px;
   padding: 10px 10px 10px 100px;
@@ -1058,7 +1068,8 @@ a:hover i {
 }
 #product_create .form_box .create_product_input input[type=text],
 #product_edit .form_box .create_product_input input[type=text],
-#restaurant_create .form_box .create_product_input input[type=text] {
+#restaurant_create .form_box .create_product_input input[type=text],
+.dashboard_edit_restaurant_form .form_box .create_product_input input[type=text] {
   width: 100%;
   padding: 0 10px;
   background-color: transparent;
@@ -1068,19 +1079,22 @@ a:hover i {
 }
 #product_create .form_box .create_product_input input[type=text]:focus,
 #product_edit .form_box .create_product_input input[type=text]:focus,
-#restaurant_create .form_box .create_product_input input[type=text]:focus {
+#restaurant_create .form_box .create_product_input input[type=text]:focus,
+.dashboard_edit_restaurant_form .form_box .create_product_input input[type=text]:focus {
   outline: none;
 }
 #product_create .form_box .create_product_input .select2-container--default .select2-selection--multiple,
 #product_edit .form_box .create_product_input .select2-container--default .select2-selection--multiple,
-#restaurant_create .form_box .create_product_input .select2-container--default .select2-selection--multiple {
+#restaurant_create .form_box .create_product_input .select2-container--default .select2-selection--multiple,
+.dashboard_edit_restaurant_form .form_box .create_product_input .select2-container--default .select2-selection--multiple {
   border: none;
   border-bottom: 2px solid #FFC244;
   padding-bottom: 0;
 }
 #product_create .form_box .create_product_input textarea,
 #product_edit .form_box .create_product_input textarea,
-#restaurant_create .form_box .create_product_input textarea {
+#restaurant_create .form_box .create_product_input textarea,
+.dashboard_edit_restaurant_form .form_box .create_product_input textarea {
   display: block;
   width: 100%;
   padding: 5px;
@@ -1090,7 +1104,8 @@ a:hover i {
 }
 #product_create .form_box .create_product_input textarea.select2-search__field,
 #product_edit .form_box .create_product_input textarea.select2-search__field,
-#restaurant_create .form_box .create_product_input textarea.select2-search__field {
+#restaurant_create .form_box .create_product_input textarea.select2-search__field,
+.dashboard_edit_restaurant_form .form_box .create_product_input textarea.select2-search__field {
   height: 28px;
   border-right: none;
   border-bottom: none;
@@ -1098,12 +1113,14 @@ a:hover i {
 }
 #product_create .form_box .create_product_input textarea:focus,
 #product_edit .form_box .create_product_input textarea:focus,
-#restaurant_create .form_box .create_product_input textarea:focus {
+#restaurant_create .form_box .create_product_input textarea:focus,
+.dashboard_edit_restaurant_form .form_box .create_product_input textarea:focus {
   outline: none;
 }
 #product_create .form_box .create_product_check_box,
 #product_edit .form_box .create_product_check_box,
-#restaurant_create .form_box .create_product_check_box {
+#restaurant_create .form_box .create_product_check_box,
+.dashboard_edit_restaurant_form .form_box .create_product_check_box {
   position: relative;
   display: inline-block;
   width: 200px;
@@ -1114,7 +1131,8 @@ a:hover i {
 }
 #product_create .form_box .create_product_check_box .input_control,
 #product_edit .form_box .create_product_check_box .input_control,
-#restaurant_create .form_box .create_product_check_box .input_control {
+#restaurant_create .form_box .create_product_check_box .input_control,
+.dashboard_edit_restaurant_form .form_box .create_product_check_box .input_control {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1124,7 +1142,8 @@ a:hover i {
 }
 #product_create .form_box .create_product_check_box .input_control label,
 #product_edit .form_box .create_product_check_box .input_control label,
-#restaurant_create .form_box .create_product_check_box .input_control label {
+#restaurant_create .form_box .create_product_check_box .input_control label,
+.dashboard_edit_restaurant_form .form_box .create_product_check_box .input_control label {
   font-weight: 600;
   font-style: italic;
 }

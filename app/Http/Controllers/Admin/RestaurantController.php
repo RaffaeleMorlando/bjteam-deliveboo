@@ -41,13 +41,6 @@ class RestaurantController extends Controller
 
         $data['user_id'] = Auth::id();
         $data['slug'] = Str::slug($data['name']);
-        // if (str_starts_with($data['logo'], 'http')) {
-        //     $url = Storage::url($data['logo']);
-        //     $newRestaurant->logo = $url;
-        // } else {
-        //   $data["logo"] = Storage::disk('public')->put('images', $data["logo"]);
-        // }
-
         $data["logo"] = Storage::disk('public')->put('images', $data["logo"]);
         $data["logo"] = Storage::url($data['logo']);
 
@@ -62,8 +55,32 @@ class RestaurantController extends Controller
     }
 
     //Modifica informazioni del ristorante
-    public function update() {
+    public function update(Request $request, $id) {
 
+      $data = $request->all();
+
+      $this->productValidation["image"] = "nullable";
+
+      $request->validate($this->productValidation);
+      
+      $restaurant = Restaurant::findOrFail($id);
+
+      if(!empty($data["logo"])){
+         Storage::disk('public')->delete($restaurant->logo);
+         $data["logo"] = Storage::disk('public')->put('images', $data["logo"]);
+         $data["logo"] = Storage::url($data['logo']);
+      }
+
+
+      //$data['restaurant_id'] = Auth::id();
+      $data['slug'] = Str::slug($data['name']);
+      $restaurant->update($data);
+
+      /**
+       * CAMBIARE MESSAGGIO AL UPDATE
+       */
+
+      return redirect()->route('admin.restaurants.dashboard');
     }
 
 }
