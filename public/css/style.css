@@ -1269,7 +1269,7 @@ a:hover i {
 }
 #admin_product_show .product_show_container .description_box {
   position: relative;
-  width: 90%;
+  width: 70%;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
