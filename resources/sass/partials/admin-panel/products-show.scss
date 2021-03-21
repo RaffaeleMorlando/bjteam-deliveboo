@@ -96,7 +96,7 @@
       }
 
       .price_box {
-        @include setPositionAbsolute(55px, 20px);
+        @include setPositionAbsolute(85%, 20px);
         width: max-content;
         padding: 10px 20px;
         background-color: #FCF6B1;
@@ -120,15 +120,10 @@
   #admin_product_show {
 
     .product_show_container {
-      padding: 0 20px; //
+      padding: 0 20px;
 
       .description_box {
-        width: 100%; //
-
-        .price_box {
-          @include setPositionAbsolute(85%, 20px); //
-
-        }
+        width: 100%;
       }
     }
   }
