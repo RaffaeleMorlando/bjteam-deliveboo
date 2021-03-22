@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Order;
 use App\Product;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+
 
 class OrderController extends Controller
 {
@@ -35,4 +38,10 @@ class OrderController extends Controller
         return view('admin.restaurants.orders.chart', compact('orders'));
 
     }
+
+    public function storeOrder(Request $request)  {
+      $order = $request->all();
+      return redirect()->route('payment')->with(['order'=> $order]);
+    }
+
 }

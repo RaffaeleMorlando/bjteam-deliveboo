@@ -49358,7 +49358,8 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     menu: [],
     categories: [],
     cartProducts: [],
-    activeBanner: false
+    activeBanner: false,
+    cartTotalPrice: 0
   },
   mounted: function mounted() {
     var _this = this;
@@ -49379,7 +49380,7 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     var link = document.getElementById("home_link");
     link.addEventListener("click", function (event) {
       //Siamo nel Menu del ristorante, se clicchiamo sul logo e il carrello ha almeno un elemento, aggiungo il prevent default
-      if (JSON.parse(window.localStorage.getItem('cart'))) {
+      if (JSON.parse(window.localStorage.getItem('cart')) && self.cartProducts.length > 0) {
         event.preventDefault();
         self.activeBanner = true;
       }
@@ -49400,6 +49401,8 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
           window.localStorage.setItem('cart', JSON.stringify(_this.cartProducts));
         }
       }
+
+      _this.getTotalPrice();
     });
   },
   methods: {
@@ -49417,9 +49420,11 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
 
         if (!found) {
           self.cartProducts.push(self.menu[index]);
+          self.getTotalPrice();
         }
       } else {
         self.cartProducts.push(self.menu[index]);
+        self.getTotalPrice();
       }
 
       window.localStorage.setItem('cart', JSON.stringify(self.cartProducts));
@@ -49431,10 +49436,11 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       this.cartProducts = [];
     },
     incrementCounter: function incrementCounter(index) {
-      console.log(this.cartProducts[index].counter);
+      // console.log(this.cartProducts[index].counter);
       this.cartProducts[index].counter++;
       this.cartProducts = window.localStorage.setItem('cart', JSON.stringify(this.cartProducts));
       this.cartProducts = JSON.parse(window.localStorage.getItem('cart'));
+      this.getTotalPrice();
       this.$forceUpdate();
     },
     decrementCounter: function decrementCounter(index) {
@@ -49442,6 +49448,7 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         this.cartProducts[index].counter--;
         this.cartProducts = window.localStorage.setItem('cart', JSON.stringify(this.cartProducts));
         this.cartProducts = JSON.parse(window.localStorage.getItem('cart'));
+        this.getTotalPrice();
         this.$forceUpdate();
       } else {
         this.cartProducts.splice(index, 1);
@@ -49449,9 +49456,15 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         window.localStorage.setItem('cart', JSON.stringify(this.cartProducts));
       }
     },
-    prova: function prova() {// if (JSON.parse(window.localStorage.getItem('cart'))) {
-      //   this.activeBanner = true;
-      // }
+    getTotalPrice: function getTotalPrice() {
+      var self = this;
+      self.cartTotalPrice = 0;
+      this.cartProducts.forEach(function (element) {
+        var count = element.counter;
+        var price = element.price;
+        self.cartTotalPrice += count * price;
+      });
+      this.$forceUpdate();
     }
   }
 });

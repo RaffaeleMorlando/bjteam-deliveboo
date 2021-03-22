@@ -4,7 +4,7 @@
     <div id="menu-restaurant">
 
       {{-- BANNER CARRELLO--}}
-      <div id="banner_exit_container" v-if="activeBanner" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%">
+      <div id="banner_exit_container" :style="activeBanner ? 'display: block;' : ''">
         <div class="banner_box">
           <h2>Banner carrello da stilizzare</h2>
           <a href="{{ route("home") }}" name="button">SI</a>
@@ -74,35 +74,16 @@
                     <span @click="incrementCounter(index)"><i class="fas fa-plus"></i></span>
                   </div>
                 </li>
-                {{-- test per grafica da cancellare li --}}
-                {{-- <li id="test_cart_item">
-                  <div class="order_item_top">
-                    <span>999 x</span>
-                    <p>asasasasasa</p>
-                    <span>1000 €</span>
-                  </div>
-                  <div class="order_item_bottom">
-                    <span @click="decrementCounter(index)"><i class="fas fa-minus"></i></span>
-                    <span @click="incrementCounter(index)"><i class="fas fa-plus"></i></span>
-                  </div>
-                </li> --}}
-                {{-- test per grafica da cancellare li --}}
-                {{-- test per grafica da cancellare li --}}
-                {{-- <li id="test_cart_item">
-                  <div class="order_item_top">
-                    <span>999 x</span>
-                    <p>asasasasasaaasasasasasasasa</p>
-                    <span>1000 €</span>
-                  </div>
-                  <div class="order_item_bottom">
-                    <span @click="decrementCounter(index)"><i class="fas fa-minus"></i></span>
-                    <span @click="incrementCounter(index)"><i class="fas fa-plus"></i></span>
-                  </div>
-                </li> --}}
-                {{-- test per grafica da cancellare li --}}
               </ul>
               <div id="container_button_cart" v-if="cartProducts.length != 0">
-                <span id="button_cart" @click="clearCart()">Vai al pagamento</span>
+                <form action="{{route('order.store')}}" method="POST" name="cart-form">
+                  @csrf
+                  @method('POST')
+                  <input type="text" :value="cartTotalPrice" hidden name="total_price">
+                  {{-- cancellare --}}
+                  <span>Totale prezzo: € @{{cartTotalPrice.toFixed(2)}}</span>
+                  <span id="button_cart" onclick="document.forms['cart-form'].submit();">Vai al pagamento</span>
+                </form>
               </div>
             </div>
 

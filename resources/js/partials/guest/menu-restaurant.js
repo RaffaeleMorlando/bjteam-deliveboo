@@ -13,7 +13,8 @@ const menuRestaurant = new Vue({
     menu: [],
     categories: [],
     cartProducts: [],
-    activeBanner: false
+    activeBanner: false,
+    cartTotalPrice: 0,
   },
 
   mounted() {
@@ -37,7 +38,7 @@ const menuRestaurant = new Vue({
     link.addEventListener("click",
       function(event) {
         //Siamo nel Menu del ristorante, se clicchiamo sul logo e il carrello ha almeno un elemento, aggiungo il prevent default
-        if(JSON.parse(window.localStorage.getItem('cart'))) {
+        if(JSON.parse(window.localStorage.getItem('cart')) && self.cartProducts.length > 0) {
           event.preventDefault();
           self.activeBanner = true;
         }
@@ -56,7 +57,6 @@ const menuRestaurant = new Vue({
         if(JSON.parse(window.localStorage.getItem('cart')) == null){
           self.cartProducts = [];
         } else {
-
           self.cartProducts = (JSON.parse(window.localStorage.getItem('cart')));
 
           if (self.cartProducts[0].restaurant_id !== self.restaurant.id) {
@@ -67,6 +67,8 @@ const menuRestaurant = new Vue({
 
           }
         }
+
+        this.getTotalPrice();
       });
 
 
@@ -78,7 +80,7 @@ const menuRestaurant = new Vue({
       self.menu[index].counter = 1;
 
       if (self.cartProducts.length > 0) {
-
+        
         let found = false;
 
         self.cartProducts.forEach(
@@ -93,9 +95,11 @@ const menuRestaurant = new Vue({
 
         if(!found) {
           self.cartProducts.push(self.menu[index]);
+          self.getTotalPrice();
         }
       } else {
         self.cartProducts.push(self.menu[index]);
+        self.getTotalPrice();
       }
 
       window.localStorage.setItem('cart', JSON.stringify(self.cartProducts));
@@ -111,10 +115,11 @@ const menuRestaurant = new Vue({
     },
 
     incrementCounter: function(index){
-      console.log(this.cartProducts[index].counter);
+      // console.log(this.cartProducts[index].counter);
       this.cartProducts[index].counter++;
       this.cartProducts = window.localStorage.setItem('cart', JSON.stringify(this.cartProducts));
       this.cartProducts = JSON.parse(window.localStorage.getItem('cart'));
+      this.getTotalPrice();
       this.$forceUpdate();
     },
 
@@ -123,6 +128,7 @@ const menuRestaurant = new Vue({
         this.cartProducts[index].counter--;
         this.cartProducts = window.localStorage.setItem('cart', JSON.stringify(this.cartProducts));
         this.cartProducts = JSON.parse(window.localStorage.getItem('cart'));
+        this.getTotalPrice();
         this.$forceUpdate();
       } else{
         this.cartProducts.splice(index, 1);
@@ -132,11 +138,18 @@ const menuRestaurant = new Vue({
 
 
     },
-    prova() {
-      // if (JSON.parse(window.localStorage.getItem('cart'))) {
-      //   this.activeBanner = true;
-      // }
 
+    getTotalPrice: function() {
+      let self = this;
+      self.cartTotalPrice = 0;
+
+      this.cartProducts.forEach(element => {
+        let count = element.counter;
+        let price = element.price;
+        self.cartTotalPrice += count * price;
+      });
+
+      this.$forceUpdate();
     }
   }
 

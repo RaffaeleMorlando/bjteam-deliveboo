@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 
 /*
@@ -62,3 +63,13 @@ Route::prefix('admin')
         Route::get("restaurants/{slug}", "GuestController@menuRestaurant")->name("menu-restaurant");
 
       });
+
+
+// BrainTree payments
+Route::post('order/store', 'Admin\OrderController@storeOrder')->name('order.store');
+
+Route::get('/payment','Guest\PaymentController@formPayment')->name('payment');
+
+Route::post('/checkout', 'Guest\PaymentController@checkout')->name("checkout");
+
+Route::get('/hosted','Guest\PaymentController@hosted')->name('hosted');

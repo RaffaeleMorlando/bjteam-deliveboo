@@ -246,6 +246,7 @@
                         border-radius: 50px;
                         color: #fff;
                         box-shadow: 0 3px 5px 0 rgb(0 0 0 / 10%);
+                        cursor: pointer;
                     }
                 }
             }
@@ -255,6 +256,7 @@
 
 //BANNER CARRELLO
 #banner_exit_container {
+  display: none; 
   position: fixed;
   top: 0;
   left: 0;
