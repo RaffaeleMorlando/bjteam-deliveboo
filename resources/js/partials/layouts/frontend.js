@@ -7,7 +7,7 @@ const frontEndHeader = new Vue({
   el: '#header',
   data: {
     headerStatus: false,
-    searchBarPlaceholder: ""
+    searchBarPlaceholder: "",
   },
 
   mounted() {

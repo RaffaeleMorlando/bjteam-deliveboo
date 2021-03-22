@@ -49357,7 +49357,8 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     restaurant: {},
     menu: [],
     categories: [],
-    cartProducts: []
+    cartProducts: [],
+    activeBanner: false
   },
   mounted: function mounted() {
     var _this = this;
@@ -49375,6 +49376,14 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
 
     var stringSplitterd = this.currentUrl.split('/');
     var slug = stringSplitterd[stringSplitterd.length - 1];
+    var link = document.getElementById("home_link");
+    link.addEventListener("click", function (event) {
+      //Siamo nel Menu del ristorante, se clicchiamo sul logo e il carrello ha almeno un elemento, aggiungo il prevent default
+      if (JSON.parse(window.localStorage.getItem('cart'))) {
+        event.preventDefault();
+        self.activeBanner = true;
+      }
+    });
     axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/restaurant/".concat(slug)).then(function (response) {
       self.restaurant = response.data[0];
       self.menu = self.restaurant.products;
@@ -49439,6 +49448,10 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         window.localStorage.clear();
         window.localStorage.setItem('cart', JSON.stringify(this.cartProducts));
       }
+    },
+    prova: function prova() {// if (JSON.parse(window.localStorage.getItem('cart'))) {
+      //   this.activeBanner = true;
+      // }
     }
   }
 });

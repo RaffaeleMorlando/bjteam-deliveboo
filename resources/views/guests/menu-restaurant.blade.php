@@ -3,6 +3,14 @@
 @section('restaurant-main')
     <div id="menu-restaurant">
 
+      {{-- BANNER --}}
+      <div id="banner_exit_container" v-if="activeBanner" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%">
+        <div class="banner_box">
+          <a href="{{ route("home") }}" name="button">SI</a>
+          <button type="button" name="button" @click="activeBanner = false">NO</button>
+        </div>
+      </div>
+
       <div id="menu_hero_img_container">
         <img src="https://bikanersweetsandrestaurant.ca/wp-content/uploads/2019/08/indiancocktails_social.jpg" alt="" :style="heroStatus ? 'opacity: 0.8' : 'opacity: 1'">
         <div class="layover_hero">

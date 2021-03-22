@@ -91,6 +91,16 @@ footer #footer-bottom {
   min-height: 100px;
 }
 
+#cart_banner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background-color: #ffffff;
+}
+
 main {
   min-height: calc(100vh - 80px);
 }
@@ -689,4 +699,29 @@ main {
   border-radius: 50px;
   color: #fff;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+#banner_exit_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 150;
+}
+#banner_exit_container .banner_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+  z-index: 150;
+  overflow: hidden;
 }

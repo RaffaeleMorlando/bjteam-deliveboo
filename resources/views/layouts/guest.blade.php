@@ -16,6 +16,7 @@
     <title></title>
   </head>
   <body>
+
     <div id="guest_layout">
 
 
@@ -24,7 +25,7 @@
           <div class="row">
 
             <div class="left col-lg-3 col-md-4">
-              <a href="{{ route('home') }}"><img class="logo" src="{{ asset("img/logo_glovo-prova.svg") }}" alt="logo"></a>
+              <a href="{{ route('home') }}" id="home_link"><img class="logo" src="{{ asset("img/logo_glovo-prova.svg") }}" alt="logo"></a>
             </div>
 
             <div class="center col-lg-6 col-md-4 ">
@@ -49,7 +50,7 @@
                 @else
                   <li>
                     <a href="{{ route('admin.restaurants.dashboard') }}">
-                      <img class="restaurant_logo" src="{{ Auth::user()->restaurant->logo }}" 
+                      <img class="restaurant_logo" src="{{ Auth::user()->restaurant->logo }}"
                       alt="restaurant_logo">
                     </a>
                   </li>
@@ -67,6 +68,7 @@
             </div>
           </div>
         </div>
+
       </header>
 
       <main>

@@ -13,6 +13,7 @@ const menuRestaurant = new Vue({
     menu: [],
     categories: [],
     cartProducts: [],
+    activeBanner: false
   },
 
   mounted() {
@@ -31,6 +32,16 @@ const menuRestaurant = new Vue({
     //Fetch api per recupero ristorante
     let stringSplitterd = this.currentUrl.split('/');
     let slug = stringSplitterd[stringSplitterd.length - 1];
+
+    let link = document.getElementById("home_link");
+    link.addEventListener("click",
+      function(event) {
+        //Siamo nel Menu del ristorante, se clicchiamo sul logo e il carrello ha almeno un elemento, aggiungo il prevent default
+        if(JSON.parse(window.localStorage.getItem('cart'))) {
+          event.preventDefault();
+          self.activeBanner = true;
+        }
+      });
 
     axios
       .get(`/api/restaurant/${slug}`)
@@ -121,6 +132,12 @@ const menuRestaurant = new Vue({
 
 
     },
+    prova() {
+      // if (JSON.parse(window.localStorage.getItem('cart'))) {
+      //   this.activeBanner = true;
+      // }
+
+    }
   }
 
 });
