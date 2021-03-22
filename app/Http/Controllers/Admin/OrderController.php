@@ -42,6 +42,7 @@ class OrderController extends Controller
 
     public function storeOrder(Request $request)  {
       $order = $request->all();
+      dd($order);
       return redirect()->route('payment')->with(['order'=> $order]);
     }
 

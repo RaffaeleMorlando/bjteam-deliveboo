@@ -66,7 +66,7 @@ Route::prefix('admin')
 
 
 // BrainTree payments
-Route::post('order/store', 'Admin\OrderController@storeOrder')->name('order.store');
+Route::post('/order/store', 'Admin\OrderController@storeOrder')->name('order.store');
 
 Route::get('/payment','Guest\PaymentController@formPayment')->name('payment');
 

@@ -80,7 +80,7 @@ const menuRestaurant = new Vue({
       self.menu[index].counter = 1;
 
       if (self.cartProducts.length > 0) {
-        
+
         let found = false;
 
         self.cartProducts.forEach(
@@ -150,7 +150,20 @@ const menuRestaurant = new Vue({
       });
 
       this.$forceUpdate();
+    },
+
+    getData() {
+      let cart = this.cartProducts;
+      axios
+        .post("/order/store", cart)
+        .then(
+          (response) => {
+            console.log(response.config.data);
+          }
+        );
     }
-  }
+
+  },
+
 
 });

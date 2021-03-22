@@ -49465,6 +49465,12 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         self.cartTotalPrice += count * price;
       });
       this.$forceUpdate();
+    },
+    getData: function getData() {
+      var cart = this.cartProducts;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post("/order/store", cart).then(function (response) {
+        console.log(response.config.data);
+      });
     }
   }
 });
