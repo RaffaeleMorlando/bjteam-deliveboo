@@ -4,6 +4,11 @@
 <div id="main_home_page_guest">
   
   <div id="main_home_page_top" >
+    <div class="main_title animate__animated animate__fadeIn">
+      <h1>TITOLO PRINCIPALE</h1>
+      <h3>Sottotitolo</h3>
+    </div>
+   
     
     <img id="razzo" class="animate__animated animate__bounceInLeft"  src="{{asset("img/rider2.png")}}" alt="">
  
@@ -37,7 +42,7 @@
   </div>
 
   {{-- Ristoranti ricercati --}}
-  <div v-if="filteredRestaurants.length != 0" class="static_restaurants_home container pino">
+  <div v-if="filteredRestaurants.length != 0" class="static_restaurants_home container scroll">
     <ul class="static_restaurants_container">
       <a v-for="restaurant in filteredRestaurants" :href="`http://127.0.0.1:8000/restaurants/${restaurant.slug}`" class="animate__animated animate__backInDown">
         <li class="static_restaurant_card">

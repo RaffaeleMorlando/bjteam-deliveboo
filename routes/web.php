@@ -16,9 +16,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {  //da cancellare
-    return view('welcome');
-});
+// Route::get('/', function () {  //da cancellare
+//     return view('welcome');
+// });
 
 Auth::routes();
 
@@ -59,7 +59,7 @@ Route::prefix('admin')
   Route::namespace('Guest')
       ->group(function(){
 
-        Route::get("home", "GuestController@homePage")->name("home");
+        Route::get("/", "GuestController@homePage")->name("home");
         Route::get("restaurants/{slug}", "GuestController@menuRestaurant")->name("menu-restaurant");
 
       });

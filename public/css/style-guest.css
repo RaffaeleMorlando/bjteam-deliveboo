@@ -115,6 +115,16 @@ main {
   background-repeat: no-repeat;
   z-index: 2;
 }
+#main_home_page_top .main_title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+  text-align: center;
+}
+#main_home_page_top .main_title h1 {
+  font-size: 60px;
+}
 #main_home_page_top #razzo {
   position: absolute;
   top: 170px;
@@ -144,6 +154,9 @@ main {
   margin: 40px 20px;
 }
 
+.static_restaurants_home {
+  padding-top: 130px;
+}
 .static_restaurants_home .static_restaurants_container {
   display: grid;
   grid-template-columns: 2fr 2fr;
