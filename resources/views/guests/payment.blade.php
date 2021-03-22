@@ -27,7 +27,7 @@
             </section>
     
             <input id="nonce" name="payment_method_nonce" type="hidden" />
-            <button class="button" type="submit"><span>Test Transaction</span></button>
+            <button class="button" type="submit" onclick=" window.localStorage.clear()"><span>Test Transaction</span></button>
         </form>
     </div>
     

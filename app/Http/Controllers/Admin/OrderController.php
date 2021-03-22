@@ -14,6 +14,7 @@ class OrderController extends Controller
 {
     public function index()
     {
+        $restaurant = Auth::user()->restaurant;
 
         $allOrders = Order::all();
         $orders = [];
@@ -28,7 +29,7 @@ class OrderController extends Controller
           }
         }
 
-        return view('admin.restaurants.orders.index', compact('orders'));
+        return view('admin.restaurants.orders.index', compact('orders', 'restaurant'));
     }
 
     // Funzione per vista statistiche ordini
