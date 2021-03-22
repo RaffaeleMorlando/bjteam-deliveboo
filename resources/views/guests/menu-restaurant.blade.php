@@ -3,9 +3,10 @@
 @section('restaurant-main')
     <div id="menu-restaurant">
 
-      {{-- BANNER --}}
+      {{-- BANNER CARRELLO--}}
       <div id="banner_exit_container" v-if="activeBanner" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%">
         <div class="banner_box">
+          <h2>Banner carrello da stilizzare</h2>
           <a href="{{ route("home") }}" name="button">SI</a>
           <button type="button" name="button" @click="activeBanner = false">NO</button>
         </div>
