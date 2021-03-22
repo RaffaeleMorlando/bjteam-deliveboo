@@ -17,6 +17,7 @@ class OrderController extends Controller
 
         $allOrders = Order::all();
         $orders = [];
+        $restaurant = Auth::user()->restaurant;
 
         foreach ($allOrders as $order) {
           foreach ($order->products as $product) {
@@ -28,7 +29,7 @@ class OrderController extends Controller
           }
         }
 
-        return view('admin.restaurants.orders.index', compact('orders'));
+        return view('admin.restaurants.orders.index', compact('orders', 'restaurant'));
     }
 
     // Funzione per vista statistiche ordini

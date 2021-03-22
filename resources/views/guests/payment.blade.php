@@ -11,32 +11,35 @@
         <form method="post" id="payment-form" action="{{ route('checkout') }}" style="width: 30%;">
             @csrf
             @method("POST")
-    
+
             <section>
                 <label for="amount">
                     <span class="input-label">Amount</span>
                     <div class="input-wrapper amount-wrapper">
-                        <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$order['total_price']}}" hidden>
+                        <input id="amount" name="total_price" type="tel" min="1" placeholder="Amount" value="{{$order['total_price']}}" hidden>
                         <span>{{$order['total_price']}}</span>
                     </div>
                 </label>
-    
+
                 <div class="bt-drop-in-wrapper">
                     <div id="bt-dropin"></div>
                 </div>
             </section>
-    
+
             <input id="nonce" name="payment_method_nonce" type="hidden" />
-            <button class="button" type="submit"><span>Test Transaction</span></button>
+
+            <input type="text" name="guest_name" value="">
+            <input type="text" name="guest_address" value="">
+            <button class="button" type="submit" onclick="window.localStorage.clear()"><span>Test Transaction</span></button>
         </form>
     </div>
-    
-    
+
+
     <script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
     <script>
         var form = document.querySelector('#payment-form');
         var client_token = "{{ $token }}";
-    
+
         braintree.dropin.create({
         authorization: client_token,
         selector: '#bt-dropin',

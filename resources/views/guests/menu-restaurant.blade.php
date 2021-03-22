@@ -79,8 +79,8 @@
                 <form action="{{route('order.store')}}" method="POST" name="cart-form">
                   @csrf
                   @method('POST')
-                  <input type="text" :value="cartTotalPrice" hidden name="total_price">
-                  {{-- cancellare --}}
+                  <input type="text" :value="cartTotalPrice" hidden readonly name="total_price">
+
                   <span>Totale prezzo: € @{{cartTotalPrice.toFixed(2)}}</span>
                   <span id="button_cart" onclick="document.forms['cart-form'].submit();">Vai al pagamento</span>
                 </form>

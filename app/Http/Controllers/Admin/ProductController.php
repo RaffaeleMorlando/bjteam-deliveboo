@@ -12,7 +12,6 @@ use function PHPUnit\Framework\isEmpty;
 
 class ProductController extends Controller
 {
-
     protected $productValidation = [
         'name' => 'required:max:60',
         'image' => 'image|required',
@@ -30,10 +29,11 @@ class ProductController extends Controller
     public function index()
     {
         // $products = Auth::user()->restaurant->products;
+        $restaurant = Auth::user()->restaurant;
         $products = Product::where('restaurant_id', Auth::user()->restaurant->id)->orderBy('name', 'asc')->get();
 
 
-        return view('admin.restaurants.products.index', compact('products'));
+        return view('admin.restaurants.products.index', compact('products', 'restaurant'));
     }
 
     /**
@@ -43,7 +43,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.restaurants.products.create');
+        $restaurant = Auth::user()->restaurant;
+        return view('admin.restaurants.products.create', compact('restaurant'));
     }
 
     /**
@@ -77,8 +78,9 @@ class ProductController extends Controller
      */
     public function show($slug)
     {
+        $restaurant = Auth::user()->restaurant;
         $product = Product::where('slug', $slug)->firstOrFail();
-        return view('admin.restaurants.products.show', compact('product'));
+        return view('admin.restaurants.products.show', compact('product', 'restaurant'));
     }
 
     /**
@@ -89,8 +91,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+        $restaurant = Auth::user()->restaurant;
         $product = Product::findOrFail($id);
-        return view('admin.restaurants.products.edit', compact('product'));
+        return view('admin.restaurants.products.edit', compact('product', 'restaurant'));
     }
 
     /**
