@@ -2,12 +2,12 @@
 
 @section("guest-main")
 <div id="main_home_page_guest">
-  
+
   <div id="main_home_page_top" >
-    
+
     <img id="razzo" class="animate__animated animate__bounceInLeft"  src="{{asset("img/rider2.png")}}" alt="">
- 
-    
+
+
     <div class="contenitore_di_tutto_il_casino" :class="isChecked ? 'active' : ''">
       <nav class="menu">
         <input class="menu-toggler" type="checkbox" v-model="isChecked" @click="checked()">
@@ -59,36 +59,22 @@
 
   <div v-else class="container static_restaurants_home">
     <ul class="animate__animated animate__fadeInUp static_restaurants_container">
-      <li class="static_restaurant_card">
+      <li class="static_restaurant_card" v-for="restaurant in homeRestaurants">
         <div class="static_restaurant_card_thumbnail_container">
-          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="">
+          <img :src="restaurant.logo" alt="logo">
         </div>
         <div class="static_restaurant_card_info">
           <div class="static_restaurant_card_info_logo">
-            <img src="https://i.pinimg.com/originals/f8/8e/89/f88e898955530880794913f0efb38755.jpg" alt="">
+            <img :src="restaurant.logo" alt="logo">
           </div>
           <div class="static_restaurant_card_info_name">
-            <p>Nome Ristorante</p>
+            <p>@{{ restaurant.name }}</p>
           </div>
         </div>
       </li>
 
 
-      <li class="static_restaurant_card">
-        <div class="static_restaurant_card_thumbnail_container">
-          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="">
-        </div>
-        <div class="static_restaurant_card_info">
-          <div class="static_restaurant_card_info_logo">
-            <img src="https://i.pinimg.com/originals/f8/8e/89/f88e898955530880794913f0efb38755.jpg" alt="">
-          </div>
-          <div class="static_restaurant_card_info_name">
-            <p>Nome Ristorante</p>
-          </div>
-        </div>
-      </li>
-
-      <li class="static_restaurant_card">
+      {{-- <li class="static_restaurant_card">
         <div class="static_restaurant_card_thumbnail_container">
           <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="">
         </div>
@@ -143,6 +129,20 @@
           </div>
         </div>
       </li>
+
+      <li class="static_restaurant_card">
+        <div class="static_restaurant_card_thumbnail_container">
+          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="">
+        </div>
+        <div class="static_restaurant_card_info">
+          <div class="static_restaurant_card_info_logo">
+            <img src="https://i.pinimg.com/originals/f8/8e/89/f88e898955530880794913f0efb38755.jpg" alt="">
+          </div>
+          <div class="static_restaurant_card_info_name">
+            <p>Nome Ristorante</p>
+          </div>
+        </div>
+      </li> --}}
 
     </ul>
   </div>
