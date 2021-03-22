@@ -13,6 +13,18 @@
   background-repeat: no-repeat;
   z-index: 2;
 
+  .main_title{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30%;
+    text-align: center;
+
+    h1{
+      font-size: 60px;
+    }
+  }
+
   #razzo {
     position: absolute;
     top:170px;
@@ -49,6 +61,7 @@
   // border: 1px solid red;
   // min-height: 500px;
   // ul
+  padding-top: 130px;
   .static_restaurants_container {
     display: grid;
     grid-template-columns: 2fr 2fr;
