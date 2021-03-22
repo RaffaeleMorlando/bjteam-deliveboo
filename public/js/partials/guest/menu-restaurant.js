@@ -49379,13 +49379,19 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       self.restaurant = response.data[0];
       self.menu = self.restaurant.products;
       self.categories = self.restaurant.categories;
-    });
 
-    if (JSON.parse(window.localStorage.getItem('cart')) == null) {
-      this.cartProducts = [];
-    } else {
-      this.cartProducts = JSON.parse(window.localStorage.getItem('cart'));
-    }
+      if (JSON.parse(window.localStorage.getItem('cart')) == null) {
+        self.cartProducts = [];
+      } else {
+        self.cartProducts = JSON.parse(window.localStorage.getItem('cart'));
+
+        if (self.cartProducts[0].restaurant_id !== self.restaurant.id) {
+          self.cartProducts = [];
+          window.localStorage.clear();
+          window.localStorage.setItem('cart', JSON.stringify(_this.cartProducts));
+        }
+      }
+    });
   },
   methods: {
     addToCart: function addToCart(index) {

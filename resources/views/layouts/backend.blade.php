@@ -177,5 +177,6 @@
   </div>
 
   <script src="{{ asset("js/partials/layouts/backend.js") }}" charset="utf-8"></script>
+  @yield('backend-script')
 </body>
 </html>

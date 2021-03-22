@@ -44,29 +44,29 @@
         <div class="create_product_input">
           <div class="orange_icon_box">
             <i class="fas fa-id-card"></i>
-          </div>  
-          <div class="small_green_box">  
+          </div>
+          <div class="small_green_box">
             <label for="p_iva" class="mx-1 my-0">partia iva</label>
-          </div>  
+          </div>
           <input type="text" name="p_iva" id="p_iva" placeholder="partita iva" value="{{ old('p_iva')}}">
         </div>
 
         <div class="create_product_input">
            <div class="orange_icon_box">
               <i class="fas fa-map-marker-alt"></i>
-           </div> 
-          <div class="small_green_box">   
+           </div>
+          <div class="small_green_box">
             <label for="address" class="mx-1 my-0">Indirizzo</label>
-          </div>  
+          </div>
           <input type="text" name="address" id="address" value="{{ old('address') }}" placeholder="Inserisci l'indirizzo del tuo locale">
         </div>
         <div class="create_product_input">
           <div class="orange_icon_box">
             <i class="fas fa-phone"></i>
-          </div>  
-          <div class="small_green_box">   
+          </div>
+          <div class="small_green_box">
             <label for="phone" class="mx-1 my-0">Telefono</label>
-          </div>  
+          </div>
           <input type="text" name="phone" id="phone" value="{{ old('phone') }}" placeholder="Inserisci il numero del tuo locale">
         </div>
         <div class="create_product_input">
@@ -74,12 +74,24 @@
             @foreach ($categories as $category)
             <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
+<<<<<<< Updated upstream
           </select> 
         </div>  
+=======
+          </select>
+        </div>
+>>>>>>> Stashed changes
         <input type="submit" id="submit" value="ADD" class="btn-submit">
       </form>
-      
-       
+
+
     </div>
   </section>
+<<<<<<< Updated upstream
 @endsection
+=======
+@endsection
+
+@section("backend-create")
+@endsection
+>>>>>>> Stashed changes

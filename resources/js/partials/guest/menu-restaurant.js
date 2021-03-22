@@ -42,13 +42,22 @@ const menuRestaurant = new Vue({
 
         self.categories = self.restaurant.categories;
 
+        if(JSON.parse(window.localStorage.getItem('cart')) == null){
+          self.cartProducts = [];
+        } else {
+
+          self.cartProducts = (JSON.parse(window.localStorage.getItem('cart')));
+
+          if (self.cartProducts[0].restaurant_id !== self.restaurant.id) {
+
+            self.cartProducts = [];
+            window.localStorage.clear();
+            window.localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+
+          }
+        }
       });
 
-     if(JSON.parse(window.localStorage.getItem('cart')) == null){
-        this.cartProducts = [];
-     } else {
-        this.cartProducts = (JSON.parse(window.localStorage.getItem('cart')));
-     }
 
   },
   methods: {
