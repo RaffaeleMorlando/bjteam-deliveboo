@@ -45,7 +45,7 @@ class PaymentController extends Controller
 
         $newOrder = new Order();
         $newOrder->fill($data);
-        $newOrder->created_at = '2021-07-25';
+        // $newOrder->created_at = '2021-07-25';
         $newOrder->save();
 
         $newOrder->products()->attach($myId);
