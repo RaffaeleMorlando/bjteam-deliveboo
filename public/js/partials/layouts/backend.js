@@ -49358,31 +49358,36 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     }
   },
   mounted: function mounted() {
-    var _this = this;
-
-    axios.get("/api/categories").then(function (response) {
-      var self = _this;
-      var myId = [];
-      response.data.forEach(function (element) {
-        myId.push(element.id);
-      });
-      var ctx = document.getElementById('myChart').getContext('2d');
-      var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'line',
-        // The data for our dataset
-        data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-          datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: myId
-          }]
-        },
-        // Configuration options go here
-        options: {}
-      });
+    vue__WEBPACK_IMPORTED_MODULE_0__.default.prototype.$userId = document.querySelector("meta[name='user-id']").getAttribute('content');
+    var restaurantSlug = JSON.parse(vue__WEBPACK_IMPORTED_MODULE_0__.default.prototype.$userId).restaurant.slug;
+    axios.get("/api/restaurant/".concat(restaurantSlug, "/orders")).then(function (response) {
+      console.log(response.data); // const self = this;
+      // let myId = [];
+      // response.data.forEach(
+      //   (element) => {
+      //     myId.push(element.id);
+      //   }
+      // );
+      //
+      // var ctx = document.getElementById('myChart').getContext('2d');
+      // var chart = new Chart(ctx, {
+      // // The type of chart we want to create
+      // type: 'line',
+      //
+      // // The data for our dataset
+      // data: {
+      //     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      //     datasets: [{
+      //     label: 'My First dataset',
+      //     backgroundColor: 'rgb(255, 99, 132)',
+      //     borderColor: 'rgb(255, 99, 132)',
+      //     data: myId
+      //   }]
+      // },
+      //
+      //   // Configuration options go here
+      //   options: {}
+      // });
     });
   }
 });

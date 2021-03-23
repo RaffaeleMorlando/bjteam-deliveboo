@@ -8,10 +8,10 @@ use App\Restaurant;
 use App\Category;
 use Illuminate\Support\Facades\Auth;
 use App\Order;
+use App\Product;
 
 class RestaurantController extends Controller
 {
-
   //recuperare i ristoranti in base alla categoria
   public function getRestaurantsByCategory($categoryParam) {
 
@@ -57,9 +57,7 @@ class RestaurantController extends Controller
   //recupero tutti gli ordini del ristorante
   public function getOrders($slug) {
 
-    $restaurant = "ciao";
-    dd(Auth::user());
-
+    $restaurant = Restaurant::where('slug', $slug)->firstOrFail();
     $allOrders = Order::all();
     $orders = [];
 
