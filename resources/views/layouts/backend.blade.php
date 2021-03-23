@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="user-id" content="{{ Auth::user() }}">
   {{-- bootstrap --}}
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   {{-- my style --}}
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <script src="{{ asset('js/app.js') }}" defer></script>
 
+  {{-- chart.js --}}
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
 <body>
   <div id="background">
@@ -34,7 +37,7 @@
         <div class="product_name_green_box text-center">
           <p>Modifica informazioni ristorante</p>
         </div>
-        
+
       @if(Auth::user()->restaurant)
         <form class="px-3" action="{{ route('admin.restaurants.update', $restaurant->id) }}" method="post" enctype="multipart/form-data">
           @csrf
