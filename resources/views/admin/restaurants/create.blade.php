@@ -38,7 +38,7 @@
           <div class="small_green_box">
             <label for="name" class="mx-1 my-0">Nome</label>
           </div>
-          <input type="text" name="name" id="name" value="{{ old('name')}}" placeholder="Inserisci il nome del prodotto">
+          <input type="text" name="name" id="name" value="{{ old('name')}}" placeholder="Inserisci il nome del tuo esercizio commerciale">
         </div>
 
         <div class="create_product_input">
