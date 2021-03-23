@@ -49358,6 +49358,7 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     menu: [],
     categories: [],
     cartProducts: [],
+    //array prod. carello
     activeBanner: false,
     cartTotalPrice: 0
   },

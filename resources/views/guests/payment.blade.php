@@ -13,10 +13,10 @@
             @method("POST")
     
             <section>
-                <label for="amount">
+                <label for="total_price">
                     <span class="input-label">Amount</span>
                     <div class="input-wrapper amount-wrapper">
-                        <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$order['total_price']}}" hidden>
+                        <input id="total_price" name="total_price" type="tel" min="1" placeholder="Amount" value="{{number_format($order['total_price'],3)}}" hidden>
                         <span>{{$order['total_price']}}</span>
                     </div>
                 </label>
@@ -25,7 +25,8 @@
                     <div id="bt-dropin"></div>
                 </div>
             </section>
-    
+            <input type="text" name="guest_name">
+            <input type="text" name="guest_address">
             <input id="nonce" name="payment_method_nonce" type="hidden" />
             <button class="button" type="submit" onclick=" window.localStorage.clear()"><span>Test Transaction</span></button>
         </form>

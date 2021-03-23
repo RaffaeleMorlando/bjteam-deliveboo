@@ -12,7 +12,7 @@ const menuRestaurant = new Vue({
     restaurant: {},
     menu: [],
     categories: [],
-    cartProducts: [],
+    cartProducts: [],//array prod. carello
     activeBanner: false,
     cartTotalPrice: 0,
   },

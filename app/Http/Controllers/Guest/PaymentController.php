@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Braintree;
 use Illuminate\Support\Facades\Session;
+use App\Order;
 
 class PaymentController extends Controller
 {
@@ -30,6 +31,15 @@ class PaymentController extends Controller
     }
 
     public function checkout(Request $request) {
+        
+        $data = $request->all();
+        $data["order_number"] = '#'.rand(10000, 99999);  
+        
+        
+        $newOrder = new Order();
+        $newOrder->fill($data);
+        $newOrder->save();
+        
 
         $gateway = new Braintree\Gateway([
             'environment' => config('services.braintree.environment'),
@@ -38,11 +48,11 @@ class PaymentController extends Controller
             'privateKey' => config('services.braintree.privateKey')
         ]);
     
-        $amount = $request->amount;
+        $total_price = $request->total_price;
         $nonce = $request->payment_method_nonce;
     
         $result = $gateway->transaction()->sale([
-            'amount' => $amount,
+            'amount' => $total_price,
             'paymentMethodNonce' => $nonce,
             'customer' => [
                 'firstName' => 'Enrico',
