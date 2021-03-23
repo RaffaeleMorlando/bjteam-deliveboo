@@ -19,7 +19,7 @@
       <div class="form_box">
 
         <div class="product_create_img" v-if="url == null">
-          @if($restaurant->logo)
+          @if(Auth::user()->restaurant)
             <img src="{{ $restaurant->logo }}" alt="product-image">
           @else
             <i class="fas fa-hotdog"></i>
@@ -34,7 +34,8 @@
         <div class="product_name_green_box text-center">
           <p>Modifica informazioni ristorante</p>
         </div>
-
+        
+      @if(Auth::user()->restaurant)
         <form class="px-3" action="{{ route('admin.restaurants.update', $restaurant->id) }}" method="post" enctype="multipart/form-data">
           @csrf
           @method("PUT")
@@ -77,6 +78,7 @@
             </a>
           </div>
         </form>
+      @endif
       </div>
     </div>
 

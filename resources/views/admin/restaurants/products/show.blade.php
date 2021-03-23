@@ -7,11 +7,9 @@
       <div class="image_box">
         {{-- immagine del prodotto --}}
         @if ($product->image == null)
-          <img height="180px" src="{{asset('img/foods-placeholder-600x600.png')}}" alt="{{$product->name}}">
-        @elseif(substr($product->image, 0, 5) == 'https')
-          <img src="{{ $product->image }}" alt="product-image">
+          <img src="{{asset('img/foods-placeholder-600x600.png')}}" alt="{{$product->name}}">
         @else
-          <img height="180px" src="{{asset('storage/'.$product->image)}}" alt="{{$product->name}}">
+          <img src="{{ $product->image }}" alt="{{$product->name}}">
         @endif
 
         {{-- box verde con nome del prodotto --}}
@@ -48,7 +46,7 @@
           <small>{{ $product->price }}&euro;</small>
         </div>
       </div>
-      
+
       <div class="buttons_container">
         <a href="{{ route("admin.restaurants.products.index") }}">
           <button type="button" class="btn_back">BACK</button>

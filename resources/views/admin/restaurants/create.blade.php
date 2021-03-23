@@ -32,12 +32,12 @@
         </label>
 
         <div class="create_product_input">
-           <div class="orange_icon_box">
+          <div class="orange_icon_box">
             <i class="fas fa-store"></i>
-        </div>
-        <div class="small_green_box">
-          <label for="name" class="mx-1 my-0">Nome</label>
-        </div>
+          </div>
+          <div class="small_green_box">
+            <label for="name" class="mx-1 my-0">Nome</label>
+          </div>
           <input type="text" name="name" id="name" value="{{ old('name')}}" placeholder="Inserisci il nome del prodotto">
         </div>
 
@@ -74,24 +74,19 @@
             @foreach ($categories as $category)
             <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
-<<<<<<< Updated upstream
-          </select> 
-        </div>  
-=======
           </select>
         </div>
->>>>>>> Stashed changes
+
+          {{-- </select>
+        </div> --}}
+
         <input type="submit" id="submit" value="ADD" class="btn-submit">
       </form>
 
 
     </div>
   </section>
-<<<<<<< Updated upstream
-@endsection
-=======
 @endsection
 
-@section("backend-create")
-@endsection
->>>>>>> Stashed changes
+{{-- @section("backend-create")
+@endsection --}}

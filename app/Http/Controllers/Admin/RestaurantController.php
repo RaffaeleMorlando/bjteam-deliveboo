@@ -24,7 +24,6 @@ class RestaurantController extends Controller
 
     //Ritorna il form per registrazione ristorante
     public function create() {
-
         $categories = Category::all();
         return view('admin.restaurants.create',compact('categories'));
 
@@ -62,7 +61,7 @@ class RestaurantController extends Controller
       $this->productValidation["image"] = "nullable";
 
       $request->validate($this->productValidation);
-      
+
       $restaurant = Restaurant::findOrFail($id);
 
       if(!empty($data["logo"])){

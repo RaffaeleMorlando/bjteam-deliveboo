@@ -8,8 +8,8 @@
       <h1>TITOLO PRINCIPALE</h1>
       <h3>Sottotitolo</h3>
     </div>
-   
-    
+
+
     <img id="razzo" class="animate__animated animate__bounceInLeft"  src="{{asset("img/rider2.png")}}" alt="">
 
 
@@ -64,91 +64,23 @@
 
   <div v-else class="container static_restaurants_home">
     <ul class="animate__animated animate__fadeInUp static_restaurants_container">
-      <li class="static_restaurant_card" v-for="restaurant in homeRestaurants">
-        <div class="static_restaurant_card_thumbnail_container">
-          <img :src="restaurant.logo" alt="logo">
-        </div>
-        <div class="static_restaurant_card_info">
-          <div class="static_restaurant_card_info_logo">
+
+      <li class="static_restaurant_card" v-for="(restaurant, index) in homeRestaurants">
+        <a :href="`http://127.0.0.1:8000/restaurants/${restaurant.slug}`">
+          <div class="static_restaurant_card_thumbnail_container">
             <img :src="restaurant.logo" alt="logo">
           </div>
-          <div class="static_restaurant_card_info_name">
-            <p>@{{ restaurant.name }}</p>
+          <div class="static_restaurant_card_info">
+            <div class="static_restaurant_card_info_logo">
+              <img :src="restaurant.logo" alt="logo">
+            </div>
+            <div class="static_restaurant_card_info_name">
+              <p>@{{ restaurant.name }}</p>
+            </div>
           </div>
-        </div>
+        </a>
       </li>
-
-
-      {{-- <li class="static_restaurant_card">
-        <div class="static_restaurant_card_thumbnail_container">
-          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="">
-        </div>
-        <div class="static_restaurant_card_info">
-          <div class="static_restaurant_card_info_logo">
-            <img src="https://i.pinimg.com/originals/f8/8e/89/f88e898955530880794913f0efb38755.jpg" alt="">
-          </div>
-          <div class="static_restaurant_card_info_name">
-            <p>Nome Ristorante</p>
-          </div>
-        </div>
-      </li>
-
-      <li class="static_restaurant_card">
-        <div class="static_restaurant_card_thumbnail_container">
-          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="">
-        </div>
-        <div class="static_restaurant_card_info">
-          <div class="static_restaurant_card_info_logo">
-            <img src="https://i.pinimg.com/originals/f8/8e/89/f88e898955530880794913f0efb38755.jpg" alt="">
-          </div>
-          <div class="static_restaurant_card_info_name">
-            <p>Nome Ristorante</p>
-          </div>
-        </div>
-      </li>
-
-      <li class="static_restaurant_card">
-        <div class="static_restaurant_card_thumbnail_container">
-          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="">
-        </div>
-        <div class="static_restaurant_card_info">
-          <div class="static_restaurant_card_info_logo">
-            <img src="https://i.pinimg.com/originals/f8/8e/89/f88e898955530880794913f0efb38755.jpg" alt="">
-          </div>
-          <div class="static_restaurant_card_info_name">
-            <p>Nome Ristorante</p>
-          </div>
-        </div>
-      </li>
-
-      <li class="static_restaurant_card">
-        <div class="static_restaurant_card_thumbnail_container">
-          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="">
-        </div>
-        <div class="static_restaurant_card_info">
-          <div class="static_restaurant_card_info_logo">
-            <img src="https://i.pinimg.com/originals/f8/8e/89/f88e898955530880794913f0efb38755.jpg" alt="">
-          </div>
-          <div class="static_restaurant_card_info_name">
-            <p>Nome Ristorante</p>
-          </div>
-        </div>
-      </li>
-
-      <li class="static_restaurant_card">
-        <div class="static_restaurant_card_thumbnail_container">
-          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="">
-        </div>
-        <div class="static_restaurant_card_info">
-          <div class="static_restaurant_card_info_logo">
-            <img src="https://i.pinimg.com/originals/f8/8e/89/f88e898955530880794913f0efb38755.jpg" alt="">
-          </div>
-          <div class="static_restaurant_card_info_name">
-            <p>Nome Ristorante</p>
-          </div>
-        </div>
-      </li> --}}
-
+      
     </ul>
   </div>
 </div>
