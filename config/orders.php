@@ -4,7 +4,7 @@ return $orders = [
   [
     "guest_name" => "Piero Merda",
     "guest_address" => "Via boh, 36, Milano 20128",
-    "order_number" => "#00001",
+    "order_number" => '#'.rand(10000, 99999),
     "total_price" => 16.50,
     "status" => "Pagato",
     "created_at" => "2020-03-12 19:47:42",
@@ -13,7 +13,7 @@ return $orders = [
   [
     "guest_name" => "Adriano Tano",
     "guest_address" => "Via brutta, 21, Milano 20134",
-    "order_number" => "#00002",
+    "order_number" => '#'.rand(10000, 99999),
     "total_price" => 8.30,
     "status" => "Pagato",
     "created_at" => "2021-04-12 19:47:42",
@@ -22,7 +22,7 @@ return $orders = [
   [
     "guest_name" => "Jane Doe",
     "guest_address" => "Via bellissima, 52, Milano 20131",
-    "order_number" => "#00003",
+    "order_number" => '#'.rand(10000, 99999),
     "total_price" => 33.30,
     "status" => "Pagato",
     "created_at" => "2020-01-12 19:47:42",
@@ -31,7 +31,7 @@ return $orders = [
   [
     "guest_name" => "Icaro Ipsum",
     "guest_address" => "Via non lo so, 48, Milano 20125",
-    "order_number" => "#00004",
+    "order_number" => '#'.rand(10000, 99999),
     "total_price" => 2,
     "status" => "Pagato",
     "created_at" => "2019-06-12 19:47:42",
@@ -40,7 +40,7 @@ return $orders = [
   [
     "guest_name" => "Mario Rossi",
     "guest_address" => "Via Tibetana, 62, Milano 20123",
-    "order_number" => "#00005",
+    "order_number" => '#'.rand(10000, 99999),
     "total_price" => 29.50,
     "status" => "Pagato",
     "created_at" => "2019-06-28 19:47:42",
@@ -49,7 +49,7 @@ return $orders = [
   [
     "guest_name" => "Stefano Adami",
     "guest_address" => "Via Pertile, 3, Milano 20130",
-    "order_number" => "#00006",
+    "order_number" => '#'.rand(10000, 99999),
     "total_price" => 13.50,
     "status" => "Pagato",
     "created_at" => "2019-04-10 19:47:42",
@@ -58,7 +58,7 @@ return $orders = [
   [
     "guest_name" => "Martina Stellari",
     "guest_address" => "Via Dei Quartieri, 72, Milano 20130",
-    "order_number" => "#00007",
+    "order_number" => '#'.rand(10000, 99999),
     "total_price" => 52.50,
     "status" => "Pagato",
     "created_at" => "2019-04-09 19:47:42",
@@ -67,7 +67,7 @@ return $orders = [
   [
     "guest_name" => "Gianluca Pesce",
     "guest_address" => "Via Garibaldi, 35, Milano 20131",
-    "order_number" => "#00008",
+    "order_number" => '#'.rand(10000, 99999),
     "total_price" => 13.50,
     "status" => "Pagato",
     "created_at" => "2019-07-15 19:47:42",
@@ -76,7 +76,7 @@ return $orders = [
   [
     "guest_name" => "Gianluca Pesce",
     "guest_address" => "Via Garibaldi, 35, Milano 20131",
-    "order_number" => "#00009",
+    "order_number" => '#'.rand(10000, 99999),
     "total_price" => 39.50,
     "status" => "Pagato",
     "created_at" => "2019-06-03 19:47:42",
@@ -85,7 +85,7 @@ return $orders = [
   [
     "guest_name" => "Michele Alti",
     "guest_address" => "Via Garibaldi, 35, Milano 20131",
-    "order_number" => "#00010",
+    "order_number" => '#'.rand(10000, 99999),
     "total_price" => 21.60,
     "status" => "Pagato",
     "created_at" => "2019-06-03 19:47:42",
@@ -94,7 +94,7 @@ return $orders = [
   [
     "guest_name" => "Felice Ma Stronzo",
     "guest_address" => "Via Bella, 42, Milano 20131",
-    "order_number" => "#00011",
+    "order_number" => '#'.rand(10000, 99999),
     "total_price" => 25.00,
     "status" => "Pagato",
     "created_at" => "2019-06-03 19:47:42",
@@ -103,7 +103,7 @@ return $orders = [
   [
     "guest_name" => "Pippo bene",
     "guest_address" => "Via ragna, 2, Milano 20135",
-    "order_number" => "#00012",
+    "order_number" => '#'.rand(10000, 99999),
     "total_price" => 25.00,
     "status" => "Pagato",
     "created_at" => "2019-06-03 19:47:42",
@@ -112,7 +112,7 @@ return $orders = [
   [
     "guest_name" => "nino casagrande",
     "guest_address" => "Via sesso, 69, Milano 20138",
-    "order_number" => "#00013",
+    "order_number" => '#'.rand(10000, 99999),
     "total_price" => 19.00,
     "status" => "Pagato",
     "created_at" => "2019-06-03 18:47:42",
@@ -121,7 +121,7 @@ return $orders = [
   [
     "guest_name" => "Pitta Mattia",
     "guest_address" => "Via Garibaldi, 69, Milano 20137",
-    "order_number" => "#00014",
+    "order_number" => '#'.rand(10000, 99999),
     "total_price" => 23.00,
     "status" => "Pagato",
     "created_at" => "2019-06-03 18:47:42",
@@ -130,7 +130,7 @@ return $orders = [
   [
     "guest_name" => "Gerry D'Angelo",
     "guest_address" => "Via Saffi, 12, Milano 20139",
-    "order_number" => "#00015",
+    "order_number" => '#'.rand(10000, 99999),
     "total_price" => 9.00,
     "status" => "Pagato",
     "created_at" => "2019-06-03 20:47:42",

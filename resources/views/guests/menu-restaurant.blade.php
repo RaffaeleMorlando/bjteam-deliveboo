@@ -79,6 +79,9 @@
                 <form action="{{route('order.store')}}" method="POST" name="cart-form">
                   @csrf
                   @method('POST')
+                  <div v-for="(product, index) in cartProducts">
+                    <input type="text" :value="product.id" hidden :name="product.name">
+                  </div>
                   <input type="text" :value="cartTotalPrice" hidden name="total_price">
                   {{-- cancellare --}}
                   <span>Totale prezzo: € @{{cartTotalPrice.toFixed(2)}}</span>

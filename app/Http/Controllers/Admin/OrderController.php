@@ -42,6 +42,14 @@ class OrderController extends Controller
 
     public function storeOrder(Request $request)  {
       $order = $request->all();
+      // $myId = [];
+      //
+      // foreach ($order as $key => $value) {
+      //   if ($key != '_token' && $key != '_method' && $key != 'total_price') {
+      //     $myId[] = $value;
+      //   }
+      // }
+
       return redirect()->route('payment')->with(['order'=> $order]);
     }
 

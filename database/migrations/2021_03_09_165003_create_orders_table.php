@@ -17,9 +17,9 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('guest_name')->required();
             $table->string('guest_address')->required();
-            $table->char('order_number',6)->required()->unique(); // #00000
+            $table->char('order_number',6)->required(); // #00000
             $table->float('total_price',5,2)->required();
-            $table->string('status', 10)->default('In attesa'); // pagato, consegnato, in attesa
+            $table->string('status', 10)->default('Pagato'); // pagato, consegnato, in attesa
             $table->timestamps();
         });
     }
