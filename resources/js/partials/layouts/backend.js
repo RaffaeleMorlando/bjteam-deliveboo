@@ -28,56 +28,68 @@ const backend = new Vue({
     },
     filterByYear(){
       Vue.prototype.$userId = document.querySelector("meta[name='user-id']").getAttribute('content');
-    let restaurantSlug = JSON.parse(Vue.prototype.$userId).restaurant.slug;
 
-    let arrayTotal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+      let restaurantSlug = JSON.parse(Vue.prototype.$userId).restaurant.slug;
+      let monthsTotalPrice = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+      let yearTotalPrice = 0;
 
-    console.log(this.year);
+      axios
+        .get(`/api/restaurant/${restaurantSlug}/orders`)
+        .then(
+          (response) => {
 
-    axios
-      .get(`/api/restaurant/${restaurantSlug}/orders`)
-      .then(
-        (response) => {
+            let orders = response.data;
+            const self = this;
+            let myId = [];
 
-          // console.log(response.data);
-          const self = this;
-          let myId = [];
-          response.data.forEach(
-            (element) => {
-              if(element.created_at.substr(0, 4) == self.year){
-                for(var i = 1; i <= 12; i++){
-                  if(element.created_at.substr(5, 2) == '0' + i){
-                    arrayTotal[i - 1] = arrayTotal[i - 1] + element.total_price;
+            //Prendo il guadagno totale di tutti i mesi dell'anno selezionato
+            orders.forEach(
+              (element) => {
+                let orderCreateDate = element.created_at; //data creazione dell'ordine
+                let orderTotalPrice = element.total_price; //importo totale dell'ordine
+
+                if(orderCreateDate.substr(0, 4) == self.year){
+                  for(var i = 1; i <= 12; i++){
+                    if(orderCreateDate.substr(5, 2) == '0' + i){
+                      monthsTotalPrice[i - 1] += orderTotalPrice;
+                    }
                   }
                 }
               }
-            }
-          );
-          console.log(arrayTotal);
+            );
 
-          var ctx = document.getElementById('myChart').getContext('2d');
-          var chart = new Chart(ctx, {
-          // The type of chart we want to create
-          type: 'line',
+            //Prendo il guadagno totale dell'anno selezionato
+            monthsTotalPrice.forEach(
+              (element) => {
+                yearTotalPrice += element;
+              }
+            );
 
-          // The data for our dataset
-          data: {
-              labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-              datasets: [{
-              label: '€',
-              backgroundColor: 'rgb(255, 99, 132)',
-              borderColor: 'rgb(255, 99, 132)',
-              data: arrayTotal
-            }]
-          },
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
 
-            // Configuration options go here
-            options: {}
-          });
+            // The data for our dataset
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                datasets: [{
+                label: yearTotalPrice + "€",
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: monthsTotalPrice
+              }]
+            },
 
-        }
-      );
-    }
+              // Configuration options go here
+              options: {
+                text: "dsfsdf"
+              }
+            });
+
+          }
+        );
+      }
   },
 
   mounted() {
