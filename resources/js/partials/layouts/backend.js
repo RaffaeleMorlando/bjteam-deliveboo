@@ -48,20 +48,18 @@ const backend = new Vue({
                 for(var i = 1; i <= 12; i++){
                   if(element.created_at.substr(5, 2) == '0' + i){
                     arrayTotal[i - 1] = arrayTotal[i - 1] + element.total_price;
-                  } 
+                  }
                 }
               }
-              
-              
             }
           );
           console.log(arrayTotal);
-          
+
           var ctx = document.getElementById('myChart').getContext('2d');
           var chart = new Chart(ctx, {
           // The type of chart we want to create
           type: 'line',
-          
+
           // The data for our dataset
           data: {
               labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -72,7 +70,7 @@ const backend = new Vue({
               data: arrayTotal
             }]
           },
-          
+
             // Configuration options go here
             options: {}
           });
@@ -83,58 +81,11 @@ const backend = new Vue({
   },
 
   mounted() {
+    let currentUrl = window.location.href;
 
-    this.filterByYear();
-    // Vue.prototype.$userId = document.querySelector("meta[name='user-id']").getAttribute('content');
-    // let restaurantSlug = JSON.parse(Vue.prototype.$userId).restaurant.slug;
-
-    // let arrayTotal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-
-    // axios
-    //   .get(`/api/restaurant/${restaurantSlug}/orders`)
-    //   .then(
-    //     (response) => {
-
-    //       // console.log(response.data);
-    //       const self = this;
-    //       let myId = [];
-    //       response.data.forEach(
-    //         (element) => {
-    //           if(element.created_at.substr(0, 4) == self.year){
-    //             for(var i = 1; i <= 12; i++){
-    //               if(element.created_at.substr(5, 2) == '0' + i){
-    //                 arrayTotal[i - 1] = arrayTotal[i - 1] + element.total_price;
-    //               } 
-    //             }
-    //           }
-              
-              
-    //         }
-    //       );
-    //       console.log(arrayTotal);
-          
-    //       var ctx = document.getElementById('myChart').getContext('2d');
-    //       var chart = new Chart(ctx, {
-    //       // The type of chart we want to create
-    //       type: 'line',
-          
-    //       // The data for our dataset
-    //       data: {
-    //           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-    //           datasets: [{
-    //           label: '€',
-    //           backgroundColor: 'rgb(255, 99, 132)',
-    //           borderColor: 'rgb(255, 99, 132)',
-    //           data: arrayTotal
-    //         }]
-    //       },
-          
-    //         // Configuration options go here
-    //         options: {}
-    //       });
-
-    //     }
-    //   );
+    if(currentUrl == "http://127.0.0.1:8000/admin/restaurants/orders/charts") {
+      this.filterByYear();
+    }
 
   }
 });
