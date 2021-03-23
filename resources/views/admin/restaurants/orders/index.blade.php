@@ -29,10 +29,17 @@
             </tbody>
         </table>
 
+        <a href="{{ route("admin.restaurants.orders.chart") }}">Grafico</a>
 
 
 
 
     </div>
-    
+    {{-- @if(auth()->check())
+      <script>
+          window.User = {!! auth()->user()  !!}
+          console.log(window.User);
+      </script>
+      @endif --}}
+
 @endsection

@@ -27,4 +27,7 @@ Route::namespace("Api")->group(function (){
   //menu ristorante da mostrare in show
   Route::get('restaurant/{slug}', 'RestaurantController@getRestaurantMenu');
 
+  //ritorna tutti gli ordini del ristorante loggato
+  Route::get('restaurant/{slug}/orders', 'RestaurantController@getOrders');
+
 });

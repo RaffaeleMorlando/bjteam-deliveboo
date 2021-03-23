@@ -36,19 +36,14 @@ class OrderController extends Controller
     public function chart()
     {
         $orders = Order::all();
-        return view('admin.restaurants.orders.chart', compact('orders'));
+        $restaurant = Auth::user()->restaurant;
+
+        return view('admin.restaurants.orders.chart', compact('orders', 'restaurant'));
 
     }
 
     public function storeOrder(Request $request)  {
       $order = $request->all();
-      // $myId = [];
-      //
-      // foreach ($order as $key => $value) {
-      //   if ($key != '_token' && $key != '_method' && $key != 'total_price') {
-      //     $myId[] = $value;
-      //   }
-      // }
 
       return redirect()->route('payment')->with(['order'=> $order]);
     }

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Restaurant;
 use App\Category;
+use Illuminate\Support\Facades\Auth;
+use App\Order;
 
 class RestaurantController extends Controller
 {
@@ -50,6 +52,28 @@ class RestaurantController extends Controller
     $menuRestaurant = Restaurant::where('slug',$slug)->with('products','categories')->get();
 
     return response()->json($menuRestaurant);
+  }
+
+  //recupero tutti gli ordini del ristorante
+  public function getOrders($slug) {
+
+    $restaurant = "ciao";
+    dd(Auth::user());
+
+    $allOrders = Order::all();
+    $orders = [];
+
+    foreach ($allOrders as $order) {
+      foreach ($order->products as $product) {
+
+        if ($product->restaurant_id === $restaurant->id && !in_array($order, $orders)) {
+          $orders[] = $order;
+
+        }
+      }
+    }
+
+    return response()->json($orders);
   }
 
 }
