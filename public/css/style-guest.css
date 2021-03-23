@@ -56,6 +56,7 @@ header .container .row .center {
   align-items: center;
   flex-wrap: wrap;
   height: 100%;
+  position: relative;
 }
 header .container .row .center input[type=text] {
   width: 80%;
@@ -64,9 +65,52 @@ header .container .row .center input[type=text] {
   background-color: #F5F5F5;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border: none;
+  transition: all 0.5s;
 }
 header .container .row .center input[type=text]:focus {
   outline: none;
+  transform: scale(1.1);
+}
+header .container .row .center .searched_box {
+  width: 80%;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #F5F5F5;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  position: absolute;
+  left: 10%;
+  top: 90%;
+}
+header .container .row .center .searched_box li {
+  padding: 10px;
+  border-radius: 50px;
+  border-bottom: 2px solid #ba181b;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin: 10px 0;
+}
+header .container .row .center .searched_box li a {
+  display: flex;
+  align-items: center;
+}
+header .container .row .center .searched_box li a .container_image {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+header .container .row .center .searched_box li a .container_image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+header .container .row .center .searched_box li a span {
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+header .container .row .center .searched_box li:hover {
+  background: rgba(241, 26, 26, 0.411);
 }
 header .container .row .right {
   height: 100%;
@@ -99,6 +143,26 @@ footer #footer-bottom {
   width: 500px;
   height: 500px;
   background-color: #ffffff;
+}
+
+.slide-enter-active {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+}
+
+.slide-leave-active {
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.slide-enter-to, .slide-leave {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.slide-enter, .slide-leave-to {
+  overflow: hidden;
+  max-height: 0;
 }
 
 main {

@@ -20,7 +20,7 @@
     <div id="guest_layout">
 
 
-      <header id="header" :class="headerStatus ? 'active' : ''" :style="headerStatus ? 'background-color: #FCF6B1' : 'transparent'">
+      <header id="header" :class="headerStatus ? 'active' : ''" :style="headerStatus ? 'background-color: #ba181b' : 'transparent'">
         <div class="container">
           <div class="row">
 
@@ -30,7 +30,22 @@
 
             <div class="center col-lg-6 col-md-4 ">
             @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')
-              <input type="text" name="" value="" :placeholder="searchBarPlaceholder">
+              <input type="text" name="" value="" :placeholder="searchBarPlaceholder" v-model="searched" @keyup="getRestaurantByName">
+
+              <transition name="slide">
+                <div class="searched_box" v-if="searchedResults.length != 0">
+                  <ul class="list-unstyled">
+                    <li v-for="(restaurant, index) in searchedResults">
+                      <a :href="'http://127.0.0.1:8000/restaurants/' + restaurant.slug">
+                        <div class="container_image">
+                          <img :src="restaurant.logo" alt="">
+                        </div>
+                        <span>@{{ restaurant.name }}</span>
+                      </a> 
+                    </li>
+                  </ul>
+                </div>
+              </transition>
             @endif
             </div>
 

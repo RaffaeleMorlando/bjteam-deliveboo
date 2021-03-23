@@ -49272,6 +49272,18 @@ Vue.compile = compileToFunctions;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -49330,15 +49342,20 @@ var __webpack_exports__ = {};
   !*** ./resources/js/partials/layouts/frontend.js ***!
   \***************************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 __webpack_require__(/*! ../../bootstrap */ "./resources/js/bootstrap.js");
 
 
-var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
+
+var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: '#header',
   data: {
     headerStatus: false,
-    searchBarPlaceholder: ""
+    searchBarPlaceholder: "",
+    searched: "",
+    searchedResults: []
   },
   mounted: function mounted() {
     var _this = this;
@@ -49354,7 +49371,17 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       ;
     });
   },
-  methods: {}
+  methods: {
+    getRestaurantByName: function getRestaurantByName() {
+      var _this2 = this;
+
+      this.searched = this.searched.toLowerCase();
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/restaurant/search/".concat(this.searched)).then(function (response) {
+        _this2.searchedResults = response.data;
+        console.log(response);
+      });
+    }
+  }
 });
 })();
 

@@ -74,4 +74,19 @@ class RestaurantController extends Controller
     return response()->json($orders);
   }
 
+  public function getSearchedRestaurant($string){
+    
+    $restaurants = Restaurant::all();
+
+    $filteredRestaurants = [];
+
+    foreach ($restaurants as $restaurant) {
+      if(str_starts_with(strtolower($restaurant->name), $string) && count($filteredRestaurants) <= 4){
+        $filteredRestaurants[] = $restaurant;
+      }
+    }
+
+    return response()->json($filteredRestaurants);
+  }
+
 }
