@@ -61,6 +61,7 @@ Route::prefix('admin')
 
         Route::get("/", "GuestController@homePage")->name("home");
         Route::get("restaurants/{slug}", "GuestController@menuRestaurant")->name("menu-restaurant");
+        Route::get("success", 'GuestController@success');
 
       });
 
