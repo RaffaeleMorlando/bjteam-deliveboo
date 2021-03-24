@@ -31,7 +31,7 @@
     }
   }
 
-  .category_selection {
+  .md_category_selection {
     display: none;
   }
 
@@ -69,6 +69,10 @@
       background-color: rgba(255, 255, 255, 0.5);
     }
   }
+
+  #slider {
+    display: none;
+  }
 }
 
 .searched_restaurants_container {
@@ -81,10 +85,8 @@
 }
 
 .static_restaurants_home {
-  // border: 1px solid red;
-  // min-height: 500px;
-  // ul
   padding: 0 100px;
+
   .static_restaurants_container {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
@@ -462,13 +464,18 @@
         }
       }
     }
+
+    #slider {
+      display: block;
+      // position: absolute;
+      // top: 500px;
+      // left: 0;
+    }
   }
 
   .static_restaurants_home {
-    // border: 1px solid red;
-    // min-height: 500px;
-    // ul
     padding: 0 100px;
+
     .static_restaurants_container {
       display: grid;
       grid-template-columns: 1fr; //

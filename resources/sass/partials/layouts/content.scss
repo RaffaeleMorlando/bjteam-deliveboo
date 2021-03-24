@@ -23,7 +23,7 @@ header {
         height: 100%;
       }
 
-      .center {
+      .header_center {
         @include SetFlexContainer (row, center, center, wrap);
         height: 100%;
         position: relative;
@@ -288,7 +288,7 @@ footer {
           }
         }
 
-        .center {
+        .header_center {
           @include SetFlexContainer (row, center, center, wrap);
           height: 100%;
           position: relative;

@@ -36,16 +36,23 @@
     </div>
 
     {{-- Ricerca delle categorie in MD --}}
-    <div class="md_category_selection">
+    {{-- <div class="md_category_selection">
       <ul class="list-unstyled md_list_category">
         <li class="md_item_category" v-for="(category, index) in categories" :title="category.name" v-on:click="getRestaurantsByCategory(index)">
           <a href="#">
             <img :src="category.image" alt="">
-            {{-- <span>@{{ category.name }}</span> --}}
+
           </a>
         </li>
       </ul>
+    </div> --}}
+    <div id="slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}' class="slider-prova">
+      <div><h3>1</h3></div>
+      <div><h3>2</h3></div>
+      <div><h3>3</h3></div>
+      <div><h3>4</h3></div>
     </div>
+
 
     <div class="main_sub_title">
       <h2 class="text-center scroll">I nostri Ritoranti!</h2>

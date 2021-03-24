@@ -61,7 +61,7 @@ header .container .row .left {
   flex-wrap: wrap;
   height: 100%;
 }
-header .container .row .center {
+header .container .row .header_center {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -70,7 +70,7 @@ header .container .row .center {
   height: 100%;
   position: relative;
 }
-header .container .row .center input[type=text] {
+header .container .row .header_center input[type=text] {
   width: 80%;
   padding: 5px 10px;
   border-radius: 20px;
@@ -80,11 +80,11 @@ header .container .row .center input[type=text] {
   transition: all 0.5s;
   font-weight: 600;
 }
-header .container .row .center input[type=text]:focus {
+header .container .row .header_center input[type=text]:focus {
   outline: none;
   transform: scale(1.1);
 }
-header .container .row .center .searched_box {
+header .container .row .header_center .searched_box {
   width: 80%;
   padding: 5px 10px;
   border-radius: 10px;
@@ -94,35 +94,35 @@ header .container .row .center .searched_box {
   left: 10%;
   top: 90%;
 }
-header .container .row .center .searched_box li {
+header .container .row .header_center .searched_box li {
   padding: 10px;
   border-radius: 50px;
   border-bottom: 2px solid #ba181b;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   margin: 10px 0;
 }
-header .container .row .center .searched_box li a {
+header .container .row .header_center .searched_box li a {
   display: flex;
   align-items: center;
 }
-header .container .row .center .searched_box li a .container_image {
+header .container .row .header_center .searched_box li a .container_image {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   padding: 5px;
   width: 50px;
   height: 50px;
   border-radius: 100%;
 }
-header .container .row .center .searched_box li a .container_image img {
+header .container .row .header_center .searched_box li a .container_image img {
   width: 100%;
   height: 100%;
   border-radius: 100%;
 }
-header .container .row .center .searched_box li a span {
+header .container .row .header_center .searched_box li a span {
   padding-left: 10px;
   font-size: 20px;
   font-weight: 600;
 }
-header .container .row .center .searched_box li:hover {
+header .container .row .header_center .searched_box li:hover {
   background: rgba(241, 26, 26, 0.411);
 }
 header .container .row .right {
@@ -250,7 +250,7 @@ footer #footer-bottom {
   header .container .row .left a {
     z-index: 250;
   }
-  header .container .row .center {
+  header .container .row .header_center {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -259,7 +259,7 @@ footer #footer-bottom {
     height: 100%;
     position: relative;
   }
-  header .container .row .center input[type=text] {
+  header .container .row .header_center input[type=text] {
     width: 80%;
     margin-top: 15px;
     padding: 20px 20px;
@@ -271,11 +271,11 @@ footer #footer-bottom {
     z-index: 300;
     font-size: 25px;
   }
-  header .container .row .center input[type=text]:focus {
+  header .container .row .header_center input[type=text]:focus {
     outline: none;
     transform: scale(1.1);
   }
-  header .container .row .center .searched_box {
+  header .container .row .header_center .searched_box {
     width: 80%;
     padding: 5px 10px;
     border-radius: 10px;
@@ -285,35 +285,35 @@ footer #footer-bottom {
     left: 10%;
     top: 90%;
   }
-  header .container .row .center .searched_box li {
+  header .container .row .header_center .searched_box li {
     padding: 10px;
     border-radius: 50px;
     border-bottom: 2px solid #ba181b;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     margin: 10px 0;
   }
-  header .container .row .center .searched_box li a {
+  header .container .row .header_center .searched_box li a {
     display: flex;
     align-items: center;
   }
-  header .container .row .center .searched_box li a .container_image {
+  header .container .row .header_center .searched_box li a .container_image {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     padding: 5px;
     width: 50px;
     height: 50px;
     border-radius: 100%;
   }
-  header .container .row .center .searched_box li a .container_image img {
+  header .container .row .header_center .searched_box li a .container_image img {
     width: 100%;
     height: 100%;
     border-radius: 100%;
   }
-  header .container .row .center .searched_box li a span {
+  header .container .row .header_center .searched_box li a span {
     padding-left: 10px;
     font-size: 20px;
     font-weight: 600;
   }
-  header .container .row .center .searched_box li:hover {
+  header .container .row .header_center .searched_box li:hover {
     background: rgba(241, 26, 26, 0.411);
   }
   header .container .row .right {
@@ -450,7 +450,7 @@ main {
   font-weight: bold;
   font-size: 30px;
 }
-#main_home_page_top .category_selection {
+#main_home_page_top .md_category_selection {
   display: none;
 }
 #main_home_page_top .main_sub_title {
@@ -482,6 +482,9 @@ main {
 }
 #main_home_page_top .contenitore_di_tutto_il_casino.active {
   background-color: rgba(255, 255, 255, 0.5);
+}
+#main_home_page_top #slider {
+  display: none;
 }
 
 .searched_restaurants_container {
@@ -896,6 +899,9 @@ main {
        object-fit: contain;
     -o-object-position: center;
        object-position: center;
+  }
+  #main_home_page_top #slider {
+    display: block;
   }
 
   .static_restaurants_home {
