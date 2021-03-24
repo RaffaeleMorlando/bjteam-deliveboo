@@ -163,8 +163,7 @@ const menuRestaurant = new Vue({
         this.isCartOpen = false;
         this.chevronDown = false;
       }
-      // this.isCartOpen = !this.isCartOpen;
-      // console.log('close' , this.isCartOpen);
+
     }
 
   }

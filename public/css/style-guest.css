@@ -1124,7 +1124,7 @@ main {
   height: calc(100% - 80px);
 }
 .container-menu-main .menu_container #menu_left .menu_info h2 {
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
   padding: 20px 15px;
 }

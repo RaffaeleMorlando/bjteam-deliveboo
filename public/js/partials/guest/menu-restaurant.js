@@ -49476,9 +49476,7 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       } else {
         this.isCartOpen = false;
         this.chevronDown = false;
-      } // this.isCartOpen = !this.isCartOpen;
-      // console.log('close' , this.isCartOpen);
-
+      }
     }
   }
 });

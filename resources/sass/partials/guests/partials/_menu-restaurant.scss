@@ -60,7 +60,7 @@
                 }
 
                 h2 {
-                    font-size: 40px;
+                    font-size: 60px;
                     font-weight: bold;
                     padding: 20px 15px;
                 }
@@ -76,7 +76,6 @@
                     width: calc(100% / 2 - 20px);
                     border-radius: 10px;
                     box-shadow: 0 2px 20px 0 rgb(0 0 0 / 10%);
-                    // border: 1px solid green;
                     margin: 20px 10px;
                     overflow: hidden;
 
@@ -98,14 +97,12 @@
                     h3 {
                         font-size: 20px;
                         font-weight: 600;
-                        // border: 1px solid red;
                         margin-bottom: 0;
                         padding: 10px;
                         text-transform: capitalize;
                     }
 
                     p {
-                        // border: 1px solid red;
                         width: 100%;
                         white-space: nowrap;
                         overflow: hidden;
@@ -163,7 +160,6 @@
                 h3 {
                     text-align: center;
                     font-size: 25px;
-                    // border: 1px solid red;
                     padding: 10px 15px;
                 }
 
@@ -172,7 +168,6 @@
                     font-size: 25px;
                     text-align: center;
                     padding: 10px 15px;
-                    // border: 1px solid red;
                 }
 
                 #cart_order_items {
@@ -195,17 +190,14 @@
                         border-bottom: 1px solid lightgray;
 
                         .order_item_top {
-                            // display: flex;
                             display: grid;
                             grid-template-columns: 1fr 2fr 1fr;
 
                             span {
                                 font-size: 20px;
-                                // border: 1px solid red;
                                 padding: 5px;
                             }
                             p {
-                                // border: 1px solid red;
                                 width: 100%;
                                 overflow: hidden;
                                 font-size: 20px;
