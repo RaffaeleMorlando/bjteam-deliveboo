@@ -48,31 +48,39 @@
     <div class="container_form_login">
         <form id="login_form" action="{{ route('login') }}" method="POST" class="container">
             @csrf
-
+          <img src="{{asset("img/logo_green.svg")}}" alt="Comodo">  
+        <div class="wrapper_input">
             <div class="form-group">
-                <label for="email">{{ __('E-Mail Address') }}</label>
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+            <label class="email_login" for="email">{{ __('E-Mail Address') }}</label>
+              <div class="box_input_credential">
+                <input id="email" type="email" class="input_credential form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="E-mail" autofocus>
+              </div>
+            @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
             </div>
+           
 
             <div class="form-group">
-                <label for="password">{{ __('Password') }}</label>
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                <label class="password_login" for="password">{{ __('Password') }}</label>
+                <div class="box_input_credential">
+                <input id="password" type="password" class="input_credential form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="password">
+                </div>
                 @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
+
+
             </div>
 
             <div class="form-group row">
                 <div class="col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                        <input  class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                         <label class="form-check-label" for="remember">
                             {{ __('Remember Me') }}
                         </label>
@@ -81,8 +89,8 @@
             </div>
 
             <div class="form-group row mb-0">
-                <div class="col-md-8">
-                    <button id="login_btn_form" type="submit" class="btn">
+                <div class="col-md-12">
+                    <button id="login_btn_form" class="btn-lg btn-block" type="submit" class="btn">
                         {{ __('Login') }}
                     </button>
                     @if (Route::has('password.request'))
@@ -92,7 +100,7 @@
                     @endif
                 </div>
             </div>
-
+          </div>  
         </form>
     </div>
 

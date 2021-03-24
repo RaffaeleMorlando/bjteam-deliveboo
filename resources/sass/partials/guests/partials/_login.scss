@@ -17,3 +17,66 @@
         }
     }
 }
+@media all and (max-width: 991px) {
+ /* main {
+    min-height: 80vh;
+  }*/
+  
+  .container_form_login { 
+    position: relative;
+    
+    #register_form,#login_form {
+      label {
+        &.label_none_md,&.password_login, &.email_login{
+        display: none;
+        }
+        
+      }
+
+      .wrapper_input {
+          position: absolute;
+          width: 65%;
+          top:50%;
+          left:50%;
+          transform: translate(-50%, -50%);
+        }
+     
+      .box_input_credential {
+        background-color: white;
+        padding: 10px;
+        margin-top:60px;
+        width: 100%;
+
+      .input_credential {
+        &:focus {
+          box-shadow: none;
+        }
+        border:none;
+        border-bottom: 2px solid #FFC244;
+        background-color: transparent;
+        height: 30px;
+      }
+    }
+      position: absolute;
+      border-radius: 50px;
+      max-width: 70%;
+      height: 80%;
+      transform: translate(-50%,-50%);
+      top: 50%;
+      left: 50%;
+  } 
+  } 
+  
+
+}
+
+@media all and (max-width: 576px) {
+
+  .container_form_login #login_form,#register_form{
+    max-width: 90%;
+    
+    .box_input_credential .input_credential {
+    height: 30px;
+  }
+  }
+}
