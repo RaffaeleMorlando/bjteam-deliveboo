@@ -49401,9 +49401,7 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
             }]
           },
           // Configuration options go here
-          options: {
-            text: "dsfsdf"
-          }
+          options: {}
         });
       });
     }

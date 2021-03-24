@@ -37,6 +37,7 @@ header {
           box-shadow: $darkShadowCard;
           border: none;
           transition: all .5s;
+          font-weight: 600;
 
           &:focus {
             outline: none;
@@ -303,6 +304,7 @@ footer {
             border: none;
             transition: all .5s;
             z-index: 300; //
+            font-size: 25px;
 
             &:focus {
               outline: none;

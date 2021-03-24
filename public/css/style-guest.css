@@ -78,6 +78,7 @@ header .container .row .center input[type=text] {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border: none;
   transition: all 0.5s;
+  font-weight: 600;
 }
 header .container .row .center input[type=text]:focus {
   outline: none;
@@ -268,6 +269,7 @@ footer #footer-bottom {
     border: none;
     transition: all 0.5s;
     z-index: 300;
+    font-size: 25px;
   }
   header .container .row .center input[type=text]:focus {
     outline: none;
