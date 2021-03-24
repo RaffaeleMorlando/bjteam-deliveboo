@@ -878,8 +878,9 @@ main {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  background: url("/img/homepage_hero.svg");
+  background: url("/img/rocket-lunch-removebg-preview.png");
   background-repeat: no-repeat;
+  background-position: left bottom;
 }
 #loading_container .checking_container {
   width: 500px;
