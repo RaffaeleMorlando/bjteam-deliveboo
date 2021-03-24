@@ -20,8 +20,11 @@
 
     <div id="guest_layout">
 
-
-      <header id="header" :class="headerStatus ? 'active' : ''" :style="headerStatus ? 'background-color: #ba181b' : 'transparent'">
+      @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')
+        <header id="header" :class="headerStatus ? 'active' : ''" :style="headerStatus ? 'background-color: #ba181b' : 'transparent'">
+      @else
+        <header id="header" style="background-color: #ba181b">
+      @endif
         <div class="container">
           <div class="row">
 
