@@ -50,22 +50,21 @@
             @csrf
           <img src="{{asset("img/logo_green.svg")}}" alt="Comodo">  
         <div class="wrapper_input">
-            <div id="box_input_credential">
-                <div class="form-group">
-                <label class="email_login" for="email">{{ __('E-Mail Address') }}</label>
-                 <div class="box_input_credential">
-                    <input id="email" type="email" class="input_credential form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="E-mail" autofocus>
-                 </div>
-                @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-                </div>
-              </div>  
+            <div class="form-group">
+            <label class="email_login" for="email">{{ __('E-Mail Address') }}</label>
+              <div class="box_input_credential">
+                <input id="email" type="email" class="input_credential form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="E-mail" autofocus>
+              </div>
+            @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+            </div>
+           
 
             <div class="form-group">
-                <label class="password_login small_green_box" for="password">{{ __('Password') }}</label>
+                <label class="password_login" for="password">{{ __('Password') }}</label>
                 <div class="box_input_credential">
                 <input id="password" type="password" class="input_credential form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="password">
                 </div>

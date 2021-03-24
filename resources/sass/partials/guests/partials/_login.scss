@@ -25,9 +25,9 @@
   .container_form_login { 
     position: relative;
     
-     #login_form {
+    #register_form,#login_form {
       label {
-        &.password_login, &.email_login{
+        &.label_none_md,&.password_login, &.email_login{
         display: none;
         }
         
@@ -72,7 +72,7 @@
 
 @media all and (max-width: 576px) {
 
-  .container_form_login #login_form{
+  .container_form_login #login_form,#register_form{
     max-width: 90%;
     
     .box_input_credential .input_credential {
