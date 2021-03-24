@@ -12,7 +12,7 @@
 
     <img id="razzo" class="animate__animated animate__bounceInLeft"  src="{{asset("img/rider2.png")}}" alt="">
 
-
+    {{-- ricerca delle categorie per LG --}}
     <div class="contenitore_di_tutto_il_casino" :class="isChecked ? 'active' : ''">
       <nav class="menu">
         <input class="menu-toggler" type="checkbox" v-model="isChecked" @click="checked()">
@@ -25,8 +25,6 @@
             </a>
           </li>
 
-
-
         <li class="menu-item gadget_button_category text-center" :class="isChecked ? '' : 'blob'">
           <a href="#">
             <img src="{{ asset("img/categories/backpack.png") }}" alt="" style="width: 50px; height: 50px">
@@ -37,9 +35,24 @@
       </nav>
     </div>
 
-    <div class="category_selection">
+    {{-- Ricerca delle categorie in MD --}}
+    {{-- <div class="md_category_selection">
+      <ul class="list-unstyled md_list_category">
+        <li class="md_item_category" v-for="(category, index) in categories" :title="category.name" v-on:click="getRestaurantsByCategory(index)">
+          <a href="#">
+            <img :src="category.image" alt="">
 
+          </a>
+        </li>
+      </ul>
+    </div> --}}
+    <div id="slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}' class="slider-prova">
+      <div><h3>1</h3></div>
+      <div><h3>2</h3></div>
+      <div><h3>3</h3></div>
+      <div><h3>4</h3></div>
     </div>
+
 
     <div class="main_sub_title">
       <h2 class="text-center scroll">I nostri Ritoranti!</h2>

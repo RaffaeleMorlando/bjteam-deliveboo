@@ -28,7 +28,7 @@
               <a href="{{ route('home') }}" id="home_link"><img class="logo" src="{{ asset("img/logo_glovo-prova.svg") }}" alt="logo"></a>
             </div>
 
-            <div class="center col-lg-6 col-md-12 ">
+            <div class="header_center col-lg-6 col-md-12 ">
             @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')
               <input type="text" name="" value="" :placeholder="searchBarPlaceholder" v-model="searched" @keyup="getRestaurantByName">
 

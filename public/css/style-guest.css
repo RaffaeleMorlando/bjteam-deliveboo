@@ -61,7 +61,7 @@ header .container .row .left {
   flex-wrap: wrap;
   height: 100%;
 }
-header .container .row .center {
+header .container .row .header_center {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -70,7 +70,7 @@ header .container .row .center {
   height: 100%;
   position: relative;
 }
-header .container .row .center input[type=text] {
+header .container .row .header_center input[type=text] {
   width: 80%;
   padding: 5px 10px;
   border-radius: 20px;
@@ -78,12 +78,13 @@ header .container .row .center input[type=text] {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border: none;
   transition: all 0.5s;
+  font-weight: 600;
 }
-header .container .row .center input[type=text]:focus {
+header .container .row .header_center input[type=text]:focus {
   outline: none;
   transform: scale(1.1);
 }
-header .container .row .center .searched_box {
+header .container .row .header_center .searched_box {
   width: 80%;
   padding: 5px 10px;
   border-radius: 10px;
@@ -93,35 +94,35 @@ header .container .row .center .searched_box {
   left: 10%;
   top: 90%;
 }
-header .container .row .center .searched_box li {
+header .container .row .header_center .searched_box li {
   padding: 10px;
   border-radius: 50px;
   border-bottom: 2px solid #ba181b;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   margin: 10px 0;
 }
-header .container .row .center .searched_box li a {
+header .container .row .header_center .searched_box li a {
   display: flex;
   align-items: center;
 }
-header .container .row .center .searched_box li a .container_image {
+header .container .row .header_center .searched_box li a .container_image {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   padding: 5px;
   width: 50px;
   height: 50px;
   border-radius: 100%;
 }
-header .container .row .center .searched_box li a .container_image img {
+header .container .row .header_center .searched_box li a .container_image img {
   width: 100%;
   height: 100%;
   border-radius: 100%;
 }
-header .container .row .center .searched_box li a span {
+header .container .row .header_center .searched_box li a span {
   padding-left: 10px;
   font-size: 20px;
   font-weight: 600;
 }
-header .container .row .center .searched_box li:hover {
+header .container .row .header_center .searched_box li:hover {
   background: rgba(241, 26, 26, 0.411);
 }
 header .container .row .right {
@@ -249,7 +250,7 @@ footer #footer-bottom {
   header .container .row .left a {
     z-index: 250;
   }
-  header .container .row .center {
+  header .container .row .header_center {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -258,7 +259,7 @@ footer #footer-bottom {
     height: 100%;
     position: relative;
   }
-  header .container .row .center input[type=text] {
+  header .container .row .header_center input[type=text] {
     width: 80%;
     margin-top: 15px;
     padding: 20px 20px;
@@ -268,12 +269,13 @@ footer #footer-bottom {
     border: none;
     transition: all 0.5s;
     z-index: 300;
+    font-size: 25px;
   }
-  header .container .row .center input[type=text]:focus {
+  header .container .row .header_center input[type=text]:focus {
     outline: none;
     transform: scale(1.1);
   }
-  header .container .row .center .searched_box {
+  header .container .row .header_center .searched_box {
     width: 80%;
     padding: 5px 10px;
     border-radius: 10px;
@@ -283,35 +285,35 @@ footer #footer-bottom {
     left: 10%;
     top: 90%;
   }
-  header .container .row .center .searched_box li {
+  header .container .row .header_center .searched_box li {
     padding: 10px;
     border-radius: 50px;
     border-bottom: 2px solid #ba181b;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     margin: 10px 0;
   }
-  header .container .row .center .searched_box li a {
+  header .container .row .header_center .searched_box li a {
     display: flex;
     align-items: center;
   }
-  header .container .row .center .searched_box li a .container_image {
+  header .container .row .header_center .searched_box li a .container_image {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     padding: 5px;
     width: 50px;
     height: 50px;
     border-radius: 100%;
   }
-  header .container .row .center .searched_box li a .container_image img {
+  header .container .row .header_center .searched_box li a .container_image img {
     width: 100%;
     height: 100%;
     border-radius: 100%;
   }
-  header .container .row .center .searched_box li a span {
+  header .container .row .header_center .searched_box li a span {
     padding-left: 10px;
     font-size: 20px;
     font-weight: 600;
   }
-  header .container .row .center .searched_box li:hover {
+  header .container .row .header_center .searched_box li:hover {
     background: rgba(241, 26, 26, 0.411);
   }
   header .container .row .right {
@@ -443,7 +445,12 @@ main {
   font-weight: bold;
   font-size: 60px;
 }
-#main_home_page_top .category_selection {
+#main_home_page_top .main_title h3 {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 30px;
+}
+#main_home_page_top .md_category_selection {
   display: none;
 }
 #main_home_page_top .main_sub_title {
@@ -475,6 +482,9 @@ main {
 }
 #main_home_page_top .contenitore_di_tutto_il_casino.active {
   background-color: rgba(255, 255, 255, 0.5);
+}
+#main_home_page_top #slider {
+  display: none;
 }
 
 .searched_restaurants_container {
@@ -851,6 +861,112 @@ main {
   }
   #main_home_page_top .contenitore_di_tutto_il_casino.active {
     background-color: rgba(255, 255, 255, 0.5);
+  }
+  #main_home_page_top .md_category_selection {
+    display: block;
+    position: absolute;
+    top: 65%;
+    left: 0;
+    width: 100%;
+    height: 100px;
+  }
+  #main_home_page_top .md_category_selection .md_list_category {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  #main_home_page_top .md_category_selection .md_list_category .md_item_category {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 80px;
+    height: 80px;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    overflow: hidden;
+  }
+  #main_home_page_top .md_category_selection .md_list_category .md_item_category img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: center;
+       object-position: center;
+  }
+  #main_home_page_top #slider {
+    display: block;
+  }
+
+  .static_restaurants_home {
+    padding: 0 100px;
+  }
+  .static_restaurants_home .static_restaurants_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 40px;
+    list-style: none;
+  }
+  .static_restaurants_home .static_restaurants_container .static_restaurant_card {
+    position: relative;
+    border-radius: 10px;
+    height: 300px;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 70px;
+  }
+  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_thumbnail_container {
+    position: absolute;
+    top: -30px;
+    left: -15px;
+    width: calc(100% - 50px);
+    height: 80%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_thumbnail_container img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
+  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_info {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+  }
+  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_info .static_restaurant_card_info_logo {
+    border-radius: 100%;
+    margin-left: 10px;
+    width: 80px;
+    height: 80px;
+    margin-top: 300px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px;
+  }
+  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_info .static_restaurant_card_info_logo img {
+    width: 100%;
+    height: 100%;
+    -o-object-position: center;
+       object-position: center;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_info .static_restaurant_card_info_name p {
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    margin-left: 20px;
   }
 }
 .container_form_login {
