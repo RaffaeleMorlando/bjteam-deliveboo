@@ -23,8 +23,9 @@
                                 <div class="card_right">
                                     <p>Ordinato da: <strong>{{ $order->guest_name }}</strong></p>
                                     <p>All'indirizzo: <strong>{{ $order->guest_address }}</strong></p>
-                                    <p>In data: <strong>{{ $order->created_at }}</strong></p>
-                                    <p>Prezzo: <strong>{{ $order->total_price }}</strong>&euro; - status Pagamento: <strong>{{ $order->status}}</strong></p>
+                                    <p>In data: <strong>{{ $order->created_at->format('d/m/Y H:i') }}</strong></p>
+                                    <p>status Pagamento: <strong>{{ $order->status}}</strong></p>
+                                    <p>Prezzo: <strong>{{ number_format($order->total_price, 2) }}</strong>&euro;</p>
                                     
                                 </div>
                             </div>
