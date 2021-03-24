@@ -24,7 +24,7 @@
           <div id="menu_left">
 
             {{-- SEZIONE INFORMAZIONI RISTORANTE --}}
-            <div class="menu_info" :style="heroStatus ? 'height: 150px' : 'height: 250px'">
+            <div class="menu_info" :style="heroStatus ? 'height: 180px' : 'height: 250px'">
               <div class="menu_info_container" >
               </div>
               <h2>@{{restaurant.name}}</h2>
@@ -91,8 +91,8 @@
             </div>
 
             {{-- CARRELLO MD/SM --}}   
-            <div class="cart_responsive" :style="isCartOpen ? 'height: 50vh' : ''" @click="openCart">
-              <span v-if="isCartOpen"><i class="fas fa-times"></i></span>
+            <div class="cart_responsive" :style="isCartOpen ? 'height: 70vh;' : ''" @click="openCart">
+              <span class="icon_close_cart" v-if="isCartOpen"><i class="fas fa-times" @click="closeCart"></i></span>
               <h3>Il tuo ordine</h3>
               <span><img src="{{ asset('img/store-delivery-light.svg') }}" alt=""></span>
               <ul id="cart_order_items" :style="isCartOpen ? 'height: 60%;' : ''">

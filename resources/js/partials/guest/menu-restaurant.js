@@ -154,12 +154,14 @@ const menuRestaurant = new Vue({
     },
 
     openCart: function() {
-      if(this.isCartOpen != true) {
         this.isCartOpen = true;
-      } else {
-        this.isCartOpen = false;
-      }
     },
+
+    closeCart: function() {
+      this.isCartOpen = false;
+      console.log('close' , this.isCartOpen);
+    }
+
   }
 
 });

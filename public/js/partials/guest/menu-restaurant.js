@@ -49469,11 +49469,11 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       this.$forceUpdate();
     },
     openCart: function openCart() {
-      if (this.isCartOpen != true) {
-        this.isCartOpen = true;
-      } else {
-        this.isCartOpen = false;
-      }
+      this.isCartOpen = true;
+    },
+    closeCart: function closeCart() {
+      this.isCartOpen = false;
+      console.log('close', this.isCartOpen);
     }
   }
 });
