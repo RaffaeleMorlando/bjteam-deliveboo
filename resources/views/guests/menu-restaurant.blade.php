@@ -61,7 +61,8 @@
               <span><img src="{{ asset('img/store-delivery-light.svg') }}" alt=""></span>
               <ul id="cart_order_items">
                 <div id="cart_order_placeholder_container" v-if="cartProducts.length == 0">
-                  <img src="{{ asset('img/astronaut-disabled.svg') }}" alt="">
+                  {{-- <img src="{{ asset('img/astronaut-disabled.svg') }}" alt=""> --}}
+                  <img src="https://www.flaticon.com/svg/vstatic/svg/993/993781.svg?token=exp=1616545279~hmac=32fc00c19bfe524e42feb5bd7192ee25" alt="">
                 </div>
                 <li v-if='cartProducts.length != 0' v-for="(product, index) in cartProducts">
                   <div class="order_item_top">

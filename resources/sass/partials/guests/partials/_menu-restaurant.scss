@@ -23,10 +23,12 @@
 
 .container-menu-main {
     width: 100%;
-    background-image: url('/img/homepage_hero.svg');
+    // background-image: url('/img/homepage_hero.svg');
+    background-image: url('/img/astronaut-disabled.svg');
     background-position: center;
-    background-repeat: no-repeat;
-    background-position: top;
+    // background-repeat: repeat;
+    // background-position: top;
+    // background-size: contain;
 
     // Container del menù
     .menu_container {
@@ -56,12 +58,10 @@
                 transition:  .2s linear;
 
                 .menu_info_container {
-                    // border: 1px solid red;
                     height: calc(100% - 80px);
                 }
 
                 h2 {
-                    // border: 1px solid red;
                     font-size: 40px;
                     font-weight: bold;
                     padding: 20px 15px;
@@ -72,7 +72,6 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
-                // border: 1px solid red;
 
                 .menu_plate {
                     min-height: 200px;
@@ -89,7 +88,6 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        // border: 1px solid red;
 
                         img {
                             width: 80%;

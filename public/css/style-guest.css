@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 a {
@@ -174,7 +174,7 @@ main {
   width: 100%;
   height: calc(80vh );
   background-image: url("/img/homepage_hero.svg");
-  background-position: left;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 2;
@@ -592,10 +592,8 @@ main {
 
 .container-menu-main {
   width: 100%;
-  background-image: url("/img/homepage_hero.svg");
+  background-image: url("/img/astronaut-disabled.svg");
   background-position: center;
-  background-repeat: no-repeat;
-  background-position: top;
 }
 .container-menu-main .menu_container {
   display: flex;

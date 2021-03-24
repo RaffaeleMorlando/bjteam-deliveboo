@@ -5,8 +5,8 @@
 
   <div id="main_home_page_top" >
     <div class="main_title animate__animated animate__fadeIn">
-      <h1>TITOLO PRINCIPALE</h1>
-      <h3>Sottotitolo</h3>
+      <h1>Ordina con Comodo</h1>
+      <h3>consegne in un razzo!</h3>
     </div>
 
 
