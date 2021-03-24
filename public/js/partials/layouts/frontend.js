@@ -49383,11 +49383,8 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         console.log(response);
       });
     },
-    toggleLogOut: function toggleLogOut() {
-      this.activeLogOut = !this.activeLogOut;
-    },
-    toggleHamburger: function toggleHamburger() {
-      this.activeHamburger = !this.activeHamburger;
+    toggleActive: function toggleActive(ref) {
+      this[ref] = !this[ref];
     }
   }
 }); //hamburger menu

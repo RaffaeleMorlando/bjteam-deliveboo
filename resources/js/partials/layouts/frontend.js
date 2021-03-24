@@ -39,12 +39,8 @@ const frontEndHeader = new Vue({
         })
     },
 
-    toggleLogOut() {
-      this.activeLogOut = !this.activeLogOut;
-    },
-
-    toggleHamburger() {
-      this.activeHamburger = !this.activeHamburger;
+    toggleActive(ref) {
+      this[ref] = !this.[ref];
     }
   }
 });

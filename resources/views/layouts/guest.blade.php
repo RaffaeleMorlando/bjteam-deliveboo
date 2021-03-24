@@ -64,7 +64,7 @@
                   @endif
 
                   {{-- hamburger menu --}}
-                  <button id="btn-hamburger" class="position-relative" @click="toggleHamburger">
+                  <button id="btn-hamburger" class="position-relative" @click="toggleActive('activeHamburger')">
                     <div class="line-1"></div>
                     <div class="line-2"></div>
                     <div class="line-3"></div>
@@ -83,7 +83,7 @@
                   <transition/>
                 @else
                   <li class="logo_section">
-                    <a href="#" class="account" @click="toggleLogOut">
+                    <a href="#" class="account" @click="toggleActive('activeLogOut')">
                       <img class="restaurant_logo" src="{{ Auth::user()->restaurant->logo }}" alt="restaurant_logo">
                       <i class="fas fa-angle-down" :class="activeLogOut ? 'active' : ''"></i>
                     </a>
