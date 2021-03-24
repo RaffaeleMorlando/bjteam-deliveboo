@@ -283,7 +283,7 @@ footer #footer-bottom {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     position: absolute;
     left: 10%;
-    top: 90%;
+    top: 110%;
   }
   header .container .row .header_center .searched_box li {
     padding: 10px;
@@ -362,7 +362,7 @@ header .container .row .right #container_buttons_log_reg li.register {
   header .container .row .right #container_buttons_log_reg #hamburger_list {
     display: block;
     position: absolute;
-    top: 110%;
+    top: 80%;
     right: 15px;
     border-radius: 10px;
     background-color: #F5F5F5;
@@ -808,324 +808,40 @@ main {
   }
 }
 @media all and (max-width: 992px) {
-  #main_home_page_top {
-    position: relative;
-    width: 100%;
-    height: calc(80vh );
-    background-image: url("/img/homepage_hero.svg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 2;
-  }
-  #main_home_page_top .main_title {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 30%;
-    text-align: center;
-  }
   #main_home_page_top .main_title h1 {
-    color: #ffffff;
-    font-weight: bold;
     font-size: 60px;
   }
   #main_home_page_top .main_title h3 {
     font-size: 20px;
   }
-  #main_home_page_top .main_sub_title {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  #main_home_page_top .main_sub_title h2 {
-    font-size: 40px;
-    font-weight: 600;
-    font-style: italic;
-  }
   #main_home_page_top #razzo {
     display: none;
-    position: absolute;
-    top: 170px;
-    left: 200px;
-    height: 400px;
   }
   #main_home_page_top .contenitore_di_tutto_il_casino {
     display: none;
-    position: absolute;
-    top: 50%;
-    right: 80px;
-    transform: translateY(-50%);
-    width: 300px;
-    height: 300px;
-    background-color: transparent;
-    border-radius: 50%;
-  }
-  #main_home_page_top .contenitore_di_tutto_il_casino.active {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  #main_home_page_top .md_category_selection {
-    display: block;
-    position: absolute;
-    top: 65%;
-    left: 0;
-    width: 100%;
-    height: 100px;
-  }
-  #main_home_page_top .md_category_selection .md_list_category {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 100%;
-  }
-  #main_home_page_top .md_category_selection .md_list_category .md_item_category {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    width: 80px;
-    height: 80px;
-    padding: 15px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    overflow: hidden;
-  }
-  #main_home_page_top .md_category_selection .md_list_category .md_item_category img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: center;
-       object-position: center;
   }
 
   .static_restaurants_home {
-    padding: 0 100px;
+    padding: 0 50px;
   }
   .static_restaurants_home .static_restaurants_container {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 40px;
-    list-style: none;
-  }
-  .static_restaurants_home .static_restaurants_container .static_restaurant_card {
-    position: relative;
-    border-radius: 10px;
-    height: 300px;
-    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
-    margin-bottom: 70px;
-  }
-  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_thumbnail_container {
-    position: absolute;
-    top: -30px;
-    left: -15px;
-    width: calc(100% - 50px);
-    height: 80%;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
-  }
-  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_thumbnail_container img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center;
-       object-position: center;
-  }
-  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_info {
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    align-items: flex-end;
-  }
-  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_info .static_restaurant_card_info_logo {
-    border-radius: 100%;
-    margin-left: 10px;
-    width: 80px;
-    height: 80px;
-    margin-top: 300px;
-    overflow: hidden;
-    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
-    margin-bottom: 5px;
-  }
-  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_info .static_restaurant_card_info_logo img {
-    width: 100%;
-    height: 100%;
-    -o-object-position: center;
-       object-position: center;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_info .static_restaurant_card_info_name p {
-    font-size: 25px;
-    margin-top: 0;
-    margin-bottom: 2rem;
-    margin-left: 20px;
   }
 }
 @media all and (max-width: 767px) {
-  #main_home_page_top {
-    position: relative;
-    width: 100%;
-    height: calc(80vh );
-    background-image: url("/img/homepage_hero.svg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 2;
-  }
-  #main_home_page_top .main_title {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 30%;
-    text-align: center;
-  }
   #main_home_page_top .main_title h1 {
-    color: #ffffff;
-    font-weight: bold;
     font-size: 50px;
   }
-  #main_home_page_top .main_sub_title {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  #main_home_page_top .main_sub_title h2 {
-    font-size: 40px;
-    font-weight: 600;
-    font-style: italic;
-  }
-  #main_home_page_top #razzo {
-    display: none;
-    position: absolute;
-    top: 170px;
-    left: 200px;
-    height: 400px;
-  }
-  #main_home_page_top .contenitore_di_tutto_il_casino {
-    display: none;
-    position: absolute;
-    top: 50%;
-    right: 80px;
-    transform: translateY(-50%);
-    width: 300px;
-    height: 300px;
-    background-color: transparent;
-    border-radius: 50%;
-  }
-  #main_home_page_top .contenitore_di_tutto_il_casino.active {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  #main_home_page_top .md_category_selection {
-    display: block;
-    position: absolute;
-    top: 65%;
-    left: 0;
-    width: 100%;
-    height: 100px;
-  }
-  #main_home_page_top .md_category_selection .md_list_category {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 100%;
-  }
-  #main_home_page_top .md_category_selection .md_list_category .md_item_category {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    width: 80px;
-    height: 80px;
-    padding: 15px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    overflow: hidden;
-  }
-  #main_home_page_top .md_category_selection .md_list_category .md_item_category img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: center;
-       object-position: center;
-  }
-
-  .static_restaurants_home {
-    padding: 0 100px;
-  }
-  .static_restaurants_home .static_restaurants_container {
-    display: grid;
+  #main_home_page_top .static_restaurants_home .static_restaurants_container {
     grid-template-columns: 1fr;
-    grid-column-gap: 40px;
-    list-style: none;
   }
-  .static_restaurants_home .static_restaurants_container .static_restaurant_card {
-    position: relative;
-    border-radius: 10px;
-    height: 300px;
-    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
-    margin-bottom: 70px;
+}
+@media all and (max-width: 576px) {
+  #main_home_page_top .main_title h1 {
+    display: none;
   }
-  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_thumbnail_container {
-    position: absolute;
-    top: -30px;
-    left: -15px;
-    width: calc(100% - 50px);
-    height: 80%;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
-  }
-  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_thumbnail_container img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center;
-       object-position: center;
-  }
-  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_info {
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    align-items: flex-end;
-  }
-  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_info .static_restaurant_card_info_logo {
-    border-radius: 100%;
-    margin-left: 10px;
-    width: 80px;
-    height: 80px;
-    margin-top: 300px;
-    overflow: hidden;
-    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
-    margin-bottom: 5px;
-  }
-  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_info .static_restaurant_card_info_logo img {
-    width: 100%;
-    height: 100%;
-    -o-object-position: center;
-       object-position: center;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .static_restaurants_home .static_restaurants_container .static_restaurant_card .static_restaurant_card_info .static_restaurant_card_info_name p {
-    font-size: 25px;
-    margin-top: 0;
-    margin-bottom: 2rem;
-    margin-left: 20px;
+  #main_home_page_top .main_title h3 {
+    display: none;
   }
 }
 .container_form_login {

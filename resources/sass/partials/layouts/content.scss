@@ -319,7 +319,7 @@ footer {
             box-shadow: $darkShadowCard;
             position: absolute;
             left: 10%;
-            top: 90%;
+            top: 110%; //
 
             li{
               padding: 10px;
@@ -410,7 +410,7 @@ footer {
             #hamburger_list {
               display: block;
               position: absolute;
-              top: 110%;
+              top: 80%; //
               right: 15px;
               border-radius: 10px;
               background-color: $darkWhite;
