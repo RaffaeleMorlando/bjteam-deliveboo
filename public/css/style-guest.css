@@ -828,7 +828,10 @@ main {
   #main_home_page_top .main_title h1 {
     color: #ffffff;
     font-weight: bold;
-    font-size: 80px;
+    font-size: 60px;
+  }
+  #main_home_page_top .main_title h3 {
+    font-size: 20px;
   }
   #main_home_page_top .main_sub_title {
     position: absolute;
@@ -987,7 +990,7 @@ main {
   #main_home_page_top .main_title h1 {
     color: #ffffff;
     font-weight: bold;
-    font-size: 80px;
+    font-size: 50px;
   }
   #main_home_page_top .main_sub_title {
     position: absolute;
