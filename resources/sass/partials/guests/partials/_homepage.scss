@@ -372,6 +372,7 @@
 @media all and (max-width: 992px) {
 
   #main_home_page_top {
+    background-image: url('/img/homepage_hero-xs.svg');
 
     .main_title{
 
@@ -415,14 +416,15 @@
       }
     }
 
-    .static_restaurants_home {
+  }
+  .static_restaurants_home {
 
-      .static_restaurants_container {
-        grid-template-columns: 1fr;
-      }
+    .static_restaurants_container {
+      grid-template-columns: 1fr;
     }
   }
 }
+
 //XS
 @media all and (max-width: 576px) {
 

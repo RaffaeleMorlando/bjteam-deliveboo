@@ -269,7 +269,7 @@ footer #footer-bottom {
     border: none;
     transition: all 0.5s;
     z-index: 300;
-    font-size: 25px;
+    font-size: 15px;
   }
   header .container .row .header_center input[type=text]:focus {
     outline: none;
@@ -417,6 +417,50 @@ header .container .row .right #container_buttons_log_reg li.register {
   footer #footer-bottom {
     background-color: #1d1d1d;
     min-height: 100px;
+  }
+}
+@media all and (max-width: 576px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    transition: all 0.3s linear;
+  }
+  header.active {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+  header .container {
+    height: 100%;
+  }
+  header .container .row {
+    height: 100%;
+  }
+  header .container .row .left {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  header .container .row .header_center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    position: relative;
+  }
+  header .container .row .header_center input[type=text] {
+    margin-top: 50px;
+    background-color: #F5F5F5;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border: none;
+    transition: all 0.5s;
+    font-weight: 600;
   }
 }
 main {
@@ -808,6 +852,9 @@ main {
   }
 }
 @media all and (max-width: 992px) {
+  #main_home_page_top {
+    background-image: url("/img/homepage_hero-xs.svg");
+  }
   #main_home_page_top .main_title h1 {
     font-size: 60px;
   }
@@ -832,7 +879,8 @@ main {
   #main_home_page_top .main_title h1 {
     font-size: 50px;
   }
-  #main_home_page_top .static_restaurants_home .static_restaurants_container {
+
+  .static_restaurants_home .static_restaurants_container {
     grid-template-columns: 1fr;
   }
 }
