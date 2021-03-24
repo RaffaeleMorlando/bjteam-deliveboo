@@ -81,7 +81,7 @@ const menuRestaurant = new Vue({
       self.menu[index].counter = 1;
 
       if (self.cartProducts.length > 0) {
-        
+
         let found = false;
 
         self.cartProducts.forEach(
@@ -153,12 +153,8 @@ const menuRestaurant = new Vue({
       this.$forceUpdate();
     },
 
-    openCart: function() {
-        this.isCartOpen = true;
-    },
-
     closeCart: function() {
-      this.isCartOpen = false;
+      this.isCartOpen = !this.isCartOpen;
       console.log('close' , this.isCartOpen);
     }
 

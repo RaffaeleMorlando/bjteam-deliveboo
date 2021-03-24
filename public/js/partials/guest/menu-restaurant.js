@@ -49468,11 +49468,8 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       });
       this.$forceUpdate();
     },
-    openCart: function openCart() {
-      this.isCartOpen = true;
-    },
     closeCart: function closeCart() {
-      this.isCartOpen = false;
+      this.isCartOpen = !this.isCartOpen;
       console.log('close', this.isCartOpen);
     }
   }

@@ -248,15 +248,15 @@
             }
 
             .cart_responsive {
-                display: none;      
-            } 
+                display: none;
+            }
         }
     }
 }
 
 //BANNER CARRELLO
 #banner_exit_container {
-    display: none; 
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -266,7 +266,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 150;
-  
+
     .banner_box {
       position: absolute;
       top: 50%;
@@ -281,24 +281,24 @@
       overflow: hidden;
     }
   }
-  
+
 
 // MEDIA QUERY
 
 @media all and (max-width: 991px) {
-    .container-menu-main {    
+    .container-menu-main {
         // Container del menù
         .menu_container {
             width: 100%;
             box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);
             border-radius: 5px;
             background-color: #fff;
-    
+
             // Menù completo scrollabile
             #menu_left {
                 width: 100%;
                 z-index: 10;
-    
+
                 .menu_info {
                     position: sticky;
                     top: 165px;
@@ -310,23 +310,23 @@
                     margin-top: -70px;
                     background-color: #fff;
                     transition:  .2s linear;
-    
+
                     .menu_info_container {
                         height: calc(100% - 165px);
                     }
-    
+
                     h2 {
                         font-size: 50px;
                         font-weight: bold;
                         padding: 20px 15px;
                     }
                 }
-    
+
                 .menu_item_sections_container {
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: space-between;
-    
+
                     .menu_plate {
                         min-height: 200px;
                         width: calc(100% / 2 - 20px);
@@ -335,14 +335,14 @@
                         // border: 1px solid green;
                         margin: 20px 10px;
                         overflow: hidden;
-    
+
                         .menu_img {
                             width: 100%;
                             height: 200px;
                             display: flex;
                             justify-content: center;
                             align-items: center;
-    
+
                             img {
                                 width: 80%;
                                 max-height: 80%;
@@ -350,7 +350,7 @@
                                 object-position: center;
                             }
                         }
-    
+
                         h3 {
                             font-size: 20px;
                             font-weight: 600;
@@ -359,7 +359,7 @@
                             padding: 10px;
                             text-transform: capitalize;
                         }
-    
+
                         p {
                             // border: 1px solid red;
                             width: 100%;
@@ -371,16 +371,16 @@
                             margin-bottom: 0;
                             letter-spacing: 2px;
                         }
-    
+
                         .plate_price_add {
                             display: flex;
                             justify-content: space-between;
-    
+
                             #plate_price {
                                 font-size: 20px;
                                 letter-spacing: 0.5px;
                             }
-    
+
                             #plate_add_cart {
                                 width: 40px;
                                 height: 40px;
@@ -390,7 +390,7 @@
                                 background-color: rgb(252, 246, 177);
                                 cursor: pointer;
                             }
-    
+
                             span {
                                 // border: 1px solid red;
                                 padding: 10px;
@@ -399,45 +399,45 @@
                     }
                 }
             }
-    
+
             //Carrello ordine
             .menu_cart{
                 position: fixed;
                 bottom: 0;
                 width: 100%;
                 z-index: 10;
-    
+
                 .cart {
                     display: none;
                 }
 
                 .cart_responsive {
                     display: block;
-                    height: 80px;
+                    //height: 80px;
                     border-top-left-radius: 10px;
                     border-top-right-radius: 10px;
                     box-shadow: 0 2px 20px 0 rgb(0 0 0 / 10%);
                     background-color: #fff;
                     padding-bottom: 80px;
-    
+
                     h3 {
                         text-align: center;
                         font-size: 25px;
                         padding: 10px 15px;
                     }
-    
+
                     span {
                         display: block;
                         font-size: 30px;
                         text-align: center;
                         padding: 10px 15px;
                     }
-    
+
                     #cart_order_items {
                         height: 300px;
                         overflow-y: scroll;
                         list-style: none;
-    
+
                         #cart_order_placeholder_container {
                             width: 100%;
                             height: 200px;
@@ -447,15 +447,15 @@
                                 width: 100%;
                             }
                         }
-    
+
                         li {
                             padding: 10px 15px;
                             border-bottom: 1px solid lightgray;
-    
+
                             .order_item_top {
                                 display: grid;
                                 grid-template-columns: 1fr 2fr 1fr;
-    
+
                                 span {
                                     font-size: 20px;
                                     padding: 5px;
@@ -469,11 +469,11 @@
                                     margin-bottom: 0;
                                 }
                             }
-    
+
                             .order_item_bottom {
                                 display: flex;
                                 justify-content: space-between;
-    
+
                                 span {
                                     font-size: 12px;
                                     background-color: rgb(217, 245, 217);
@@ -484,12 +484,12 @@
                             }
                         }
                     }
-    
+
                     #container_button_cart {
                         width: 100%;
                         display: flex;
                         justify-content: center;
-    
+
                         #button_cart {
                             background-color: #00A07F;
                             padding: 16px 28px;
@@ -506,26 +506,26 @@
 }
 
 @media all and (max-width: 767px) {
-    .container-menu-main {    
+    .container-menu-main {
         // Container del menù
         .menu_container {
             // Menù completo scrollabile
             #menu_left {
                 .menu_info {
-                    top: 165px;    
+                    top: 165px;
                     h2 {
                         font-size: 50px;
                         font-weight: bold;
                         padding: 20px 15px;
                     }
                 }
-    
+
                 .menu_item_sections_container {
                     display: block;
                     flex-wrap: nowrap;
                     justify-content: space-between;
                     padding: 10px 30px;
-                    
+
                     .menu_plate {
                         min-height: 200px;
                         width: 100%;
@@ -534,14 +534,14 @@
                         // border: 1px solid green;
                         margin: 20px 0;
                         overflow: hidden;
-    
+
                         .menu_img {
                             width: 100%;
                             height: 200px;
                             display: flex;
                             justify-content: center;
                             align-items: center;
-    
+
                             img {
                                 width: 100%;
                                 max-height: 100%;
@@ -549,7 +549,7 @@
                                 object-position: center;
                             }
                         }
-    
+
                         h3 {
                             font-size: 20px;
                             font-weight: 600;
@@ -558,7 +558,7 @@
                             padding: 10px;
                             text-transform: capitalize;
                         }
-    
+
                         p {
                             // border: 1px solid red;
                             width: 100%;
@@ -570,16 +570,16 @@
                             margin-bottom: 0;
                             letter-spacing: 2px;
                         }
-    
+
                         .plate_price_add {
                             display: flex;
                             justify-content: space-between;
-    
+
                             #plate_price {
                                 font-size: 20px;
                                 letter-spacing: 0.5px;
                             }
-    
+
                             #plate_add_cart {
                                 width: 40px;
                                 height: 40px;
@@ -589,7 +589,7 @@
                                 background-color: rgb(252, 246, 177);
                                 cursor: pointer;
                             }
-    
+
                             span {
                                 // border: 1px solid red;
                                 padding: 10px;
@@ -598,14 +598,14 @@
                     }
                 }
             }
-    
+
             //Carrello ordine
             .menu_cart{
                 position: fixed;
                 bottom: 0;
                 width: 100%;
                 z-index: 10;
-    
+
                 .cart {
                     display: none;
                     height: 80px;
@@ -617,25 +617,25 @@
                     border-top-right-radius: 10px;
                     box-shadow: 0 2px 20px 0 rgb(0 0 0 / 10%);
                     margin: 0;
-    
+
                     h3 {
                         text-align: center;
                         font-size: 25px;
                         padding: 10px 15px;
                     }
-    
+
                     span {
                         display: block;
                         font-size: 25px;
                         text-align: center;
                         padding: 10px 15px;
                     }
-    
+
                     #cart_order_items {
                         height: 300px;
                         overflow-y: scroll;
                         list-style: none;
-    
+
                         #cart_order_placeholder_container {
                             width: 100%;
                             height: 200px;
@@ -645,15 +645,15 @@
                                 width: 90%;
                             }
                         }
-    
+
                         li {
                             padding: 10px 15px;
                             border-bottom: 1px solid lightgray;
-    
+
                             .order_item_top {
                                 display: grid;
                                 grid-template-columns: 1fr 2fr 1fr;
-    
+
                                 span {
                                     font-size: 20px;
                                     padding: 5px;
@@ -667,11 +667,11 @@
                                     margin-bottom: 0;
                                 }
                             }
-    
+
                             .order_item_bottom {
                                 display: flex;
                                 justify-content: space-between;
-    
+
                                 span {
                                     font-size: 12px;
                                     background-color: rgb(217, 245, 217);
@@ -682,12 +682,12 @@
                             }
                         }
                     }
-    
+
                     #container_button_cart {
                         width: 100%;
                         display: flex;
                         justify-content: center;
-    
+
                         #button_cart {
                             background-color: #00A07F;
                             padding: 16px 28px;
@@ -712,7 +712,7 @@
                     margin: 0;
                     padding-bottom: 80px;
                     z-index: 40;
-    
+
                     // .icon_close_cart {
                     // }
 
@@ -721,19 +721,19 @@
                         font-size: 25px;
                         padding: 10px 15px;
                     }
-    
+
                     span {
                         display: block;
                         font-size: 25px;
                         text-align: center;
                         padding: 10px 15px;
                     }
-    
+
                     #cart_order_items {
                         height: 300px;
                         overflow-y: scroll;
                         list-style: none;
-    
+
                         #cart_order_placeholder_container {
                             width: 100%;
                             height: 200px;
@@ -743,15 +743,15 @@
                                 width: 90%;
                             }
                         }
-    
+
                         li {
                             padding: 10px 15px;
                             border-bottom: 1px solid lightgray;
-    
+
                             .order_item_top {
                                 display: grid;
                                 grid-template-columns: 1fr 2fr 1fr;
-    
+
                                 span {
                                     font-size: 20px;
                                     padding: 5px;
@@ -765,11 +765,11 @@
                                     margin-bottom: 0;
                                 }
                             }
-    
+
                             .order_item_bottom {
                                 display: flex;
                                 justify-content: space-between;
-    
+
                                 span {
                                     font-size: 12px;
                                     background-color: rgb(217, 245, 217);
@@ -780,13 +780,13 @@
                             }
                         }
                     }
-    
+
                     #container_button_cart {
                         width: 100%;
                         height: 20%;
                         display: flex;
                         justify-content: center;
-    
+
                         #button_cart {
                             background-color: #00A07F;
                             padding: 16px 28px;

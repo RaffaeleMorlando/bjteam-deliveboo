@@ -90,9 +90,10 @@
               </div>
             </div>
 
-            {{-- CARRELLO MD/SM --}}   
-            <div class="cart_responsive" :style="isCartOpen ? 'height: 70vh;' : ''" @click="openCart">
-              <span class="icon_close_cart" v-if="isCartOpen"><i class="fas fa-times" @click="closeCart"></i></span>
+            {{-- CARRELLO MD/SM --}}
+            <div class="cart_responsive" :style="isCartOpen ? 'height: 70vh' : 'height: 80px'">
+              <span class="icon_close_cart"><i class="fas fa-times" @click="closeCart"></i></span>
+              <span class="icon_close_cart"><i class="fas fa-cat" @click="closeCart"></i></span>
               <h3>Il tuo ordine</h3>
               <span><img src="{{ asset('img/store-delivery-light.svg') }}" alt=""></span>
               <ul id="cart_order_items" :style="isCartOpen ? 'height: 60%;' : ''">
@@ -123,9 +124,9 @@
                   <span>Totale prezzo: € @{{cartTotalPrice.toFixed(2)}}</span>
                   <span id="button_cart" onclick="document.forms['cart-form'].submit();">Vai al pagamento</span>
                 </form>
-              </div> 
+              </div>
             </div>
-           
+
 
           </div>
 
