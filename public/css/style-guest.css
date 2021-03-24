@@ -912,6 +912,14 @@ main {
     box-shadow: none;
   }
 }
+@media all and (max-width: 576px) {
+  .container_form_login #login_form {
+    max-width: 90%;
+  }
+  .container_form_login #login_form .box_input_credential .input_credential {
+    height: 30px;
+  }
+}
 #loading_container {
   position: relative;
   height: 100vh;

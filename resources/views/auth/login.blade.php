@@ -65,7 +65,7 @@
               </div>  
 
             <div class="form-group">
-                <label class="password_login" for="password">{{ __('Password') }}</label>
+                <label class="password_login small_green_box" for="password">{{ __('Password') }}</label>
                 <div class="box_input_credential">
                 <input id="password" type="password" class="input_credential form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="password">
                 </div>

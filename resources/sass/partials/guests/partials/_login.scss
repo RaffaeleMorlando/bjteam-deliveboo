@@ -71,4 +71,12 @@
 }
 
 @media all and (max-width: 576px) {
+
+  .container_form_login #login_form{
+    max-width: 90%;
+    
+    .box_input_credential .input_credential {
+    height: 30px;
+  }
+  }
 }
