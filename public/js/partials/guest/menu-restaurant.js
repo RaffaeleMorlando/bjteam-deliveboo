@@ -49360,7 +49360,8 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     cartProducts: [],
     //array prod. carello
     activeBanner: false,
-    cartTotalPrice: 0
+    cartTotalPrice: 0,
+    isCartOpen: false
   },
   mounted: function mounted() {
     var _this = this;
@@ -49466,6 +49467,13 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         self.cartTotalPrice += count * price;
       });
       this.$forceUpdate();
+    },
+    openCart: function openCart() {
+      if (this.isCartOpen != true) {
+        this.isCartOpen = true;
+      } else {
+        this.isCartOpen = false;
+      }
     }
   }
 });

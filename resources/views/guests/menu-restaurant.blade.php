@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="container-menu-main">
-        <div class="menu_container container">
+        <div class="menu_container">
 
           <div id="menu_left">
 
@@ -53,16 +53,15 @@
           </div>
 
           {{-- Container del carrello --}}
-          <div id="menu_cart">
+          <div class="menu_cart">
 
             {{-- CARRELLO --}}
-            <div id="cart">
+            <div class="cart">
               <h3>Il tuo ordine</h3>
               <span><img src="{{ asset('img/store-delivery-light.svg') }}" alt=""></span>
               <ul id="cart_order_items">
                 <div id="cart_order_placeholder_container" v-if="cartProducts.length == 0">
-                  {{-- <img src="{{ asset('img/astronaut-disabled.svg') }}" alt=""> --}}
-                  <img src="https://www.flaticon.com/svg/vstatic/svg/993/993781.svg?token=exp=1616545279~hmac=32fc00c19bfe524e42feb5bd7192ee25" alt="">
+                  <img src="{{ asset('img/astronaut-disabled.svg') }}" alt="">
                 </div>
                 <li v-if='cartProducts.length != 0' v-for="(product, index) in cartProducts">
                   <div class="order_item_top">
@@ -90,6 +89,43 @@
                 </form>
               </div>
             </div>
+
+            {{-- CARRELLO MD/SM --}}   
+            <div class="cart_responsive" :style="isCartOpen ? 'height: 50vh' : ''" @click="openCart">
+              <span v-if="isCartOpen"><i class="fas fa-times"></i></span>
+              <h3>Il tuo ordine</h3>
+              <span><img src="{{ asset('img/store-delivery-light.svg') }}" alt=""></span>
+              <ul id="cart_order_items" :style="isCartOpen ? 'height: 60%;' : ''">
+                <div id="cart_order_placeholder_container" v-if="cartProducts.length == 0">
+                  <img src="{{ asset('img/astronaut-disabled.svg') }}" alt="">
+                </div>
+                <li v-if='cartProducts.length != 0' v-for="(product, index) in cartProducts">
+                  <div class="order_item_top">
+                    <span>@{{ product.counter }}x</span>
+                    <p>@{{ product.name }}</p>
+                    <span>@{{ (product.price * product.counter).toFixed(2) }}€</span>
+                  </div>
+                  <div class="order_item_bottom">
+                    <span @click="decrementCounter(index)"><i class="fas fa-minus"></i></span>
+                    <span @click="incrementCounter(index)"><i class="fas fa-plus"></i></span>
+                  </div>
+                </li>
+              </ul>
+              <div id="container_button_cart" v-if="cartProducts.length != 0">
+                <form action="{{route('order.store')}}" method="POST" name="cart-form">
+                  @csrf
+                  @method('POST')
+                  <div v-for="(product, index) in cartProducts">
+                    <input type="text" :value="product.id" hidden :name="product.name">
+                  </div>
+                  <input type="text" :value="cartTotalPrice" hidden name="total_price">
+                  {{-- cancellare --}}
+                  <span>Totale prezzo: € @{{cartTotalPrice.toFixed(2)}}</span>
+                  <span id="button_cart" onclick="document.forms['cart-form'].submit();">Vai al pagamento</span>
+                </form>
+              </div> 
+            </div>
+           
 
           </div>
 
