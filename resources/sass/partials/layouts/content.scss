@@ -254,7 +254,7 @@ footer {
 //MEDIA QUERY-------------------------------------------------------------------
 
 //MD
-@media all and (max-width: 992px) {
+@media all and (max-width: 991px) {
 
   header {
     position: fixed;
@@ -262,7 +262,8 @@ footer {
     left: 0;
     z-index:100;
     width: 100%;
-    height: $headerHeight;
+    height: max-content; //
+    padding: 20px 0;
     //background-color: transparent;
     transition: all 0.3s linear;
 
@@ -280,6 +281,10 @@ footer {
         .left {
           @include SetFlexContainer (row, center, center, wrap);
           height: 100%;
+
+          a {
+            z-index: 250; //
+          }
         }
 
         .center {
@@ -290,12 +295,14 @@ footer {
 
           input[type=text] {
             width: 80%;
-            padding: 5px 10px;
-            border-radius: 20px;
+            margin-top: 15px; //
+            padding: 20px 20px; //
+            border-radius: 50px; //
             background-color: $darkWhite;
             box-shadow: $darkShadowCard;
             border: none;
             transition: all .5s;
+            z-index: 300; //
 
             &:focus {
               outline: none;
@@ -380,7 +387,7 @@ footer {
               padding: 15px;
               cursor: pointer;
               .line-1, .line-2, .line-3 {
-                width: 22px;
+                width: 30px;
                 height: 2px;
                 background-color: #ba181b;
                 margin: 4px 0;

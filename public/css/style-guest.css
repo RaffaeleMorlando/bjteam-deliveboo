@@ -216,14 +216,17 @@ footer #footer-bottom {
   max-height: 0;
 }
 
-@media all and (max-width: 992px) {
+@media all and (max-width: 991px) {
   header {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
     width: 100%;
-    height: 80px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    padding: 20px 0;
     transition: all 0.3s linear;
   }
   header.active {
@@ -243,6 +246,9 @@ footer #footer-bottom {
     flex-wrap: wrap;
     height: 100%;
   }
+  header .container .row .left a {
+    z-index: 250;
+  }
   header .container .row .center {
     display: flex;
     flex-direction: row;
@@ -254,12 +260,14 @@ footer #footer-bottom {
   }
   header .container .row .center input[type=text] {
     width: 80%;
-    padding: 5px 10px;
-    border-radius: 20px;
+    margin-top: 15px;
+    padding: 20px 20px;
+    border-radius: 50px;
     background-color: #F5F5F5;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     border: none;
     transition: all 0.5s;
+    z-index: 300;
   }
   header .container .row .center input[type=text]:focus {
     outline: none;
@@ -334,7 +342,7 @@ header .container .row .right #container_buttons_log_reg li.register {
     cursor: pointer;
   }
   header .container .row .right #container_buttons_log_reg #btn-hamburger .line-1, header .container .row .right #container_buttons_log_reg #btn-hamburger .line-2, header .container .row .right #container_buttons_log_reg #btn-hamburger .line-3 {
-    width: 22px;
+    width: 30px;
     height: 2px;
     background-color: #ba181b;
     margin: 4px 0;
@@ -431,6 +439,8 @@ main {
   text-align: center;
 }
 #main_home_page_top .main_title h1 {
+  color: #ffffff;
+  font-weight: bold;
   font-size: 60px;
 }
 #main_home_page_top .category_selection {
@@ -806,7 +816,9 @@ main {
     text-align: center;
   }
   #main_home_page_top .main_title h1 {
-    font-size: 60px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 80px;
   }
   #main_home_page_top .main_sub_title {
     position: absolute;
