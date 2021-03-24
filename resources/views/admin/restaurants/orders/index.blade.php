@@ -2,37 +2,41 @@
 
 @section('main')
     <div id="dashboard_order">
-        <h1>I MIEI ORDINI</h1>
 
-        <table class="table table-bordered table-hover">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">NUMERO ORDINE:</th>
-                    <th scope="col">ORDINATO DA:</th>
-                    <th scope="col">INDIRIZZO:</th>
-                    <th scope="col">IN DATA:</th>
-                    <th scope="col">PREZZO:</th>
-                    <th scope="col">STATUS:</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div class="card_title">
+            <h1>{{ Auth::user()->restaurant->name }} Ordini</h1>
+            <div class="menu_icon">
+                <i class="far fa-chart-bar dashboard-icon"></i>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
                 @foreach ($orders as $order)
-                    <tr>
-                        <td>{{$order->order_number}}</td>
-                        <td>{{$order->guest_name}}</td>
-                        <td>{{$order->guest_address}}</td>
-                        <td>{{$order->created_at}}</td>
-                        <td>{{$order->total_price}}</td>
-                        <td>{{$order->status}}</td>
-                    </tr>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="card_orders">
+                            <div class="card_order">
+                                <div class="card_left">
+                                    <p>Ordine N. {{ $order->order_number }}</p>                      
+                                </div>
+                                
+                                <div class="card_right">
+                                    <p>Ordinato da: <strong>{{ $order->guest_name }}</strong></p>
+                                    <p>All'indirizzo: <strong>{{ $order->guest_address }}</strong></p>
+                                    <p>In data: <strong>{{ $order->created_at }}</strong></p>
+                                    <p>Prezzo: <strong>{{ $order->total_price }}</strong>&euro; - status Pagamento: <strong>{{ $order->status}}</strong></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
                 @endforeach
-            </tbody>
-        </table>
-
-        <a href="{{ route("admin.restaurants.orders.chart") }}">Grafico</a>
-
-
-
+            </div>
+            <div class="my_buttons">
+                <a class="my_dashboard_btn" href="{{ route('admin.restaurants.dashboard') }}" class="my_dashboard_btn">Torna alla dashboard</a>
+                <a class="my_create_btn" href="{{ route("admin.restaurants.orders.chart") }}">Grafico</a>
+            </div>  
+        </div>
 
     </div>
     {{-- @if(auth()->check())
