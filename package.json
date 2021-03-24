@@ -30,6 +30,7 @@
         "chart.js": "^2.9.4",
         "select2": "^4.1.0-rc.0",
         "slick-carousel": "^1.8.1",
+        "slick-slider": "^1.8.2",
         "vue": "^2.6.12"
     }
 }
