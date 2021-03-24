@@ -41,7 +41,7 @@
                           <img :src="restaurant.logo" alt="">
                         </div>
                         <span>@{{ restaurant.name }}</span>
-                      </a> 
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -51,14 +51,14 @@
 
             <div class="right col-lg-3 col-md-4 text-right">
               {{-- header content login --}}
-              <ul id="container_buttons_log_reg" class="ml-auto">
+              <ul id="container_buttons_log_reg" class="list-unstyled">
                   <!-- Authentication Links -->
                 @guest
-                  <li class="button_log_reg">
+                  <li class="btn_main">
                       <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                   </li>
                   @if (Route::has('register'))
-                    <li class="button_log_reg">
+                    <li class="btn_main ml-3">
                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                     </li>
                   @endif

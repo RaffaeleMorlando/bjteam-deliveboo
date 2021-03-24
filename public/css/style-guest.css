@@ -24,6 +24,17 @@ a:hover i {
   display: block;
 }
 
+.btn_main {
+  padding: 5px 10px;
+  border-radius: 50px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: #FCFCFA;
+  font-weight: 700;
+}
+.btn_main a {
+  color: #1E1E1E;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -116,14 +127,22 @@ header .container .row .center .searched_box li:hover {
 header .container .row .right {
   height: 100%;
 }
-header .container .row .right img.restaurant_logo {
+header .container .row .right #container_buttons_log_reg {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 100%;
+}
+header .container .row .right #container_buttons_log_reg img.restaurant_logo {
   width: 60px;
   height: 60px;
   padding: 2px;
   border-radius: 50%;
   border: 2px solid #A9E5BB;
 }
-header .container .row .right i {
+header .container .row .right #container_buttons_log_reg i {
   padding: 5px;
   font-size: 30px;
   color: #2D1E2F;
@@ -190,6 +209,17 @@ main {
 #main_home_page_top .main_title h1 {
   font-size: 60px;
 }
+#main_home_page_top .main_sub_title {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main_home_page_top .main_sub_title h2 {
+  font-size: 40px;
+  font-weight: 600;
+  font-style: italic;
+}
 #main_home_page_top #razzo {
   position: absolute;
   top: 170px;
@@ -220,11 +250,11 @@ main {
 }
 
 .static_restaurants_home {
-  padding-top: 130px;
+  padding: 0 100px;
 }
 .static_restaurants_home .static_restaurants_container {
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 2fr 2fr 2fr;
   grid-column-gap: 40px;
   list-style: none;
 }
@@ -530,28 +560,6 @@ main {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
-#container_buttons_log_reg {
-  display: flex;
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
-}
-#container_buttons_log_reg .button_log_reg {
-  border-radius: 5px;
-  background-color: #00A082;
-  padding: 5px 10px;
-  font-weight: 700;
-}
-#container_buttons_log_reg .button_log_reg a {
-  color: #fff;
-}
-#container_buttons_log_reg .button_log_reg:hover {
-  background-color: #008169;
-}
-
 .container_form_login {
   padding: 50px 0;
   min-height: calc( 100vh - 180px);

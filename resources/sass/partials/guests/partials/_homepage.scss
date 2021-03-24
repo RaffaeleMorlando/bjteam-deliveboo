@@ -26,6 +26,19 @@
     }
   }
 
+  .main_sub_title {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    h2 {
+      font-size: 40px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  }
+
   #razzo {
     position: absolute;
     top:170px;
@@ -62,10 +75,10 @@
   // border: 1px solid red;
   // min-height: 500px;
   // ul
-  padding-top: 130px;
+  padding: 0 100px;
   .static_restaurants_container {
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 2fr 2fr 2fr;
     grid-column-gap: 40px;
     list-style: none;
 

@@ -9,7 +9,7 @@ header {
   transition: all 0.3s linear;
 
   &.active {
-    box-shadow:  $darkShadowCard;
+    box-shadow: $darkShadowCard;
 
   }
 
@@ -22,7 +22,6 @@ header {
       .left {
         @include SetFlexContainer (row, center, center, wrap);
         height: 100%;
-        //background-color: green;
       }
 
       .center {
@@ -75,7 +74,7 @@ header {
                 width: 50px;
                 height: 50px;
                 border-radius: 100%;
-  
+
                 img{
                   width: 100%;
                   height: 100%;
@@ -89,35 +88,39 @@ header {
               }
             }
 
-            
+
             &:hover{
               background: rgba(241, 26, 26, 0.411);
             }
           }
-          
-          
+
+
 
         }
       }
 
       .right {
         height: 100%;
-        //background-color: green;
 
-        img.restaurant_logo {
-          width: 60px;
-          height: 60px;
-          padding: 2px;
-          border-radius: 50%;
-          border: 2px solid #A9E5BB;
-        }
+        #container_buttons_log_reg {
+          @include SetFlexContainer (row, flex-end, center, nowrap);
+          height: 100%;
 
-        i {
-          padding: 5px;
-          font-size: 30px;
-          color: #2D1E2F;
-          border: 2px solid #2D1E2F;
-          border-radius: 3px;
+          img.restaurant_logo {
+            width: 60px;
+            height: 60px;
+            padding: 2px;
+            border-radius: 50%;
+            border: 2px solid #A9E5BB;
+          }
+
+          i {
+            padding: 5px;
+            font-size: 30px;
+            color: #2D1E2F;
+            border: 2px solid #2D1E2F;
+            border-radius: 3px;
+          }
         }
       }
     }
