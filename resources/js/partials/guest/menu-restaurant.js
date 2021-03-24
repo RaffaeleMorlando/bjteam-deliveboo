@@ -15,6 +15,7 @@ const menuRestaurant = new Vue({
     cartProducts: [],//array prod. carello
     activeBanner: false,
     cartTotalPrice: 0,
+    isCartOpen: false
   },
 
   mounted() {
@@ -150,7 +151,15 @@ const menuRestaurant = new Vue({
       });
 
       this.$forceUpdate();
-    }
+    },
+
+    openCart: function() {
+      if(this.isCartOpen != true) {
+        this.isCartOpen = true;
+      } else {
+        this.isCartOpen = false;
+      }
+    },
   }
 
 });
