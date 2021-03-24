@@ -135,19 +135,41 @@ header .container .row .right #container_buttons_log_reg {
   flex-wrap: nowrap;
   height: 100%;
 }
-header .container .row .right #container_buttons_log_reg img.restaurant_logo {
+header .container .row .right #container_buttons_log_reg a.account img.restaurant_logo {
   width: 60px;
   height: 60px;
   padding: 2px;
   border-radius: 50%;
   border: 2px solid #A9E5BB;
 }
-header .container .row .right #container_buttons_log_reg i {
-  padding: 5px;
+header .container .row .right #container_buttons_log_reg a.account i {
+  color: #F5F5F5;
   font-size: 30px;
-  color: #2D1E2F;
-  border: 2px solid #2D1E2F;
-  border-radius: 3px;
+  vertical-align: middle;
+  margin: 0 5px;
+  transition: all 0.3s linear;
+}
+header .container .row .right #container_buttons_log_reg a.account i.active {
+  transform: rotate(-180deg);
+}
+header .container .row .right #container_buttons_log_reg ul.drop_down_list {
+  position: absolute;
+  top: 100%;
+  left: 80%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #F5F5F5;
+  box-shadow: 0 2px 20px 8px rgba(0, 0, 0, 0.2);
+}
+header .container .row .right #container_buttons_log_reg ul.drop_down_list li {
+  margin: 10px 0;
+}
+header .container .row .right #container_buttons_log_reg ul.drop_down_list li a {
+  color: #1E1E1E;
+  font-weight: 600;
 }
 
 footer #footer-bottom {
@@ -167,12 +189,12 @@ footer #footer-bottom {
 
 .slide-enter-active {
   transition-duration: 0.3s;
-  transition-timing-function: ease-in;
+  transition-timing-function: linear;
 }
 
 .slide-leave-active {
   transition-duration: 0.3s;
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  transition-timing-function: linear;
 }
 
 .slide-enter-to, .slide-leave {

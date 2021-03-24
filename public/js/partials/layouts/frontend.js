@@ -49355,7 +49355,8 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     headerStatus: false,
     searchBarPlaceholder: "",
     searched: "",
-    searchedResults: []
+    searchedResults: [],
+    activeLogOut: false
   },
   mounted: function mounted() {
     var _this = this;
@@ -49380,6 +49381,9 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         _this2.searchedResults = response.data;
         console.log(response);
       });
+    },
+    toggleLogOut: function toggleLogOut() {
+      this.activeLogOut = !this.activeLogOut;
     }
   }
 });

@@ -63,13 +63,32 @@
                     </li>
                   @endif
                 @else
-                  <li>
-                    <a href="{{ route('admin.restaurants.dashboard') }}">
-                      <img class="restaurant_logo" src="{{ Auth::user()->restaurant->logo }}"
-                      alt="restaurant_logo">
+                  <li class="position-relative">
+                    <a href="#" class="account" @click="toggleLogOut">
+                      <img class="restaurant_logo" src="{{ Auth::user()->restaurant->logo }}" alt="restaurant_logo">
+                      <i class="fas fa-angle-down" :class="activeLogOut ? 'active' : ''"></i>
                     </a>
+
+                    <transition name="slide">
+                      <ul class="drop_down_list list-unstyled" v-if="activeLogOut">
+                        <li class="text-center">
+                          <a href="{{ route('admin.restaurants.dashboard') }}"> Dashboard</a>
+                        </li>
+
+                        <li class="text-center">
+                          <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                              Log Out
+                          </a>
+
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                              @csrf
+                          </form>
+                        </li>
+                      </ul>
+                    </transition>
                   </li>
-                  <li>
+                  {{-- {{ route('admin.restaurants.dashboard') }} --}}
+                  {{-- <li>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt"></i>
                     </a>
@@ -77,7 +96,7 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
-                  </li>
+                  </li> --}}
                 @endguest
               </ul>
             </div>

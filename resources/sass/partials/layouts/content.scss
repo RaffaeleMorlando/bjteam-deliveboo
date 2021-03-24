@@ -106,20 +106,45 @@ header {
           @include SetFlexContainer (row, flex-end, center, nowrap);
           height: 100%;
 
-          img.restaurant_logo {
-            width: 60px;
-            height: 60px;
-            padding: 2px;
-            border-radius: 50%;
-            border: 2px solid #A9E5BB;
+          a.account {
+
+            img.restaurant_logo {
+              width: 60px;
+              height: 60px;
+              padding: 2px;
+              border-radius: 50%;
+              border: 2px solid #A9E5BB;
+            }
+
+            i {
+              color: $darkWhite;
+              font-size: 30px;
+              vertical-align: middle;
+              margin: 0 5px;
+              transition: all 0.3s linear;
+
+              &.active {
+                transform: rotate(-180deg);
+              }
+            }
           }
 
-          i {
-            padding: 5px;
-            font-size: 30px;
-            color: #2D1E2F;
-            border: 2px solid #2D1E2F;
-            border-radius: 3px;
+          ul.drop_down_list {
+            @include setPositionAbsolute(100%, 80%);
+            width: max-content;
+            padding: 10px 20px;
+            border-radius: $borderRadCard;
+            background-color: $darkWhite;
+            box-shadow: $shadowDashboard;
+
+            li {
+              margin: 10px 0;
+
+              a {
+                color: $black;
+                font-weight: 600;
+              }
+            }
           }
         }
       }
@@ -160,10 +185,10 @@ footer {
   -webkit-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -moz-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
+  -moz-transition-timing-function: linear;
+  -webkit-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
 }
 
 .slide-leave-active {
@@ -171,10 +196,10 @@ footer {
   -webkit-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  -moz-transition-timing-function: linear;
+  -webkit-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
 }
 
 .slide-enter-to, .slide-leave {

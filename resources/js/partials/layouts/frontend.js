@@ -10,7 +10,8 @@ const frontEndHeader = new Vue({
     headerStatus: false,
     searchBarPlaceholder: "",
     searched: "",
-    searchedResults: []
+    searchedResults: [],
+    activeLogOut: false
   },
 
   mounted() {
@@ -35,6 +36,10 @@ const frontEndHeader = new Vue({
           this.searchedResults = (response.data);
           console.log(response);
         })
+    },
+
+    toggleLogOut() {
+      this.activeLogOut = !this.activeLogOut;
     }
   }
 });
