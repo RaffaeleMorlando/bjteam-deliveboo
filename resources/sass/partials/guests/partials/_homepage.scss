@@ -26,6 +26,10 @@
     }
   }
 
+  .category_selection {
+    display: none;
+  }
+
   .main_sub_title {
     position: absolute;
     top: 80%;
@@ -352,5 +356,72 @@
 		transform: scale(0.95);
 		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 	}
+
+}
+
+//MEDIA QUERY-------------------------------------------------------------------
+
+//MD
+@media all and (max-width: 992px) {
+
+  #main_home_page_top {
+    position: relative;
+    width: 100%;
+    height: calc(80vh );
+    background-image: url('/img/homepage_hero.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 2;
+
+    .main_title{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 30%;
+      text-align: center;
+
+      h1{
+        font-size: 60px;
+      }
+    }
+
+    .main_sub_title {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      h2 {
+        font-size: 40px;
+        font-weight: 600;
+        font-style: italic;
+      }
+    }
+
+    #razzo {
+      display: none; //
+      position: absolute;
+      top:170px;
+      left: 200px;
+      height: 400px;
+    }
+
+    .contenitore_di_tutto_il_casino {
+      display: none;
+      position: absolute;
+      top: 50%;
+      right: 80px;
+      transform: translateY(-50%);
+      width: 300px;
+      height: 300px;
+      background-color: transparent;
+      border-radius: 50%;
+
+      &.active {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
 
 }

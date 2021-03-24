@@ -37,6 +37,10 @@
       </nav>
     </div>
 
+    <div class="category_selection">
+
+    </div>
+
     <div class="main_sub_title">
       <h2 class="text-center scroll">I nostri Ritoranti!</h2>
     </div>

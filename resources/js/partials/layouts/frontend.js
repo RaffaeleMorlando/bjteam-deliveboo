@@ -11,7 +11,8 @@ const frontEndHeader = new Vue({
     searchBarPlaceholder: "",
     searched: "",
     searchedResults: [],
-    activeLogOut: false
+    activeLogOut: false,
+    activeHamburger: false
   },
 
   mounted() {
@@ -40,6 +41,29 @@ const frontEndHeader = new Vue({
 
     toggleLogOut() {
       this.activeLogOut = !this.activeLogOut;
+    },
+
+    toggleHamburger() {
+      this.activeHamburger = !this.activeHamburger;
     }
   }
 });
+
+
+//hamburger menu
+var $menuBtn = document.getElementById('btn-hamburger');
+// to attach an event to do more than one task in the same time
+$menuBtn.onclick = function(e)
+{
+  // do something tasks
+  // your code here
+  // animation for button with cross line on click
+  animatedMenu(this);
+
+  // avoid default behavior
+  e.preventDefault();
+};
+function animatedMenu(x)
+{
+    x.classList.toggle("animeOpenClose");
+}
