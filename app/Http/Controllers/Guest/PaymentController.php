@@ -80,7 +80,7 @@ class PaymentController extends Controller
 
             // return back()->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
 
-            return redirect()->route('home')->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
+            return redirect()->route('success')->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
         } else {
             $errorString = "";
 

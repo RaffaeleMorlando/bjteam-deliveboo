@@ -877,18 +877,24 @@ main {
   justify-content: center;
   align-items: center;
   width: 100vw;
+  background: url("/img/homepage_hero.svg");
+  background-repeat: no-repeat;
 }
-#loading_container #description {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+#loading_container .checking_container {
+  width: 500px;
+  height: 275px;
+  background: white;
+  box-shadow: 0 2px 10px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #loading_container #loadingIndicator {
   position: absolute;
   height: 90px;
   width: 150px;
-  top: 35%;
+  top: 10px;
   left: 50%;
   transform: translate(-50%, 0%);
 }
@@ -898,8 +904,8 @@ main {
   width: 30px;
   height: 30px;
   border-radius: 30px;
-  -webkit-animation: loadingAnimation 3s infinite;
-          animation: loadingAnimation 3s infinite;
+  -webkit-animation: loadingAnimation 2s infinite;
+          animation: loadingAnimation 2s infinite;
 }
 #loading_container #loadingIndicator #loadingBar1 {
   background: #1e00ff;
@@ -951,8 +957,8 @@ main {
   position: relative;
   background: white;
   transform: scale(1);
-  -webkit-animation: success-anim 700ms ease;
-          animation: success-anim 700ms ease;
+  -webkit-animation: success-anim 900ms ease;
+          animation: success-anim 900ms ease;
 }
 #loading_container .circle-border {
   z-index: 0;
