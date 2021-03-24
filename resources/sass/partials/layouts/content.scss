@@ -258,20 +258,20 @@ footer {
 @media all and (max-width: 991px) {
 
   header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index:100;
-    width: 100%;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // z-index:100;
+    // width: 100%;
     height: max-content; //
-    padding: 20px 0;
+    padding: 20px 0; //
     //background-color: transparent;
-    transition: all 0.3s linear;
+    // transition: all 0.3s linear;
 
-    &.active {
-      box-shadow: $darkShadowCard;
-
-    }
+    // &.active {
+    //   box-shadow: $darkShadowCard;
+    //
+    // }
 
     .container {
       height: 100%;
@@ -304,7 +304,7 @@ footer {
             border: none;
             transition: all .5s;
             z-index: 300; //
-            font-size: 25px;
+            font-size: 15px; //
 
             &:focus {
               outline: none;
@@ -319,7 +319,7 @@ footer {
             box-shadow: $darkShadowCard;
             position: absolute;
             left: 10%;
-            top: 90%;
+            top: 110%; //
 
             li{
               padding: 10px;
@@ -381,7 +381,13 @@ footer {
 
             //hamburger menu
             #btn-hamburger {
+              position: absolute !important;
+              top: 0;
+              right: 20px !important;
               display: block;
+              position: fixed;
+              top: 0;
+              right: 0;
               border:none;
               outline:0;
               background: $darkWhite; // change color to your favorite here
@@ -410,11 +416,11 @@ footer {
             #hamburger_list {
               display: block;
               position: absolute;
-              top: 110%;
-              right: 15px;
+              top: 35%; //
               border-radius: 10px;
               background-color: $darkWhite;
               box-shadow: $darkShadowCard;
+              z-index: 300;
 
               li {
                 margin: 10px 0;
@@ -495,4 +501,55 @@ footer {
 
   }
 
+}
+
+//XS
+@media all and (max-width: 576px) {
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:100;
+    width: 100%;
+    //height: $headerHeight;
+    transition: all 0.3s linear;
+
+    &.active {
+      box-shadow: $darkShadowCard;
+
+    }
+
+    .container {
+      height: 100%;
+
+      .row {
+        height: 100%;
+
+        .left {
+          @include SetFlexContainer (row, center, center, wrap);
+          height: 100%;
+        }
+
+        .header_center {
+          @include SetFlexContainer (row, center, center, wrap);
+          height: 100%;
+          position: relative;
+          //background-color: red;
+
+          input[type=text] {
+            //width: 60%;
+            //padding: 5px 10px;
+            //border-radius: 15px;
+            margin-top: 50px; //
+            background-color: $darkWhite;
+            box-shadow: $darkShadowCard;
+            border: none;
+            transition: all .5s;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
 }

@@ -19,8 +19,11 @@
 
     <div id="guest_layout">
 
-
-      <header id="header" :class="headerStatus ? 'active' : ''" :style="headerStatus ? 'background-color: #ba181b' : 'transparent'">
+      @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register' && Route::currentRouteName() != 'success')
+        <header id="header" :class="headerStatus ? 'active' : ''" :style="headerStatus ? 'background-color: #ba181b' : 'transparent'">
+      @else
+        <header id="header" style="background-color: #ba181b">
+      @endif
         <div class="container">
           <div class="row">
 
@@ -29,8 +32,8 @@
             </div>
 
             <div class="header_center col-lg-6 col-md-12 ">
-            @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')
-              <input type="text" name="" value="" :placeholder="searchBarPlaceholder" v-model="searched" @keyup="getRestaurantByName">
+            @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register' && Route::currentRouteName() != 'success')
+              <input type="text" name="" value="" placeholder="Cerca ristorante per nome" v-model="searched" @keyup="getRestaurantByName">
 
               <transition name="slide">
                 <div class="searched_box" v-if="searchedResults.length != 0">
