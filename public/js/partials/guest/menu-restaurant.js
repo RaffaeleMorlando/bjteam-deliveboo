@@ -49361,7 +49361,8 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     //array prod. carello
     activeBanner: false,
     cartTotalPrice: 0,
-    isCartOpen: false
+    isCartOpen: false,
+    chevronDown: false
   },
   mounted: function mounted() {
     var _this = this;
@@ -49468,9 +49469,16 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       });
       this.$forceUpdate();
     },
-    closeCart: function closeCart() {
-      this.isCartOpen = !this.isCartOpen;
-      console.log('close', this.isCartOpen);
+    openCart: function openCart() {
+      if (!this.isCartOpen) {
+        this.isCartOpen = true;
+        this.chevronDown = true;
+      } else {
+        this.isCartOpen = false;
+        this.chevronDown = false;
+      } // this.isCartOpen = !this.isCartOpen;
+      // console.log('close' , this.isCartOpen);
+
     }
   }
 });

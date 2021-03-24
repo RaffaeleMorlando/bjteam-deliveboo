@@ -91,11 +91,14 @@
             </div>
 
             {{-- CARRELLO MD/SM --}}
-            <div class="cart_responsive" :style="isCartOpen ? 'height: 70vh' : 'height: 80px'">
-              <span class="icon_close_cart"><i class="fas fa-times" @click="closeCart"></i></span>
-              <span class="icon_close_cart"><i class="fas fa-cat" @click="closeCart"></i></span>
-              <h3>Il tuo ordine</h3>
+            <div class="cart_responsive" :style="isCartOpen ? 'height: 70vh' : 'height: 120px'">
+
+              <span v-if="isCartOpen == false"><i class="fas fa-chevron-up" @click="openCart"></i></span>
+              <span v-if="chevronDown"><i class="fas fa-chevron-down" @click="openCart"></i></span>
+              <h3>Il tuo carrello</h3>
+
               <span><img src="{{ asset('img/store-delivery-light.svg') }}" alt=""></span>
+
               <ul id="cart_order_items" :style="isCartOpen ? 'height: 60%;' : ''">
                 <div id="cart_order_placeholder_container" v-if="cartProducts.length == 0">
                   <img src="{{ asset('img/astronaut-disabled.svg') }}" alt="">
