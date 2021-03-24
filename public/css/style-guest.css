@@ -219,19 +219,10 @@ footer #footer-bottom {
 
 @media all and (max-width: 991px) {
   header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    width: 100%;
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
     padding: 20px 0;
-    transition: all 0.3s linear;
-  }
-  header.active {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
   header .container {
     height: 100%;
@@ -335,7 +326,13 @@ header .container .row .right #container_buttons_log_reg li.register {
     display: none;
   }
   header .container .row .right #container_buttons_log_reg #btn-hamburger {
+    position: absolute !important;
+    top: 0;
+    right: 20px !important;
     display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
     border: none;
     outline: 0;
     background: #F5F5F5;
@@ -362,11 +359,11 @@ header .container .row .right #container_buttons_log_reg li.register {
   header .container .row .right #container_buttons_log_reg #hamburger_list {
     display: block;
     position: absolute;
-    top: 80%;
-    right: 15px;
+    top: 35%;
     border-radius: 10px;
     background-color: #F5F5F5;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    z-index: 300;
   }
   header .container .row .right #container_buttons_log_reg #hamburger_list li {
     margin: 10px 0;

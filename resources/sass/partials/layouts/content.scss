@@ -258,20 +258,20 @@ footer {
 @media all and (max-width: 991px) {
 
   header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index:100;
-    width: 100%;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // z-index:100;
+    // width: 100%;
     height: max-content; //
-    padding: 20px 0;
+    padding: 20px 0; //
     //background-color: transparent;
-    transition: all 0.3s linear;
+    // transition: all 0.3s linear;
 
-    &.active {
-      box-shadow: $darkShadowCard;
-
-    }
+    // &.active {
+    //   box-shadow: $darkShadowCard;
+    //
+    // }
 
     .container {
       height: 100%;
@@ -381,7 +381,13 @@ footer {
 
             //hamburger menu
             #btn-hamburger {
+              position: absolute !important;
+              top: 0;
+              right: 20px !important;
               display: block;
+              position: fixed;
+              top: 0;
+              right: 0;
               border:none;
               outline:0;
               background: $darkWhite; // change color to your favorite here
@@ -410,11 +416,11 @@ footer {
             #hamburger_list {
               display: block;
               position: absolute;
-              top: 80%; //
-              right: 15px;
+              top: 35%; //
               border-radius: 10px;
               background-color: $darkWhite;
               box-shadow: $darkShadowCard;
+              z-index: 300;
 
               li {
                 margin: 10px 0;
