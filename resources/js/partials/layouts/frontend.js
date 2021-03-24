@@ -1,6 +1,7 @@
 require('../../bootstrap');
 
 
+import axios from 'axios';
 import Vue from 'vue';
 
 const frontEndHeader = new Vue({
@@ -8,6 +9,8 @@ const frontEndHeader = new Vue({
   data: {
     headerStatus: false,
     searchBarPlaceholder: "",
+    searched: "",
+    searchedResults: []
   },
 
   mounted() {
@@ -24,5 +27,14 @@ const frontEndHeader = new Vue({
   },
 
   methods: {
+    getRestaurantByName(){
+      this.searched = this.searched.toLowerCase();
+      axios
+        .get(`/api/restaurant/search/${this.searched}`)
+        .then(response => {
+          this.searchedResults = (response.data);
+          console.log(response);
+        })
+    }
   }
 });

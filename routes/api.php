@@ -30,4 +30,7 @@ Route::namespace("Api")->group(function (){
   //ritorna tutti gli ordini del ristorante loggato
   Route::get('restaurant/{slug}/orders', 'RestaurantController@getOrders');
 
+  //ricerca ristorante per nome
+  Route::get('restaurant/search/{string}', 'RestaurantController@getSearchedRestaurant');
+
 });
