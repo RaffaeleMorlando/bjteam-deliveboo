@@ -46,13 +46,6 @@
         </li>
       </ul>
     </div> --}}
-    <div id="slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}' class="slider-prova">
-      <div><h3>1</h3></div>
-      <div><h3>2</h3></div>
-      <div><h3>3</h3></div>
-      <div><h3>4</h3></div>
-    </div>
-
 
     <div class="main_sub_title">
       <h2 class="text-center scroll">I nostri Ritoranti!</h2>
