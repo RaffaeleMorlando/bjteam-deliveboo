@@ -26,9 +26,11 @@
       </div>
       <h3 class="completed_order">Order completed successfully</h3>
    </div>
-   
+   <h2 id="countdown" v-if="checking == false">Fra <strong style="color: #ba181b">@{{ countdown }}</strong> sarai reindirizzato all'homepage</h2>
 </div>
-   
+
+
+
 @endsection
 
 @section('page-guest-script')

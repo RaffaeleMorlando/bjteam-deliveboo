@@ -581,10 +581,10 @@ a:hover i {
   #container_dashboard aside {
     padding: 50px 0;
   }
-  #container_dashboard #settings_dashboard_container .setting_list span {
+  #container_dashboard #settings_dashboard_container a span {
     display: none;
   }
-  #container_dashboard #settings_dashboard_container .setting_list i.settings-icon {
+  #container_dashboard #settings_dashboard_container a i.settings-icon {
     display: block;
     font-size: 25px;
   }
