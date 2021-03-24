@@ -10,7 +10,9 @@ const frontEndHeader = new Vue({
     headerStatus: false,
     searchBarPlaceholder: "",
     searched: "",
-    searchedResults: []
+    searchedResults: [],
+    activeLogOut: false,
+    activeHamburger: false
   },
 
   mounted() {
@@ -35,6 +37,29 @@ const frontEndHeader = new Vue({
           this.searchedResults = (response.data);
           console.log(response);
         })
+    },
+
+    toggleActive(ref) {
+      this[ref] = !this.[ref];
     }
   }
 });
+
+
+//hamburger menu
+var $menuBtn = document.getElementById('btn-hamburger');
+// to attach an event to do more than one task in the same time
+$menuBtn.onclick = function(e)
+{
+  // do something tasks
+  // your code here
+  // animation for button with cross line on click
+  animatedMenu(this);
+
+  // avoid default behavior
+  e.preventDefault();
+};
+function animatedMenu(x)
+{
+    x.classList.toggle("animeOpenClose");
+}

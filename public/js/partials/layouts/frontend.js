@@ -49355,7 +49355,9 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     headerStatus: false,
     searchBarPlaceholder: "",
     searched: "",
-    searchedResults: []
+    searchedResults: [],
+    activeLogOut: false,
+    activeHamburger: false
   },
   mounted: function mounted() {
     var _this = this;
@@ -49380,9 +49382,27 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         _this2.searchedResults = response.data;
         console.log(response);
       });
+    },
+    toggleActive: function toggleActive(ref) {
+      this[ref] = !this[ref];
     }
   }
-});
+}); //hamburger menu
+
+var $menuBtn = document.getElementById('btn-hamburger'); // to attach an event to do more than one task in the same time
+
+$menuBtn.onclick = function (e) {
+  // do something tasks
+  // your code here
+  // animation for button with cross line on click
+  animatedMenu(this); // avoid default behavior
+
+  e.preventDefault();
+};
+
+function animatedMenu(x) {
+  x.classList.toggle("animeOpenClose");
+}
 })();
 
 /******/ })()

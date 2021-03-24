@@ -5,11 +5,10 @@ header {
   z-index:100;
   width: 100%;
   height: $headerHeight;
-  //background-color: transparent;
   transition: all 0.3s linear;
 
   &.active {
-    box-shadow:  $darkShadowCard;
+    box-shadow: $darkShadowCard;
 
   }
 
@@ -22,7 +21,6 @@ header {
       .left {
         @include SetFlexContainer (row, center, center, wrap);
         height: 100%;
-        //background-color: green;
       }
 
       .center {
@@ -75,7 +73,7 @@ header {
                 width: 50px;
                 height: 50px;
                 border-radius: 100%;
-  
+
                 img{
                   width: 100%;
                   height: 100%;
@@ -89,35 +87,76 @@ header {
               }
             }
 
-            
+
             &:hover{
               background: rgba(241, 26, 26, 0.411);
             }
           }
-          
-          
+
+
 
         }
       }
 
       .right {
         height: 100%;
-        //background-color: green;
 
-        img.restaurant_logo {
-          width: 60px;
-          height: 60px;
-          padding: 2px;
-          border-radius: 50%;
-          border: 2px solid #A9E5BB;
-        }
+        #container_buttons_log_reg {
+          @include SetFlexContainer (row, flex-end, center, nowrap);
+          height: 100%;
 
-        i {
-          padding: 5px;
-          font-size: 30px;
-          color: #2D1E2F;
-          border: 2px solid #2D1E2F;
-          border-radius: 3px;
+          #btn-hamburger {
+            display: none;
+          }
+          #hamburger_list {
+            display: none;
+          }
+
+          li.logo_section {
+            position: relative;
+
+            a.account {
+
+              img.restaurant_logo {
+                width: 60px;
+                height: 60px;
+                padding: 2px;
+                border-radius: 50%;
+                border: 2px solid #A9E5BB;
+              }
+
+              i {
+                color: $darkWhite;
+                font-size: 30px;
+                vertical-align: middle;
+                margin: 0 5px;
+                transition: all 0.3s linear;
+
+                &.active {
+                  transform: rotate(-180deg);
+                }
+              }
+            }
+
+            ul.drop_down_list {
+              @include setPositionAbsolute(110%, -30%);
+              width: max-content;
+              padding: 10px 20px;
+              border-radius: $borderRadCard;
+              background-color: $darkWhite;
+              box-shadow: $shadowDashboard;
+
+              li {
+                margin: 10px 0;
+
+                a {
+                  color: $black;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+
         }
       }
     }
@@ -157,10 +196,10 @@ footer {
   -webkit-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -moz-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
+  -moz-transition-timing-function: linear;
+  -webkit-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
 }
 
 .slide-leave-active {
@@ -168,10 +207,10 @@ footer {
   -webkit-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  -moz-transition-timing-function: linear;
+  -webkit-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
 }
 
 .slide-enter-to, .slide-leave {
@@ -182,4 +221,276 @@ footer {
 .slide-enter, .slide-leave-to {
   overflow: hidden;
   max-height: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//MEDIA QUERY-------------------------------------------------------------------
+
+//MD
+@media all and (max-width: 991px) {
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:100;
+    width: 100%;
+    height: max-content; //
+    padding: 20px 0;
+    //background-color: transparent;
+    transition: all 0.3s linear;
+
+    &.active {
+      box-shadow: $darkShadowCard;
+
+    }
+
+    .container {
+      height: 100%;
+
+      .row {
+        height: 100%;
+
+        .left {
+          @include SetFlexContainer (row, center, center, wrap);
+          height: 100%;
+
+          a {
+            z-index: 250; //
+          }
+        }
+
+        .center {
+          @include SetFlexContainer (row, center, center, wrap);
+          height: 100%;
+          position: relative;
+          //background-color: red;
+
+          input[type=text] {
+            width: 80%;
+            margin-top: 15px; //
+            padding: 20px 20px; //
+            border-radius: 50px; //
+            background-color: $darkWhite;
+            box-shadow: $darkShadowCard;
+            border: none;
+            transition: all .5s;
+            z-index: 300; //
+
+            &:focus {
+              outline: none;
+              transform: scale(1.1);
+            }
+          }
+          .searched_box{
+            width: 80%;
+            padding: 5px 10px;
+            border-radius: 10px;
+            background-color: $darkWhite;
+            box-shadow: $darkShadowCard;
+            position: absolute;
+            left: 10%;
+            top: 90%;
+
+            li{
+              padding: 10px;
+              border-radius: 50px;
+              border-bottom: 2px solid #ba181b;
+              box-shadow: $darkShadowCard;
+              margin: 10px 0;
+
+              a{
+                display: flex;
+                align-items: center;
+                // &:hover{
+                //   color: black;
+                // }
+
+                .container_image{
+                  box-shadow: $darkShadowCard;
+                  padding: 5px;
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 100%;
+
+                  img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 100%;
+                  }
+                }
+                span{
+                  padding-left: 10px;
+                  font-size: 20px;
+                  font-weight: 600;
+                }
+              }
+
+
+              &:hover{
+                background: rgba(241, 26, 26, 0.411);
+              }
+            }
+
+
+
+          }
+        }
+
+        .right {
+          @include setPositionAbsolute(20px, 0); //
+          height: 100%;
+
+          #container_buttons_log_reg {
+            @include SetFlexContainer (row, flex-end, center, nowrap);
+            height: 100%;
+
+            li.login,
+            li.register {
+              display: none;
+            }
+
+            //hamburger menu
+            #btn-hamburger {
+              display: block;
+              border:none;
+              outline:0;
+              background: $darkWhite; // change color to your favorite here
+              border-radius: 5px;
+              padding: 15px;
+              cursor: pointer;
+              .line-1, .line-2, .line-3 {
+                width: 30px;
+                height: 2px;
+                background-color: #ba181b;
+                margin: 4px 0;
+                transition: 0.4s;
+              }
+              &.animeOpenClose .line-1 {
+                -webkit-transform: rotate(-45deg) translate(-4px, 4px);
+                transform: rotate(-45deg) translate(-5px, 4px);
+              }
+              &.animeOpenClose .line-2 {
+                opacity: 0;
+              }
+              &.animeOpenClose .line-3 {
+                -webkit-transform: rotate(45deg) translate(-4px, -4px);
+                transform: rotate(45deg) translate(-4px, -4px);
+              }
+            }
+            #hamburger_list {
+              display: block;
+              position: absolute;
+              top: 110%;
+              right: 15px;
+              border-radius: 10px;
+              background-color: $darkWhite;
+              box-shadow: $darkShadowCard;
+
+              li {
+                margin: 10px 0;
+
+                a {
+                  color: $black;
+                  font-weight: 600;
+                  font-size: 20px;
+                }
+              }
+            }
+
+            li.logo_section {
+
+              a.account {
+
+                img.restaurant_logo {
+                  width: 80px; //
+                  height: 80px; //
+                  padding: 2px;
+                  border-radius: 50%;
+                  border: 2px solid #A9E5BB;
+                }
+
+                i {
+                  color: $darkWhite;
+                  font-size: 30px;
+                  vertical-align: middle;
+                  margin: 0 5px;
+                  transition: all 0.3s linear;
+
+                  &.active {
+                    transform: rotate(-180deg);
+                  }
+                }
+              }
+
+              ul.drop_down_list {
+                @include setPositionAbsolute(110%, -40%); //
+                width: max-content;
+                padding: 10px 20px;
+                border-radius: $borderRadCard;
+                background-color: $darkWhite;
+                box-shadow: $shadowDashboard;
+
+                li {
+                  margin: 10px 0;
+
+                  a {
+                    color: $black;
+                    font-weight: 600;
+                    font-size: 20px;
+                  }
+                }
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    // min-height: calc( 100vh - 160px);
+    //margin-top: 80px;
+  }
+
+
+
+  // FOOTER farà parte del layout
+  footer {
+
+    #footer-bottom {
+      background-color: #1d1d1d;
+      min-height: 100px;
+    }
+
+  }
+
 }

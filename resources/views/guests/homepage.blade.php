@@ -16,7 +16,6 @@
     <div class="contenitore_di_tutto_il_casino" :class="isChecked ? 'active' : ''">
       <nav class="menu">
         <input class="menu-toggler" type="checkbox" v-model="isChecked" @click="checked()">
-        {{-- <label for="menu-toggler"></label> --}}
         <ul>
 
           <li class="menu-item" v-for="(category, index) in categories" :title="category.name" v-on:click="getRestaurantsByCategory(index)">
@@ -38,11 +37,18 @@
       </nav>
     </div>
 
+    <div class="category_selection">
+
+    </div>
+
+    <div class="main_sub_title">
+      <h2 class="text-center scroll">I nostri Ritoranti!</h2>
+    </div>
 
   </div>
 
   {{-- Ristoranti ricercati --}}
-  <div v-if="filteredRestaurants.length != 0" class="static_restaurants_home container scroll">
+  <div v-if="filteredRestaurants.length != 0" class="static_restaurants_home container-fluid">
     <ul class="static_restaurants_container">
       <a v-for="restaurant in filteredRestaurants" :href="`http://127.0.0.1:8000/restaurants/${restaurant.slug}`" class="animate__animated animate__backInDown">
         <li class="static_restaurant_card">
@@ -62,7 +68,7 @@
     </ul>
   </div>
 
-  <div v-else class="container static_restaurants_home">
+  <div v-else class="container-fluid static_restaurants_home">
     <ul class="animate__animated animate__fadeInUp static_restaurants_container">
 
       <li class="static_restaurant_card" v-for="(restaurant, index) in homeRestaurants">
@@ -80,7 +86,7 @@
           </div>
         </a>
       </li>
-      
+
     </ul>
   </div>
 </div>

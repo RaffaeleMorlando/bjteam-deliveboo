@@ -24,6 +24,17 @@ a:hover i {
   display: block;
 }
 
+.btn_main {
+  padding: 5px 10px;
+  border-radius: 50px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: #FCFCFA;
+  font-weight: 700;
+}
+.btn_main a {
+  color: #1E1E1E;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -116,19 +127,58 @@ header .container .row .center .searched_box li:hover {
 header .container .row .right {
   height: 100%;
 }
-header .container .row .right img.restaurant_logo {
+header .container .row .right #container_buttons_log_reg {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 100%;
+}
+header .container .row .right #container_buttons_log_reg #btn-hamburger {
+  display: none;
+}
+header .container .row .right #container_buttons_log_reg #hamburger_list {
+  display: none;
+}
+header .container .row .right #container_buttons_log_reg li.logo_section {
+  position: relative;
+}
+header .container .row .right #container_buttons_log_reg li.logo_section a.account img.restaurant_logo {
   width: 60px;
   height: 60px;
   padding: 2px;
   border-radius: 50%;
   border: 2px solid #A9E5BB;
 }
-header .container .row .right i {
-  padding: 5px;
+header .container .row .right #container_buttons_log_reg li.logo_section a.account i {
+  color: #F5F5F5;
   font-size: 30px;
-  color: #2D1E2F;
-  border: 2px solid #2D1E2F;
-  border-radius: 3px;
+  vertical-align: middle;
+  margin: 0 5px;
+  transition: all 0.3s linear;
+}
+header .container .row .right #container_buttons_log_reg li.logo_section a.account i.active {
+  transform: rotate(-180deg);
+}
+header .container .row .right #container_buttons_log_reg li.logo_section ul.drop_down_list {
+  position: absolute;
+  top: 110%;
+  left: -30%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #F5F5F5;
+  box-shadow: 0 2px 20px 8px rgba(0, 0, 0, 0.2);
+}
+header .container .row .right #container_buttons_log_reg li.logo_section ul.drop_down_list li {
+  margin: 10px 0;
+}
+header .container .row .right #container_buttons_log_reg li.logo_section ul.drop_down_list li a {
+  color: #1E1E1E;
+  font-weight: 600;
 }
 
 footer #footer-bottom {
@@ -148,12 +198,12 @@ footer #footer-bottom {
 
 .slide-enter-active {
   transition-duration: 0.3s;
-  transition-timing-function: ease-in;
+  transition-timing-function: linear;
 }
 
 .slide-leave-active {
   transition-duration: 0.3s;
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  transition-timing-function: linear;
 }
 
 .slide-enter-to, .slide-leave {
@@ -166,6 +216,207 @@ footer #footer-bottom {
   max-height: 0;
 }
 
+@media all and (max-width: 991px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    padding: 20px 0;
+    transition: all 0.3s linear;
+  }
+  header.active {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+  header .container {
+    height: 100%;
+  }
+  header .container .row {
+    height: 100%;
+  }
+  header .container .row .left {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  header .container .row .left a {
+    z-index: 250;
+  }
+  header .container .row .center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    position: relative;
+  }
+  header .container .row .center input[type=text] {
+    width: 80%;
+    margin-top: 15px;
+    padding: 20px 20px;
+    border-radius: 50px;
+    background-color: #F5F5F5;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border: none;
+    transition: all 0.5s;
+    z-index: 300;
+  }
+  header .container .row .center input[type=text]:focus {
+    outline: none;
+    transform: scale(1.1);
+  }
+  header .container .row .center .searched_box {
+    width: 80%;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    position: absolute;
+    left: 10%;
+    top: 90%;
+  }
+  header .container .row .center .searched_box li {
+    padding: 10px;
+    border-radius: 50px;
+    border-bottom: 2px solid #ba181b;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    margin: 10px 0;
+  }
+  header .container .row .center .searched_box li a {
+    display: flex;
+    align-items: center;
+  }
+  header .container .row .center .searched_box li a .container_image {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+  }
+  header .container .row .center .searched_box li a .container_image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+  }
+  header .container .row .center .searched_box li a span {
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  header .container .row .center .searched_box li:hover {
+    background: rgba(241, 26, 26, 0.411);
+  }
+  header .container .row .right {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    height: 100%;
+  }
+  header .container .row .right #container_buttons_log_reg {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 100%;
+  }
+  header .container .row .right #container_buttons_log_reg li.login,
+header .container .row .right #container_buttons_log_reg li.register {
+    display: none;
+  }
+  header .container .row .right #container_buttons_log_reg #btn-hamburger {
+    display: block;
+    border: none;
+    outline: 0;
+    background: #F5F5F5;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+  }
+  header .container .row .right #container_buttons_log_reg #btn-hamburger .line-1, header .container .row .right #container_buttons_log_reg #btn-hamburger .line-2, header .container .row .right #container_buttons_log_reg #btn-hamburger .line-3 {
+    width: 30px;
+    height: 2px;
+    background-color: #ba181b;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+  header .container .row .right #container_buttons_log_reg #btn-hamburger.animeOpenClose .line-1 {
+    transform: rotate(-45deg) translate(-5px, 4px);
+  }
+  header .container .row .right #container_buttons_log_reg #btn-hamburger.animeOpenClose .line-2 {
+    opacity: 0;
+  }
+  header .container .row .right #container_buttons_log_reg #btn-hamburger.animeOpenClose .line-3 {
+    transform: rotate(45deg) translate(-4px, -4px);
+  }
+  header .container .row .right #container_buttons_log_reg #hamburger_list {
+    display: block;
+    position: absolute;
+    top: 110%;
+    right: 15px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+  header .container .row .right #container_buttons_log_reg #hamburger_list li {
+    margin: 10px 0;
+  }
+  header .container .row .right #container_buttons_log_reg #hamburger_list li a {
+    color: #1E1E1E;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  header .container .row .right #container_buttons_log_reg li.logo_section a.account img.restaurant_logo {
+    width: 80px;
+    height: 80px;
+    padding: 2px;
+    border-radius: 50%;
+    border: 2px solid #A9E5BB;
+  }
+  header .container .row .right #container_buttons_log_reg li.logo_section a.account i {
+    color: #F5F5F5;
+    font-size: 30px;
+    vertical-align: middle;
+    margin: 0 5px;
+    transition: all 0.3s linear;
+  }
+  header .container .row .right #container_buttons_log_reg li.logo_section a.account i.active {
+    transform: rotate(-180deg);
+  }
+  header .container .row .right #container_buttons_log_reg li.logo_section ul.drop_down_list {
+    position: absolute;
+    top: 110%;
+    left: -40%;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    box-shadow: 0 2px 20px 8px rgba(0, 0, 0, 0.2);
+  }
+  header .container .row .right #container_buttons_log_reg li.logo_section ul.drop_down_list li {
+    margin: 10px 0;
+  }
+  header .container .row .right #container_buttons_log_reg li.logo_section ul.drop_down_list li a {
+    color: #1E1E1E;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  footer #footer-bottom {
+    background-color: #1d1d1d;
+    min-height: 100px;
+  }
+}
 main {
   min-height: calc(100vh - 80px);
 }
@@ -188,7 +439,23 @@ main {
   text-align: center;
 }
 #main_home_page_top .main_title h1 {
+  color: #ffffff;
+  font-weight: bold;
   font-size: 60px;
+}
+#main_home_page_top .category_selection {
+  display: none;
+}
+#main_home_page_top .main_sub_title {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main_home_page_top .main_sub_title h2 {
+  font-size: 40px;
+  font-weight: 600;
+  font-style: italic;
 }
 #main_home_page_top #razzo {
   position: absolute;
@@ -220,11 +487,11 @@ main {
 }
 
 .static_restaurants_home {
-  padding-top: 130px;
+  padding: 0 100px;
 }
 .static_restaurants_home .static_restaurants_container {
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 2fr 2fr 2fr;
   grid-column-gap: 40px;
   list-style: none;
 }
@@ -530,28 +797,62 @@ main {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
-#container_buttons_log_reg {
-  display: flex;
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
+@media all and (max-width: 992px) {
+  #main_home_page_top {
+    position: relative;
+    width: 100%;
+    height: calc(80vh );
+    background-image: url("/img/homepage_hero.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 2;
+  }
+  #main_home_page_top .main_title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30%;
+    text-align: center;
+  }
+  #main_home_page_top .main_title h1 {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 80px;
+  }
+  #main_home_page_top .main_sub_title {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #main_home_page_top .main_sub_title h2 {
+    font-size: 40px;
+    font-weight: 600;
+    font-style: italic;
+  }
+  #main_home_page_top #razzo {
+    display: none;
+    position: absolute;
+    top: 170px;
+    left: 200px;
+    height: 400px;
+  }
+  #main_home_page_top .contenitore_di_tutto_il_casino {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 80px;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
+    border-radius: 50%;
+  }
+  #main_home_page_top .contenitore_di_tutto_il_casino.active {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
 }
-#container_buttons_log_reg .button_log_reg {
-  border-radius: 5px;
-  background-color: #00A082;
-  padding: 5px 10px;
-  font-weight: 700;
-}
-#container_buttons_log_reg .button_log_reg a {
-  color: #fff;
-}
-#container_buttons_log_reg .button_log_reg:hover {
-  background-color: #008169;
-}
-
 .container_form_login {
   padding: 50px 0;
   min-height: calc( 100vh - 180px);
