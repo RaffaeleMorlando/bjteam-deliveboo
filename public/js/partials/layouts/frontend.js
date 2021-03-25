@@ -49386,7 +49386,7 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     toggleActive: function toggleActive(ref) {
       this[ref] = !this[ref];
 
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 993) {
         console.log(window.innerWidth);
         this.displayNone = !this.displayNone;
       }

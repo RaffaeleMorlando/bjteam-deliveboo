@@ -41,7 +41,7 @@ const frontEndHeader = new Vue({
 
     toggleActive(ref) {
       this[ref] = !this.[ref];
-      if(window.innerWidth < 768) {
+      if(window.innerWidth < 993) {
         console.log(window.innerWidth);
         this.displayNone = !this.displayNone;
       }

@@ -155,6 +155,10 @@ header {
                   font-weight: 600;
                 }
               }
+
+              .exit_icon {
+                display: none;
+              }
             }
           }
 
@@ -471,25 +475,23 @@ footer {
               }
 
               ul.drop_down_list {
-                //@include setPositionAbsolute(110%, -40%); //
-                //width: max-content;
-                //padding: 10px 20px;
                 position: fixed;
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: 100vh;
-                border-radius: $borderRadCard;
+                height: 50vh;
+                border-radius: 0 0 400px 400px;
                 background-color: $darkWhite;
                 box-shadow: $shadowDashboard;
 
                 li {
-                  margin: 10px 0;
+                  margin: 20px 0;
 
                   a {
                     color: $black;
                     font-weight: 600;
-                    font-size: 20px;
+                    font-size: 40px;
+                    text-transform: uppercase;
                   }
                 }
 
@@ -546,8 +548,6 @@ footer {
           #container_buttons_log_reg{
 
             li.logo_section{
-              // position: absolute;
-              // top: 0;
             }
           }
         }
