@@ -30,7 +30,7 @@
         @method("POST")
 
         <label for="image" class="create_add_image" title="add photo">
-          <input type="file" accept="image/*" name="image" id="image" @change="onFileChange">
+          <input type="file" accept="image/*" name="image" id="image" @change="onFileChange" required>
           <i class="fas fa-camera-retro"></i>
         </label>
 
@@ -44,7 +44,7 @@
           <div class="small_green_box">
             <label for="name" class="mx-1 my-0">Nome</label>
           </div>
-          <input type="text" name="name" id="name" value="{{ old('name')}}" placeholder="Inserisci il nome del prodotto">
+          <input type="text" name="name" id="name" value="{{ old('name')}}" placeholder="Inserisci il nome del prodotto" title="inserisci il nome del prodotto con almento 2 caratteri" min="2" max=60 required>
         </div>
 
         <div class="create_product_input">
@@ -57,7 +57,7 @@
           <div class="small_green_box">
             <label for="description" class="mx-1 my-0">Descrizione</label>
           </div>
-          <textarea name="description" id="description" placeholder="Descrizione prodotto">{{ old('description')}}</textarea>
+          <textarea max="6000" name="description" id="description" placeholder="Descrizione prodotto" title="inserisci ingredienti" required>{{ old('description')}}</textarea>
         </div>
 
         <div class="create_product_input">
@@ -70,7 +70,7 @@
           <div class="small_green_box">
             <label for="price" class="mx-1 my-0">Prezzo</label>
           </div>
-          <input type="text" name="price" id="price" value="{{ old('price') }}" placeholder="Prezzo (€)">
+          <input type="number"  name="price" id="price" value="{{ old('price') }}" title="inserisci un numero da 0.01 a 999" placeholder="Prezzo (€)" min="0.01" max="999" step="0.01" required> 
         </div>
 
         <div class="create_product_check_box">
