@@ -217,14 +217,6 @@ footer #footer-bottom {
   max-height: 0;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {
@@ -876,10 +868,10 @@ main {
     background-image: url("/img/homepage_hero-xs.svg");
   }
   #main_home_page_top .main_title h1 {
-    font-size: 60px;
+    display: none;
   }
   #main_home_page_top .main_title h3 {
-    font-size: 20px;
+    display: none;
   }
   #main_home_page_top #razzo {
     display: none;
@@ -934,10 +926,6 @@ main {
   }
 }
 @media all and (max-width: 767px) {
-  #main_home_page_top .main_title h1 {
-    font-size: 50px;
-  }
-
   #carousel {
     display: flex;
     flex-direction: row;
@@ -982,12 +970,6 @@ main {
   }
 }
 @media all and (max-width: 576px) {
-  #main_home_page_top .main_title h1 {
-    display: none;
-  }
-  #main_home_page_top .main_title h3 {
-    display: none;
-  }
   #main_home_page_top #carousel {
     display: flex;
     flex-direction: row;

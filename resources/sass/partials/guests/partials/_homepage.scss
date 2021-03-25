@@ -376,11 +376,11 @@
     .main_title{
 
       h1{
-        font-size: 60px;
+        display: none;
       }
 
       h3 {
-        font-size: 20px;
+        display: none;
       }
     }
 
@@ -439,16 +439,6 @@
 //SM
 @media all and (max-width: 767px) {
 
-  #main_home_page_top {
-
-    .main_title{
-
-      h1{
-        font-size: 50px;
-      }
-    }
-
-  }
 
   #carousel {
     @include SetFlexContainer (row, center, center, nowrap);
@@ -495,17 +485,6 @@
 @media all and (max-width: 576px) {
 
   #main_home_page_top {
-
-    .main_title{
-
-      h1 {
-        display: none;
-      }
-
-      h3 {
-        display: none;
-      }
-    }
 
     #carousel {
       @include SetFlexContainer (row, center, center, nowrap);
