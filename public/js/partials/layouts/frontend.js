@@ -49358,12 +49358,14 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     searchedResults: [],
     activeLogOut: false,
     activeHamburger: false,
-    displayNone: false
+    displayNone: false,
+    actualUser: null
   },
   mounted: function mounted() {
     var _this = this;
 
     var self = this;
+    var user;
     window.addEventListener('scroll', function () {
       if (window.scrollY > 1) {
         _this.headerStatus = true;
@@ -49373,6 +49375,8 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
 
       ;
     });
+    user = vue__WEBPACK_IMPORTED_MODULE_1__.default.prototype.$userId = document.querySelector("meta[name='user-id']").getAttribute('content');
+    this.actualUser = user;
   },
   methods: {
     getRestaurantByName: function getRestaurantByName() {
@@ -49386,7 +49390,7 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     toggleActive: function toggleActive(ref) {
       this[ref] = !this[ref];
 
-      if (window.innerWidth < 993) {
+      if (window.innerWidth < 993 && this.actualUser) {
         console.log(window.innerWidth);
         this.displayNone = !this.displayNone;
       }

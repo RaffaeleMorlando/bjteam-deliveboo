@@ -12,12 +12,13 @@ const frontEndHeader = new Vue({
     searchedResults: [],
     activeLogOut: false,
     activeHamburger: false,
-    displayNone: false
+    displayNone: false,
+    actualUser: null
   },
 
   mounted() {
     const self = this;
-
+    let user;
     window.addEventListener('scroll', () => {
       if (window.scrollY > 1) {
         this.headerStatus = true;
@@ -26,6 +27,8 @@ const frontEndHeader = new Vue({
       };
     });
 
+    user = Vue.prototype.$userId = document.querySelector("meta[name='user-id']").getAttribute('content');
+    this.actualUser = user;
   },
 
   methods: {
@@ -41,7 +44,7 @@ const frontEndHeader = new Vue({
 
     toggleActive(ref) {
       this[ref] = !this.[ref];
-      if(window.innerWidth < 993) {
+      if(window.innerWidth < 993 && this.actualUser) {
         console.log(window.innerWidth);
         this.displayNone = !this.displayNone;
       }

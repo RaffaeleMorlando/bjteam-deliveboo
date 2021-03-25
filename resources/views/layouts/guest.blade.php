@@ -13,6 +13,7 @@
     <link href="{{ asset('css/style-guest.css') }}" rel="stylesheet">
 
     <meta charset="utf-8">
+    <meta name="user-id" content="{{ Auth::user() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
   </head>
@@ -20,7 +21,7 @@
 
     <div id="guest_layout">
 
-      @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register' && Route::currentRouteName() != 'success')
+      @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register' && Route::currentRouteName() != 'success' )
         <header id="header" :class="headerStatus ? 'active' : ''" :style="headerStatus ? 'background-color: #ba181b' : 'transparent'">
       @else
         <header id="header" style="background-color: #ba181b">
