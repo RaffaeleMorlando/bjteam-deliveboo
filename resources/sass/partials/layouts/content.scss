@@ -512,6 +512,29 @@ footer {
 
 }
 
+@media all and (max-width: 767px){
+
+  header{
+
+    .container{
+
+      .row{
+
+        .right{
+
+          #container_buttons_log_reg{
+
+            li.logo_section{
+              position: absolute;
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 //XS
 @media all and (max-width: 576px) {
 
@@ -534,6 +557,23 @@ footer {
 
       .row {
         height: 100%;
+
+        .right{
+
+          #container_buttons_log_reg{
+
+            li.logo_section{
+              
+              a.account {
+
+                img.restaurant_logo {
+                  width: 50px;
+                  height: 50px;
+                }
+              }
+            }
+          }
+        }
 
         .left {
           @include SetFlexContainer (row, center, center, wrap);

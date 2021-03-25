@@ -431,6 +431,12 @@ header .container .row .right #container_buttons_log_reg li.register {
     min-height: 100px;
   }
 }
+@media all and (max-width: 767px) {
+  header .container .row .right #container_buttons_log_reg li.logo_section {
+    position: absolute;
+    top: 0;
+  }
+}
 @media all and (max-width: 576px) {
   header {
     position: fixed;
@@ -448,6 +454,10 @@ header .container .row .right #container_buttons_log_reg li.register {
   }
   header .container .row {
     height: 100%;
+  }
+  header .container .row .right #container_buttons_log_reg li.logo_section a.account img.restaurant_logo {
+    width: 50px;
+    height: 50px;
   }
   header .container .row .left {
     display: flex;
@@ -904,10 +914,13 @@ main {
     border-radius: 10px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
-  #main_home_page_top #carousel .carousel_box img {
-    width: 50%;
+  #main_home_page_top #carousel .carousel_box div {
+    text-align: center;
   }
-  #main_home_page_top #carousel .carousel_box h4 {
+  #main_home_page_top #carousel .carousel_box div img {
+    width: 70%;
+  }
+  #main_home_page_top #carousel .carousel_box div h4 {
     margin: 5px 0;
     text-transform: uppercase;
     font-weight: 700;
@@ -919,7 +932,7 @@ main {
   }
 
   .static_restaurants_home {
-    padding: 0 50px;
+    padding: 50px;
   }
   .static_restaurants_home .static_restaurants_container {
     grid-template-columns: 1fr 1fr;

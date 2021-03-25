@@ -407,15 +407,21 @@
         border-radius: $borderRadCard;
         box-shadow: $darkShadowCard;
 
-        img {
-          width: 50%;
+        div{
+          text-align: center;
+
+          img {
+            width: 70%;
+          }
+  
+          h4 {
+            margin: 5px 0;
+            text-transform: uppercase;
+            font-weight: 700;
+          }
         }
 
-        h4 {
-          margin: 5px 0;
-          text-transform: uppercase;
-          font-weight: 700;
-        }
+       
       }
 
       i {
@@ -428,7 +434,7 @@
 
 
   .static_restaurants_home {
-    padding: 0 50px; //
+    padding: 50px; //
 
     .static_restaurants_container {
       grid-template-columns: 1fr 1fr; //
