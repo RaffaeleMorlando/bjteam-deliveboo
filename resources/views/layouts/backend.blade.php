@@ -138,6 +138,7 @@
               <div id="settings_dashboard_container" class="text-center">
                 <a href="#" @click="toggleSettings">
                   <span id="settings_dashboard">SETTINGS</span>
+                  <i class="fas fa-cog settings-icon"></i>
                   <i class="fas fa-chevron-down" :class="activeSettings ? 'counterclockwise_180' : 'clockwise_180'"></i>
                 </a>
 
