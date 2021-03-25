@@ -1077,9 +1077,15 @@ a:hover i {
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
   border-radius: 5px;
 }
-#product_create .form_box .create_product_input input[type=text],
+#product_create .form_box .create_product_input input[type=number], #product_create .form_box .create_product_input input[type=tel], #product_create .form_box .create_product_input input[type=text],
+#product_edit .form_box .create_product_input input[type=number],
+#product_edit .form_box .create_product_input input[type=tel],
 #product_edit .form_box .create_product_input input[type=text],
+#restaurant_create .form_box .create_product_input input[type=number],
+#restaurant_create .form_box .create_product_input input[type=tel],
 #restaurant_create .form_box .create_product_input input[type=text],
+.dashboard_edit_restaurant_form .form_box .create_product_input input[type=number],
+.dashboard_edit_restaurant_form .form_box .create_product_input input[type=tel],
 .dashboard_edit_restaurant_form .form_box .create_product_input input[type=text] {
   width: 100%;
   padding: 0 10px;
@@ -1088,9 +1094,15 @@ a:hover i {
   border-bottom: 2px solid #FFC244;
   vertical-align: text-bottom;
 }
-#product_create .form_box .create_product_input input[type=text]:focus,
+#product_create .form_box .create_product_input input[type=number]:focus, #product_create .form_box .create_product_input input[type=tel]:focus, #product_create .form_box .create_product_input input[type=text]:focus,
+#product_edit .form_box .create_product_input input[type=number]:focus,
+#product_edit .form_box .create_product_input input[type=tel]:focus,
 #product_edit .form_box .create_product_input input[type=text]:focus,
+#restaurant_create .form_box .create_product_input input[type=number]:focus,
+#restaurant_create .form_box .create_product_input input[type=tel]:focus,
 #restaurant_create .form_box .create_product_input input[type=text]:focus,
+.dashboard_edit_restaurant_form .form_box .create_product_input input[type=number]:focus,
+.dashboard_edit_restaurant_form .form_box .create_product_input input[type=tel]:focus,
 .dashboard_edit_restaurant_form .form_box .create_product_input input[type=text]:focus {
   outline: none;
 }
@@ -1127,6 +1139,26 @@ a:hover i {
 #restaurant_create .form_box .create_product_input textarea:focus,
 .dashboard_edit_restaurant_form .form_box .create_product_input textarea:focus {
   outline: none;
+}
+#product_create .form_box input::-webkit-outer-spin-button,
+#product_create .form_box input::-webkit-inner-spin-button,
+#product_edit .form_box input::-webkit-outer-spin-button,
+#product_edit .form_box input::-webkit-inner-spin-button,
+#restaurant_create .form_box input::-webkit-outer-spin-button,
+#restaurant_create .form_box input::-webkit-inner-spin-button,
+.dashboard_edit_restaurant_form .form_box input::-webkit-outer-spin-button,
+.dashboard_edit_restaurant_form .form_box input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+#product_create .form_box input[type=number],
+#product_edit .form_box input[type=number],
+#restaurant_create .form_box input[type=number],
+.dashboard_edit_restaurant_form .form_box input[type=number] {
+  -moz-appearance: textfield;
+  /* Firefox */
 }
 #product_create .form_box .create_product_check_box,
 #product_edit .form_box .create_product_check_box,

@@ -1023,11 +1023,25 @@ main {
   }
 }
 @media all and (max-width: 576px) {
-  .container_form_login #login_form, #register_form {
-    max-width: 90%;
+  .container_form_login {
+    min-height: 90vh;
+    padding: 0;
   }
-  .container_form_login #login_form .box_input_credential .input_credential, #register_form .box_input_credential .input_credential {
+  .container_form_login #login_form, .container_form_login #register_form {
+    max-width: 98%;
+    padding: 20px 30px;
+  }
+  .container_form_login #login_form .box_input_credential .input_credential, .container_form_login #register_form .box_input_credential .input_credential {
     height: 30px;
+  }
+
+  .container_form_login #register_form .box_input_credential {
+    margin-top: 30px;
+  }
+}
+@media all and (max-width: 330px) {
+  .container_form_login #register_form, .container_form_login #login_form {
+    min-height: 98%;
   }
 }
 #loading_container {
