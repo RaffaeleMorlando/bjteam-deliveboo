@@ -25,47 +25,52 @@
         <div class="wrapper_input">
           <div class="form-group">
             <label class="label_none_md" for="name">{{ __('Name') }}</label>
-            <div id="box_input_credential">  
-              <input id="name" type="text" class="input_credential form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-            </div>   
-
+            <div class="box_input_credential">  
+              <input id="name" type="text" class="input_credential form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Nome" autofocus>
               @error('name')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                   </span>
               @enderror
+            </div>     
           </div>
                       
           <div class="form-group">
             <label class="label_none_md"for="email">{{ __('E-Mail Address') }}</label>
-                <input id="email"  type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+              <div class="box_input_credential">
+                <input id="email"  type="email" class="input_credential form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required placeholder="E-mail"  autocomplete="email">
 
                 @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
+              </div> 
           </div>
 
             <div class="form-group">
                 <label class="label_none_md" for="password">{{ __('Password') }}</label>
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                  <div class="box_input_credential">  
+                    <input id="password" type="password" class="input_credential form-control @error('password') is-invalid @enderror" name="password" required placeholder="Password" autocomplete="new-password">
 
                     @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
+                  </div>  
             </div>
 
             <div class="form-group">
                 <label class="label_none_md" for="password-confirm">{{ __('Confirm Password') }}</label>
-                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                <div class="box_input_credential">
+                  <input id="password-confirm" type="password" class="form-control input_credential" name="password_confirmation" placeholder="Conferma Passswords" required autocomplete="new-password">
+                </div>  
             </div>
 
             <div class="form-group">
                 <div>
-                    <button type="submit" id="register_btn_form" class="btn">
+                    <button type="submit" id="register_btn_form" class="btn-lg btn-block">
                         {{ __('Register') }}
                     </button>
                 </div>
