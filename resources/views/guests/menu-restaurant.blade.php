@@ -24,7 +24,7 @@
           <div id="menu_left">
 
             {{-- SEZIONE INFORMAZIONI RISTORANTE --}}
-            <div class="menu_info" :style="heroStatus ? 'height: 150px' : 'height: 250px'">
+            <div class="menu_info" :style="heroStatus ? 'height: 180px' : 'height: 250px'">
               <div class="menu_info_container" >
               </div>
               <h2>@{{restaurant.name}}</h2>
@@ -90,11 +90,15 @@
               </div>
             </div>
 
-            {{-- CARRELLO MD/SM --}}   
-            <div class="cart_responsive" :style="isCartOpen ? 'height: 50vh' : ''" @click="openCart">
-              <span v-if="isCartOpen"><i class="fas fa-times"></i></span>
-              <h3>Il tuo ordine</h3>
+            {{-- CARRELLO MD/SM --}}
+            <div class="cart_responsive" :style="isCartOpen ? 'height: 70vh' : 'height: 120px'">
+
+              <span v-if="isCartOpen == false"><i class="fas fa-chevron-up" @click="openCart"></i></span>
+              <span v-if="chevronDown"><i class="fas fa-chevron-down" @click="openCart"></i></span>
+              <h3>Il tuo carrello</h3>
+
               <span><img src="{{ asset('img/store-delivery-light.svg') }}" alt=""></span>
+
               <ul id="cart_order_items" :style="isCartOpen ? 'height: 60%;' : ''">
                 <div id="cart_order_placeholder_container" v-if="cartProducts.length == 0">
                   <img src="{{ asset('img/astronaut-disabled.svg') }}" alt="">
@@ -123,9 +127,9 @@
                   <span>Totale prezzo: € @{{cartTotalPrice.toFixed(2)}}</span>
                   <span id="button_cart" onclick="document.forms['cart-form'].submit();">Vai al pagamento</span>
                 </form>
-              </div> 
+              </div>
             </div>
-           
+
 
           </div>
 

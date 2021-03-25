@@ -7,8 +7,6 @@
   width: 100%;
   height: calc(80vh );
   background-image: url('/img/homepage_hero.svg');
-  // background-image: url('/img/method-draw-image.svg');
-  // background-image: url("https://images.creativemarket.com/0.1.0/ps/7583374/1820/893/m1/fpnw/wm1/copl0pcbgxikqywwqiloq9zlalzbscrfhse997942gpslz6vvagc38kjwt0bspbr-.jpg?1578938585&s=cf8e38a875f5639a8d16789c774bff03");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -26,9 +24,14 @@
       font-weight: bold;
       font-size: 60px;
     }
+    h3 {
+      color: $white;
+      font-weight: bold;
+      font-size: 30px;
+    }
   }
 
-  .category_selection {
+  .md_category_selection {
     display: none;
   }
 
@@ -66,6 +69,10 @@
       background-color: rgba(255, 255, 255, 0.5);
     }
   }
+
+  #slider {
+    display: none;
+  }
 }
 
 .searched_restaurants_container {
@@ -78,10 +85,8 @@
 }
 
 .static_restaurants_home {
-  // border: 1px solid red;
-  // min-height: 500px;
-  // ul
   padding: 0 100px;
+
   .static_restaurants_container {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
@@ -367,65 +372,73 @@
 @media all and (max-width: 992px) {
 
   #main_home_page_top {
-    position: relative;
-    width: 100%;
-    height: calc(80vh );
-    background-image: url('/img/homepage_hero.svg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 2;
+    background-image: url('/img/homepage_hero-xs.svg');
 
     .main_title{
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 30%;
-      text-align: center;
 
       h1{
-        color: $white;
-        font-weight: bold;
-        font-size: 80px; //
+        font-size: 60px;
       }
-    }
 
-    .main_sub_title {
-      position: absolute;
-      top: 80%;
-      left: 50%;
-      transform: translateX(-50%);
-
-      h2 {
-        font-size: 40px;
-        font-weight: 600;
-        font-style: italic;
+      h3 {
+        font-size: 20px;
       }
     }
 
     #razzo {
-      display: none; //
-      position: absolute;
-      top:170px;
-      left: 200px;
-      height: 400px;
+      display: none;
     }
 
     .contenitore_di_tutto_il_casino {
       display: none;
-      position: absolute;
-      top: 50%;
-      right: 80px;
-      transform: translateY(-50%);
-      width: 300px;
-      height: 300px;
-      background-color: transparent;
-      border-radius: 50%;
+    }
 
-      &.active {
-        background-color: rgba(255, 255, 255, 0.5);
-      }
+  }
+
+  .static_restaurants_home {
+    padding: 0 50px; //
+
+    .static_restaurants_container {
+      grid-template-columns: 1fr 1fr; //
     }
   }
 
+}
+//SM
+@media all and (max-width: 767px) {
+
+  #main_home_page_top {
+
+    .main_title{
+
+      h1{
+        font-size: 50px;
+      }
+    }
+
+  }
+  .static_restaurants_home {
+
+    .static_restaurants_container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+//XS
+@media all and (max-width: 576px) {
+
+  #main_home_page_top {
+
+    .main_title{
+
+      h1 {
+        display: none;
+      }
+
+      h3 {
+        display: none;
+      }
+    }
+  }
 }

@@ -1,11 +1,12 @@
 require('./bootstrap');
 require('select2');
 
-import Vue from 'vue';
+//import Vue from 'vue';
 
 $(document).ready(
   function() {
 
+    // Select 2
     $("#categories").select2(
       {
         maximumSelectionLength: 5,
@@ -13,7 +14,6 @@ $(document).ready(
         width: 'resolve',
         height: 'resolve',
       });
-
 
   }
 );

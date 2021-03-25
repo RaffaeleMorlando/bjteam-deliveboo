@@ -1838,16 +1838,15 @@ module.exports = {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! select2 */ "./node_modules/select2/dist/js/select2.js");
+__webpack_require__(/*! select2 */ "./node_modules/select2/dist/js/select2.js"); //import Vue from 'vue';
 
 
 $(document).ready(function () {
+  // Select 2
   $("#categories").select2({
     maximumSelectionLength: 5,
     placeholder: "inserisci categoria",

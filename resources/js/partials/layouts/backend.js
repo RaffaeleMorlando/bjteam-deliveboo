@@ -82,9 +82,7 @@ const backend = new Vue({
             },
 
               // Configuration options go here
-              options: {
-                text: "dsfsdf"
-              }
+              options: {}
             });
 
           }

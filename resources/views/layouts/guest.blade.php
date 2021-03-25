@@ -13,14 +13,18 @@
     <link href="{{ asset('css/style-guest.css') }}" rel="stylesheet">
 
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
   </head>
   <body>
 
     <div id="guest_layout">
 
-
-      <header id="header" :class="headerStatus ? 'active' : ''" :style="headerStatus ? 'background-color: #ba181b' : 'transparent'">
+      @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register' && Route::currentRouteName() != 'success')
+        <header id="header" :class="headerStatus ? 'active' : ''" :style="headerStatus ? 'background-color: #ba181b' : 'transparent'">
+      @else
+        <header id="header" style="background-color: #ba181b">
+      @endif
         <div class="container">
           <div class="row">
 
@@ -28,9 +32,9 @@
               <a href="{{ route('home') }}" id="home_link"><img class="logo" src="{{ asset("img/logo_glovo-prova.svg") }}" alt="logo"></a>
             </div>
 
-            <div class="center col-lg-6 col-md-12 ">
-            @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')
-              <input type="text" name="" value="" :placeholder="searchBarPlaceholder" v-model="searched" @keyup="getRestaurantByName">
+            <div class="header_center col-lg-6 col-md-12 ">
+            @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register' && Route::currentRouteName() != 'success')
+              <input type="text" name="" value="" placeholder="Cerca ristorante per nome" v-model="searched" @keyup="getRestaurantByName">
 
               <transition name="slide">
                 <div class="searched_box" v-if="searchedResults.length != 0">
