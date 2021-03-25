@@ -9,6 +9,7 @@
 @import 'partials/admin-panel/products-index'; // stile index products
 @import 'partials/admin-panel/products-create-edit'; // stile create products e edit product
 @import 'partials/admin-panel/products-show.scss'; // stile show prodotto
-@import 'partials/admin-panel/orders-index.scss';
+@import 'partials/admin-panel/orders-index.scss'; // stile order-index
+@import 'partials/admin-panel/chart.scss'; // stile grafico
 // fonts
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
