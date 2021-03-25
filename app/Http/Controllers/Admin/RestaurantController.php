@@ -16,6 +16,7 @@ class RestaurantController extends Controller
 {
     private $restaurantValidation = [
         'logo' => 'required|image', //da modificare a nullable (con immagine default)
+        'image_hero' => 'required|image',
         'name' => 'required|max:100',
         'phone' => 'required|max:20',
         'address' => 'required',

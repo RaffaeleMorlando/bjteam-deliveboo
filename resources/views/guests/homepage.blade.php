@@ -59,7 +59,7 @@
       <a v-for="restaurant in filteredRestaurants" :href="`http://127.0.0.1:8000/restaurants/${restaurant.slug}`" class="animate__animated animate__backInDown">
         <li class="static_restaurant_card">
           <div class="static_restaurant_card_thumbnail_container">
-            <img :src="restaurant.logo" alt="">
+            <img :src="restaurant.image_hero" alt="">
           </div>
           <div class="static_restaurant_card_info">
             <div class="static_restaurant_card_info_logo">
@@ -80,7 +80,7 @@
       <li class="static_restaurant_card" v-for="(restaurant, index) in homeRestaurants">
         <a :href="`http://127.0.0.1:8000/restaurants/${restaurant.slug}`">
           <div class="static_restaurant_card_thumbnail_container">
-            <img :src="restaurant.logo" alt="logo">
+            <img :src="restaurant.image_hero" alt="logo">
           </div>
           <div class="static_restaurant_card_info">
             <div class="static_restaurant_card_info_logo">
