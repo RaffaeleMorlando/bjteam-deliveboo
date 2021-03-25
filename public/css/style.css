@@ -1009,6 +1009,17 @@ a:hover i {
   font-size: 30px;
   cursor: pointer;
 }
+#product_create .restaurant_image_hero_box img,
+#product_edit .restaurant_image_hero_box img,
+#restaurant_create .restaurant_image_hero_box img,
+.dashboard_edit_restaurant_form .restaurant_image_hero_box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
 #product_create .form_box,
 #product_edit .form_box,
 #restaurant_create .form_box,

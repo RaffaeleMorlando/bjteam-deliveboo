@@ -34,7 +34,7 @@ class RestaurantController extends Controller
     public function store(Request $request) {
 
         $data = $request->all();
-
+        
         $request->validate($this->restaurantValidation);
 
         $newRestaurant = new Restaurant();
@@ -43,6 +43,8 @@ class RestaurantController extends Controller
         $data['slug'] = Str::slug($data['name']);
         $data["logo"] = Storage::disk('public')->put('images', $data["logo"]);
         $data["logo"] = Storage::url($data['logo']);
+        $data["image_hero"] = Storage::disk('public')->put('images', $data["image_hero"]);
+        $data["image_hero"] = Storage::url($data['image_hero']);
 
 
         $newRestaurant->fill($data);
