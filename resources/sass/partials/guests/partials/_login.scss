@@ -72,11 +72,16 @@
 
 @media all and (max-width: 576px) {
 
-  .container_form_login #login_form,#register_form{
-    max-width: 90%;
+  .container_form_login {
+      min-height: 90vh;
+      padding: 0;
+      #login_form,#register_form{
+      max-width: 98%;
+      padding: 20px 30px;
     
-    .box_input_credential .input_credential {
-    height: 30px;
-  }
+      .box_input_credential .input_credential {
+      height: 30px;
+      }
+    }
   }
 }
