@@ -820,7 +820,7 @@ a:hover i {
   color: white;
   position: absolute;
   top: -7%;
-  left: -10%;
+  left: -7%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1414,4 +1414,70 @@ a:hover i {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.myChart_container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.myChart_container #myChart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+}
+
+.select_year select {
+  padding: 10px 15px;
+}
+
+.turn_to_see {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  display: none;
+}
+.turn_to_see i {
+  font-size: 30px;
+}
+.turn_to_see .fa-sync-alt {
+  -webkit-animation-name: rotation;
+          animation-name: rotation;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media all and (max-heigth: 500px) {
+  .turn_to_see {
+    display: none;
+  }
+}
+@media all and (max-width: 568px) {
+  .turn_to_see {
+    display: block;
+  }
 }

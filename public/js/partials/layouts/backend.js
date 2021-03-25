@@ -49395,14 +49395,26 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             datasets: [{
               label: yearTotalPrice + "€",
-              backgroundColor: 'rgb(255, 99, 132)',
-              borderColor: 'rgb(255, 99, 132)',
+              backgroundColor: '#e77b37',
+              borderColor: '#be363b',
               data: monthsTotalPrice
             }]
           },
           // Configuration options go here
-          options: {}
-        });
+          options: {
+            responsive: true // maintainAspectRatio: false
+            // onresize: function(ctx, ){
+            // } 
+
+          }
+        }); // chart.options.responsive = function(){
+        //   if(screen.width < 768){
+        //     return false;
+        //   } else {
+        //     return true;
+        //   }
+        // };
+        // chart.update(); 
       });
     }
   },
@@ -49411,6 +49423,7 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
 
     if (currentUrl == "http://127.0.0.1:8000/admin/restaurants/orders/charts") {
       this.filterByYear();
+      console.log(screen.width < 768);
     }
   }
 });
