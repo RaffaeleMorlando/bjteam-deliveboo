@@ -49341,6 +49341,7 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     activeSettings: false,
     editForm: false,
     url: null,
+    url_one: null,
     year: "2021"
   },
   methods: {
@@ -49356,6 +49357,10 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     onFileChange: function onFileChange(e) {
       var file = e.target.files[0];
       this.url = URL.createObjectURL(file);
+    },
+    onFileChangeSecond: function onFileChangeSecond(e) {
+      var file = e.target.files[0];
+      this.url_one = URL.createObjectURL(file);
     },
     filterByYear: function filterByYear() {
       var _this = this;
