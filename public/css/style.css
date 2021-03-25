@@ -1358,6 +1358,28 @@ a:hover i {
     width: 100%;
   }
 }
-#dashboard_order h1 {
-  color: red;
+#dashboard_order .card_orders {
+  margin: 20px 15px;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
+  position: relative;
+  border: 0;
+  background: #ffffff;
+}
+#dashboard_order .card_orders .card_order {
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  min-height: 250px;
+  padding: 20px;
+  color: green;
+}
+#dashboard_order .card_orders .card_order:hover {
+  color: lightgreen;
+}
+#dashboard_order .card_orders .card_order .card_left {
+  display: flex;
+  justify-content: flex-start;
+}
+#dashboard_order .card_orders .card_order .card_right {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
