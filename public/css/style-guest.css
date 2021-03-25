@@ -1191,6 +1191,38 @@ main {
     font-size: 25px;
   }
 }
+#container_404 {
+  display: flex;
+}
+#container_404 #container_404_img {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #E4392E;
+}
+#container_404 #container_404_img img {
+  width: 100%;
+}
+#container_404 #container_404-message {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#container_404 #container_404-message h1 {
+  font-size: 100px;
+  margin-bottom: 30px;
+}
+#container_404 #container_404-message h2 {
+  padding: 20px;
+}
+#container_404 #container_404-message h2 a {
+  color: red;
+}
+
 #menu_hero_img_container {
   position: relative;
   width: 100%;
