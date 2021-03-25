@@ -383,6 +383,11 @@ a:hover i {
   border-radius: 10px;
   box-shadow: 0 2px 20px 8px rgba(0, 0, 0, 0.2);
 }
+#background .restaurant_image_hero_box {
+  position: absolute;
+  top: 80%;
+  left: 45%;
+}
 
 #container_dashboard {
   height: 100%;
@@ -983,6 +988,7 @@ a:hover i {
   background-color: #ffffff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 10px;
+  overflow: hidden;
 }
 #product_create .restaurant_image_hero_box label,
 #product_edit .restaurant_image_hero_box label,
@@ -1004,7 +1010,7 @@ a:hover i {
 #restaurant_create .restaurant_image_hero_box label i,
 .dashboard_edit_restaurant_form .restaurant_image_hero_box label i {
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
   font-size: 30px;
   cursor: pointer;

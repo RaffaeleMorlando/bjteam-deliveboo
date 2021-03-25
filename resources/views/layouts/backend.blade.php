@@ -48,6 +48,15 @@
             <i class="fas fa-camera-retro"></i>
           </label>
 
+          <div class="restaurant_image_hero_box">
+            <label for="image_hero" title="aggiungi image_hero">
+              <input type="file" accept="image/*" name="image_hero" id="image_hero" @change="onFileChangeSecond">
+              <i class="fas fa-camera-retro"></i>
+            </label>
+            <img :src="url_one" v-if="url_one != null"/>
+            <img src="{{ $restaurant->image_hero }}" alt="" v-else>
+          </div>
+
           <div class="create_product_input">
             {{-- box arancione contente l'icona --}}
             <div class="orange_icon_box">
