@@ -1077,9 +1077,12 @@ a:hover i {
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
   border-radius: 5px;
 }
-#product_create .form_box .create_product_input input[type=text],
+#product_create .form_box .create_product_input input[type=tel], #product_create .form_box .create_product_input input[type=text],
+#product_edit .form_box .create_product_input input[type=tel],
 #product_edit .form_box .create_product_input input[type=text],
+#restaurant_create .form_box .create_product_input input[type=tel],
 #restaurant_create .form_box .create_product_input input[type=text],
+.dashboard_edit_restaurant_form .form_box .create_product_input input[type=tel],
 .dashboard_edit_restaurant_form .form_box .create_product_input input[type=text] {
   width: 100%;
   padding: 0 10px;
@@ -1088,9 +1091,12 @@ a:hover i {
   border-bottom: 2px solid #FFC244;
   vertical-align: text-bottom;
 }
-#product_create .form_box .create_product_input input[type=text]:focus,
+#product_create .form_box .create_product_input input[type=tel]:focus, #product_create .form_box .create_product_input input[type=text]:focus,
+#product_edit .form_box .create_product_input input[type=tel]:focus,
 #product_edit .form_box .create_product_input input[type=text]:focus,
+#restaurant_create .form_box .create_product_input input[type=tel]:focus,
 #restaurant_create .form_box .create_product_input input[type=text]:focus,
+.dashboard_edit_restaurant_form .form_box .create_product_input input[type=tel]:focus,
 .dashboard_edit_restaurant_form .form_box .create_product_input input[type=text]:focus {
   outline: none;
 }
