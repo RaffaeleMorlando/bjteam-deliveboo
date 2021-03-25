@@ -224,10 +224,19 @@ footer {
   max-height: 0;
 }
 
-
-
-
-
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
 
 
 
@@ -434,6 +443,9 @@ footer {
             }
 
             li.logo_section {
+              position: fixed;
+              top: 15px;
+              right: 15px;
 
               a.account {
 
@@ -503,6 +515,29 @@ footer {
 
 }
 
+@media all and (max-width: 767px){
+
+  header{
+
+    .container{
+
+      .row{
+
+        .right{
+
+          #container_buttons_log_reg{
+
+            li.logo_section{
+              // position: absolute;
+              // top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 //XS
 @media all and (max-width: 576px) {
 
@@ -525,6 +560,23 @@ footer {
 
       .row {
         height: 100%;
+
+        .right{
+
+          #container_buttons_log_reg{
+
+            li.logo_section{
+
+              a.account {
+
+                img.restaurant_logo {
+                  width: 50px;
+                  height: 50px;
+                }
+              }
+            }
+          }
+        }
 
         .left {
           @include SetFlexContainer (row, center, center, wrap);

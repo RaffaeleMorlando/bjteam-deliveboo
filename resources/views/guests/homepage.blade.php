@@ -46,6 +46,17 @@
         </li>
       </ul>
     </div> --}}
+    {{-- CAROSELLO DI IMMAGINI --}}
+    <div id="carousel">
+      <i class="fas fa-angle-left" @click="prevCategory"></i>
+      <transition-group name="slide-fade" class="carousel_box">
+        <div v-if="index == indexCarousel" v-for="(category, index) in categories" :key="category" @click='getRestaurantsByCategory(index)'>
+          <img :src="category.image" :alt="category.name">
+          <h4>@{{ category.name }}</h4>
+        </div>
+      </transition-group>
+      <i class="fas fa-angle-right" @click="nextCategory"></i>
+    </div>
 
     <div class="main_sub_title">
       <h2 class="text-center scroll">I nostri Ritoranti!</h2>
