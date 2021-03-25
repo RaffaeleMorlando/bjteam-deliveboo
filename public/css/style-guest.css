@@ -500,6 +500,9 @@ header .container .row .right #container_buttons_log_reg li.register {
     transition: all 0.5s;
     font-weight: 600;
   }
+  header .container .row li.logo_section ul.drop_down_list {
+    height: 35vh !important;
+  }
 }
 main {
   min-height: calc(100vh - 80px);
