@@ -1,0 +1,38 @@
+#container_404 {
+   display: flex;
+
+    #container_404_img {
+        width: 50%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background-color: #E4392E;
+
+        img {
+            width: 100%;
+        }
+
+    }
+
+    #container_404-message {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        h1 {
+            font-size: 100px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            padding: 20px;
+
+            a {
+                color: red;
+            }
+        }
+    }
+}

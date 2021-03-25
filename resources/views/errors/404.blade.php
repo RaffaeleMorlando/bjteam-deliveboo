@@ -1,0 +1,13 @@
+@extends('layouts.guest')
+
+@section('guest-main')
+    <div id="container_404">
+        <div id="container_404_img">
+            <img src="{{ asset('img/404-not-found.jpg') }}" alt="">
+        </div>
+        <div id="container_404-message">
+            <h1>Ops!..</h1>
+            <h2>Sembra che ci sia stato un problema, ritorna sulla <a href="{{ route('home')}}">home</a></h2>
+        </div>
+    </div>
+@endsection
