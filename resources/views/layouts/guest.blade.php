@@ -107,6 +107,10 @@
                               @csrf
                           </form>
                         </li>
+
+                        <div class="exit_icon" v-if="activeLogOut">
+                          <i class="far fa-times-circle" @click="toggleActive('activeLogOut')"></i>
+                        </div>
                       </ul>
                     </transition>
                   </li>
