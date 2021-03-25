@@ -47,7 +47,6 @@
       background-color: #E56668;
     }
 
-
 // css specifico
 #product_create,
 #product_edit,
@@ -57,6 +56,31 @@
   box-shadow: $shadowCard;
   border-radius: $borderRadCard;
   background-color: $white;
+
+  .restaurant_image_hero_box {
+    @include setPositionAbsolute(85%, 30%);
+    width: 50%;
+    height: 150px;
+    background-color: $white;
+    box-shadow: $darkShadowCard;
+    border-radius: $borderRadCard;
+
+    label {
+      @include setPositionAbsolute(50%, 50%);
+      transform: translate(-50%, -50%);
+
+      input {
+        display: none;
+      }
+      i {
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 50%;
+        font-size: 30px;
+        cursor: pointer;
+      }
+    }
+  }
 
   .form_box {
     width: 100%;

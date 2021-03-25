@@ -971,6 +971,44 @@ a:hover i {
   border-radius: 10px;
   background-color: #ffffff;
 }
+#product_create .restaurant_image_hero_box,
+#product_edit .restaurant_image_hero_box,
+#restaurant_create .restaurant_image_hero_box,
+.dashboard_edit_restaurant_form .restaurant_image_hero_box {
+  position: absolute;
+  top: 85%;
+  left: 30%;
+  width: 50%;
+  height: 150px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+}
+#product_create .restaurant_image_hero_box label,
+#product_edit .restaurant_image_hero_box label,
+#restaurant_create .restaurant_image_hero_box label,
+.dashboard_edit_restaurant_form .restaurant_image_hero_box label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#product_create .restaurant_image_hero_box label input,
+#product_edit .restaurant_image_hero_box label input,
+#restaurant_create .restaurant_image_hero_box label input,
+.dashboard_edit_restaurant_form .restaurant_image_hero_box label input {
+  display: none;
+}
+#product_create .restaurant_image_hero_box label i,
+#product_edit .restaurant_image_hero_box label i,
+#restaurant_create .restaurant_image_hero_box label i,
+.dashboard_edit_restaurant_form .restaurant_image_hero_box label i {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  font-size: 30px;
+  cursor: pointer;
+}
 #product_create .form_box,
 #product_edit .form_box,
 #restaurant_create .form_box,
