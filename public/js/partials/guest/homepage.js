@@ -49357,7 +49357,8 @@ var prova = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     homeRestaurants: [],
     filteredRestaurants: [],
     isChecked: false,
-    headerStatus: false
+    headerStatus: false,
+    indexCarousel: 0
   },
   mounted: function mounted() {
     var _this = this;
@@ -49397,6 +49398,20 @@ var prova = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     checked: function checked() {
       this.isChecked = !this.isChecked;
       console.log(this.isChecked);
+    },
+    nextCategory: function nextCategory() {
+      if (this.indexCarousel == this.categories.length - 1) {
+        this.indexCarousel = 0;
+      } else {
+        this.indexCarousel++;
+      }
+    },
+    prevCategory: function prevCategory() {
+      if (this.indexCarousel == 0) {
+        this.indexCarousel = this.categories.length - 1;
+      } else {
+        this.indexCarousel--;
+      }
     }
   }
 });
