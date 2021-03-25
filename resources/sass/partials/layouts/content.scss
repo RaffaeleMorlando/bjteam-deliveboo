@@ -443,6 +443,9 @@ footer {
             }
 
             li.logo_section {
+              position: fixed;
+              top: 15px;
+              right: 15px;
 
               a.account {
 
@@ -525,8 +528,8 @@ footer {
           #container_buttons_log_reg{
 
             li.logo_section{
-              position: absolute;
-              top: 0;
+              // position: absolute;
+              // top: 0;
             }
           }
         }
@@ -563,7 +566,7 @@ footer {
           #container_buttons_log_reg{
 
             li.logo_section{
-              
+
               a.account {
 
                 img.restaurant_logo {

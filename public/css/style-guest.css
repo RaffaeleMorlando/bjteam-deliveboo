@@ -388,6 +388,11 @@ header .container .row .right #container_buttons_log_reg li.register {
     font-weight: 600;
     font-size: 20px;
   }
+  header .container .row .right #container_buttons_log_reg li.logo_section {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+  }
   header .container .row .right #container_buttons_log_reg li.logo_section a.account img.restaurant_logo {
     width: 80px;
     height: 80px;
@@ -429,12 +434,6 @@ header .container .row .right #container_buttons_log_reg li.register {
   footer #footer-bottom {
     background-color: #1d1d1d;
     min-height: 100px;
-  }
-}
-@media all and (max-width: 767px) {
-  header .container .row .right #container_buttons_log_reg li.logo_section {
-    position: absolute;
-    top: 0;
   }
 }
 @media all and (max-width: 576px) {
