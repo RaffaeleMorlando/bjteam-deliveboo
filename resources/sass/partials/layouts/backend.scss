@@ -33,6 +33,10 @@
       box-shadow: $shadowDashboard;
     }
   }
+
+  .restaurant_image_hero_box {
+    @include setPositionAbsolute(80%, 45%);
+  }
 }
 
 #container_dashboard {

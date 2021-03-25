@@ -8,6 +8,7 @@ const backend = new Vue({
     activeSettings: false,
     editForm: false,
     url: null,
+    url_one: null,
     year: "2021"
   },
   methods: {
@@ -27,6 +28,10 @@ const backend = new Vue({
     onFileChange(e) {
       const file = e.target.files[0];
       this.url = URL.createObjectURL(file);
+    },
+    onFileChangeSecond(e) {
+      const file = e.target.files[0];
+      this.url_one = URL.createObjectURL(file);
     },
 
     filterByYear(){

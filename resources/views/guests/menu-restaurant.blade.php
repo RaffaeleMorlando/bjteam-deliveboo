@@ -17,7 +17,7 @@
       </div>
 
       <div id="menu_hero_img_container">
-        <img src="https://bikanersweetsandrestaurant.ca/wp-content/uploads/2019/08/indiancocktails_social.jpg" alt="" :style="heroStatus ? 'opacity: 0.8' : 'opacity: 1'">
+        <img :src="restaurant.image_hero" alt="" :style="heroStatus ? 'opacity: 0.8' : 'opacity: 1'">
         <div class="layover_hero">
 
         </div>
