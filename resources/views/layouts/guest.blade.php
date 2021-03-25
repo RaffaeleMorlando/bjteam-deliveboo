@@ -28,11 +28,11 @@
         <div class="container">
           <div class="row">
 
-            <div class="left col-lg-3 col-md-12">
+            <div class="left col-lg-3 col-md-12" :style="displayNone ? 'display: none' : ''">
               <a href="{{ route('home') }}" id="home_link"><img class="logo" src="{{ asset("img/logo_glovo-prova.svg") }}" alt="logo"></a>
             </div>
 
-            <div class="header_center col-lg-6 col-md-12 ">
+            <div class="header_center col-lg-6 col-md-12 " :style="displayNone ? 'display: none' : ''">
             @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register' && Route::currentRouteName() != 'success')
               <input type="text" name="" value="" placeholder="Cerca ristorante per nome" v-model="searched" @keyup="getRestaurantByName">
 

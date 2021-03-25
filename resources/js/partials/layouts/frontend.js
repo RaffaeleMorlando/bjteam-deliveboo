@@ -11,7 +11,8 @@ const frontEndHeader = new Vue({
     searched: "",
     searchedResults: [],
     activeLogOut: false,
-    activeHamburger: false
+    activeHamburger: false,
+    displayNone: false
   },
 
   mounted() {
@@ -34,12 +35,16 @@ const frontEndHeader = new Vue({
         .get(`/api/restaurant/search/${this.searched}`)
         .then(response => {
           this.searchedResults = (response.data);
-          console.log(response);
+
         })
     },
 
     toggleActive(ref) {
       this[ref] = !this.[ref];
+      if(window.innerWidth < 768) {
+        console.log(window.innerWidth);
+        this.displayNone = !this.displayNone;
+      }
     }
   }
 });

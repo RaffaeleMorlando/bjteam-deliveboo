@@ -49357,7 +49357,8 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     searched: "",
     searchedResults: [],
     activeLogOut: false,
-    activeHamburger: false
+    activeHamburger: false,
+    displayNone: false
   },
   mounted: function mounted() {
     var _this = this;
@@ -49380,11 +49381,15 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       this.searched = this.searched.toLowerCase();
       axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/restaurant/search/".concat(this.searched)).then(function (response) {
         _this2.searchedResults = response.data;
-        console.log(response);
       });
     },
     toggleActive: function toggleActive(ref) {
       this[ref] = !this[ref];
+
+      if (window.innerWidth < 768) {
+        console.log(window.innerWidth);
+        this.displayNone = !this.displayNone;
+      }
     }
   }
 }); //hamburger menu
