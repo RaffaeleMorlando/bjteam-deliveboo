@@ -20,7 +20,7 @@
 
     <div id="guest_layout">
 
-      @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register' && Route::currentRouteName() != 'success')
+      @if(Route::currentRouteName() == 'home' || Route::currentRouteName() == 'menu-restaurant' || Route::currentRouteName() == 'payment')
         <header id="header" :class="headerStatus ? 'active' : ''" :style="headerStatus ? 'background-color: #ba181b' : 'transparent'">
       @else
         <header id="header" style="background-color: #ba181b">
