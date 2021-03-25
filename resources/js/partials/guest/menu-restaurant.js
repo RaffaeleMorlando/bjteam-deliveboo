@@ -155,7 +155,7 @@ const menuRestaurant = new Vue({
     },
 
     openCart: function() {
-     
+
       if(!this.isCartOpen) {
         this.isCartOpen = true;
         this.chevronDown = true;
