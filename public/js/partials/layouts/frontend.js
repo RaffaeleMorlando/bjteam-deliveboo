@@ -49357,12 +49357,15 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     searched: "",
     searchedResults: [],
     activeLogOut: false,
-    activeHamburger: false
+    activeHamburger: false,
+    displayNone: false,
+    actualUser: null
   },
   mounted: function mounted() {
     var _this = this;
 
     var self = this;
+    var user;
     window.addEventListener('scroll', function () {
       if (window.scrollY > 1) {
         _this.headerStatus = true;
@@ -49372,6 +49375,8 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
 
       ;
     });
+    user = vue__WEBPACK_IMPORTED_MODULE_1__.default.prototype.$userId = document.querySelector("meta[name='user-id']").getAttribute('content');
+    this.actualUser = user;
   },
   methods: {
     getRestaurantByName: function getRestaurantByName() {
@@ -49380,11 +49385,15 @@ var frontEndHeader = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       this.searched = this.searched.toLowerCase();
       axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/restaurant/search/".concat(this.searched)).then(function (response) {
         _this2.searchedResults = response.data;
-        console.log(response);
       });
     },
     toggleActive: function toggleActive(ref) {
       this[ref] = !this[ref];
+
+      if (window.innerWidth < 993 && this.actualUser) {
+        console.log(window.innerWidth);
+        this.displayNone = !this.displayNone;
+      }
     }
   }
 }); //hamburger menu

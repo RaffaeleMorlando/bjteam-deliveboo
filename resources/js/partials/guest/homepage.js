@@ -27,7 +27,6 @@ const prova = new Vue({
     axios.get('/api/restaurants')
       .then(response => {
         this.homeRestaurants = response.data;
-        console.log(this.homeRestaurants);
       });
 
 },

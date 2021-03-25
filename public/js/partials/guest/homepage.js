@@ -49370,7 +49370,6 @@ var prova = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
 
     axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/restaurants').then(function (response) {
       _this.homeRestaurants = response.data;
-      console.log(_this.homeRestaurants);
     });
   },
   methods: {
