@@ -57,7 +57,7 @@
           <div class="small_green_box">
             <label for="description" class="mx-1 my-0">Descrizione</label>
           </div>
-          <textarea max="6000" name="description" id="description" placeholder="Descrizione prodotto" title="inserisci ingredienti" required>{{ old('description')}}</textarea>
+          <textarea max="6000" name="description" id="description" placeholder="ingredienti" title="inserisci ingredienti" required>{{ old('description')}}</textarea>
         </div>
 
         <div class="create_product_input">
