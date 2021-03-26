@@ -569,6 +569,9 @@ main {
 #main_home_page_top .contenitore_di_tutto_il_casino.active {
   background-color: rgba(255, 255, 255, 0.5);
 }
+#main_home_page_top .contenitore_di_tutto_il_casino span {
+  font-weight: 700;
+}
 #main_home_page_top #carousel {
   display: none;
 }

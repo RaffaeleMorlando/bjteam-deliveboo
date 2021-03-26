@@ -20,8 +20,8 @@
 
           <li class="menu-item" v-for="(category, index) in categories" :title="category.name" v-on:click="getRestaurantsByCategory(index)">
             <a href="#">
-              <img :src="category.image" alt="" style="width: 50px; height: 50px">
-              <span>@{{ category.name }}</span>
+              <img :src="category.image" alt="" style="width: 50px; height: 50px" :style="category.title_rotate">
+              <span :style="category.title_rotate">@{{ category.name }}</span>
             </a>
           </li>
 
