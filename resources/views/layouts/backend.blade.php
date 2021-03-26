@@ -84,9 +84,9 @@
           </div>
 
           <div class="buttons_container">
-            <input type="submit" id="submit" value="SAVE" class="btn-submit">
+            <input type="submit" id="submit" value="SALVA" class="btn-submit">
             <a href="#">
-              <button type="button" class="btn_back" @click="activeEditForm">BACK</button>
+              <button type="button" class="btn_back" @click="activeEditForm">INDIETRO</button>
             </a>
           </div>
         </form>

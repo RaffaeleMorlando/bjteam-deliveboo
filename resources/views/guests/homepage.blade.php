@@ -35,17 +35,6 @@
       </nav>
     </div>
 
-    {{-- Ricerca delle categorie in MD --}}
-    {{-- <div class="md_category_selection">
-      <ul class="list-unstyled md_list_category">
-        <li class="md_item_category" v-for="(category, index) in categories" :title="category.name" v-on:click="getRestaurantsByCategory(index)">
-          <a href="#">
-            <img :src="category.image" alt="">
-
-          </a>
-        </li>
-      </ul>
-    </div> --}}
     {{-- CAROSELLO DI IMMAGINI --}}
     <div id="carousel">
       <i class="fas fa-angle-left" @click="prevCategory"></i>
@@ -59,7 +48,7 @@
     </div>
 
     <div class="main_sub_title">
-      <h2 class="text-center scroll">I nostri Ritoranti!</h2>
+      <h2 class="text-center scroll">I nostri Ristoranti!</h2>
     </div>
 
   </div>
