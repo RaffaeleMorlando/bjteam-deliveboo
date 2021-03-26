@@ -121,7 +121,7 @@
     // rettangolo verde che contiene il nome della sezione
     .product_name_green_box {
       @include SetFlexContainer (row, flex-start, center, nowrap);
-      @include setPositionAbsolute(-50px, 50%);
+      @include setPositionAbsolute(-35px, 50%);
       width: 45%;
       height: 100px;
       padding: 0 16px;
@@ -369,11 +369,15 @@
 
     }
   }
-  // #restaurant_create {
-  //
-  //   .restaurant_image_hero_box {
-  //     left: 35%;
-  //     width: 65%;
-  //   }
-  // }
+
+  #restaurant_create {
+    .form_box {
+
+      .product_name_green_box {
+        display: none;
+      }
+    }
+
+  }
+
 }

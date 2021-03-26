@@ -1120,7 +1120,7 @@ a:hover i {
   align-items: center;
   flex-wrap: nowrap;
   position: absolute;
-  top: -50px;
+  top: -35px;
   left: 50%;
   width: 45%;
   height: 100px;
@@ -1378,6 +1378,10 @@ a:hover i {
   }
   #product_create .form_box .product_name_green_box,
 #product_edit .form_box .product_name_green_box {
+    display: none;
+  }
+
+  #restaurant_create .form_box .product_name_green_box {
     display: none;
   }
 }
