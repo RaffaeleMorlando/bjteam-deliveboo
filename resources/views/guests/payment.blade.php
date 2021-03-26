@@ -53,7 +53,12 @@
                             <input class="custom_payment_input" type="text" name="guest_address" placeholder="Via Roma, 32" required> 
                         </div>
                     </div>
-
+                    <div class="textfield--float-label">
+                        <label class="custom_payment_label" for="guest_address"><i class="fas fa-at"></i>Mail</label>
+                        <div  class="hosted-field custom_payment_border">
+                            <input class="custom_payment_input" type="mail" name="email_customer" placeholder="mario.rossi@mail.com"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required> 
+                        </div>
+                    </div>
                     @foreach ($order as $key => $value)
                     <input type="text" name="{{ $key }}" value="{{ $value }}" hidden>
                     @endforeach
@@ -61,7 +66,7 @@
                 </div>
                 <input id="nonce" name="payment_method_nonce" hidden>
                 <div class="panel__footer">
-                    <button type="submit" onclick=" window.localStorage.clear()" class="pay-button">Pay</button>    
+                    <button type="submit" onclick=" window.localStorage.clear()" class="pay-button btn_main">Pay</button>    
                 </div>
             
             </div>
@@ -106,7 +111,8 @@
             fields: {
             number: {
                 selector: '#card-number',
-                placeholder: '1111 1111 1111 1111'
+                placeholder: '1111 1111 1111 1111',
+                title:'numero carta sbagiat0'
             },
            
             expirationDate: {

@@ -53,8 +53,7 @@ PANEL FORM
 }
 
 .panel__footer {
-  background: $grey2_payment;
-  
+  background: $grey2_payment;  
 }
 
 .panel__content {
@@ -144,11 +143,11 @@ svg.svg_payment {
 }
 
 .pay-button {
-  background: #E91E63;
+  background: #e3342f;
+  border-radius: 50px;
+  padding: 5px 10px;
   color: #fff;
   margin: 0 auto;
-  border: 0;
-  border-radius: 3px;
   padding: 1em 3em;
   font-size: 1em;
   text-transform: uppercase;
