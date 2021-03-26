@@ -37,7 +37,7 @@
         @method("PUT")
 
         <label for="image" class="create_add_image" title="add photo">
-          <input type="file" accept="image/*" name="image" id="image" @change="onFileChange" required>
+          <input type="file" accept="image/*" name="image" id="image" @change="onFileChange">
           <i class="fas fa-camera-retro"></i>
         </label>
 
