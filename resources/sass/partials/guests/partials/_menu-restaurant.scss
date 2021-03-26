@@ -89,7 +89,7 @@
                         img {
                             width: 80%;
                             max-height: 80%;
-                            object-fit: contain;
+                            object-fit: cover;
                             object-position: center;
                         }
                     }
@@ -334,7 +334,7 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 150;
-    
+
         .banner_box {
             position: absolute;
             top: 50%;
@@ -352,15 +352,15 @@
             justify-content: center;
             align-items: center;
             filter: drop-shadow(0px 10px 80px red);
-    
+
                 h2 {
                     font-size: 30px;
                 }
-    
+
                 img {
                     width: 50%;
                 }
-    
+
                 p {
                     text-align: center;
                     margin-bottom: 40px;
@@ -370,8 +370,8 @@
                     width: 100%;
                     display: flex;
                     justify-content: space-around;
-    
-    
+
+
                     .btn_exit_banner {
                         font-size: 20px;
                         color: #fff;
@@ -383,7 +383,7 @@
                         text-align: center;
                         box-shadow: $darkShadowCard;
                     }
-    
+
                     .btn_exit_banner:last-child {
                         background-color: #fff;
                         border: 1px solid red;
@@ -397,7 +397,7 @@
     #menu_hero_img_container {
         height: 10vh;
         max-height: 400px;
-        min-height: 300px;    
+        min-height: 300px;
     }
 
     .container-menu-main {
@@ -628,7 +628,7 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 150;
-    
+
         .banner_box {
             position: absolute;
             top: 50%;
@@ -646,15 +646,15 @@
             justify-content: center;
             align-items: center;
             filter: none;
-    
+
                 h2 {
                     font-size: 30px;
                 }
-    
+
                 img {
                     width: 50%;
                 }
-    
+
                 p {
                     text-align: center;
                     margin-bottom: 40px;
@@ -665,7 +665,7 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-    
+
                     .btn_exit_banner {
                         font-size: 15px;
                         color: #fff;
@@ -678,7 +678,7 @@
                         box-shadow: $darkShadowCard;
                         margin-bottom: 10px;
                     }
-    
+
                     .btn_exit_banner:last-child {
                         background-color: #fff;
                         border: 1px solid red;

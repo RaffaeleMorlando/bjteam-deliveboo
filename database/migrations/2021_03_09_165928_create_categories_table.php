@@ -18,6 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string('name', 30)->required();
             $table->string('slug', 30)->required();
             $table->string('image')->required(); //da rimettere 80
+            $table->string('title_rotate', 30)->nullable();
         });
     }
 

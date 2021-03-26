@@ -569,6 +569,9 @@ main {
 #main_home_page_top .contenitore_di_tutto_il_casino.active {
   background-color: rgba(255, 255, 255, 0.5);
 }
+#main_home_page_top .contenitore_di_tutto_il_casino span {
+  font-weight: 700;
+}
 #main_home_page_top #carousel {
   display: none;
 }
@@ -1713,8 +1716,8 @@ Media Queries
 .container-menu-main .menu_container #menu_left .menu_item_sections_container .menu_plate .menu_img img {
   width: 80%;
   max-height: 80%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
   -o-object-position: center;
      object-position: center;
 }
