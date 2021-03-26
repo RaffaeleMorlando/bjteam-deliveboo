@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
+use App\Mail\SendNewMail;
 use Illuminate\Http\Request;
 use Braintree;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Mail;
 use App\Order;
 
 class PaymentController extends Controller
@@ -33,6 +35,7 @@ class PaymentController extends Controller
 
     public function checkout(Request $request) {
 
+
         $data = $request->all();
 
         $myId = [];
@@ -50,6 +53,9 @@ class PaymentController extends Controller
 
         $newOrder->products()->attach($myId);
 
+        // Mail::to($data['email_customer'])->send(new SendNewMail($newOrder)); // da utilizzare per inviare email di conferma ordine all'utente
+
+        Mail::to('costumer@mail.com')->send(new SendNewMail($newOrder));
 
         $gateway = new Braintree\Gateway([
             'environment' => config('services.braintree.environment'),
