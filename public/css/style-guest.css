@@ -989,15 +989,19 @@ main {
   margin-top: 80px;
 }
 .container_form_login #register_form, .container_form_login #login_form {
-  border: 2px solid #FFC244;
+  border: 2px solid red;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   padding: 30px;
   max-width: 30%;
   border-radius: 5px;
 }
 .container_form_login #register_form #register_btn_form, .container_form_login #register_form #login_btn_form, .container_form_login #login_form #register_btn_form, .container_form_login #login_form #login_btn_form {
-  background-color: #00A082;
+  background-color: #7bba7b;
   color: white;
+  border-radius: 50px;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 @media all and (max-width: 991px) {
@@ -1034,7 +1038,7 @@ main {
   }
   .container_form_login #register_form .box_input_credential .input_credential, .container_form_login #login_form .box_input_credential .input_credential {
     border: none;
-    border-bottom: 2px solid #FFC244;
+    border-bottom: 2px solid red;
     background-color: transparent;
     height: 30px;
   }
