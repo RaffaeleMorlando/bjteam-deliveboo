@@ -49,7 +49,7 @@
 
       <div class="buttons_container">
         <a href="{{ route("admin.restaurants.products.index") }}">
-          <button type="button" class="btn_back">BACK</button>
+          <button type="button" class="btn_back">INDIETRO</button>
         </a>
       </div>
     </div>

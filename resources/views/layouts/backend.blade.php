@@ -155,6 +155,12 @@
                 <transition name="slide">
                   <ul class="setting_list list-unstyled" v-if="activeSettings">
                     <li class="my-3">
+                      <a href="#" @click="activeEditForm">
+                        <span>Modifca profilo</span>
+                        <i class="fas fa-edit settings-icon mb-3"></i>
+                      </a>
+                    </li>
+                    <li class="my-3">
                       <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <span>Log Out</span>
                         <i class="fas fa-sign-out-alt settings-icon mb-3"></i>
@@ -163,12 +169,6 @@
                       <form id="logout-form" action="{{ route('logout') }}" method="POST">
                           @csrf
                       </form>
-                    </li>
-                    <li class="my-3">
-                      <a href="#" @click="activeEditForm">
-                        <span>Modifca profilo</span>
-                        <i class="fas fa-edit settings-icon mb-3"></i>
-                      </a>
                     </li>
                   </ul>
                 </transition>

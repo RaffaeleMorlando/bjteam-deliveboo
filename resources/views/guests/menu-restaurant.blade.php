@@ -31,7 +31,7 @@
             <div class="menu_info" :style="heroStatus ? 'height: 180px' : 'height: 250px'">
               <div class="menu_info_container" >
               </div>
-              <h2>@{{restaurant.name}}</h2>
+              <h2 id="menu_info_restaurant_name">@{{restaurant.name}}</h2>
             </div>
 
             {{-- sezione contenente piatti , scrollabile --}}
@@ -47,7 +47,8 @@
                 <p>@{{plate.description}}</p>
                 <div class="plate_price_add">
                   <span class="plate_infos" id="plate_price">@{{plate.price.toFixed(2)}}€</span>
-                  <span class="plate_infos" id="plate_add_cart" @click="addToCart(index)"><i class="fas fa-shopping-cart"></i>
+                  <span class="plate_infos" id="plate_add_cart" @click="addToCart(index)">
+                    <i class="fas fa-cart-plus"></i>
                   </span>
                 </div>
               </div>
@@ -114,8 +115,8 @@
                     <span>@{{ (product.price * product.counter).toFixed(2) }}€</span>
                   </div>
                   <div class="order_item_bottom">
-                    <span @click="decrementCounter(index)"><i class="fas fa-minus"></i></span>
-                    <span @click="incrementCounter(index)"><i class="fas fa-plus"></i></span>
+                    <span class="order_item_buttons" @click="decrementCounter(index)"><i class="fas fa-minus"></i></span>
+                    <span class="order_item_buttons" @click="incrementCounter(index)"><i class="fas fa-plus"></i></span>
                   </div>
                 </li>
               </ul>
@@ -128,7 +129,7 @@
                   </div>
                   <input type="text" :value="cartTotalPrice" hidden name="total_price">
                   {{-- cancellare --}}
-                  <span>Totale prezzo: € @{{cartTotalPrice.toFixed(2)}}</span>
+                  <span id="total_price_cart">Totale prezzo: € @{{cartTotalPrice.toFixed(2)}}</span>
                   <span id="button_cart" onclick="document.forms['cart-form'].submit();">Vai al pagamento</span>
                 </form>
               </div>

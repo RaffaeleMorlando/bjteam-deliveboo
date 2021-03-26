@@ -103,15 +103,15 @@
           {{-- box con l'input e la label --}}
           <div class="input_control">
             <input {{ $product->is_glutenfree === 1 ? 'checked' : '' }} type="checkbox" name="is_glutenfree" id="is_glutenfree" value="1">
-            <label for="is_glutenfree" class="mx-1 my-0">Gluten Free</label>
+            <label for="is_glutenfree" class="mx-1 my-0">Glutine Free</label>
           </div>
 
         </div>
 
         <div class="buttons_container">
-          <input type="submit" id="submit" value="EDIT" class="btn-submit">
+          <input type="submit" id="submit" value="MODIFICA" class="btn-submit">
           <a href="{{ route("admin.restaurants.products.show", $product->slug) }}">
-            <button type="button" class="btn_back">BACK</button>
+            <button type="button" class="btn_back">INDIETRO</button>
           </a>
         </div>
       </form>

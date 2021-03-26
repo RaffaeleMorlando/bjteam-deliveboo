@@ -493,12 +493,13 @@ header .container .row .right #container_buttons_log_reg li.register {
     position: relative;
   }
   header .container .row .header_center input[type=text] {
-    margin-top: 50px;
+    margin-top: 10px;
     background-color: #F5F5F5;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     border: none;
     transition: all 0.5s;
     font-weight: 600;
+    padding: 10px 10px;
   }
   header .container .row li.logo_section ul.drop_down_list {
     height: 35vh !important;
@@ -1452,7 +1453,7 @@ main {
   height: calc(100% - 80px);
 }
 .container-menu-main .menu_container #menu_left .menu_info h2 {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
   padding: 20px 15px;
 }
@@ -1514,8 +1515,8 @@ main {
   height: 40px;
   margin-right: 10px;
   border-radius: 100%;
-  color: #00A082;
-  background-color: #fcf6b1;
+  color: #fff;
+  background-color: #cc2f1e;
   cursor: pointer;
 }
 .container-menu-main .menu_container #menu_left .menu_item_sections_container .menu_plate .plate_price_add span {
@@ -1549,7 +1550,7 @@ main {
   padding: 10px 15px;
 }
 .container-menu-main .menu_container .menu_cart .cart #cart_order_items {
-  height: 50% !important;
+  height: 400px;
   overflow-y: scroll;
   list-style: none;
 }
@@ -1770,7 +1771,7 @@ main {
     height: calc(100% - 165px);
   }
   .container-menu-main .menu_container #menu_left .menu_info h2 {
-    font-size: 50px;
+    font-size: 35px;
     font-weight: bold;
     padding: 20px 15px;
   }
@@ -1832,8 +1833,6 @@ main {
     height: 40px;
     margin-right: 10px;
     border-radius: 100%;
-    color: #00A082;
-    background-color: #fcf6b1;
     cursor: pointer;
   }
   .container-menu-main .menu_container #menu_left .menu_item_sections_container .menu_plate .plate_price_add span {
@@ -2058,8 +2057,6 @@ main {
     height: 40px;
     margin-right: 10px;
     border-radius: 100%;
-    color: #00A082;
-    background-color: #fcf6b1;
     cursor: pointer;
   }
   .container-menu-main .menu_container #menu_left .menu_item_sections_container .menu_plate .plate_price_add span {
@@ -2241,7 +2238,7 @@ main {
     position: static;
   }
   .container-menu-main .menu_container #menu_left .menu_info h2 {
-    font-size: 50px;
+    font-size: 25px;
     font-weight: bold;
     padding: 20px 15px;
   }
@@ -2304,8 +2301,6 @@ main {
     height: 40px;
     margin-right: 10px;
     border-radius: 100%;
-    color: #00A082;
-    background-color: #fcf6b1;
     cursor: pointer;
   }
   .container-menu-main .menu_container #menu_left .menu_item_sections_container .menu_plate .plate_price_add span {
@@ -2327,13 +2322,12 @@ main {
   }
   .container-menu-main .menu_container .menu_cart .cart_responsive span:first-child {
     font-size: 25px;
-    border: 1px solid red;
   }
   .container-menu-main .menu_container .menu_cart .cart_responsive span {
     display: block;
     font-size: 12px;
     text-align: center;
-    padding: 10px 10px;
+    padding: 0;
   }
   .container-menu-main .menu_container .menu_cart .cart_responsive #cart_order_items {
     height: 40%;
@@ -2380,11 +2374,18 @@ main {
     border-radius: 50%;
     cursor: pointer;
   }
+  .container-menu-main .menu_container .menu_cart .cart_responsive #cart_order_items li .order_item_bottom .order_item_buttons {
+    font-size: 15px;
+    padding: 5px 10px;
+  }
   .container-menu-main .menu_container .menu_cart .cart_responsive #container_button_cart {
     width: 100%;
     height: 20%;
     display: flex;
     justify-content: center;
+  }
+  .container-menu-main .menu_container .menu_cart .cart_responsive #container_button_cart #total_price_cart {
+    font-size: 20px;
   }
   .container-menu-main .menu_container .menu_cart .cart_responsive #container_button_cart #button_cart {
     background-color: #00A07F;
@@ -2393,5 +2394,6 @@ main {
     color: #fff;
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    font-size: 20px;
   }
 }
