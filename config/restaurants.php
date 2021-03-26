@@ -75,9 +75,9 @@ $restaurants = [
   ],
   [
     "user_id" => 7,
-    "name" => "Ristorante Indiano Curry Twist",
-    "slug" => "ristorante-indiano-curry-twist",
-    "logo" => "https://d2egcvq7li5bpq.cloudfront.net/it/images/restaurants/219257.gif",
+    "name" => "Curry Twist",
+    "slug" => "curry-twist",
+    "logo" => "https://pbs.twimg.com/profile_images/1275841366/logo_400x400.jpg",
     "image_hero" => "https://www.bellavistarelax.it/wp-content/uploads/2018/11/ristorante-slider.jpg",
     "address" => " Via Carlo Farini 37,Milano 20159",
     "p_iva" => "36336788418",

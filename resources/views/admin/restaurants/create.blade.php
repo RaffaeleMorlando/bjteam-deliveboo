@@ -88,7 +88,7 @@
           {{-- </select>
         </div> --}}
 
-        <input type="submit" id="submit" value="ADD" class="btn-submit">
+        <input type="submit" id="submit" value="AGGIUNGI" class="btn-submit">
       </form>
 
 
