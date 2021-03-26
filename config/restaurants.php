@@ -97,17 +97,18 @@ $restaurants = [
     "lat" => "",
     "lon" => "",
   ],
-  // [
-  //   "user_id" => 6,
-  //   "name" => "Panino Giusto - Garibaldi",
-  //   "slug" => "panino-giusto-garibaldi",
-  //   "logo" => "",
-  //   "address" => "Corso Garibaldi, 125,Milano, 20121",
-  //   "p_iva" => "272232932157",
-  //   "phone" => "334-32345374",
-  //   "lat" => "",
-  //   "lon" => "",
-  // ]
+  [
+    "user_id" => 9,
+    "name" => "Blu Istanbul",
+    "slug" => "blu-istanbul",
+    "logo" => "https://i.trendingcountries.com/images/378621/27-images-prove-istanbul-instagrammable-city-planet.png",
+    "image_hero" => "https://www.cosafarei.it/wp-content/uploads/2017/07/istanbul-principale-1366x691.jpg",
+    "address" => "Via Guglielmo Silva 45,Milano, 20149",
+    "p_iva" => "3648521479",
+    "phone" => "346-3816497",
+    "lat" => "",
+    "lon" => "",
+  ],
 ];
 
 return $restaurants;
