@@ -13,7 +13,7 @@
                     <label for="total_price">
                         <span class="input-label">Totale ordine</span>
                         <div class="input-wrapper amount-wrapper">
-                            <input id="total_price" name="total_price" type="tel" min="1" placeholder="Amount" value="{{number_format($order['total_price'],3)}}" hidden>
+                            <input id="total_price" name="total_price" min="1" placeholder="Amount" value="{{number_format($order['total_price'],3)}}" hidden>
                             <span>{{ number_format($order['total_price'], 2)." €" }}</span>
                         </div>
                     </label>

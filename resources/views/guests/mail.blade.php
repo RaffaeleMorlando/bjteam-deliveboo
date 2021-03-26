@@ -60,10 +60,13 @@
                 <h1>Grazie di averci scelto</h1>
                 <p>Di seguito il suo ordine:</p>
                 <ul>
-                @foreach ($order as $item)
+                    @php
+                        $order->counter = explode( ',', $order->counter);
+                     @endphp
 
-                    {{-- <li>{{$item->}}</li> --}}
-                @endforeach
+                    @for($i = 0; $i < count($order->products); $i++)
+                        <li>{{ $order->products[$i]->name }} x{{ $order->counter[$i] }}</li>
+                    @endfor
                 </ul>
             </div>
         </div>
