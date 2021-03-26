@@ -238,6 +238,44 @@
 @media all and (max-width: 992px) {
   #background {
     padding: 50px;
+
+    .dashboard_edit_restaurant_form {
+
+      .form_box {
+        position: fixed;
+        top: 50%; //
+        left: 50%; //
+        width: 100%;
+        height: 100%;
+
+        .product_name_green_box {
+          @include SetFlexContainer (row, center, center, nowrap);
+          @include setPositionAbsolute(10px, 5%); //
+          width: 90%;
+        }
+
+        .product_create_img {
+          display: block;
+          position: relative;
+          top: 0;
+          left: 16px;
+          margin-bottom: 45px;
+        }
+
+        .create_add_image {
+          top: 140px;
+          left: 115px;
+        }
+
+        .restaurant_image_hero_box {
+          position: relative;
+          width: 100%;
+          left: 0;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
   }
 
   #container_dashboard{
@@ -275,59 +313,6 @@
   }
 
 
-  // #container_dashboard{
-  //   aside {
-
-  //     #aside_center {
-
-  //       justify-content: center;
-
-  //       i {
-  //         margin-right: 0;
-  //         font-size: 30px;
-  //       }
-  //       #settings {
-  //         display: none;
-  //       }
-
-  //     }
-
-  //     main{
-
-  //       text-align: center;
-
-  //       #route_list{
-
-  //         li{
-  //             text-align: center;
-  //           a{
-
-  //             .dashboard-icon{
-  //               font-size: 30px;
-  //             }
-  //           }
-  //         }
-  //       }
-
-  //       h3{
-  //         display: none;
-  //       }
-
-  //     }
-
-  //     small {
-  //       display: none;
-  //     }
-
-  //     #settings_dashboard_container {
-
-  //       span#settings_dashboard{
-  //         display: none;
-  //       }
-
-  //     }
-  //   }
-  // }
 }
 
 //SM
@@ -344,6 +329,15 @@
 @media all and (max-width: 575px) {
   #background {
     padding: 0;
+
+    .buttons_container {
+
+      input,
+      button {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
   }
   #container_dashboard {
     border-radius: 0;

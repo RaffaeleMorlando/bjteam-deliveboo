@@ -44,18 +44,9 @@
           @method("PUT")
 
           <label for="logo" class="create_add_image" title="add photo">
-            <input type="file" accept="image/*" name="logo" id="logo" @change="onFileChange" required>
+            <input type="file" accept="image/*" name="logo" id="logo" @change="onFileChange">
             <i class="fas fa-camera-retro"></i>
           </label>
-
-          <div class="restaurant_image_hero_box">
-            <label for="image_hero" title="aggiungi image_hero">
-              <input type="file" accept="image/*" name="image_hero" id="image_hero" @change="onFileChangeSecond">
-              <i class="fas fa-camera-retro"></i>
-            </label>
-            <img :src="url_one" v-if="url_one != null"/>
-            <img src="{{ $restaurant->image_hero }}" alt="" v-else>
-          </div>
 
           <div class="create_product_input">
             {{-- box arancione contente l'icona --}}
@@ -81,6 +72,15 @@
               <label for="address" class="mx-1 my-0">Telefono</label>
             </div>
             <input type="text" name="address" id="address" value="{{ $restaurant->phone }}" placeholder="Inserisci l'indirizzo"placeholder="Inserisci il numero del tuo locale"  min="6"  title="esempio +393205308707" required>
+          </div>
+
+          <div class="restaurant_image_hero_box">
+            <label for="image_hero" title="aggiungi image_hero">
+              <input type="file" accept="image/*" name="image_hero" id="image_hero" @change="onFileChangeSecond">
+              <i class="fas fa-camera-retro"></i>
+            </label>
+            <img :src="url_one" v-if="url_one != null"/>
+            <img src="{{ $restaurant->image_hero }}" alt="" v-else>
           </div>
 
           <div class="buttons_container">
