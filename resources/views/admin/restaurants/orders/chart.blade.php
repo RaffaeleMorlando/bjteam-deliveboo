@@ -11,16 +11,16 @@
   </select>
 </div>
 
-  <div id="chart_box" class="container" style="position: relative; height:100%; width:80vw;">    
-    <div class="myChart_container">
-      <canvas id="myChart"></canvas>
-    </div>
-    <div class="turn_to_see">
-      <i class="fas fa-mobile-alt"></i>
-      <i class="fas fa-sync-alt"></i>
-      <p>Turn your phone for better visualization of the chart</p>
-    </div>
-    
+<div id="chart_box" class="container" style="position: relative; height:100%; width:80vw;">    
+  <div class="myChart_container">
+    <canvas id="myChart"></canvas>
   </div>
+  <div class="turn_to_see">
+    <i class="fas fa-mobile-alt"></i>
+    <i class="fas fa-sync-alt"></i>
+    <p>Turn your phone for better visualization of the chart</p>
+  </div>
+    
+</div>
   
 @endsection
