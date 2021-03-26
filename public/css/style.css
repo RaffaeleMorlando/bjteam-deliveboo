@@ -1120,7 +1120,7 @@ a:hover i {
   align-items: center;
   flex-wrap: nowrap;
   position: absolute;
-  top: -50px;
+  top: -35px;
   left: 50%;
   width: 45%;
   height: 100px;
@@ -1343,6 +1343,32 @@ a:hover i {
     margin-bottom: 10px;
   }
 }
+@media all and (max-width: 768px) {
+  #restaurant_create .form_box {
+    padding: 115px 0;
+  }
+  #restaurant_create .form_box .product_create_img {
+    width: 125px;
+    height: 125px;
+    top: -30px;
+    left: -20px;
+  }
+  #restaurant_create .form_box .product_name_green_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    top: -35px;
+    text-align: center;
+  }
+  #restaurant_create .restaurant_image_hero_box {
+    position: relative;
+    left: 0;
+    width: 100%;
+    margin-bottom: 45px;
+  }
+}
 @media all and (max-width: 575px) {
   #product_create .form_box .product_create_img,
 #product_edit .form_box .product_create_img {
@@ -1352,6 +1378,10 @@ a:hover i {
   }
   #product_create .form_box .product_name_green_box,
 #product_edit .form_box .product_name_green_box {
+    display: none;
+  }
+
+  #restaurant_create .form_box .product_name_green_box {
     display: none;
   }
 }
