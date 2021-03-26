@@ -1356,8 +1356,11 @@ PANEL FORM
   display: inline-block;
   padding-right: 5px;
 }
+.textfield--float-label .custom_payment_border:focus {
+  border-bottom: 2px solid #3F51B5;
+}
 
-.hosted-field--label {
+.hosted-field--label, .custom_payment_label {
   transform: translateY(0.4em);
   font-size: 1.125em;
   line-height: 32px;
@@ -1368,15 +1371,19 @@ PANEL FORM
   overflow: hidden;
   margin-bottom: 0.5em;
 }
-.hosted-field--label.label-float, .hosted-field--label.invalid, .hosted-field--label.filled {
+.hosted-field--label i, .custom_payment_label i {
+  height: 20px;
+  margin-right: 0.5em;
+}
+.hosted-field--label.label-float, .hosted-field--label.invalid, .hosted-field--label.filled, .custom_payment_label.label-float, .custom_payment_label.invalid, .custom_payment_label.filled {
   text-overflow: ellipsis;
   color: #2196F3;
   transition: all 0.15s ease-out;
 }
-.hosted-field--label.filled {
+.hosted-field--label.filled, .custom_payment_label.filled {
   color: rgba(0, 0, 0, 0.54);
 }
-.hosted-field--label.invalid {
+.hosted-field--label.invalid, .custom_payment_label.invalid {
   color: #F44336;
 }
 

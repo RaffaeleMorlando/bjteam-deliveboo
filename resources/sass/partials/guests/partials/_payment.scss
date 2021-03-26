@@ -67,9 +67,16 @@ PANEL FORM
   float: left;
   display: inline-block;
   padding-right: 5px;
+
+  .custom_payment_border:focus {
+    border-bottom: 2px solid $blue_payment;
+  }
 }
 
-.hosted-field--label {
+
+
+
+.hosted-field--label, .custom_payment_label {
   transform: translateY(0.4em);
   font-size: 1.125em;
   line-height: 32px;
@@ -79,10 +86,15 @@ PANEL FORM
   font-weight: 400;
   overflow: hidden;
   margin-bottom: 0.5em;
+
+  i {
+      height: 20px;
+      margin-right: 0.5em;
+  }
   &.label-float {
     text-overflow: ellipsis;
     color: #2196F3;
-    transition: all .15s ease-out
+    transition: all .15s ease-out;
   }
   &.filled {
     @extend .label-float;
