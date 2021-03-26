@@ -57,7 +57,7 @@ return $restaurantCategoryArray = [
     "restaurant_id" => 4,
     "category_id" => 7,
   ],
- 
+  // ristorante
   [
     "restaurant_id" => 5,
     "category_id" => 2,
@@ -70,6 +70,7 @@ return $restaurantCategoryArray = [
     "restaurant_id" => 5,
     "category_id" => 7,
   ],
+  // ristorante
   [
     "restaurant_id" => 6,
     "category_id" => 1,
@@ -78,10 +79,15 @@ return $restaurantCategoryArray = [
     "restaurant_id" => 6,
     "category_id" => 5,
   ],
+  // ristorante
   [
     "restaurant_id" => 7,
     "category_id" => 1,
   ],
-
+  // ristorante
+  [
+    "restaurant_id" => 8,
+    "category_id" => 11,
+  ],
 
 ];

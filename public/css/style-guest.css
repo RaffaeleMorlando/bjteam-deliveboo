@@ -1508,8 +1508,8 @@ main {
 .container-menu-main .menu_container #menu_left .menu_item_sections_container .menu_plate .menu_img img {
   width: 80%;
   max-height: 80%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
   -o-object-position: center;
      object-position: center;
 }
