@@ -56,7 +56,7 @@
                     <div class="textfield--float-label">
                         <label class="custom_payment_label" for="guest_address"><i class="fas fa-at"></i>Mail</label>
                         <div  class="hosted-field custom_payment_border">
-                            <input class="custom_payment_input" type="mail" name="email_customer" placeholder="mario.rossi@mail.com"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required> 
+                            {{-- <input class="custom_payment_input" type="mail" name="email_customer" placeholder="mario.rossi@mail.com"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>  --}}
                         </div>
                     </div>
                     @foreach ($order as $key => $value)
