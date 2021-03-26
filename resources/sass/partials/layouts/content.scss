@@ -155,6 +155,10 @@ header {
                   font-weight: 600;
                 }
               }
+
+              .exit_icon {
+                display: none;
+              }
             }
           }
 
@@ -224,10 +228,19 @@ footer {
   max-height: 0;
 }
 
-
-
-
-
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
 
 
 
@@ -434,6 +447,9 @@ footer {
             }
 
             li.logo_section {
+              position: fixed;
+              top: 15px;
+              right: 15px;
 
               a.account {
 
@@ -459,20 +475,36 @@ footer {
               }
 
               ul.drop_down_list {
-                @include setPositionAbsolute(110%, -40%); //
-                width: max-content;
-                padding: 10px 20px;
-                border-radius: $borderRadCard;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 50vh;
+                border-radius: 0 0 400px 400px;
                 background-color: $darkWhite;
                 box-shadow: $shadowDashboard;
 
                 li {
-                  margin: 10px 0;
+                  margin: 20px 0;
 
                   a {
                     color: $black;
                     font-weight: 600;
-                    font-size: 20px;
+                    font-size: 40px;
+                    text-transform: uppercase;
+                  }
+                }
+
+                .exit_icon {
+                  @include SetFlexContainer (row, center, center, nowrap);
+                  position: fixed;
+                  top: 0;
+                  right: 0;
+                  width: 80px;
+                  height: 50px;
+
+                  i {
+                    font-size: 30px;
                   }
                 }
               }
@@ -503,6 +535,27 @@ footer {
 
 }
 
+@media all and (max-width: 767px){
+
+  header{
+
+    .container{
+
+      .row{
+
+        .right{
+
+          #container_buttons_log_reg{
+
+            li.logo_section{
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 //XS
 @media all and (max-width: 576px) {
 
@@ -526,6 +579,23 @@ footer {
       .row {
         height: 100%;
 
+        .right{
+
+          #container_buttons_log_reg{
+
+            li.logo_section{
+
+              a.account {
+
+                img.restaurant_logo {
+                  width: 50px;
+                  height: 50px;
+                }
+              }
+            }
+          }
+        }
+
         .left {
           @include SetFlexContainer (row, center, center, wrap);
           height: 100%;
@@ -547,6 +617,13 @@ footer {
             border: none;
             transition: all .5s;
             font-weight: 600;
+          }
+        }
+
+        li.logo_section {
+
+          ul.drop_down_list {
+            height: 35vh !important;
           }
         }
       }

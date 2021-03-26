@@ -51,7 +51,7 @@
           <div class="small_green_box">
             <label for="name" class="mx-1 my-0">Nome</label>
           </div>
-          <input type="text" name="name" id="name" value="{{ $product->name }}" placeholder="Inserisci il nome del prodotto">
+          <input type="text" name="name" id="name" value="{{ $product->name }}"placeholder="Inserisci il nome del prodotto" title="inserisci il nome del prodotto con almento 2 caratteri" min="2" max=60 required>
         </div>
 
         <div class="create_product_input">
@@ -64,7 +64,7 @@
           <div class="small_green_box">
             <label for="description" class="mx-1 my-0">Descrizione</label>
           </div>
-          <textarea name="description" id="description" placeholder="Descrizione prodotto">{{  $product->description }}</textarea>
+           <textarea max="6000" name="description" id="description" placeholder="ingredienti" title="inserisci ingredienti" required>{{  $product->description }}</textarea>
         </div>
 
         <div class="create_product_input">
@@ -77,7 +77,7 @@
           <div class="small_green_box">
             <label for="price" class="mx-1 my-0">Prezzo</label>
           </div>
-          <input type="text" name="price" id="price" value="{{ $product->price }}" placeholder="Prezzo (€)">
+          <input type="number" name="price" id="price" value="{{ $product->price }}" placeholder="Prezzo (€)" min="0.01" max="999" step="0.01" required>
         </div>
 
         <div class="create_product_check_box">

@@ -6,14 +6,18 @@
       {{-- BANNER CARRELLO--}}
       <div id="banner_exit_container" :style="activeBanner ? 'display: block;' : ''">
         <div class="banner_box">
-          <h2>Banner carrello da stilizzare</h2>
-          <a href="{{ route("home") }}" name="button">SI</a>
-          <button type="button" name="button" @click="activeBanner = false">NO</button>
+          <h2>Vuoi uscire dal locale?</h2>
+          <img src="{{ asset('img/cute-astronaut.png') }}" alt="">
+          <p>Se esci ora, perderai i prodotti che hai scelto, ma se ritorni sullo stesso ristorante per magia li ritroverai. Confermi di voler uscire?</p>
+          <div class="container_btn_exit_banner">
+            <a class="btn_exit_banner" href="{{ route("home") }}" name="button">SI</a>
+            <a class="btn_exit_banner" type="button" name="button" @click="activeBanner = false">NO</a>
+          </div>
         </div>
       </div>
 
       <div id="menu_hero_img_container">
-        <img src="https://bikanersweetsandrestaurant.ca/wp-content/uploads/2019/08/indiancocktails_social.jpg" alt="" :style="heroStatus ? 'opacity: 0.8' : 'opacity: 1'">
+        <img :src="restaurant.image_hero" alt="" :style="heroStatus ? 'opacity: 0.8' : 'opacity: 1'">
         <div class="layover_hero">
 
         </div>
@@ -91,7 +95,7 @@
             </div>
 
             {{-- CARRELLO MD/SM --}}
-            <div class="cart_responsive" :style="isCartOpen ? 'height: 70vh' : 'height: 120px'">
+            <div class="cart_responsive" :style="isCartOpen ? 'height: calc(100vh - 205px)' : 'height: 120px'">
 
               <span v-if="isCartOpen == false"><i class="fas fa-chevron-up" @click="openCart"></i></span>
               <span v-if="chevronDown"><i class="fas fa-chevron-down" @click="openCart"></i></span>
@@ -99,7 +103,7 @@
 
               <span><img src="{{ asset('img/store-delivery-light.svg') }}" alt=""></span>
 
-              <ul id="cart_order_items" :style="isCartOpen ? 'height: 60%;' : ''">
+              <ul id="cart_order_items" :style="isCartOpen ? 'height: 50%;' : ''">
                 <div id="cart_order_placeholder_container" v-if="cartProducts.length == 0">
                   <img src="{{ asset('img/astronaut-disabled.svg') }}" alt="">
                 </div>

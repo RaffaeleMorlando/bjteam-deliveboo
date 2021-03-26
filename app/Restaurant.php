@@ -10,6 +10,7 @@ class Restaurant extends Model
         'user_id',
         'name',
         'logo',
+        'image_hero',
         'address',
         'long',
         'lat',
@@ -22,7 +23,7 @@ class Restaurant extends Model
     /**
      * DB RELATIONSHIP
      */
-    
+
     public function user(){
         return $this->belongsTo('App\User');
     }

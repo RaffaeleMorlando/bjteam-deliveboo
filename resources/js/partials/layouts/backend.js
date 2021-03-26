@@ -8,9 +8,11 @@ const backend = new Vue({
     activeSettings: false,
     editForm: false,
     url: null,
+    url_one: null,
     year: "2021"
   },
   methods: {
+
     toggleShow(){
       this.activeAside = !this.activeAside;
     },
@@ -22,10 +24,16 @@ const backend = new Vue({
     activeEditForm() {
       this.editForm = !this.editForm;
     },
+
     onFileChange(e) {
       const file = e.target.files[0];
       this.url = URL.createObjectURL(file);
     },
+    onFileChangeSecond(e) {
+      const file = e.target.files[0];
+      this.url_one = URL.createObjectURL(file);
+    },
+
     filterByYear(){
       Vue.prototype.$userId = document.querySelector("meta[name='user-id']").getAttribute('content');
 
@@ -75,15 +83,31 @@ const backend = new Vue({
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
                 datasets: [{
                 label: yearTotalPrice + "€",
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: '#e77b37',
+                borderColor: '#be363b',
                 data: monthsTotalPrice
               }]
             },
 
               // Configuration options go here
-              options: {}
+              options: {
+                responsive: true,
+                // maintainAspectRatio: false
+
+                // onresize: function(ctx, ){
+                  
+                // } 
+              }
+              
             });
+            // chart.options.responsive = function(){
+            //   if(screen.width < 768){
+            //     return false;
+            //   } else {
+            //     return true;
+            //   }
+            // };
+            // chart.update(); 
 
           }
         );
@@ -95,6 +119,7 @@ const backend = new Vue({
 
     if(currentUrl == "http://127.0.0.1:8000/admin/restaurants/orders/charts") {
       this.filterByYear();
+      console.log(screen.width < 768);
     }
 
   }

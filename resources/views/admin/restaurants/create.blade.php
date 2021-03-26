@@ -31,6 +31,14 @@
           <i class="fas fa-camera-retro"></i>
         </label>
 
+        <div class="restaurant_image_hero_box">
+          <label for="image_hero" title="aggiungi image_hero">
+            <input type="file" accept="image/*" name="image_hero" id="image_hero" @change="onFileChangeSecond">
+            <i class="fas fa-camera-retro"></i>
+          </label>
+          <img :src="url_one" v-if="url_one != null"/>
+        </div>
+
         <div class="create_product_input">
           <div class="orange_icon_box">
             <i class="fas fa-store"></i>
@@ -38,7 +46,7 @@
           <div class="small_green_box">
             <label for="name" class="mx-1 my-0">Nome</label>
           </div>
-          <input type="text" name="name" id="name" value="{{ old('name')}}" placeholder="Inserisci il nome del tuo esercizio commerciale">
+          <input type="text" name="name" id="name" value="{{ old('name')}}" placeholder="Inserisci il nome del tuo esercizio commerciale" required>
         </div>
 
         <div class="create_product_input">
@@ -48,7 +56,7 @@
           <div class="small_green_box">
             <label for="p_iva" class="mx-1 my-0">partia iva</label>
           </div>
-          <input type="text" name="p_iva" id="p_iva" placeholder="partita iva" value="{{ old('p_iva')}}">
+          <input type="text" name="p_iva" id="p_iva" placeholder="partita iva" value="{{ old('p_iva')}}" min="11" max="11" title="deve essere composto da 11 cifre" title="es: 12345678912" required>
         </div>
 
         <div class="create_product_input">
@@ -58,7 +66,7 @@
           <div class="small_green_box">
             <label for="address" class="mx-1 my-0">Indirizzo</label>
           </div>
-          <input type="text" name="address" id="address" value="{{ old('address') }}" placeholder="Inserisci l'indirizzo del tuo locale">
+          <input type="text" name="address" id="address" value="{{ old('address') }}" placeholder="Inserisci l'indirizzo del tuo locale" min=4  title="deve contener almeno 4 caratteri e un numero"  required>
         </div>
         <div class="create_product_input">
           <div class="orange_icon_box">
@@ -67,10 +75,10 @@
           <div class="small_green_box">
             <label for="phone" class="mx-1 my-0">Telefono</label>
           </div>
-          <input type="text" name="phone" id="phone" value="{{ old('phone') }}" placeholder="Inserisci il numero del tuo locale">
+          <input type="tel" name="phone" id="phone" value="{{ old('phone') }}" placeholder="Inserisci il numero del tuo locale"  min="6"  title="esempio +393205308707" required>
         </div>
         <div class="create_product_input">
-          <select style=" width:100%; height:25px" class="select_form_category" id="categories" name="categories[]" multiple>
+          <select style=" width:100%; height:25px" class="select_form_category" id="categories" name="categories[]" required title="aggiungi una o più categorie es: Pizzeria Pub" multiple>
             @foreach ($categories as $category)
             <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach

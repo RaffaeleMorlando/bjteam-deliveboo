@@ -16,6 +16,7 @@ class RestaurantController extends Controller
 {
     private $restaurantValidation = [
         'logo' => 'required|image', //da modificare a nullable (con immagine default)
+        'image_hero' => 'required|image',
         'name' => 'required|max:100',
         'phone' => 'required|max:20',
         'address' => 'required',
@@ -42,6 +43,8 @@ class RestaurantController extends Controller
         $data['slug'] = Str::slug($data['name']);
         $data["logo"] = Storage::disk('public')->put('images', $data["logo"]);
         $data["logo"] = Storage::url($data['logo']);
+        $data["image_hero"] = Storage::disk('public')->put('images', $data["image_hero"]);
+        $data["image_hero"] = Storage::url($data['image_hero']);
 
 
         $newRestaurant->fill($data);
@@ -70,6 +73,11 @@ class RestaurantController extends Controller
          $data["logo"] = Storage::url($data['logo']);
       }
 
+      if(!empty($data["image_hero"])){
+         Storage::disk('public')->delete($restaurant->image_hero);
+         $data["image_hero"] = Storage::disk('public')->put('images', $data["image_hero"]);
+         $data["image_hero"] = Storage::url($data['image_hero']);
+      }
 
       //$data['restaurant_id'] = Auth::id();
       $data['slug'] = Str::slug($data['name']);

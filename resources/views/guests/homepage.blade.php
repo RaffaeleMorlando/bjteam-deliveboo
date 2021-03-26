@@ -46,6 +46,17 @@
         </li>
       </ul>
     </div> --}}
+    {{-- CAROSELLO DI IMMAGINI --}}
+    <div id="carousel">
+      <i class="fas fa-angle-left" @click="prevCategory"></i>
+      <transition-group name="slide-fade" class="carousel_box">
+        <div v-if="index == indexCarousel" v-for="(category, index) in categories" :key="category" @click='getRestaurantsByCategory(index)'>
+          <img :src="category.image" :alt="category.name">
+          <h4>@{{ category.name }}</h4>
+        </div>
+      </transition-group>
+      <i class="fas fa-angle-right" @click="nextCategory"></i>
+    </div>
 
     <div class="main_sub_title">
       <h2 class="text-center scroll">I nostri Ritoranti!</h2>
@@ -59,7 +70,7 @@
       <a v-for="restaurant in filteredRestaurants" :href="`http://127.0.0.1:8000/restaurants/${restaurant.slug}`" class="animate__animated animate__backInDown">
         <li class="static_restaurant_card">
           <div class="static_restaurant_card_thumbnail_container">
-            <img :src="restaurant.logo" alt="">
+            <img :src="restaurant.image_hero" alt="">
           </div>
           <div class="static_restaurant_card_info">
             <div class="static_restaurant_card_info_logo">
@@ -80,7 +91,7 @@
       <li class="static_restaurant_card" v-for="(restaurant, index) in homeRestaurants">
         <a :href="`http://127.0.0.1:8000/restaurants/${restaurant.slug}`">
           <div class="static_restaurant_card_thumbnail_container">
-            <img :src="restaurant.logo" alt="logo">
+            <img :src="restaurant.image_hero" alt="logo">
           </div>
           <div class="static_restaurant_card_info">
             <div class="static_restaurant_card_info_logo">

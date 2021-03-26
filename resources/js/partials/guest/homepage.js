@@ -12,6 +12,7 @@ const prova = new Vue({
     filteredRestaurants: [],
     isChecked: false,
     headerStatus: false,
+    indexCarousel: 0
   },
 
   mounted() {
@@ -26,7 +27,6 @@ const prova = new Vue({
     axios.get('/api/restaurants')
       .then(response => {
         this.homeRestaurants = response.data;
-        console.log(this.homeRestaurants);
       });
 
 },
@@ -63,7 +63,24 @@ const prova = new Vue({
     checked: function(){
       this.isChecked = !this.isChecked;
       console.log(this.isChecked);
+    },
+
+    nextCategory() {
+      if (this.indexCarousel == this.categories.length - 1) {
+        this.indexCarousel = 0;
+      } else {
+        this.indexCarousel++;
+      }
+    },
+
+    prevCategory() {
+      if (this.indexCarousel == 0) {
+        this.indexCarousel = this.categories.length - 1;
+      } else {
+        this.indexCarousel--;
+      }
     }
+
 
   },
 

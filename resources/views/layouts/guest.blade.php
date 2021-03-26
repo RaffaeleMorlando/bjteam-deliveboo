@@ -13,6 +13,7 @@
     <link href="{{ asset('css/style-guest.css') }}" rel="stylesheet">
 
     <meta charset="utf-8">
+    <meta name="user-id" content="{{ Auth::user() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
   </head>
@@ -20,7 +21,7 @@
 
     <div id="guest_layout">
 
-      @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register' && Route::currentRouteName() != 'success')
+      @if(Route::currentRouteName() == 'home' || Route::currentRouteName() == 'menu-restaurant' || Route::currentRouteName() == 'payment')
         <header id="header" :class="headerStatus ? 'active' : ''" :style="headerStatus ? 'background-color: #ba181b' : 'transparent'">
       @else
         <header id="header" style="background-color: #ba181b">
@@ -28,11 +29,11 @@
         <div class="container">
           <div class="row">
 
-            <div class="left col-lg-3 col-md-12">
+            <div class="left col-lg-3 col-md-12" :style="displayNone ? 'display: none' : ''">
               <a href="{{ route('home') }}" id="home_link"><img class="logo" src="{{ asset("img/logo_glovo-prova.svg") }}" alt="logo"></a>
             </div>
 
-            <div class="header_center col-lg-6 col-md-12 ">
+            <div class="header_center col-lg-6 col-md-12 " :style="displayNone ? 'display: none' : ''">
             @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register' && Route::currentRouteName() != 'success')
               <input type="text" name="" value="" placeholder="Cerca ristorante per nome" v-model="searched" @keyup="getRestaurantByName">
 
@@ -107,6 +108,10 @@
                               @csrf
                           </form>
                         </li>
+
+                        <div class="exit_icon" v-if="activeLogOut">
+                          <i class="far fa-times-circle" @click="toggleActive('activeLogOut')"></i>
+                        </div>
                       </ul>
                     </transition>
                   </li>
