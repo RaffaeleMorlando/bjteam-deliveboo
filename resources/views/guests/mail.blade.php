@@ -42,7 +42,7 @@
         .email_footer {
             height: 80px;
             background-color: black;
-        } 
+        }
 
     </style>
     <title>Email conferma ordine n° #####</title>
@@ -60,10 +60,11 @@
                 <h1>Grazie di averci scelto</h1>
                 <p>Di seguito il suo ordine:</p>
                 <ul>
-                {{-- @foreach ($order as $item)
-                    <li>{{$item->}}</li>
+                @foreach ($order as $item)
+
+                    {{-- <li>{{$item->}}</li> --}}
                 @endforeach
-                </ul> --}}
+                </ul>
             </div>
         </div>
     </div>

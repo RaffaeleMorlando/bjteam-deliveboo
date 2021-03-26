@@ -4,6 +4,7 @@ return $orders = [
   [
     "guest_name" => "Piero Merda",
     "guest_address" => "Via boh, 36, Milano 20128",
+    "email_customer" => "pippo@mail.com",
     "order_number" => '#'.rand(10000, 99999),
     "total_price" => 16.50,
     "status" => "Pagato",
@@ -13,6 +14,7 @@ return $orders = [
   [
     "guest_name" => "Adriano Tano",
     "guest_address" => "Via brutta, 21, Milano 20134",
+    "email_customer" => "pippo@mail.com",
     "order_number" => '#'.rand(10000, 99999),
     "total_price" => 8.30,
     "status" => "Pagato",
@@ -22,6 +24,7 @@ return $orders = [
   [
     "guest_name" => "Jane Doe",
     "guest_address" => "Via bellissima, 52, Milano 20131",
+    "email_customer" => "pippo@mail.com",
     "order_number" => '#'.rand(10000, 99999),
     "total_price" => 33.30,
     "status" => "Pagato",
@@ -31,6 +34,7 @@ return $orders = [
   [
     "guest_name" => "Icaro Ipsum",
     "guest_address" => "Via non lo so, 48, Milano 20125",
+    "email_customer" => "pippo@mail.com",
     "order_number" => '#'.rand(10000, 99999),
     "total_price" => 2,
     "status" => "Pagato",
@@ -40,6 +44,7 @@ return $orders = [
   [
     "guest_name" => "Mario Rossi",
     "guest_address" => "Via Tibetana, 62, Milano 20123",
+    "email_customer" => "pippo@mail.com",
     "order_number" => '#'.rand(10000, 99999),
     "total_price" => 29.50,
     "status" => "Pagato",
@@ -49,6 +54,7 @@ return $orders = [
   [
     "guest_name" => "Stefano Adami",
     "guest_address" => "Via Pertile, 3, Milano 20130",
+    "email_customer" => "pippo@mail.com",
     "order_number" => '#'.rand(10000, 99999),
     "total_price" => 13.50,
     "status" => "Pagato",
@@ -58,6 +64,7 @@ return $orders = [
   [
     "guest_name" => "Martina Stellari",
     "guest_address" => "Via Dei Quartieri, 72, Milano 20130",
+    "email_customer" => "pippo@mail.com",
     "order_number" => '#'.rand(10000, 99999),
     "total_price" => 52.50,
     "status" => "Pagato",
@@ -67,6 +74,7 @@ return $orders = [
   [
     "guest_name" => "Gianluca Pesce",
     "guest_address" => "Via Garibaldi, 35, Milano 20131",
+    "email_customer" => "pippo@mail.com",
     "order_number" => '#'.rand(10000, 99999),
     "total_price" => 13.50,
     "status" => "Pagato",
@@ -76,6 +84,7 @@ return $orders = [
   [
     "guest_name" => "Gianluca Pesce",
     "guest_address" => "Via Garibaldi, 35, Milano 20131",
+    "email_customer" => "pippo@mail.com",
     "order_number" => '#'.rand(10000, 99999),
     "total_price" => 39.50,
     "status" => "Pagato",
@@ -85,6 +94,7 @@ return $orders = [
   [
     "guest_name" => "Michele Alti",
     "guest_address" => "Via Garibaldi, 35, Milano 20131",
+    "email_customer" => "pippo@mail.com",
     "order_number" => '#'.rand(10000, 99999),
     "total_price" => 21.60,
     "status" => "Pagato",
@@ -94,6 +104,7 @@ return $orders = [
   [
     "guest_name" => "Felice Ma Stronzo",
     "guest_address" => "Via Bella, 42, Milano 20131",
+    "email_customer" => "pippo@mail.com",
     "order_number" => '#'.rand(10000, 99999),
     "total_price" => 25.00,
     "status" => "Pagato",
@@ -103,6 +114,7 @@ return $orders = [
   [
     "guest_name" => "Pippo bene",
     "guest_address" => "Via ragna, 2, Milano 20135",
+    "email_customer" => "pippo@mail.com",
     "order_number" => '#'.rand(10000, 99999),
     "total_price" => 25.00,
     "status" => "Pagato",
@@ -112,6 +124,7 @@ return $orders = [
   [
     "guest_name" => "nino casagrande",
     "guest_address" => "Via sesso, 69, Milano 20138",
+    "email_customer" => "pippo@mail.com",
     "order_number" => '#'.rand(10000, 99999),
     "total_price" => 19.00,
     "status" => "Pagato",
@@ -121,6 +134,7 @@ return $orders = [
   [
     "guest_name" => "Pitta Mattia",
     "guest_address" => "Via Garibaldi, 69, Milano 20137",
+    "email_customer" => "pippo@mail.com",
     "order_number" => '#'.rand(10000, 99999),
     "total_price" => 23.00,
     "status" => "Pagato",
@@ -130,14 +144,12 @@ return $orders = [
   [
     "guest_name" => "Gerry D'Angelo",
     "guest_address" => "Via Saffi, 12, Milano 20139",
+    "email_customer" => "pippo@mail.com",
     "order_number" => '#'.rand(10000, 99999),
     "total_price" => 9.00,
     "status" => "Pagato",
     "created_at" => "2019-06-03 20:47:42",
     "updated_at" => "2019-06-03 20:47:42",
   ],
- 
- 
- 
 
 ];

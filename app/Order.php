@@ -10,7 +10,8 @@ class Order extends Model
         'order_number',
         'total_price',
         'guest_name',
-        'guest_address'
+        'guest_address',
+        'email_customer'
     ];
 
     /**
