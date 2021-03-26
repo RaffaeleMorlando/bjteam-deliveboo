@@ -559,18 +559,13 @@ a:hover i {
   #background .dashboard_edit_restaurant_form .form_box .product_name_green_box {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
     position: absolute;
     top: 10px;
-    left: 50%;
-    width: 45%;
-    height: 100px;
-    padding: 0 16px;
-    background: linear-gradient(60deg, #66bb6a, #43a047);
-    border-radius: 5px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    left: 5%;
+    width: 90%;
   }
   #background .dashboard_edit_restaurant_form .form_box .product_create_img {
     display: block;
@@ -582,6 +577,12 @@ a:hover i {
   #background .dashboard_edit_restaurant_form .form_box .create_add_image {
     top: 140px;
     left: 115px;
+  }
+  #background .dashboard_edit_restaurant_form .form_box .restaurant_image_hero_box {
+    position: relative;
+    width: 100%;
+    left: 0;
+    margin-bottom: 20px;
   }
 
   #container_dashboard aside .content #aside_top {
@@ -612,6 +613,11 @@ a:hover i {
 @media all and (max-width: 575px) {
   #background {
     padding: 0;
+  }
+  #background .buttons_container input,
+#background .buttons_container button {
+    display: block;
+    margin-bottom: 10px;
   }
 
   #container_dashboard {

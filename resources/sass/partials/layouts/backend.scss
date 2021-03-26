@@ -249,14 +249,9 @@
         height: 100%;
 
         .product_name_green_box {
-          @include SetFlexContainer (row, flex-start, center, nowrap);
-          @include setPositionAbsolute(10px, 50%); //
-          width: 45%;
-          height: 100px;
-          padding: 0 16px;
-          background: linear-gradient(60deg, #66bb6a, #43a047);
-          border-radius: 5px;
-          box-shadow: $darkShadowCard;
+          @include SetFlexContainer (row, center, center, nowrap);
+          @include setPositionAbsolute(10px, 5%); //
+          width: 90%;
         }
 
         .product_create_img {
@@ -272,6 +267,12 @@
           left: 115px;
         }
 
+        .restaurant_image_hero_box {
+          position: relative;
+          width: 100%;
+          left: 0;
+          margin-bottom: 20px;
+        }
       }
     }
 
@@ -328,6 +329,15 @@
 @media all and (max-width: 575px) {
   #background {
     padding: 0;
+
+    .buttons_container {
+
+      input,
+      button {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
   }
   #container_dashboard {
     border-radius: 0;
