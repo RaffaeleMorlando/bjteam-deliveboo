@@ -10,13 +10,17 @@
       transform: translate(-50%, -50%);
       height:  100%; 
       width: 100%;
+      z-index: 1;
+      background: white;
    }
 }
 
 .select_year{
+   position: relative;
+   z-index: 2;
 
-   select{
-   padding: 10px 15px;
+   select{ 
+      padding: 10px 15px;
    }
 }
 
@@ -48,14 +52,19 @@
 }
 
 
-@media all and(max-heigth: 500px){
-   .turn_to_see{
-      display: none;
-   }
-}
-
-@media all and(max-width: 568px){
+@media screen and(max-width: 568px) and (orientation: portrait){
    .turn_to_see{
       display: block;
    }
 }
+
+@media screen and(max-height: 400px) and (orientation: landscape){
+   
+   #chart_box{
+
+      .myChart_container{
+         margin-top: 75px;
+      }
+   }
+   
+ }
