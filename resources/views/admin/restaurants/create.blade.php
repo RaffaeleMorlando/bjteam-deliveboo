@@ -56,7 +56,7 @@
           <div class="small_green_box">
             <label for="p_iva" class="mx-1 my-0">partia iva</label>
           </div>
-          <input type="text" name="p_iva" id="p_iva" placeholder="partita iva" value="{{ old('p_iva')}}" min="11" max="11" title="deve essere composto da 11 cifre" title="es: 12345678912" required>
+          <input type="text" name="p_iva" id="p_iva" placeholder="partita iva" value="{{ old('p_iva')}}" title="deve essere composto da 11 cifre" title="es: 12345678912" required maxlength="11" minlength="11">
         </div>
 
         <div class="create_product_input">
