@@ -16,9 +16,9 @@ use Illuminate\Http\Request;
 |
 */
 
-// Route::get('/', function () {  //da cancellare
-//     return view('welcome');
-// });
+Route::get('/mail', function () {  //da cancellare
+    return view('guests.mail');
+});
 
 Auth::routes();
 
