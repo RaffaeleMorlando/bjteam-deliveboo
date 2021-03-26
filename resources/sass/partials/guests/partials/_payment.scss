@@ -24,14 +24,27 @@ PANEL FORM
 --------------------*/
 
 .panel {
-  background: $white_payment;
-  width: 80%;
+ 
+ width: 80%;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 2px 0 rgba(0, 0, 0, .12);
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .panel__header {
+ 
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
   background: $blue_payment;
   color: $white_payment;
+  label {
+    font-size: 25px;
+    font-weight: bolder;
+  }
+  .card-item__chip {
+    height: 60px;
+  }
 }
 
 .panel__header,
@@ -41,6 +54,7 @@ PANEL FORM
 
 .panel__footer {
   background: $grey2_payment;
+  
 }
 
 .panel__content {
@@ -105,6 +119,16 @@ svg.svg_payment {
   box-shadow: none;
   border-radius: 0;
   position: relative;
+
+  .custom_payment_input {
+    border:none;
+    background-color: transparent;
+    &:focus {
+      outline:none;
+      
+    }
+  }
+
 }
 
 .pay-button {

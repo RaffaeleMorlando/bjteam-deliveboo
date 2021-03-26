@@ -1315,14 +1315,25 @@ GENERAL
 PANEL FORM
 --------------------*/
 .panel {
-  background: #FFF;
   width: 80%;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .panel__header {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
   background: #3F51B5;
   color: #FFF;
+}
+.panel__header label {
+  font-size: 25px;
+  font-weight: bolder;
+}
+.panel__header .card-item__chip {
+  height: 60px;
 }
 
 .panel__header,
@@ -1394,6 +1405,13 @@ svg.svg_payment {
   box-shadow: none;
   border-radius: 0;
   position: relative;
+}
+.hosted-field .custom_payment_input {
+  border: none;
+  background-color: transparent;
+}
+.hosted-field .custom_payment_input:focus {
+  outline: none;
 }
 
 .pay-button {
