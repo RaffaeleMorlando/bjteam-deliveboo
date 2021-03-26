@@ -60,7 +60,7 @@
                 }
 
                 h2 {
-                    font-size: 60px;
+                    font-size: 50px;
                     font-weight: bold;
                     padding: 20px 15px;
                 }
@@ -127,8 +127,8 @@
                             height: 40px;
                             margin-right: 10px;
                             border-radius: 100%;
-                            color: $greenPrimary;
-                            background-color: rgb(252, 246, 177);
+                            color: #fff;
+                            background-color: rgb(204, 47, 30);
                             cursor: pointer;
                         }
 
@@ -171,7 +171,7 @@
                 }
 
                 #cart_order_items {
-                    height: 50% !important;
+                    height: 400px;
                     overflow-y: scroll;
                     list-style: none;
 
@@ -430,7 +430,7 @@
                     }
 
                     h2 {
-                        font-size: 50px;
+                        font-size: 35px;
                         font-weight: bold;
                         padding: 20px 15px;
                     }
@@ -500,8 +500,6 @@
                                 height: 40px;
                                 margin-right: 10px;
                                 border-radius: 100%;
-                                color: $greenPrimary;
-                                background-color: rgb(252, 246, 177);
                                 cursor: pointer;
                             }
 
@@ -770,8 +768,6 @@
                                 height: 40px;
                                 margin-right: 10px;
                                 border-radius: 100%;
-                                color: $greenPrimary;
-                                background-color: rgb(252, 246, 177);
                                 cursor: pointer;
                             }
 
@@ -997,7 +993,7 @@
                 .menu_info {
                     // top: 165px;
                     h2 {
-                        font-size: 50px;
+                        font-size: 25px;
                         font-weight: bold;
                         padding: 20px 15px;
                     }
@@ -1068,8 +1064,6 @@
                                 height: 40px;
                                 margin-right: 10px;
                                 border-radius: 100%;
-                                color: $greenPrimary;
-                                background-color: rgb(252, 246, 177);
                                 cursor: pointer;
                             }
 
@@ -1095,7 +1089,6 @@
 
                 .cart_responsive {
                     h3 {
-                        // border: 1px solid red;
                         text-align: center;
                         font-size: 15px;
                         padding: 10px 15px;
@@ -1103,14 +1096,13 @@
 
                     span:first-child {
                         font-size: 25px;
-                        border: 1px solid red;
                     }
 
                     span {
                         display: block;
                         font-size: 12px;
                         text-align: center;
-                        padding: 10px 10px;
+                        padding: 0;
                     }
 
                     #cart_order_items {
@@ -1161,6 +1153,11 @@
                                     border-radius: 50%;
                                     cursor: pointer;
                                 }
+
+                                .order_item_buttons {
+                                    font-size: 15px;
+                                    padding: 5px 10px;
+                                }
                             }
                         }
                     }
@@ -1171,6 +1168,10 @@
                         display: flex;
                         justify-content: center;
 
+                        #total_price_cart {
+                            font-size: 20px;
+                        }
+
                         #button_cart {
                             background-color: #00A07F;
                             padding: 16px 28px;
@@ -1178,6 +1179,7 @@
                             color: #fff;
                             box-shadow: 0 3px 5px 0 rgb(0 0 0 / 10%);
                             cursor: pointer;
+                            font-size: 20px;
                         }
                     }
                 }

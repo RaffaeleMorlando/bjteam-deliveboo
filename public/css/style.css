@@ -948,6 +948,10 @@ a:hover i {
   }
 }
 @media all and (max-width: 576px) {
+  .card_title h1 {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
   .card_title .menu_icon {
     display: none;
   }
@@ -1513,6 +1517,129 @@ a:hover i {
   }
   #admin_product_show .product_show_container .description_box {
     width: 100%;
+  }
+}
+@media all and (max-width: 576px) {
+  #admin_product_show .product_show_container {
+    width: 100%;
+  }
+  #admin_product_show .product_show_container .image_box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  #admin_product_show .product_show_container .image_box img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+  #admin_product_show .product_show_container .image_box .green_name_box {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    padding: 15px;
+    background: linear-gradient(60deg, #66bb6a, #43a047);
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+  #admin_product_show .product_show_container .image_box .green_name_box h3 {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    font-size: 10px;
+  }
+  #admin_product_show .product_show_container .image_box .orange_icon_box {
+    position: absolute;
+    top: 205px;
+    left: -20px;
+  }
+  #admin_product_show .product_show_container .image_box .orange_icon_box i:hover {
+    color: #ffffff;
+  }
+  #admin_product_show .product_show_container .image_box .is_vegetal_box,
+#admin_product_show .product_show_container .image_box .gluten_free_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    transform: rotate(-35deg);
+    width: 30px;
+    height: 50px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+  }
+  #admin_product_show .product_show_container .image_box .is_vegetal_box i,
+#admin_product_show .product_show_container .image_box .gluten_free_box i {
+    font-size: 20px;
+    color: #00A082;
+  }
+  #admin_product_show .product_show_container .image_box .is_vegetal_box {
+    position: absolute;
+    top: 40px;
+    left: -20px;
+    background-color: #FCF6B1;
+    z-index: 1;
+  }
+  #admin_product_show .product_show_container .image_box .gluten_free_box {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    padding: 10px 5px;
+    background-color: #E56668;
+  }
+  #admin_product_show .product_show_container .image_box .gluten_free_box i {
+    font-size: 20px;
+    color: #ffffff;
+  }
+  #admin_product_show .product_show_container .description_box {
+    position: relative;
+    width: 70%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    margin: 100px 0 60px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+  }
+  #admin_product_show .product_show_container .description_box p {
+    margin: 0;
+    font-size: 10px;
+    font-weight: bold;
+  }
+  #admin_product_show .product_show_container .description_box .price_box {
+    position: absolute;
+    top: 85%;
+    left: 20px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    padding: 10px 20px;
+    background-color: #FCF6B1;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+  }
+  #admin_product_show .product_show_container .description_box .price_box small {
+    font-size: 20px;
+    font-weight: bold;
   }
 }
 #dashboard_order .card_orders {

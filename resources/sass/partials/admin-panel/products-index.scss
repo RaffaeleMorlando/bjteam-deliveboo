@@ -209,6 +209,11 @@
 
 @media all and (max-width: 576px){
   .card_title{
+
+    h1 {
+      font-size: 1.2rem;
+      padding: 10px;
+    }
     .menu_icon{
       display: none;
     }
