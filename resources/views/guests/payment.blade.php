@@ -5,6 +5,15 @@
         <form id="cardForm_payment" action="{{ route('checkout') }}" method="post" style="margin-top: 300px">
             @csrf
             @method('POST')
+            {{-- <label for="total_price">
+                    <span class="input-label">Amount</span>
+                    <div class="input-wrapper amount-wrapper">
+                        <input id="total_price" name="total_price" type="tel" min="1" placeholder="Amount" value="{{number_format($order['total_price'],3)}}" hidden>
+                        <span>{{$order['total_price']}}</span>
+                    </div>
+             </label> 
+            <input type="text" name="guest_name">
+            <input type="text" name="guest_address"> --}}
         <div class="panel">
             <div class="panel__header"><h1>Card Payment</h1></div>
             <div class="panel__content">
@@ -26,10 +35,13 @@
                     <div id="expiration-date" class="hosted-field"></div>
                     <!-- End hosted fields section -->
                 </div>
+                @foreach ($order as $key => $value)
+                <input type="text" name="{{ $key }}" value="{{ $value }}" hidden>
+                @endforeach
                 
                 
             </div>
-            <div class="panel__footer"><button class="pay-button">Pay</button></div>
+            <div class="panel__footer"><button type="submit" onclick=" window.localStorage.clear()" class="pay-button">Pay</button></div>
         </div>
         </form>
 
@@ -61,10 +73,11 @@
                 <input id="nonce" name="payment_method_nonce" type="hidden" />
                 <button class="button" type="submit" onclick=" window.localStorage.clear()"><span>Test Transaction</span></button>
             </form> --}}
+            <script src="https://js.braintreegateway.com/web/3.76.0/js/client.min.js"></script>
 
+            <script src="https://js.braintreegateway.com/web/3.76.0/js/hosted-fields.min.js"></script>
 
-
-        <script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
+        {{-- <script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script> --}}
         {{-- <script>
             var form = document.querySelector('#payment-form');
             var client_token = "{{ $token }}";
@@ -97,14 +110,18 @@
 
     </div>
         <script>
-
-            braintree.client.create({
-        authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b'
+        var form = document.querySelector('#cardForm_payment');
+        var client_token = "{{ $token }}";
+        console.log(braintree);
+    
+      braintree.client.create({
+        authorization: client_token,
         }, function(err, clientInstance) {
         if (err) {
             console.error(err);
+             console.log("test collegamento")
             return;
-        }
+        } 
 
         braintree.hostedFields.create({
             client: clientInstance,
@@ -130,18 +147,12 @@
                 selector: '#card-number',
                 placeholder: '1111 1111 1111 1111'
             },
-            cvv: {
-                selector: '#cvv',
-                placeholder: '111'
-            },
+           
             expirationDate: {
                 selector: '#expiration-date',
                 placeholder: 'MM/YY'
             },
-            postalCode: {
-                selector: '#postal-code',
-                placeholder: '11111'
-            }
+           
             }
         }, function(err, hostedFieldsInstance) {
             if (err) {
