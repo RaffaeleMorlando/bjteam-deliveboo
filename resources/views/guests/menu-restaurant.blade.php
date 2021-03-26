@@ -86,7 +86,7 @@
                   @method('POST')
                   <div v-for="(product, index) in cartProducts">
                     <input type="text" :value="product.id" hidden :name="product.name">
-                    <input type="text" :value="product.counter" hidden :name="product.id +'_counter'">
+                    <input type="text" :value="product.counter" hidden name="counter[]">
                   </div>
                   <input type="text" :value="cartTotalPrice" hidden name="total_price">
                   {{-- cancellare --}}

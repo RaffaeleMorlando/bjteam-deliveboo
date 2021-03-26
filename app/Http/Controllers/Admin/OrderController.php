@@ -16,7 +16,7 @@ class OrderController extends Controller
     {
         $restaurant = Auth::user()->restaurant;
 
-        $allOrders = Order::all();
+        $allOrders = Order::orderBy('created_at', 'desc')->get();
         $orders = [];
 
         foreach ($allOrders as $order) {

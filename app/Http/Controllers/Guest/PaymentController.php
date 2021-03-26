@@ -37,10 +37,12 @@ class PaymentController extends Controller
 
 
         $data = $request->all();
+        $data["counter"] = implode(",", $data["counter"]);
+
 
         $myId = [];
         foreach ($data as $key => $value) {
-          if ($key != '_token' && $key != '_method' && $key != 'total_price' && $key != 'guest_address' && $key != 'guest_name' && $key != 'payment_method_nonce') {
+          if ($key != '_token' && $key != '_method' && $key != 'total_price' && $key != 'guest_address' && $key != 'guest_name' && $key != 'payment_method_nonce' && $key != 'counter' && $key != 'email_customer') {
             $myId[] = $value;
           }
         }
@@ -48,14 +50,13 @@ class PaymentController extends Controller
 
         $newOrder = new Order();
         $newOrder->fill($data);
+        $newOrder->counter = $data["counter"];
         // $newOrder->created_at = '2021-07-25';
         $newOrder->save();
 
         $newOrder->products()->attach($myId);
 
-        // Mail::to($data['email_customer'])->send(new SendNewMail($newOrder)); // da utilizzare per inviare email di conferma ordine all'utente
-
-        Mail::to('costumer@mail.com')->send(new SendNewMail($newOrder));
+        Mail::to($data['email_customer'])->send(new SendNewMail($newOrder)); // da utilizzare per inviare email di conferma ordine all'utente
 
         $gateway = new Braintree\Gateway([
             'environment' => config('services.braintree.environment'),

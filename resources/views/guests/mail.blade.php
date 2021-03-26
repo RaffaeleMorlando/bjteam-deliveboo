@@ -42,7 +42,7 @@
         .email_footer {
             height: 80px;
             background-color: black;
-        } 
+        }
 
     </style>
     <title>Email conferma ordine n° #####</title>
@@ -60,10 +60,14 @@
                 <h1>Grazie di averci scelto</h1>
                 <p>Di seguito il suo ordine:</p>
                 <ul>
-                {{-- @foreach ($order as $item)
-                    <li>{{$item->}}</li>
-                @endforeach
-                </ul> --}}
+                    @php
+                        $order->counter = explode( ',', $order->counter);
+                     @endphp
+
+                    @for($i = 0; $i < count($order->products); $i++)
+                        <li>{{ $order->products[$i]->name }} x{{ $order->counter[$i] }}</li>
+                    @endfor
+                </ul>
             </div>
         </div>
     </div>
