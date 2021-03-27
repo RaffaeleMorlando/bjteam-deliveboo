@@ -1381,6 +1381,7 @@ PANEL FORM
 
 .textfield--float-label {
   width: 50%;
+  float: left;
   display: inline-block;
   padding-right: 5px;
 }
