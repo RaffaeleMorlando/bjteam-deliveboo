@@ -1747,6 +1747,11 @@ Media Queries
   letter-spacing: 0.5px;
 }
 .container-menu-main .menu_container #menu_left .menu_item_sections_container .menu_plate .plate_price_add #plate_add_cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   width: 40px;
   height: 40px;
   margin-right: 10px;

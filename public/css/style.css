@@ -1652,21 +1652,14 @@ a:hover i {
 }
 #dashboard_order .card_orders .card_order {
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
-  min-height: 250px;
+  max-height: 275px;
   padding: 20px;
-  color: green;
-}
-#dashboard_order .card_orders .card_order:hover {
-  color: lightgreen;
+  color: #1E1E1E;
+  overflow: auto;
 }
 #dashboard_order .card_orders .card_order .card_left {
   display: flex;
   justify-content: flex-start;
-}
-#dashboard_order .card_orders .card_order .card_right {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 
 .myChart_container {

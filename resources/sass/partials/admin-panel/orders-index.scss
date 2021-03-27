@@ -5,15 +5,13 @@
       position: relative;
       border: 0;
       background: $white;
-      
+
     .card_order{
       box-shadow: $shadowCard;
-      min-height: 250px;
+      max-height: 275px;
       padding: 20px;
-      color: green;
-      &:hover {
-        color: lightgreen;
-      }
+      color: $black;
+      overflow: auto;
 
 
 
@@ -21,12 +19,6 @@
         display: flex;
         justify-content: flex-start;
       }
-      .card_right{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-      }
-
     }
   }
 }
