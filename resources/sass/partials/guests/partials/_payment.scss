@@ -63,7 +63,6 @@ PANEL FORM
 
 .textfield--float-label {
   width: 50%;
-  float: left;
   display: inline-block;
   padding-right: 5px;
 
@@ -191,5 +190,14 @@ Media Queries
   }
   .pay-button {
     width: 100%;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .panel__header {
+    label,h1 {
+      font-size: 1.6rem;
+    }
+    
   }
 }
