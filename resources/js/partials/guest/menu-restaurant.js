@@ -17,7 +17,8 @@ const menuRestaurant = new Vue({
     cartTotalPrice: 0,
     isCartOpen: false,
     chevronDown: false,
-    addedToCart: false
+    addedToCart: false,
+    indexArray: []
   },
 
   mounted() {
@@ -54,6 +55,11 @@ const menuRestaurant = new Vue({
         self.restaurant = response.data[0];
 
         self.menu = self.restaurant.products;
+        self.menu.forEach(
+          (element) => {
+            self.indexArray.push(false);
+          }
+        );
 
         self.categories = self.restaurant.categories;
 
@@ -61,6 +67,21 @@ const menuRestaurant = new Vue({
           self.cartProducts = [];
         } else {
           self.cartProducts = (JSON.parse(window.localStorage.getItem('cart')));
+
+          for(let i = 0; i < self.menu.length; i++) {
+            let found = false;
+
+            self.cartProducts.forEach(
+              (element) => {
+                if(element.name == self.menu[i].name) {
+                  found = true;
+                }
+              }
+            );
+            if(found) {
+              self.indexArray[i] = true;
+            }
+          }
 
           if (self.cartProducts[0].restaurant_id !== self.restaurant.id) {
 
@@ -97,17 +118,18 @@ const menuRestaurant = new Vue({
         );
 
         if(!found) {
+          self.indexArray[index] = true;
           self.cartProducts.push(self.menu[index]);
           self.getTotalPrice();
 
           if(window.innerWidth < 993) {
 
             self.addedToCart = true;
-            
+
             setTimeout(function(){
               self.addedToCart = false;
             },1000);
-  
+
           }
         }
       } else {
@@ -115,13 +137,13 @@ const menuRestaurant = new Vue({
         if(window.innerWidth < 993) {
 
           self.addedToCart = true;
-          
+
           setTimeout(function(){
             self.addedToCart = false;
           },1000);
 
         }
-
+        self.indexArray[index] = true;
         self.cartProducts.push(self.menu[index]);
         self.getTotalPrice();
       }
@@ -155,9 +177,17 @@ const menuRestaurant = new Vue({
         this.getTotalPrice();
         this.$forceUpdate();
       } else{
+        const self = this;
+        //this.indexArray[index] = false;
+        for(let i = 0; i < this.menu.length; i++) {
+          if (self.menu[i].name == self.cartProducts[index].name) {
+            self.indexArray[i] = false;
+          }
+        }
         this.cartProducts.splice(index, 1);
         window.localStorage.clear();
         window.localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+        this.$forceUpdate();
       }
 
 

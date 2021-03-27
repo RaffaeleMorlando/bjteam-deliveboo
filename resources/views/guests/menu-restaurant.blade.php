@@ -47,8 +47,9 @@
                 <p>@{{plate.description}}</p>
                 <div class="plate_price_add">
                   <span class="plate_infos" id="plate_price">@{{plate.price.toFixed(2)}}€</span>
-                  <span class="plate_infos" id="plate_add_cart" @click="addToCart(index)">
-                    <i class="fas fa-cart-plus" v-if=""></i>
+                  <span class="plate_infos" id="plate_add_cart"  :style="!indexArray[index] ? '' : 'background-color: #d6bdba'" @click="addToCart(index)">
+                    <i class="fas fa-cart-plus"></i>
+                    {{-- <i class="fas fa-minus" v-else></i> --}}
                   </span>
                 </div>
               </div>

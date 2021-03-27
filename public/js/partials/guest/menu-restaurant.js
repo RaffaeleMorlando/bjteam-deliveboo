@@ -49363,7 +49363,8 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     cartTotalPrice: 0,
     isCartOpen: false,
     chevronDown: false,
-    addedToCart: false
+    addedToCart: false,
+    indexArray: []
   },
   mounted: function mounted() {
     var _this = this;
@@ -49392,12 +49393,32 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/restaurant/".concat(slug)).then(function (response) {
       self.restaurant = response.data[0];
       self.menu = self.restaurant.products;
+      self.menu.forEach(function (element) {
+        self.indexArray.push(false);
+      });
       self.categories = self.restaurant.categories;
 
       if (JSON.parse(window.localStorage.getItem('cart')) == null) {
         self.cartProducts = [];
       } else {
         self.cartProducts = JSON.parse(window.localStorage.getItem('cart'));
+
+        var _loop = function _loop(i) {
+          var found = false;
+          self.cartProducts.forEach(function (element) {
+            if (element.name == self.menu[i].name) {
+              found = true;
+            }
+          });
+
+          if (found) {
+            self.indexArray[i] = true;
+          }
+        };
+
+        for (var i = 0; i < self.menu.length; i++) {
+          _loop(i);
+        }
 
         if (self.cartProducts[0].restaurant_id !== self.restaurant.id) {
           self.cartProducts = [];
@@ -49423,6 +49444,7 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         });
 
         if (!found) {
+          self.indexArray[index] = true;
           self.cartProducts.push(self.menu[index]);
           self.getTotalPrice();
 
@@ -49441,6 +49463,7 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
           }, 1000);
         }
 
+        self.indexArray[index] = true;
         self.cartProducts.push(self.menu[index]);
         self.getTotalPrice();
       }
@@ -49469,9 +49492,18 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         this.getTotalPrice();
         this.$forceUpdate();
       } else {
+        var self = this; //this.indexArray[index] = false;
+
+        for (var i = 0; i < this.menu.length; i++) {
+          if (self.menu[i].name == self.cartProducts[index].name) {
+            self.indexArray[i] = false;
+          }
+        }
+
         this.cartProducts.splice(index, 1);
         window.localStorage.clear();
         window.localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+        this.$forceUpdate();
       }
     },
     getTotalPrice: function getTotalPrice() {
