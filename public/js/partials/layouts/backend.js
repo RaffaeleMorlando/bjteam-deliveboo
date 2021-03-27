@@ -49340,6 +49340,7 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     activeAside: "",
     asideClass: "",
     mainClass: "",
+    contentAsideClass: "",
     activeSettings: false,
     editForm: false,
     url: null,
@@ -49353,16 +49354,19 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         this.activeAside = false;
         this.asideClass = "aside_slide_right";
         this.mainClass = "main_slide_left";
+        this.contentAsideClass = "fade_out";
       } else {
         if (!this.activeAside) {
           this.activeAside = true;
           this.asideClass = "aside_slide_left";
           this.mainClass = "main_slide_right";
+          this.contentAsideClass = "fade_in";
           this.$forceUpdate;
         } else {
           this.activeAside = false;
           this.asideClass = "aside_slide_right";
           this.mainClass = "main_slide_left";
+          this.contentAsideClass = "fade_out";
           this.$forceUpdate;
         }
       }

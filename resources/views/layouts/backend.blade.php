@@ -105,7 +105,7 @@
 
         <aside :class="asideClass">
 
-          <div class="content">
+          <div class="content" :class="contentAsideClass">
 
             <div id="aside_top">
               <i class="far fa-user-circle"></i>

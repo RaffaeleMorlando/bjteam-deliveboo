@@ -7,6 +7,7 @@ const backend = new Vue({
     activeAside: "",
     asideClass: "",
     mainClass: "",
+    contentAsideClass: "",
     activeSettings: false,
     editForm: false,
     url: null,
@@ -21,16 +22,19 @@ const backend = new Vue({
         this.activeAside = false;
         this.asideClass = "aside_slide_right";
         this.mainClass = "main_slide_left";
+        this.contentAsideClass = "fade_out";
       } else {
         if (!this.activeAside) {
           this.activeAside = true;
           this.asideClass = "aside_slide_left";
           this.mainClass = "main_slide_right";
+          this.contentAsideClass = "fade_in";
           this.$forceUpdate;
         } else {
           this.activeAside = false;
           this.asideClass = "aside_slide_right";
           this.mainClass = "main_slide_left";
+          this.contentAsideClass = "fade_out";
           this.$forceUpdate;
         }
       }
