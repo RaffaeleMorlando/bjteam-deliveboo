@@ -49362,7 +49362,8 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     activeBanner: false,
     cartTotalPrice: 0,
     isCartOpen: false,
-    chevronDown: false
+    chevronDown: false,
+    addedToCart: false
   },
   mounted: function mounted() {
     var _this = this;
@@ -49424,8 +49425,22 @@ var menuRestaurant = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         if (!found) {
           self.cartProducts.push(self.menu[index]);
           self.getTotalPrice();
+
+          if (window.innerWidth < 993) {
+            self.addedToCart = true;
+            setTimeout(function () {
+              self.addedToCart = false;
+            }, 1000);
+          }
         }
       } else {
+        if (window.innerWidth < 993) {
+          self.addedToCart = true;
+          setTimeout(function () {
+            self.addedToCart = false;
+          }, 1000);
+        }
+
         self.cartProducts.push(self.menu[index]);
         self.getTotalPrice();
       }

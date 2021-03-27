@@ -1757,6 +1757,7 @@ Media Queries
 }
 .container-menu-main .menu_container #menu_left .menu_item_sections_container .menu_plate .plate_price_add span {
   padding: 10px;
+  font-weight: 600;
 }
 .container-menu-main .menu_container .menu_cart {
   width: 40%;
@@ -2158,6 +2159,10 @@ Media Queries
     color: #fff;
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
+  }
+
+  .boxShadowAdded {
+    box-shadow: inset 0px 2px 20px 0 #db0909 !important;
   }
 }
 @media all and (max-width: 767px) {

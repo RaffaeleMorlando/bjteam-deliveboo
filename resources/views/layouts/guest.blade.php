@@ -30,7 +30,7 @@
           <div class="row">
 
             <div class="left col-lg-3 col-md-12" :style="displayNone ? 'display: none' : ''">
-              <a href="{{ route('home') }}" id="home_link"><img class="logo" src="{{ asset("img/logo_glovo-prova.svg") }}" alt="logo"></a>
+              <a href="{{ route('home') }}" id="home_link"><img class="logo" src="{{ asset("img/logo.png") }}" alt="logo"></a>
             </div>
 
             <div class="header_center col-lg-6 col-md-12 " :style="displayNone ? 'display: none' : ''">

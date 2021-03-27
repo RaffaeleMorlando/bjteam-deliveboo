@@ -134,6 +134,7 @@
 
                         span {
                             padding: 10px;
+                            font-weight: 600;
                         }
                     }
                 }
@@ -614,6 +615,12 @@
             }
         }
     }
+
+    .boxShadowAdded {
+        box-shadow: inset 0px 2px 20px 0 rgb(219 9 9) !important;
+
+    }
+
 }
 
 @media all and (max-width: 767px) {

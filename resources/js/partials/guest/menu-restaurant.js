@@ -17,6 +17,7 @@ const menuRestaurant = new Vue({
     cartTotalPrice: 0,
     isCartOpen: false,
     chevronDown: false,
+    addedToCart: false
   },
 
   mounted() {
@@ -98,8 +99,29 @@ const menuRestaurant = new Vue({
         if(!found) {
           self.cartProducts.push(self.menu[index]);
           self.getTotalPrice();
+
+          if(window.innerWidth < 993) {
+
+            self.addedToCart = true;
+            
+            setTimeout(function(){
+              self.addedToCart = false;
+            },1000);
+  
+          }
         }
       } else {
+
+        if(window.innerWidth < 993) {
+
+          self.addedToCart = true;
+          
+          setTimeout(function(){
+            self.addedToCart = false;
+          },1000);
+
+        }
+
         self.cartProducts.push(self.menu[index]);
         self.getTotalPrice();
       }

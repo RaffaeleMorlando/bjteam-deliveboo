@@ -48,7 +48,7 @@
                 <div class="plate_price_add">
                   <span class="plate_infos" id="plate_price">@{{plate.price.toFixed(2)}}€</span>
                   <span class="plate_infos" id="plate_add_cart" @click="addToCart(index)">
-                    <i class="fas fa-cart-plus"></i>
+                    <i class="fas fa-cart-plus" v-if=""></i>
                   </span>
                 </div>
               </div>
@@ -97,7 +97,7 @@
             </div>
 
             {{-- CARRELLO MD/SM --}}
-            <div class="cart_responsive" :style="isCartOpen ? 'height: calc(100vh - 205px)' : 'height: 120px'">
+            <div class="cart_responsive" :style="isCartOpen ? 'height: calc(100vh - 205px)' : 'height: 120px'" :class="addedToCart ? 'boxShadowAdded' : '' ">
 
               <span v-if="isCartOpen == false"><i class="fas fa-chevron-up" @click="openCart"></i></span>
               <span v-if="chevronDown"><i class="fas fa-chevron-down" @click="openCart"></i></span>
