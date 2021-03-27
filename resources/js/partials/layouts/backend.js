@@ -16,7 +16,7 @@ const backend = new Vue({
   },
   methods: {
 
-    toggleShow(){
+    toggleShowAside(){
       //this.activeAside = !this.activeAside;
       if (this.activeAside === "") {
         this.activeAside = false;

@@ -49348,7 +49348,7 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     year: "2021"
   },
   methods: {
-    toggleShow: function toggleShow() {
+    toggleShowAside: function toggleShowAside() {
       //this.activeAside = !this.activeAside;
       if (this.activeAside === "") {
         this.activeAside = false;

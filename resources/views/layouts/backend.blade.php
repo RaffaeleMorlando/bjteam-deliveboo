@@ -184,7 +184,7 @@
 
 
        {{-- burgericon --}}
-      <a id="burgerIcon" @click="toggleShow" :class="activeAside ? 'active' : '' "><i></i></a>
+      <a id="burgerIcon" @click="toggleShowAside" :class="activeAside ? 'active' : '' "><i></i></a>
       {{-- box con il form per editare le informazioni del ristorante --}}
 
 
