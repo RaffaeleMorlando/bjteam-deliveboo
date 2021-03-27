@@ -50,7 +50,7 @@
               </a>
 
               <div class="delete_product">
-                <form action="{{ route('admin.restaurants.products.destroy', $product->id) }}" method="post">
+                <form action="{{ route('admin.restaurants.products.destroy', $product->id) }}" method="post" onclick="return confirm('Sei sicuro?')">
                   @csrf
                   @method('DELETE')
                   <button class="my_delete_btn" type="submit"><i class="fas fa-trash-alt"></i></button>
