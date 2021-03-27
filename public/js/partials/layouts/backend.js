@@ -49349,7 +49349,6 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   },
   methods: {
     toggleShowAside: function toggleShowAside() {
-      //this.activeAside = !this.activeAside;
       if (this.activeAside === "") {
         this.activeAside = false;
         this.asideClass = "aside_slide_right";
