@@ -404,6 +404,7 @@ a:hover i {
 }
 #container_dashboard #dashboard_main {
   height: 100%;
+  width: 80%;
   padding: 50px 80px;
   overflow-y: auto;
   background-image: url("/img/backend_hero.svg");

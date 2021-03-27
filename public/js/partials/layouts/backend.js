@@ -49337,7 +49337,9 @@ __webpack_require__(/*! ../../bootstrap */ "./resources/js/bootstrap.js");
 var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: '#background',
   data: {
-    activeAside: true,
+    activeAside: "",
+    asideClass: "",
+    mainClass: "",
     activeSettings: false,
     editForm: false,
     url: null,
@@ -49346,7 +49348,24 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   },
   methods: {
     toggleShow: function toggleShow() {
-      this.activeAside = !this.activeAside;
+      //this.activeAside = !this.activeAside;
+      if (this.activeAside === "") {
+        this.activeAside = false;
+        this.asideClass = "aside_slide_right";
+        this.mainClass = "main_slide_left";
+      } else {
+        if (!this.activeAside) {
+          this.activeAside = true;
+          this.asideClass = "aside_slide_left";
+          this.mainClass = "main_slide_right";
+          this.$forceUpdate;
+        } else {
+          this.activeAside = false;
+          this.asideClass = "aside_slide_right";
+          this.mainClass = "main_slide_left";
+          this.$forceUpdate;
+        }
+      }
     },
     toggleSettings: function toggleSettings() {
       this.activeSettings = !this.activeSettings;
@@ -49407,19 +49426,9 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
           },
           // Configuration options go here
           options: {
-            responsive: true // maintainAspectRatio: false
-            // onresize: function(ctx, ){
-            // } 
-
+            responsive: true
           }
-        }); // chart.options.responsive = function(){
-        //   if(screen.width < 768){
-        //     return false;
-        //   } else {
-        //     return true;
-        //   }
-        // };
-        // chart.update(); 
+        });
       });
     }
   },
@@ -49428,7 +49437,6 @@ var backend = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
 
     if (currentUrl == "http://127.0.0.1:8000/admin/restaurants/orders/charts") {
       this.filterByYear();
-      console.log(screen.width < 768);
     }
   }
 });
