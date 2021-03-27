@@ -4,7 +4,10 @@ import Vue from 'vue';
 const backend = new Vue({
   el: '#background',
   data: {
-    activeAside: true,
+    activeAside: "",
+    asideClass: "",
+    mainClass: "",
+    contentAsideClass: "",
     activeSettings: false,
     editForm: false,
     url: null,
@@ -13,8 +16,28 @@ const backend = new Vue({
   },
   methods: {
 
-    toggleShow(){
-      this.activeAside = !this.activeAside;
+    toggleShowAside(){
+      //this.activeAside = !this.activeAside;
+      if (this.activeAside === "") {
+        this.activeAside = false;
+        this.asideClass = "aside_slide_right";
+        this.mainClass = "main_slide_left";
+        this.contentAsideClass = "fade_out";
+      } else {
+        if (!this.activeAside) {
+          this.activeAside = true;
+          this.asideClass = "aside_slide_left";
+          this.mainClass = "main_slide_right";
+          this.contentAsideClass = "fade_in";
+          this.$forceUpdate;
+        } else {
+          this.activeAside = false;
+          this.asideClass = "aside_slide_right";
+          this.mainClass = "main_slide_left";
+          this.contentAsideClass = "fade_out";
+          this.$forceUpdate;
+        }
+      }
     },
 
     toggleSettings() {
@@ -92,22 +115,10 @@ const backend = new Vue({
               // Configuration options go here
               options: {
                 responsive: true,
-                // maintainAspectRatio: false
-
-                // onresize: function(ctx, ){
-                  
-                // } 
               }
-              
+
             });
-            // chart.options.responsive = function(){
-            //   if(screen.width < 768){
-            //     return false;
-            //   } else {
-            //     return true;
-            //   }
-            // };
-            // chart.update(); 
+
 
           }
         );
@@ -119,7 +130,6 @@ const backend = new Vue({
 
     if(currentUrl == "http://127.0.0.1:8000/admin/restaurants/orders/charts") {
       this.filterByYear();
-      console.log(screen.width < 768);
     }
 
   }

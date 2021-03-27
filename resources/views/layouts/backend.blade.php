@@ -97,15 +97,15 @@
     <div id="container_dashboard" class="container-fluid p-0">
 
         {{-- parte sinistra del layout --}}
-        <main :class="activeAside ? 'main_slide_right' : 'main_slide_left'" id="dashboard_main">
+        <main id="dashboard_main" :class="mainClass">
           @yield('main')
         </main>
 
         {{-- parte destra del layout --}}
 
-        <aside :class="activeAside ? 'aside_slide_left' : 'aside_slide_right'">
+        <aside :class="asideClass">
 
-          <div class="content" :class="activeAside ? 'fade_in' : 'fade_out'">
+          <div class="content" :class="contentAsideClass">
 
             <div id="aside_top">
               <i class="far fa-user-circle"></i>
@@ -184,7 +184,7 @@
 
 
        {{-- burgericon --}}
-      <a id="burgerIcon" @click="toggleShow" :class="activeAside ? 'active' : '' "><i></i></a>
+      <a id="burgerIcon" @click="toggleShowAside" :class="activeAside ? 'active' : '' "><i></i></a>
       {{-- box con il form per editare le informazioni del ristorante --}}
 
 
