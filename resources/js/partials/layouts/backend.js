@@ -17,7 +17,6 @@ const backend = new Vue({
   methods: {
 
     toggleShowAside(){
-      //this.activeAside = !this.activeAside;
       if (this.activeAside === "") {
         this.activeAside = false;
         this.asideClass = "aside_slide_right";
