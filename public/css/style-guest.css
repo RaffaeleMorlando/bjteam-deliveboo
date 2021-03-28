@@ -1499,6 +1499,11 @@ Media Queries
     width: 100%;
   }
 }
+@media all and (max-width: 576px) {
+  .panel__header label, .panel__header h1 {
+    font-size: 1.6rem;
+  }
+}
 #container_404 {
   display: flex;
 }
