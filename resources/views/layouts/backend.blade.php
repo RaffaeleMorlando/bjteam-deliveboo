@@ -56,9 +56,9 @@
 
             {{-- retangolo piccolo verde con la label --}}
             <div class="small_green_box">
-              <label for="name" class="mx-1 my-0">Indirizzo</label>
+              <label for="address" class="mx-1 my-0">Indirizzo</label>
             </div>
-            <input type="text" name="name" id="name" value="{{ $restaurant->address }}" placeholder="Inserisci il nome del ristorante" placeholder="Inserisci l'indirizzo del tuo locale" min=4  title="deve contener almeno 4 caratteri e un numero"  required>
+            <input type="text" name="address" id="address" value="{{ $restaurant->address }}" placeholder="Inserisci l'indirizzo del tuo locale" min=4  title="deve contener almeno 4 caratteri e un numero"  required>
           </div>
 
           <div class="create_product_input">
@@ -69,9 +69,9 @@
 
             {{-- retangolo piccolo verde con la label --}}
             <div class="small_green_box">
-              <label for="address" class="mx-1 my-0">Telefono</label>
+              <label for="phone" class="mx-1 my-0">Telefono</label>
             </div>
-            <input type="text" name="address" id="address" value="{{ $restaurant->phone }}" placeholder="Inserisci l'indirizzo"placeholder="Inserisci il numero del tuo locale"  min="6"  title="esempio +393205308707" required>
+            <input type="text" name="phone" id="phone" value="{{ $restaurant->phone }}" placeholder="Inserisci il numero del tuo locale"  min="6"  title="esempio +393205308707" required>
           </div>
 
           <div class="restaurant_image_hero_box">
