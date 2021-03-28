@@ -177,12 +177,40 @@ main {
 
 // FOOTER farà parte del layout
 footer {
+  margin-top: 50px;
 
   #footer-bottom {
+    color: white;
+    @include SetFlexContainer(row, space-around, center, nowrap);
     background-color: #1d1d1d;
     min-height: 100px;
+    ul {
+      min-height: 320px;
+      &#Team4 {
+        li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      
+      }
+      }
+      li {
+        i {
+          margin: 10px;
+          font-size: 25px;
+        }
+        img.img_icon_ft {
+          height: 25px;
+        }
+        a {
+          color: white;
+        }
+      }
+    }
+
   }
 
+  
 }
 
 //BANNER DEL CARRELLO
@@ -242,7 +270,16 @@ footer {
   opacity: 0;
 }
 
-
+@media all and (max-width: 992px) {
+  footer {
+    img {
+      margin-top:100px;
+    }
+    #footer-bottom{
+    display: none;
+    }
+  }
+}
 
 
 

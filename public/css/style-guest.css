@@ -185,9 +185,36 @@ header .container .row .right #container_buttons_log_reg li.logo_section ul.drop
   display: none;
 }
 
+footer {
+  margin-top: 50px;
+}
 footer #footer-bottom {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
   background-color: #1d1d1d;
   min-height: 100px;
+}
+footer #footer-bottom ul {
+  min-height: 320px;
+}
+footer #footer-bottom ul#Team4 li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer #footer-bottom ul li i {
+  margin: 10px;
+  font-size: 25px;
+}
+footer #footer-bottom ul li img.img_icon_ft {
+  height: 25px;
+}
+footer #footer-bottom ul li a {
+  color: white;
 }
 
 #cart_banner {
@@ -235,6 +262,14 @@ footer #footer-bottom {
   opacity: 0;
 }
 
+@media all and (max-width: 992px) {
+  footer img {
+    margin-top: 100px;
+  }
+  footer #footer-bottom {
+    display: none;
+  }
+}
 @media all and (max-width: 991px) {
   header {
     height: -webkit-max-content;
