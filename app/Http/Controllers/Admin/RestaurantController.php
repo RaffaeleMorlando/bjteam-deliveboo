@@ -80,7 +80,7 @@ class RestaurantController extends Controller
       }
 
       //$data['restaurant_id'] = Auth::id();
-      $data['slug'] = Str::slug($data['name']);
+      //$data['slug'] = Str::slug($data['name']);
       $restaurant->update($data);
 
       /**
