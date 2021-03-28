@@ -48,7 +48,7 @@
     <div class="container_form_login">
         <form id="login_form" action="{{ route('login') }}" method="POST" class="container">
             @csrf
-          <img src="{{asset("img/logo_green.svg")}}" alt="Comodo">  
+          <img src="{{asset("img/logo_login.png")}}" alt="Comodo">  
         <div class="wrapper_input">
             <div class="form-group">
             <label class="email_login" for="email">{{ __('E-Mail Address') }}</label>

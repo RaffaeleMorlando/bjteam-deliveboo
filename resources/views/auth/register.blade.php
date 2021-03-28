@@ -21,7 +21,7 @@
                     
       <form method="POST" id="register_form"  class="container" action="{{ route('register') }}">
         @csrf
-        <img src="{{asset("img/logo_green.svg")}}" alt="Comodo">
+        <img src="{{asset("img/logo_login.png")}}" alt="Comodo">
         <div class="wrapper_input">
           <div class="form-group">
             <label class="label_none_md" for="name">{{ __('Name') }}</label>
