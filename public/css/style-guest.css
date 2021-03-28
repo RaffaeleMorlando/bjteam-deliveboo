@@ -1579,7 +1579,7 @@ Media Queries
     height: 100vh;
     display: flex;
     flex-direction: column;
-    margin-top: 170px;
+    margin-top: 155px;
   }
   #container_404 #container_404_img {
     width: 100%;
@@ -1619,7 +1619,7 @@ Media Queries
     height: 100vh;
     display: flex;
     flex-direction: column;
-    margin-top: 170px;
+    margin-top: 155px;
   }
   #container_404 #container_404_img {
     width: 100%;
@@ -1630,9 +1630,6 @@ Media Queries
   }
   #container_404 #container_404_img img {
     width: 100%;
-  }
-  #container_404 #container_404_message {
-    display: none;
   }
 }
 #template-email .email_header {
