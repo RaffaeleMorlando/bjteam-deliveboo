@@ -17,7 +17,7 @@
           <div class="dashboard_top_card_icon">
             <i class="fas fa-wallet"></i>
           </div>
-          <p>Total: {{ number_format($totalEarnings, 2) }}&euro;</p>
+          <p>Fatturato Totale: {{ number_format($totalEarnings, 2) }}&euro;</p>
         </li>
         <li class="dashboard_top_card">
           <div class="dashboard_top_card_icon">
